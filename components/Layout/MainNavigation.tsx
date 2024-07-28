@@ -8,6 +8,9 @@ export const MainNavigation = () => {
           <li>
             <Link href="/login">Join us</Link>
           </li>
+          <li>
+            <Link href="/profile">Your profile</Link>
+          </li>
         </ul>
       </nav>
     </header>
