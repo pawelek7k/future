@@ -1,6 +1,6 @@
-import { hashPassword } from "@/lib/auth";
+import { hashPassword } from "@/lib/singup/auth";
 import { connectToDatabase } from "@/lib/db";
-import { schema } from "@/lib/schemaJoi";
+import { schema } from "@/lib/singup/schemaJoi";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
