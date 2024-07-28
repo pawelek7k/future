@@ -1,7 +1,13 @@
-import { SingupForm } from "@/components/login/Form";
+import { LoginForm } from "@/components/login/Login";
+import { SingupForm } from "@/components/login/Singup";
 
 const LoginPage = () => {
-  return <SingupForm />;
+  return (
+    <>
+      <SingupForm />
+      <LoginForm />
+    </>
+  );
 };
 
 export default LoginPage;
