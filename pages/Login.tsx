@@ -1,7 +1,7 @@
-import { LoginForm } from "@/components/login/Form";
+import { SingupForm } from "@/components/login/Form";
 
 const LoginPage = () => {
-  return <LoginForm />;
+  return <SingupForm />;
 };
 
 export default LoginPage;
