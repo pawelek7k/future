@@ -10,7 +10,7 @@ if (!mongoUri) {
     throw new Error('MONGODB_CONNECT environment variable is not defined')
 }
 
-export const connectToDatabse = async (): Promise<MongoClient> => {
+export const connectToDatabase = async (): Promise<MongoClient> => {
 
     try {
         const client = await MongoClient.connect(mongoUri)
