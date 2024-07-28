@@ -1,10 +1,10 @@
 import { LoginForm } from "@/components/login/Login";
-import { SingupForm } from "@/components/login/Singup";
+import { SignupForm } from "@/components/login/Signup";
 
 const LoginPage = () => {
   return (
     <>
-      <SingupForm />
+      <SignupForm />
       <LoginForm />
     </>
   );

@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 export const schema = Joi.object({
-    name: Joi.string()
+    username: Joi.string()
         .min(3)
         .max(20)
         .required()
