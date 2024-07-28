@@ -1,4 +1,4 @@
-import { createUser } from "@/lib/singup/userApi";
+import { createUser } from "@/lib/signup/userApi";
 import { useState } from "react";
 
 export const SignupForm = () => {
