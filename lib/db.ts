@@ -11,6 +11,7 @@ if (!mongoUri) {
 }
 
 export const connectToDatabse = async (): Promise<MongoClient> => {
+
     try {
         const client = await MongoClient.connect(mongoUri)
         return client
@@ -18,6 +19,5 @@ export const connectToDatabse = async (): Promise<MongoClient> => {
         console.error('Failed to connect to database', e)
         throw e
     }
-
 
 }
