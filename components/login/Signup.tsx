@@ -47,10 +47,8 @@ export const SignupForm = () => {
         formData.password
       );
       console.log("User created:", result);
-      // Można dodać kod do obsługi sukcesu, np. przekierowanie lub wyświetlenie komunikatu
     } catch (error) {
       console.error("Error creating user:", error);
-      // Można dodać kod do obsługi błędu, np. wyświetlenie komunikatu
     }
   };
 
