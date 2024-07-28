@@ -1,21 +1,33 @@
+import { hashPassword } from "@/lib/auth"
 import { connectToDatabase } from "@/lib/db"
 import { schema } from "@/lib/schemaJoi"
 import { NextApiRequest, NextApiResponse } from "next"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    const client = await connectToDatabase()
-    const db = client.db()
+    try {
+        const client = await connectToDatabase()
+        const db = client.db()
+        const data = req.body
+        const { email, name, password } = data
+        const { error, value } = schema.validate({ email, name, password })
 
-    const data = req.body
+        if (error) {
+            return res.status(400).json({ error: error.message })
+        }
 
-    const { email, name, password } = data
-    const { error, value } = schema.validate({ email, name, password })
+        const hashedPassword = await hashPassword(password)
 
-    if (error) {
-        return res.status(400).json({ error: error.message })
+        const result = await db.collection('users').insertOne({
+            ...value,
+            password: hashedPassword
+        })
+
+        return res.status(201).json(result)
+
+    } catch (e) {
+        console.error('Database operation failed:', e)
+        return res.status(500).json({ error: 'Internal server error' })
     }
-
-    const result = await db.collection('users').insertOne(value)
 }
 
 
