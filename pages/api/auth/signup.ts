@@ -14,7 +14,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         const data = req.body;
         const { email, username, password } = data;
 
-        const { error, value } = schema.validate({ email, name: username, password });
+        const { error, value } = schema.validate({ email, username, password });
 
         if (error) {
             return res.status(400).json({ error: error.message });
