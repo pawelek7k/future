@@ -6,6 +6,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const db = client.db()
 
     db.collection('users')
+    const data = req.body
+    const { email, name, password } = data
 }
 
 
