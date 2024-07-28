@@ -1,5 +1,11 @@
-import { hash } from 'bcryptjs'
+import { hash } from 'bcrypt'
 
 export const hashPassword = async (password: string) => {
-    const hashedPassword = await hash(password, 12)
+    try {
+        const hashedPassword = await hash(password, 12)
+        return hashedPassword
+    } catch (e) {
+        console.error('Error hashing password:', e)
+        throw new Error('Error hashing password')
+    }
 }
