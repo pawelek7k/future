@@ -1,9 +1,13 @@
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 
 export const MainNavigation = () => {
   const { data: session, status } = useSession();
   const loading = status === "loading";
+
+  const logoutHandler = () => {
+    signOut();
+  };
 
   return (
     <header className="flex justify-evenly p-4 w-full text-text fixed z-50 bg-secondaryBg backdrop-blur-md rounded-b-lg border-b border-secondary top-0">
@@ -21,7 +25,7 @@ export const MainNavigation = () => {
           )}
           {session && (
             <li>
-              <button>Logout</button>
+              <button onClick={logoutHandler}>Logout</button>
             </li>
           )}
         </ul>
