@@ -1,36 +1,20 @@
-import { createUser } from "@/lib/signup/userApi";
-import { useState } from "react";
+import React from "react";
 
-export const SignupForm = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    username: "",
-    password: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+interface SignupFormProps {
+  formData: {
+    email: string;
+    username: string;
+    password: string;
   };
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  submitHandler: (e: React.FormEvent<HTMLFormElement>) => void;
+}
 
-  const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    try {
-      const result = await createUser(
-        formData.email,
-        formData.username,
-        formData.password
-      );
-      console.log("User created:", result);
-    } catch (error) {
-      console.error("Error creating user:", error);
-    }
-  };
-
+export const SignupForm = (React.FC<SignupFormProps> = ({
+  formData,
+  handleChange,
+  submitHandler,
+}) => {
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-40">
       <h2 className="text-2xl font-semibold mb-6 text-gray-800">Rejestracja</h2>
@@ -95,4 +79,4 @@ export const SignupForm = () => {
       </form>
     </div>
   );
-};
+});

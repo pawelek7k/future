@@ -1,4 +1,16 @@
 export const LoginForm = () => {
+  // const isLogin = async () => {
+  //   try {
+  //     const result = await singIn("credentials", {
+  //       redirect: false,
+  //       email: formData.email,
+  //       password: formData.password,
+  //     });
+  //     console.log(result);
+  //   } catch (error) {
+  //     console.error("Login error:", error);
+  //   }
+  // };
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10">
       <h2 className="text-2xl font-semibold mb-6 text-gray-800">Logowanie</h2>
