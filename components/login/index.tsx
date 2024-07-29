@@ -2,9 +2,10 @@ import { createUser } from "@/lib/signup/userApi";
 import { useState } from "react";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
+import signIn from "next-auth";
 
 export const Container = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     email: "",
     username: "",
@@ -26,15 +27,28 @@ export const Container = () => {
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    try {
-      const result = await createUser(
-        formData.email,
-        formData.username,
-        formData.password
-      );
-      console.log("User created:", result);
-    } catch (error) {
-      console.error("Error creating user:", error);
+    if (isLogin) {
+      try {
+        const result = await signIn("credentials", {
+          redirect: false,
+          email: formData.email,
+          password: formData.password,
+        });
+        console.log(result);
+      } catch (error) {
+        console.error("Login error:", error);
+      }
+    } else {
+      try {
+        const result = await createUser(
+          formData.email,
+          formData.username,
+          formData.password
+        );
+        console.log("User created:", result);
+      } catch (error) {
+        console.error("Error creating user:", error);
+      }
     }
   };
 
