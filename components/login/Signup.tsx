@@ -16,7 +16,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
   submitHandler,
 }) => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-40">
+    <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10">
       <h2 className="text-2xl font-semibold mb-6 text-gray-800">Rejestracja</h2>
       <form onSubmit={submitHandler}>
         <div className="mb-4">
