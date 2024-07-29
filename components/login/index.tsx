@@ -1,8 +1,8 @@
 import { createUser } from "@/lib/signup/userApi";
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
-import signIn from "next-auth";
 
 export const Container = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -55,7 +55,11 @@ export const Container = () => {
   return (
     <div className="container mx-auto p-20 flex flex-col justify-center items-center">
       {isLogin ? (
-        <LoginForm />
+        <LoginForm
+          formData={formData}
+          handleChange={handleChange}
+          submitHandler={submitHandler}
+        />
       ) : (
         <SignupForm
           formData={formData}

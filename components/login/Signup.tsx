@@ -10,7 +10,7 @@ interface SignupFormProps {
   submitHandler: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-export const SignupForm = (React.FC<SignupFormProps> = ({
+export const SignupForm: React.FC<SignupFormProps> = ({
   formData,
   handleChange,
   submitHandler,
@@ -79,4 +79,4 @@ export const SignupForm = (React.FC<SignupFormProps> = ({
       </form>
     </div>
   );
-});
+};
