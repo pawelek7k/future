@@ -24,29 +24,36 @@ export default NextAuth({
                 const client = await connectToDatabase();
 
                 try {
+                    console.log("Attempting to authorize with email:", credentials.email);
+
                     const usersCollection = client.db().collection<User>('users');
                     const user = await usersCollection.findOne({ email: credentials.email });
 
                     if (!user) {
+                        console.error('No user found with the provided email.');
                         throw new Error('No user found with the provided email.');
                     }
+
+                    console.log('User found:', user);
 
                     const isValid = await verifyPassword(credentials.password, user.password);
 
                     if (!isValid) {
+                        console.error('Invalid credentials.');
                         throw new Error('Invalid credentials.');
                     }
 
+                    console.log('User authorized:', user.email);
+
                     return { email: user.email };
                 } finally {
-
                     await client.close();
                 }
             }
+
         })
     ],
     pages: {
         signIn: '/login',
-        error: '/auth/error',
     }
 } as NextAuthOptions);
