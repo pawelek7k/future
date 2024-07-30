@@ -15,7 +15,7 @@ const UserProfilePage = () => {
     newPassword: string;
   }) => {
     try {
-      const response = await fetch("/api/user/changePassword", {
+      const response = await fetch("/api/user/change-password", {
         method: "PATCH",
         body: JSON.stringify(passwordData),
         headers: {
