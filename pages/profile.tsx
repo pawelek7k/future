@@ -46,8 +46,6 @@ const UserProfilePage = () => {
   );
 };
 
-export default UserProfilePage;
-
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsResult<SessionProps>> => {
@@ -74,3 +72,5 @@ export const getServerSideProps = async (
     };
   }
 };
+
+export default UserProfilePage;

@@ -37,7 +37,7 @@ export const Container = () => {
           password: formData.password,
         });
 
-        if (!result.error) {
+        if (result && !result.error) {
           router.replace("/profile");
         }
         console.log(result);
