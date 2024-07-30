@@ -1,5 +1,13 @@
 import { PasswordChangeForm } from "@/components/profile/PasswordChangeForm";
 import { getSession } from "next-auth/react";
+import {
+  GetServerSidePropsContext,
+  GetServerSidePropsResult,
+} from "next/types";
+
+interface SessionProps {
+  session: any;
+}
 
 const UserProfilePage = () => {
   return (
@@ -13,14 +21,16 @@ const UserProfilePage = () => {
 
 export default UserProfilePage;
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+): Promise<GetServerSidePropsResult<SessionProps>> => {
   try {
     const session = await getSession({ req: context.req });
     if (!session) {
       return {
         redirect: {
           destination: "/login",
-          pernament: false,
+          permanent: false,
         },
       };
     }
@@ -29,6 +39,11 @@ export const getServerSideProps = async (context) => {
       props: { session },
     };
   } catch (error) {
-    console.error(error);
+    console.error("Failed to fetch session:", error);
+    return {
+      props: {
+        session: null,
+      },
+    };
   }
 };
