@@ -10,11 +10,22 @@ interface SessionProps {
 }
 
 const UserProfilePage = () => {
+  const changePasswordHandler = async (passwordData) => {
+    const response = await fetch("/api/user/changePassword", {
+      method: "PATCH",
+      body: JSON.stringify(passwordData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+  };
   return (
     <div className="mt-20">
       <h1>User Profile</h1>
       <p>Welcome, user!</p>
-      <PasswordChangeForm />
+      <PasswordChangeForm onChangePassword={changePasswordHandler} />
     </div>
   );
 };

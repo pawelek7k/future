@@ -1,6 +1,15 @@
 import { useRef } from "react";
 
-export const PasswordChangeForm: React.FC = () => {
+interface PasswordChangeFormProps {
+  onChangePassword: (passwordData: {
+    oldPassword: string;
+    newPassword: string;
+  }) => void;
+}
+
+export const PasswordChangeForm: React.FC<PasswordChangeFormProps> = ({
+  onChangePassword,
+}) => {
   const oldPasswordRef = useRef<HTMLInputElement>(null);
   const newPasswordRef = useRef<HTMLInputElement>(null);
 
@@ -12,6 +21,11 @@ export const PasswordChangeForm: React.FC = () => {
 
     console.log("Old Password:", enteredOldPassword);
     console.log("New Password:", enteredNewPassword);
+
+    onChangePassword({
+      oldPassword: enteredOldPassword,
+      newPassword: enteredNewPassword,
+    });
   };
 
   return (

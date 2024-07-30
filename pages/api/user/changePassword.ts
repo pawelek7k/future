@@ -5,7 +5,7 @@ import { getSession } from 'next-auth/react';
 
 export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method !== 'PATCH') {
-        return
+        return res.status(405).json({ message: 'Method Not Allowed' });
     }
 
     try {
@@ -17,8 +17,7 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         }
 
         const userEmail = session.user?.email
-        const oldPassword = req.body.oldPassword
-        const newPassword = req.body.newPassword
+        const { oldPassword, newPassword } = req.body;
 
         const client = await connectToDatabase()
         const usersCollection = client.db().collection('users')
@@ -26,9 +25,8 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         const user = await usersCollection.findOne({ email: userEmail })
 
         if (!user) {
-            res.status(404).json({ message: 'User not found' })
             client.close()
-            return
+            return res.status(404).json({ message: 'User not found' })
         }
 
         const currentPassword = user.password
@@ -36,19 +34,21 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         const passwordsAreEqual = await verifyPassword(oldPassword, currentPassword)
 
         if (!passwordsAreEqual) {
-            res.status(422).json({ message: 'Invalid password.' })
             client.close()
-            return
+            return res.status(422).json({ message: 'Invalid password.' })
         }
 
         const hashedPassword = await hashPassword(newPassword)
 
-        const result = await usersCollection.updateOne(
+        await usersCollection.updateOne(
             { email: userEmail },
-            { $set: { password: newPassword } })
+            { $set: { password: hashedPassword } })
 
         client.close()
         res.status(200).json({ message: 'Password updated!' })
 
-    } catch (error) { }
+    } catch (error) {
+        console.error('Failed to update password:', error);
+        return res.status(500).json({ message: 'Internal Server Error' });
+    }
 };
