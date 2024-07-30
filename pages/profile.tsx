@@ -1,11 +1,10 @@
-import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const UserProfilePage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [session, setSession] = useState<Session | null>(null);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -15,7 +14,6 @@ const UserProfilePage = () => {
         if (!fetchedSession) {
           router.push("/login");
         } else {
-          setSession(fetchedSession);
           setIsLoading(false);
         }
       } catch (error) {
@@ -33,7 +31,7 @@ const UserProfilePage = () => {
   return (
     <div className="mt-20">
       <h1>User Profile</h1>
-      <p>Welcome, {session?.user?.username || "User"}!</p>
+      <p>Welcome, user!</p>
     </div>
   );
 };
