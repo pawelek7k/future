@@ -1,20 +1,21 @@
+import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const UserProfilePage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [session, setSession] = useState(null);
+  const [session, setSession] = useState<Session | null>(null);
   const router = useRouter();
 
   useEffect(() => {
     const fetchSession = async () => {
       try {
-        const session = await getSession();
-        if (!session) {
+        const fetchedSession = await getSession();
+        if (!fetchedSession) {
           router.push("/login");
         } else {
-          setSession(session);
+          setSession(fetchedSession);
           setIsLoading(false);
         }
       } catch (error) {
@@ -32,7 +33,7 @@ const UserProfilePage = () => {
   return (
     <div className="mt-20">
       <h1>User Profile</h1>
-      <p>Welcome, {session.user.username}!</p>
+      <p>Welcome, {session?.user?.username || "User"}!</p>
     </div>
   );
 };
