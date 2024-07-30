@@ -1,3 +1,4 @@
+import { PasswordChangeForm } from "@/components/profile/PasswordChangeForm";
 import { getSession } from "next-auth/react";
 
 const UserProfilePage = () => {
@@ -5,6 +6,7 @@ const UserProfilePage = () => {
     <div className="mt-20">
       <h1>User Profile</h1>
       <p>Welcome, user!</p>
+      <PasswordChangeForm />
     </div>
   );
 };
