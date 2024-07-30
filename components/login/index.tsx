@@ -1,5 +1,6 @@
 import { createUser } from "@/lib/signup/userApi";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
@@ -11,6 +12,7 @@ export const Container = () => {
     username: "",
     password: "",
   });
+  const router = useRouter();
 
   const toggleForm = () => {
     setIsLogin((prev) => !prev);
@@ -34,6 +36,10 @@ export const Container = () => {
           email: formData.email,
           password: formData.password,
         });
+
+        if (!result.error) {
+          router.replace("/profile");
+        }
         console.log(result);
       } catch (error) {
         console.error("Login error:", error);
