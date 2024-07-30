@@ -3,7 +3,7 @@ import { hashPassword, verifyPassword } from '@/lib/signup/auth';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getSession } from 'next-auth/react';
 
-export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method !== 'PATCH') {
         return res.status(405).json({ message: 'Method Not Allowed' });
     }
@@ -52,3 +52,5 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(500).json({ message: 'Internal Server Error' });
     }
 };
+
+export default handler;

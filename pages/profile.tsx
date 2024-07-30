@@ -10,17 +10,33 @@ interface SessionProps {
 }
 
 const UserProfilePage = () => {
-  const changePasswordHandler = async (passwordData) => {
-    const response = await fetch("/api/user/changePassword", {
-      method: "PATCH",
-      body: JSON.stringify(passwordData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-    console.log(data);
+  const changePasswordHandler = async (passwordData: {
+    oldPassword: string;
+    newPassword: string;
+  }) => {
+    try {
+      const response = await fetch("/api/user/changePassword", {
+        method: "PATCH",
+        body: JSON.stringify(passwordData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(
+          `HTTP error! status: ${response.status} - ${errorMessage}`
+        );
+      }
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error("Error changing password:", error);
+    }
   };
+
   return (
     <div className="mt-20">
       <h1>User Profile</h1>
