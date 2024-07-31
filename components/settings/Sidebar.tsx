@@ -1,10 +1,24 @@
+import { FaRegUser } from "react-icons/fa";
+import { IoIosNotificationsOutline } from "react-icons/io";
+import { IoSettingsOutline } from "react-icons/io5";
+import { MdOutlineManageAccounts, MdSecurity } from "react-icons/md";
+import { RiGitRepositoryPrivateLine } from "react-icons/ri";
+
 const sidebarItems = [
-  { id: "profile", label: "Profil" },
-  { id: "account", label: "Konto" },
-  { id: "notifications", label: "Powiadomienia" },
-  { id: "security", label: "Bezpieczeństwo" },
-  { id: "privacy", label: "Prywatność" },
-  { id: "general", label: "Ogólne" },
+  { id: "profile", label: "Profil", icon: <FaRegUser /> },
+  { id: "account", label: "Konto", icon: <MdOutlineManageAccounts /> },
+  {
+    id: "notifications",
+    label: "Powiadomienia",
+    icon: <IoIosNotificationsOutline />,
+  },
+  { id: "security", label: "Bezpieczeństwo", icon: <MdSecurity /> },
+  {
+    id: "privacy",
+    label: "Prywatność",
+    icon: <RiGitRepositoryPrivateLine />,
+  },
+  { id: "general", label: "Ogólne", icon: <IoSettingsOutline /> },
 ];
 
 export const Sidebar = () => {
@@ -16,8 +30,9 @@ export const Sidebar = () => {
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="block p-2 hover:bg-neutral-200 rounded"
+              className=" p-2 hover:bg-neutral-200 rounded flex items-center gap-4"
             >
+              {item.icon}
               {item.label}
             </a>
           </li>
