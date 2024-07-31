@@ -42,10 +42,17 @@ const SettingsPage = ({ session }: SessionProps) => {
   };
 
   return (
-    <section className="mt-20 p-10">
-      <h1 className="text-2xl">User Profile</h1>
-      <p>Welcome, {session?.user?.email}!</p>
-      <PasswordChangeForm onChangePassword={changePasswordHandler} />
+    <section className="mt-0 pt-16">
+      <div className="">ok</div>
+      <div className="">
+        <div>
+          {" "}
+          <h1 className="text-2xl">User Profile</h1>
+          <p>Welcome, {session?.user?.email}!</p>
+        </div>
+
+        <PasswordChangeForm onChangePassword={changePasswordHandler} />
+      </div>
     </section>
   );
 };
