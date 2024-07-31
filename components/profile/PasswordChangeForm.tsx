@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { PrimaryButton } from "../global/buttons";
 
 interface PasswordChangeFormProps {
   onChangePassword: (passwordData: {
@@ -44,7 +45,7 @@ export const PasswordChangeForm: React.FC<PasswordChangeFormProps> = ({
         <input
           id="current-password"
           type="password"
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-sky-950 sm:text-sm"
           required
           ref={oldPasswordRef}
         />
@@ -59,17 +60,12 @@ export const PasswordChangeForm: React.FC<PasswordChangeFormProps> = ({
         <input
           id="new-password"
           type="password"
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-sky-950 sm:text-sm"
           required
           ref={newPasswordRef}
         />
       </div>
-      <button
-        type="submit"
-        className="w-full bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
-      >
-        Change Password
-      </button>
+      <PrimaryButton>Zmień hasło</PrimaryButton>
     </form>
   );
 };

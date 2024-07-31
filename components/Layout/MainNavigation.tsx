@@ -14,7 +14,7 @@ export const MainNavigation = () => {
   console.log("Loading Status:", loading);
 
   return (
-    <header className="flex justify-evenly p-4 w-full text-text fixed z-50 bg-secondaryBg backdrop-blur-md rounded-b-lg border-b border-secondary top-0">
+    <header className="flex justify-evenly p-4 w-full text-text fixed z-50 bg-secondaryBg backdrop-blur-md rounded-b-lg border-b border-secondary top-0 items-center">
       <Logo />
       <nav>
         <ul className="flex gap-8 tracking-widest">
