@@ -2,6 +2,7 @@ import { connectToDatabase } from '@/lib/db';
 import { verifyPassword } from '@/lib/signup/auth';
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from 'next-auth/providers/google';
 
 interface User {
     id: string;
@@ -55,7 +56,11 @@ export default NextAuth({
                     await client.close();
                 }
             }
-        })
+        }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID as string,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+        }),
     ],
     pages: {
         signIn: '/login',
