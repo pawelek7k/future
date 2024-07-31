@@ -1,4 +1,4 @@
-import { GoogleButton, PrimaryButton } from "../buttons";
+import { GoogleButton, PrimaryButton } from "../global/buttons";
 
 interface FormData {
   email: string;

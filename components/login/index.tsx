@@ -2,7 +2,7 @@ import { createUser } from "@/lib/signup/userApi";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { PrimaryButton } from "../buttons";
+import { PrimaryButton } from "../global/buttons";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
 
