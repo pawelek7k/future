@@ -1,6 +1,11 @@
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 
+interface ButtonProps {
+  children: string;
+  onClick?: () => void;
+}
+
 export const GoogleButton = () => {
   return (
     <button
@@ -11,6 +16,18 @@ export const GoogleButton = () => {
       <span className="text-gray-800 text-sm font-medium">
         Sign in with Google
       </span>
+    </button>
+  );
+};
+
+export const PrimaryButton = ({ children, onClick }: ButtonProps) => {
+  return (
+    <button
+      type="submit"
+      className="w-full bg-sky-900 text-white py-2 px-4 rounded-lg hover:bg-sky-950 focus:outline-none focus:ring-2  focus:ring-opacity-50"
+      onClick={onClick}
+    >
+      {children}
     </button>
   );
 };

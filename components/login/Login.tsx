@@ -1,4 +1,4 @@
-import { GoogleButton } from "../buttons";
+import { GoogleButton, PrimaryButton } from "../buttons";
 
 interface FormData {
   email: string;
@@ -54,13 +54,14 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
         />
       </div>
-      <button
-        type="submit"
-        className="w-full bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
-      >
-        Zaloguj się
-      </button>
-      <GoogleButton />
+      <ul className="flex flex-col gap-4">
+        <li>
+          <PrimaryButton>Zaloguj się</PrimaryButton>
+        </li>
+        <li>
+          <GoogleButton />
+        </li>
+      </ul>
     </form>
   </div>
 );

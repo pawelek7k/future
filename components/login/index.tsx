@@ -2,6 +2,7 @@ import { createUser } from "@/lib/signup/userApi";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { PrimaryButton } from "../buttons";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
 
@@ -73,12 +74,11 @@ export const Container = () => {
           submitHandler={submitHandler}
         />
       )}
-      <button
-        onClick={toggleForm}
-        className="mb-4 bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 mt-20"
-      >
-        {isLogin ? "Przełącz na Rejestrację" : "Przełącz na Logowanie"}
-      </button>
+      <div>
+        <PrimaryButton onClick={toggleForm}>
+          {isLogin ? "Przełącz na Rejestrację" : "Przełącz na Logowanie"}
+        </PrimaryButton>
+      </div>
     </div>
   );
 };

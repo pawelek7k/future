@@ -1,4 +1,5 @@
 import React from "react";
+import { PrimaryButton } from "../buttons";
 
 interface SignupFormProps {
   formData: {
@@ -70,12 +71,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
           />
         </div>
-        <button
-          type="submit"
-          className="w-full bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
-        >
-          Zarejestruj się
-        </button>
+        <PrimaryButton>Zarejestruj się</PrimaryButton>
       </form>
     </div>
   );
