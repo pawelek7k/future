@@ -1,4 +1,4 @@
-import { PasswordChangeForm } from "@/components/profile/PasswordChangeForm";
+import { PasswordChangeForm } from "@/components/settings/PasswordChangeForm";
 import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
 import {
