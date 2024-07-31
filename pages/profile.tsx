@@ -16,6 +16,7 @@ const UserProfilePage = ({ session }: SessionProps) => {
     newPassword: string;
   }) => {
     try {
+      console.log(passwordData);
       const response = await fetch("/api/user/change-password", {
         method: "PATCH",
         body: JSON.stringify(passwordData),
