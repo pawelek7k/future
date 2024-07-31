@@ -1,4 +1,4 @@
-import { signIn } from "next-auth/react";
+import { GoogleButton } from "../buttons";
 
 interface FormData {
   email: string;
@@ -60,7 +60,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
       >
         Zaloguj się
       </button>
-      <button onClick={() => signIn("google")}>Sign in with Google</button>
+      <GoogleButton />
     </form>
   </div>
 );
