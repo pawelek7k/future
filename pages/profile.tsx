@@ -34,6 +34,7 @@ const UserProfilePage = ({ session }: SessionProps) => {
 
       const data = await response.json();
       console.log(data);
+      return data;
     } catch (error) {
       console.error("Error changing password:", error);
     }
