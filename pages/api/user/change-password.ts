@@ -9,13 +9,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     try {
-        const session = await getSession({ req })
+        const session = await getSession({ req });
+        console.log('Session:', session);
 
         if (!session) {
-            res.status(401).json({ message: 'Not authenticated!' })
-            return
+            return res.status(401).json({ message: 'Not authenticated!' });
         }
-
         const userEmail = session.user?.email
         const { oldPassword, newPassword } = req.body;
 
