@@ -17,7 +17,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
   submitHandler,
 }) => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10">
+    <div className="bg-neutral-50 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10">
       <h2 className="text-2xl font-semibold mb-6 text-gray-800">Rejestracja</h2>
       <form onSubmit={submitHandler}>
         <div className="mb-4">
@@ -34,7 +34,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
             value={formData.username}
             onChange={handleChange}
             placeholder="Wpisz swoje imię"
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-sky-950"
           />
         </div>
         <div className="mb-4">
@@ -51,7 +51,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
             value={formData.email}
             onChange={handleChange}
             placeholder="Wpisz swój e-mail"
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-sky-950"
           />
         </div>
         <div className="mb-4">
@@ -68,7 +68,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
             value={formData.password}
             onChange={handleChange}
             placeholder="Wpisz swoje hasło"
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-sky-950"
           />
         </div>
         <PrimaryButton>Zarejestruj się</PrimaryButton>
