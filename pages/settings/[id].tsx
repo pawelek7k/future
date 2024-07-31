@@ -56,13 +56,13 @@ const SettingPage = () => {
       <Head>
         <title>Future - Zarządzaj swoimi ustawieniami!</title>
       </Head>
-      <div className="flex">
+      <section className="flex">
         <Sidebar />
         <div className="flex-1 p-4 mt-20">
           <h1 className="text-2xl font-bold mb-4">{content.title}</h1>
           <div className="text-gray-700">{content.content}</div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
