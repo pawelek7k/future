@@ -1,6 +1,7 @@
 import { Sidebar } from "@/components/settings/Sidebar";
 import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
+import Head from "next/head";
 import {
   GetServerSidePropsContext,
   GetServerSidePropsResult,
@@ -42,9 +43,13 @@ const SettingsPage = ({ session }: SessionProps) => {
   };
 
   return (
-    <section className="h-screen">
-      <Sidebar />
-      {/* <div className="">
+    <>
+      <Head>
+        <title>Future - Zarządzaj swoimi ustawieniami!</title>
+      </Head>
+      <section className="h-screen">
+        <Sidebar />
+        {/* <div className="">
         <div>
           {" "}
           <h1 className="text-2xl">User Profile</h1>
@@ -53,7 +58,8 @@ const SettingsPage = ({ session }: SessionProps) => {
 
         <PasswordChangeForm onChangePassword={changePasswordHandler} />
       </div> */}
-    </section>
+      </section>
+    </>
   );
 };
 

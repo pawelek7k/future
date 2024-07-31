@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { FaRegUser } from "react-icons/fa";
 import { IoIosNotificationsOutline } from "react-icons/io";
@@ -50,13 +51,19 @@ const SettingPage = () => {
   };
 
   return (
-    <div className="flex">
-      <Sidebar />
-      <div className="flex-1 p-4 mt-20">
-        <h1 className="text-2xl font-bold mb-4">{content.title}</h1>
-        <div className="text-gray-700">{content.content}</div>
+    <>
+      {" "}
+      <Head>
+        <title>Future - Zarządzaj swoimi ustawieniami!</title>
+      </Head>
+      <div className="flex">
+        <Sidebar />
+        <div className="flex-1 p-4 mt-20">
+          <h1 className="text-2xl font-bold mb-4">{content.title}</h1>
+          <div className="text-gray-700">{content.content}</div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
