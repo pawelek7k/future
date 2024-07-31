@@ -1,4 +1,4 @@
-import { PasswordChangeForm } from "@/components/settings/PasswordChangeForm";
+import { Sidebar } from "@/components/settings/Sidebar";
 import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
 import {
@@ -42,9 +42,9 @@ const SettingsPage = ({ session }: SessionProps) => {
   };
 
   return (
-    <section className="mt-0 pt-16">
-      <div className="">ok</div>
-      <div className="">
+    <section className="h-screen">
+      <Sidebar />
+      {/* <div className="">
         <div>
           {" "}
           <h1 className="text-2xl">User Profile</h1>
@@ -52,7 +52,7 @@ const SettingsPage = ({ session }: SessionProps) => {
         </div>
 
         <PasswordChangeForm onChangePassword={changePasswordHandler} />
-      </div>
+      </div> */}
     </section>
   );
 };
