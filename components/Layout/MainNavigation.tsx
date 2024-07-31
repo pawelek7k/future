@@ -29,6 +29,9 @@ export const MainNavigation = () => {
                 <Link href="/profile">Twój profil</Link>
               </li>
               <li>
+                <Link href="/settings">Ustawienia</Link>
+              </li>
+              <li>
                 <button onClick={logoutHandler}>Wyloguj</button>
               </li>
             </>
