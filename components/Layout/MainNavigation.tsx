@@ -20,16 +20,16 @@ export const MainNavigation = () => {
         <ul className="flex gap-8 tracking-widest">
           {!session && !loading && (
             <li>
-              <Link href="/login">Join us</Link>
+              <Link href="/login">Zaloguj się</Link>
             </li>
           )}
           {session && (
             <>
               <li>
-                <Link href="/profile">Your profile</Link>
+                <Link href="/profile">Twój profil</Link>
               </li>
               <li>
-                <button onClick={logoutHandler}>Logout</button>
+                <button onClick={logoutHandler}>Wyloguj</button>
               </li>
             </>
           )}

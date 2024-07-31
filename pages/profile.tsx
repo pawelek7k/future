@@ -42,11 +42,11 @@ const UserProfilePage = ({ session }: SessionProps) => {
   };
 
   return (
-    <div className="mt-20">
-      <h1>User Profile</h1>
+    <section className="mt-20 p-10">
+      <h1 className="text-2xl">User Profile</h1>
       <p>Welcome, {session?.user?.email}!</p>
       <PasswordChangeForm onChangePassword={changePasswordHandler} />
-    </div>
+    </section>
   );
 };
 
