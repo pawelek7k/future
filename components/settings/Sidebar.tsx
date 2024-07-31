@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaRegUser } from "react-icons/fa";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -13,11 +14,7 @@ const sidebarItems = [
     icon: <IoIosNotificationsOutline />,
   },
   { id: "security", label: "Bezpieczeństwo", icon: <MdSecurity /> },
-  {
-    id: "privacy",
-    label: "Prywatność",
-    icon: <RiGitRepositoryPrivateLine />,
-  },
+  { id: "privacy", label: "Prywatność", icon: <RiGitRepositoryPrivateLine /> },
   { id: "general", label: "Ogólne", icon: <IoSettingsOutline /> },
 ];
 
@@ -28,13 +25,13 @@ export const Sidebar = () => {
       <ul className="space-y-2">
         {sidebarItems.map((item) => (
           <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              className=" p-2 hover:bg-neutral-200 rounded flex items-center gap-4"
+            <Link
+              href={`/settings/${item.id}`}
+              className="p-2 hover:bg-neutral-200 rounded flex items-center gap-4"
             >
               {item.icon}
               {item.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
