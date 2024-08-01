@@ -1,10 +1,17 @@
 import { NotificationContainer } from "@/components/settings/Notification";
 import { ProfileContainer } from "@/components/settings/Profile";
+import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
+import { Session } from "next-auth";
+import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { PasswordChangeForm } from "../../components/settings/Security/PasswordChangeForm";
 import { Sidebar } from "../../components/settings/Sidebar";
 import { changePasswordHandler } from "../../lib/settings/userService";
+
+interface SessionProps {
+  session: Session | null;
+}
 
 const SettingPage = () => {
   const router = useRouter();
@@ -57,6 +64,34 @@ const SettingPage = () => {
       <div className="flex-1 p-4 mt-20">{renderContent()}</div>
     </div>
   );
+};
+
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+): Promise<GetServerSidePropsResult<SessionProps>> => {
+  try {
+    const session = await getSession({ req: context.req });
+
+    if (!session) {
+      return {
+        redirect: {
+          destination: "/login",
+          permanent: false,
+        },
+      };
+    }
+
+    return {
+      props: { session },
+    };
+  } catch (error) {
+    console.error("Failed to fetch session:", error);
+    return {
+      props: {
+        session: null,
+      },
+    };
+  }
 };
 
 export default SettingPage;
