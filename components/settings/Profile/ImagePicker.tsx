@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ChangeEvent, useRef, useState } from "react";
+import { FaRegUser, FaRegUserCircle, FaUserCircle } from "react-icons/fa";
 
 export const ImagePicker = () => {
   const [pickedImage, setPickedImage] = useState<string | null>(null);
@@ -30,7 +31,7 @@ export const ImagePicker = () => {
           className="w-32 h-32 rounded-full relative border border-myPrimary flex items-center justify-center font-sans cursor-pointer"
           onClick={handleImageClick}
         >
-          {!pickedImage && <p>No image picked yet.</p>}
+          {!pickedImage && <FaUserCircle className="w-32 h-32" />}
           {pickedImage && (
             <Image
               src={pickedImage}
