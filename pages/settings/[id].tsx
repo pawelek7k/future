@@ -1,3 +1,4 @@
+import { ProfileContainer } from "@/components/settings/Profile";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { PasswordChangeForm } from "../../components/settings/PasswordChangeForm";
@@ -27,7 +28,7 @@ const SettingPage = () => {
   const renderContent = () => {
     switch (id) {
       case "profile":
-        return <div>Profile settings content...</div>;
+        return <ProfileContainer />;
       case "account":
         return <div>Account settings content...</div>;
       case "notifications":
@@ -52,7 +53,7 @@ const SettingPage = () => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="flex-1 p-4 mt-40">{renderContent()}</div>
+      <div className="flex-1 p-4 mt-20">{renderContent()}</div>
     </div>
   );
 };
