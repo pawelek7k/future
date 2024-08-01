@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ChangeEvent, useRef, useState } from "react";
-import { FaRegUser, FaRegUserCircle, FaUserCircle } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 
 export const ImagePicker = () => {
   const [pickedImage, setPickedImage] = useState<string | null>(null);
