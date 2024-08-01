@@ -1,3 +1,4 @@
+import { Divide as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { useState } from "react";
 import { FaRegUser } from "react-icons/fa";
@@ -5,7 +6,6 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineManageAccounts, MdSecurity } from "react-icons/md";
 import { RiGitRepositoryPrivateLine } from "react-icons/ri";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { SecondHeading } from "../global/heading";
 
 const sidebarItems = [
@@ -22,20 +22,17 @@ const sidebarItems = [
 ];
 
 export const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setOpen] = useState(true);
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+    setOpen(!isOpen);
   };
 
   return (
     <div>
-      <button
-        className="mt-20 fixed z-50 -top-16 left-4"
-        onClick={toggleSidebar}
-      >
-        <RxHamburgerMenu className="w-8 h-8" />
-      </button>
+      <div className="fixed z-50 left-2 top-2">
+        <Hamburger toggled={isOpen} toggle={setOpen} />
+      </div>
       <div
         className={`fixed top-0 left-0 h-screen bg-neutral-100 text-sky-950 p-4 pt-20 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
