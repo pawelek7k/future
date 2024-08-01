@@ -4,11 +4,11 @@ import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
 
-interface User {
+interface CustomUser {
     id: string;
     email: string;
     username?: string;
-    password: string;
+    password?: string;
 }
 
 export default NextAuth({
@@ -32,7 +32,7 @@ export default NextAuth({
                 try {
                     console.log("Attempting to authorize with email:", credentials.email);
 
-                    const usersCollection = client.db().collection<User>('users');
+                    const usersCollection = client.db().collection<CustomUser>('users');
                     const user = await usersCollection.findOne({ email: credentials.email });
 
                     if (!user) {
@@ -42,7 +42,7 @@ export default NextAuth({
 
                     console.log('User found:', user);
 
-                    const isValid = await verifyPassword(credentials.password, user.password);
+                    const isValid = await verifyPassword(credentials.password, user.password || '');
 
                     if (!isValid) {
                         console.error('Invalid credentials.');
@@ -64,5 +64,25 @@ export default NextAuth({
     ],
     pages: {
         signIn: '/login',
-    }
+    },
+    callbacks: {
+        async jwt({ token, user }) {
+            if (user) {
+                token.id = (user as CustomUser).id;
+                token.email = (user as CustomUser).email;
+                token.username = (user as CustomUser).username;
+            }
+            return token;
+        },
+        async session({ session, token }) {
+            if (token) {
+                session.user = {
+                    id: token.id as string,
+                    email: token.email as string,
+                    username: token.username as string,
+                };
+            }
+            return session;
+        },
+    },
 } as NextAuthOptions);
