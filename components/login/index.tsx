@@ -39,7 +39,7 @@ export const Container = () => {
         });
 
         if (result && !result.error) {
-          router.replace("/profile");
+          router.replace("/settings/profile");
         }
         console.log(result);
       } catch (error) {

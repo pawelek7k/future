@@ -25,9 +25,9 @@ export const ImagePicker = () => {
 
   return (
     <div>
-      <div className="flex flex-col gap-4 w-[15rem]">
+      <div className="bg-neutral-100 p-2 rounded-full">
         <div
-          className="w-40 h-40 rounded-full relative border border-myPrimary flex items-center justify-center font-sans cursor-pointer"
+          className="w-32 h-32 rounded-full relative border border-myPrimary flex items-center justify-center font-sans cursor-pointer"
           onClick={handleImageClick}
         >
           {!pickedImage && <p>No image picked yet.</p>}
