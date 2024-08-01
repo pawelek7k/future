@@ -4,6 +4,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineManageAccounts, MdSecurity } from "react-icons/md";
 import { RiGitRepositoryPrivateLine } from "react-icons/ri";
+import { SecondHeading } from "../global/heading";
 
 const sidebarItems = [
   { id: "profile", label: "Profil", icon: <FaRegUser /> },
@@ -21,7 +22,7 @@ const sidebarItems = [
 export const Sidebar = () => {
   return (
     <div className="w-1/4 bg-neutral-100 text-sky-950 h-screen p-4 pt-20">
-      <h2 className="text-lg font-semibold mb-4">Ustawienia</h2>
+      <SecondHeading>Ustawienia</SecondHeading>
       <ul className="space-y-2">
         {sidebarItems.map((item) => (
           <li key={item.id}>

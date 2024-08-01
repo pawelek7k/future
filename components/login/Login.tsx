@@ -1,4 +1,5 @@
 import { GoogleButton, PrimaryButton } from "../global/buttons";
+import { SecondHeading } from "../global/heading";
 
 interface FormData {
   email: string;
@@ -18,7 +19,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   submitHandler,
 }) => (
   <div className="bg-neutral-50 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10">
-    <h2 className="text-2xl font-semibold mb-6 text-gray-800">Logowanie</h2>
+    <SecondHeading>Logowanie</SecondHeading>
     <form onSubmit={submitHandler}>
       <div className="mb-4">
         <label

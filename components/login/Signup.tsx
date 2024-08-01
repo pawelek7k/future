@@ -1,5 +1,6 @@
 import React from "react";
 import { PrimaryButton } from "../global/buttons";
+import { SecondHeading } from "../global/heading";
 
 interface SignupFormProps {
   formData: {
@@ -18,7 +19,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
 }) => {
   return (
     <div className="bg-neutral-50 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10">
-      <h2 className="text-2xl font-semibold mb-6 text-gray-800">Rejestracja</h2>
+      <SecondHeading>Rejestracja</SecondHeading>
       <form onSubmit={submitHandler}>
         <div className="mb-4">
           <label
