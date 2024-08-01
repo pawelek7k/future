@@ -23,7 +23,7 @@ export const Sidebar = () => {
   return (
     <div className="w-1/4 bg-neutral-100 text-sky-950 h-screen p-4 pt-20">
       <SecondHeading>Ustawienia</SecondHeading>
-      <ul className="space-y-2">
+      <ul className="space-y-2 mt-6">
         {sidebarItems.map((item) => (
           <li key={item.id}>
             <Link

@@ -10,12 +10,12 @@ export const FirstHeading = ({ children }: Props) => {
 
 export const SecondHeading = ({ children }: Props) => {
   return (
-    <h2 className="text-2xl font-semibold mb-6 text-gray-800 font-sans">
+    <h2 className="text-2xl font-semibold text-gray-800 font-sans">
       {children}
     </h2>
   );
 };
 
 export const ThirdHeading = ({ children }: Props) => {
-  return <h3>{children}</h3>;
+  return <h3 className="text-l font-semibold text-gray-800">{children}</h3>;
 };
