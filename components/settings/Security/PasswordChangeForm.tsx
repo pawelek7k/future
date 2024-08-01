@@ -1,5 +1,6 @@
+import { SecondHeading } from "@/components/global/heading";
 import { useRef } from "react";
-import { PrimaryButton } from "../global/buttons";
+import { PrimaryButton } from "../../global/buttons";
 
 interface PasswordChangeFormProps {
   onChangePassword: (passwordData: {
@@ -32,10 +33,10 @@ export const PasswordChangeForm: React.FC<PasswordChangeFormProps> = ({
   return (
     <form
       onSubmit={submitHandler}
-      className="max-w-md mx-auto p-4 border border-gray-300 rounded-lg shadow-md"
+      className="max-w-md mx-auto p-4 border border-gray-300 rounded-lg shadow-md bg-neutral-50 mt-20"
     >
-      <h2 className="text-2xl font-bold mb-4">Change Password</h2>
-      <div className="mb-4">
+      <SecondHeading>Zmień hasło</SecondHeading>
+      <div className="mb-4 mt-4">
         <label
           htmlFor="current-password"
           className="block text-sm font-medium text-gray-700"

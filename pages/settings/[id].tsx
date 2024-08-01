@@ -1,7 +1,7 @@
 import { ProfileContainer } from "@/components/settings/Profile";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { PasswordChangeForm } from "../../components/settings/PasswordChangeForm";
+import { PasswordChangeForm } from "../../components/settings/Security/PasswordChangeForm";
 import { Sidebar } from "../../components/settings/Sidebar";
 import { changePasswordHandler } from "../../lib/settings/userService";
 
