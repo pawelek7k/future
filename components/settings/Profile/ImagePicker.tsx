@@ -5,10 +5,6 @@ export const ImagePicker = () => {
   const [pickedImage, setPickedImage] = useState<string | null>(null);
   const imageInput = useRef<HTMLInputElement>(null);
 
-  const handlePickClick = () => {
-    imageInput.current?.click();
-  };
-
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
 
@@ -22,12 +18,18 @@ export const ImagePicker = () => {
     };
     fileReader.readAsDataURL(file);
   };
+
+  const handleImageClick = () => {
+    imageInput.current?.click();
+  };
+
   return (
     <div>
-      {" "}
-      <label></label>
       <div className="flex flex-col gap-4 w-[15rem]">
-        <div className="w-40 h-40 rounded-full relative border border-myPrimary flex items-center justify-center font-sans">
+        <div
+          className="w-40 h-40 rounded-full relative border border-myPrimary flex items-center justify-center font-sans cursor-pointer"
+          onClick={handleImageClick}
+        >
           {!pickedImage && <p>No image picked yet.</p>}
           {pickedImage && (
             <Image
@@ -35,6 +37,7 @@ export const ImagePicker = () => {
               alt="The image selected by the user"
               layout="fill"
               objectFit="cover"
+              className="rounded-full"
             />
           )}
         </div>
@@ -46,13 +49,6 @@ export const ImagePicker = () => {
           onChange={handleImageChange}
           required
         />
-        <button
-          type="button"
-          className="bg-accent text-text"
-          onClick={handlePickClick}
-        >
-          Choose a cover
-        </button>
       </div>
     </div>
   );
