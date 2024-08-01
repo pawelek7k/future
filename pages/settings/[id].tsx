@@ -1,3 +1,4 @@
+import { NotificationContainer } from "@/components/settings/Notification";
 import { ProfileContainer } from "@/components/settings/Profile";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -32,7 +33,7 @@ const SettingPage = () => {
       case "account":
         return <div>Account settings content...</div>;
       case "notifications":
-        return <div>Notifications settings content...</div>;
+        return <NotificationContainer />;
       case "security":
         return (
           <>
