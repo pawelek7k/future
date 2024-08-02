@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { Logo } from "../global/Logo";
 
-export const MainNavigation = () => {
+export const MainNavigation: React.FC = () => {
   const { data: session, status } = useSession();
   const loading = status === "loading";
   const { t } = useTranslation("common");
@@ -12,11 +12,8 @@ export const MainNavigation = () => {
     signOut();
   };
 
-  console.log("Session Data:", session);
-  console.log("Loading Status:", loading);
-
   return (
-    <header className="flex justify-evenly p-4 w-full  fixed z-40 bg-secondaryBg backdrop-blur-md rounded-b-lg border-b top-0 items-center">
+    <header className="flex justify-evenly p-4 w-full fixed z-40 bg-secondaryBg backdrop-blur-md rounded-b-lg border-b top-0 items-center">
       <Logo />
       <nav>
         <ul className="flex gap-8 tracking-widest">
@@ -27,14 +24,11 @@ export const MainNavigation = () => {
           )}
           {session && (
             <>
-              {/* <li>
-                <Link href="/profile">Twój profil</Link>
-              </li> */}
               <li>
-                <Link href="/settings">Ustawienia</Link>
+                <Link href="/settings">{t("settings")}</Link>
               </li>
               <li>
-                <button onClick={logoutHandler}>Wyloguj</button>
+                <button onClick={logoutHandler}>{t("logoutButton")}</button>
               </li>
             </>
           )}

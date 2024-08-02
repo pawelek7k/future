@@ -1,3 +1,4 @@
+import { GeneralComponent } from "@/components/settings/General";
 import { NotificationContainer } from "@/components/settings/Notification";
 import { ProfileContainer } from "@/components/settings/Profile";
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
@@ -52,7 +53,7 @@ const SettingPage = () => {
       case "privacy":
         return <div>Privacy settings content...</div>;
       case "general":
-        return <div>General settings content...</div>;
+        return <GeneralComponent />;
       default:
         return <div>Unknown settings section</div>;
     }
