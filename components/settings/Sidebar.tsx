@@ -54,7 +54,7 @@ export const Sidebar = () => {
         <Hamburger toggled={isOpen} toggle={setOpen} />
       </div>
       <div
-        className={`fixed top-0 left-0 h-screen bg-neutral-100 text-sky-950 p-4 pt-20 transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-screen bg-neutral-100 text-sky-950 p-4 pt-20 z-48 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } ${isDesktop ? "md:relative md:translate-x-0 md:w-1/4" : ""}`}
       >
