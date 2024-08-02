@@ -1,7 +1,7 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { Logo } from "../global/Logo";
+import { Logo } from "../../components/global/Logo";
 
 export const MainNavigation: React.FC = () => {
   const { data: session, status } = useSession();

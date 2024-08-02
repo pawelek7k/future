@@ -1,3 +1,5 @@
+"use client";
+
 import { Divide as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";

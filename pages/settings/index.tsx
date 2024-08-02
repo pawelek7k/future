@@ -1,5 +1,7 @@
 import { Sidebar } from "@/components/settings/Sidebar";
+import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import { Session } from "next-auth";
+import { getSession } from "next-auth/react";
 import Head from "next/head";
 
 interface SessionProps {
@@ -58,32 +60,32 @@ const SettingsPage = ({ session }: SessionProps) => {
   );
 };
 
-// export const getServerSideProps = async (
-//   context: GetServerSidePropsContext
-// ): Promise<GetServerSidePropsResult<SessionProps>> => {
-//   try {
-//     const session = await getSession({ req: context.req });
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+): Promise<GetServerSidePropsResult<SessionProps>> => {
+  try {
+    const session = await getSession({ req: context.req });
 
-//     if (!session) {
-//       return {
-//         redirect: {
-//           destination: "/login",
-//           permanent: false,
-//         },
-//       };
-//     }
+    if (!session) {
+      return {
+        redirect: {
+          destination: "/login",
+          permanent: false,
+        },
+      };
+    }
 
-//     return {
-//       props: { session },
-//     };
-//   } catch (error) {
-//     console.error("Failed to fetch session:", error);
-//     return {
-//       props: {
-//         session: null,
-//       },
-//     };
-//   }
-// };
+    return {
+      props: { session },
+    };
+  } catch (error) {
+    console.error("Failed to fetch session:", error);
+    return {
+      props: {
+        session: null,
+      },
+    };
+  }
+};
 
 export default SettingsPage;

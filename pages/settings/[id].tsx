@@ -14,7 +14,7 @@ interface SessionProps {
   session: Session | null;
 }
 
-const SettingPage = () => {
+const SettingPage = ({ session }: SessionProps) => {
   const router = useRouter();
   const { id } = router.query;
   const [error, setError] = useState<string | null>(null);
