@@ -8,3 +8,9 @@ body {
   background-color: #f5f5f5;
   font-family: "Montserrat", sans-serif;
 }
+
+@layer base {
+  body {
+    @apply dark:bg-gray-800 bg-white;
+  }
+}
