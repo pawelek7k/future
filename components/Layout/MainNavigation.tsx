@@ -1,10 +1,12 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { Logo } from "../global/Logo";
 
 export const MainNavigation = () => {
   const { data: session, status } = useSession();
   const loading = status === "loading";
+  const { t } = useTranslation("common");
 
   const logoutHandler = () => {
     signOut();
@@ -20,7 +22,7 @@ export const MainNavigation = () => {
         <ul className="flex gap-8 tracking-widest">
           {!session && !loading && (
             <li>
-              <Link href="/login">Zaloguj się</Link>
+              <Link href="/login">{t("loginButton")}</Link>
             </li>
           )}
           {session && (
