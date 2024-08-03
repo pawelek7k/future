@@ -62,7 +62,7 @@ const SettingPage = ({ session }: SessionProps) => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="flex-1 p-4 mt-20">{renderContent()}</div>
+      <div className="flex-1 p-4">{renderContent()}</div>
     </div>
   );
 };
