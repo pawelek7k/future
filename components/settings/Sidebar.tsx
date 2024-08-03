@@ -56,9 +56,9 @@ export const Sidebar = () => {
         <Hamburger toggled={isOpen} toggle={setOpen} />
       </div>
       <div
-        className={`fixed top-0 left-0 h-screen bg-neutral-100 text-sky-950 p-4 pt-20 z-48 transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-screen bg-neutral-100 text-sky-950 p-4 pt-20 z-40 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } ${isDesktop ? "md:relative md:translate-x-0 md:w-1/4" : ""}`}
+        } ${isDesktop ? "md:relative md:translate-x-0 md:w-1/4 z-30" : ""}`}
       >
         <SecondHeading>Ustawienia</SecondHeading>
         <ul className="space-y-2 mt-6">
@@ -69,8 +69,7 @@ export const Sidebar = () => {
                 className="p-2 hover:bg-neutral-200 rounded flex items-center gap-4"
                 onClick={toggleSidebar}
               >
-                {item.icon}
-                {item.label}
+                <span className="text-xl">{item.icon}</span> {item.label}
               </Link>
             </li>
           ))}
