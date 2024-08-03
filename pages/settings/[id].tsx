@@ -60,7 +60,7 @@ const SettingPage = ({ session }: SessionProps) => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex bg-bg-settings dark:bg-dark-bg-settings h-screen">
       <Sidebar />
       <div className="flex-1 p-4">{renderContent()}</div>
     </div>
