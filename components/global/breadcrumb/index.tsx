@@ -1,5 +1,3 @@
-"use client";
-
 import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/breadcrumbs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
