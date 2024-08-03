@@ -12,11 +12,12 @@ export const Sidebar = () => {
   return (
     <div>
       <div className={`fixed z-50 top-2 left-1/2 transform -translate-x-1/2`}>
-        <Hamburger toggled={isOpen} toggle={setOpen} />
+        <Hamburger toggled={isOpen} toggle={setOpen} size={24} />
       </div>
+
       <div
-        className={`fixed top-0 left-0 h-full bg-neutral-100 text-sky-950 p-4 pt-20 z-40 transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 right-0 h-full bg-neutral-100 text-sky-950 p-4 pt-20 z-40 transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ width: "250px" }}
       >
