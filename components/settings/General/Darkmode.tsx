@@ -2,7 +2,7 @@
 import { PrimaryButton } from "@/components/global/buttons";
 import { useTheme } from "next-themes";
 
-export const Button = () => {
+export const Button: React.FC = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
 

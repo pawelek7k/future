@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ChangeEvent, useRef, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 
-export const ImagePicker = () => {
+export const ImagePicker: React.FC = () => {
   const [pickedImage, setPickedImage] = useState<string | null>(null);
   const imageInput = useRef<HTMLInputElement>(null);
 

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { SecondHeading } from "../global/heading";
 
-export const Sidebar = () => {
+export const Sidebar: React.FC = () => {
   const [isOpen, setOpen] = useState(true);
 
   return (

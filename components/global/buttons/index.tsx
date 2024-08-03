@@ -6,7 +6,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export const GoogleButton = () => {
+export const GoogleButton: React.FC = () => {
   const handleGoogleSignIn = async () => {
     try {
       await signIn("google", { redirect: true });
@@ -27,7 +27,7 @@ export const GoogleButton = () => {
   );
 };
 
-export const PrimaryButton = ({ children, onClick }: ButtonProps) => {
+export const PrimaryButton: React.FC<ButtonProps> = ({ children, onClick }) => {
   return (
     <button
       type="submit"

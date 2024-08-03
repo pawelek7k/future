@@ -2,7 +2,7 @@ import { SecondHeading, ThirdHeading } from "@/components/global/heading";
 import { FaRegCopy } from "react-icons/fa";
 import { ImagePicker } from "./ImagePicker";
 
-export const ProfileContainer = () => {
+export const ProfileContainer: React.FC = () => {
   return (
     <div>
       <SecondHeading>Profil użytkownika</SecondHeading>

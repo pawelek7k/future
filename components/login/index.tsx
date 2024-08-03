@@ -6,7 +6,7 @@ import { PrimaryButton } from "../global/buttons";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
 
-export const Container = () => {
+export const Container: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     email: "",

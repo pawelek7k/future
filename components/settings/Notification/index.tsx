@@ -3,7 +3,7 @@ import { Paragraph } from "@/components/global/text";
 import { IoTrashBinOutline } from "react-icons/io5";
 import { SearchInput } from "./SearchInput";
 
-export const NotificationContainer = () => {
+export const NotificationContainer: React.FC = () => {
   return (
     <div>
       <SearchInput />
