@@ -28,7 +28,7 @@ export const ImagePicker = () => {
     <div>
       <div className="bg-neutral-100 p-2 rounded-full">
         <div
-          className="w-28 h-28 rounded-full relative border border-myPrimary flex items-center justify-center font-sans cursor-pointer"
+          className="w-28 h-28 rounded-full relative border border-myPrimary flex items-center justify-center font-sans cursor-pointer z-10"
           onClick={handleImageClick}
         >
           {!pickedImage && <FaUserCircle className="w-28 h-28" />}

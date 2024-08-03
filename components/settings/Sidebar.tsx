@@ -1,73 +1,35 @@
 "use client";
 
+import { sidebarItems } from "@/lib/routes";
 import { Divide as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { FaRegUser } from "react-icons/fa";
-import { IoIosNotificationsOutline } from "react-icons/io";
-import { IoSettingsOutline } from "react-icons/io5";
-import { MdOutlineManageAccounts, MdSecurity } from "react-icons/md";
-import { RiGitRepositoryPrivateLine } from "react-icons/ri";
+import { useState } from "react";
 import { SecondHeading } from "../global/heading";
 
-const sidebarItems = [
-  { id: "profile", label: "Profil", icon: <FaRegUser /> },
-  { id: "account", label: "Konto", icon: <MdOutlineManageAccounts /> },
-  {
-    id: "notifications",
-    label: "Powiadomienia",
-    icon: <IoIosNotificationsOutline />,
-  },
-  { id: "security", label: "Bezpieczeństwo", icon: <MdSecurity /> },
-  { id: "privacy", label: "Prywatność", icon: <RiGitRepositoryPrivateLine /> },
-  { id: "general", label: "Ogólne", icon: <IoSettingsOutline /> },
-];
-
 export const Sidebar = () => {
-  const [isOpen, setOpen] = useState(true);
-  const [isDesktop, setIsDesktop] = useState(true);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (isDesktop) {
-      setOpen(true);
-    }
-  }, [isDesktop]);
-
-  const toggleSidebar = () => {
-    if (!isDesktop) {
-      setOpen(!isOpen);
-    }
-  };
+  const [isOpen, setOpen] = useState(false);
 
   return (
     <div>
-      <div className={`fixed z-50 left-2 top-2 ${isDesktop ? "hidden" : ""}`}>
+      <div className={`fixed z-50 top-2 left-1/2 transform -translate-x-1/2`}>
         <Hamburger toggled={isOpen} toggle={setOpen} />
       </div>
       <div
-        className={`fixed top-0 left-0 h-screen bg-neutral-100 text-sky-950 p-4 pt-20 z-40 transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full bg-neutral-100 text-sky-950 p-4 pt-20 z-40 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } ${isDesktop ? "md:relative md:translate-x-0 md:w-1/4 z-30" : ""}`}
+        }`}
+        style={{ width: "250px" }}
       >
         <SecondHeading>Ustawienia</SecondHeading>
         <ul className="space-y-2 mt-6">
           {sidebarItems.map((item) => (
-            <li key={item.id}>
+            <li
+              key={item.id}
+              className="hover:bg-neutral-200 rounded transition-colors w-full"
+            >
               <Link
                 href={`/settings/${item.id}`}
-                className="p-2 hover:bg-neutral-200 rounded flex items-center gap-4"
-                onClick={toggleSidebar}
+                className="gap-4 p-2 w-full h-full text-sky-950 flex items-center hover:text-neutral-400 transition-all"
               >
                 <span className="text-xl">{item.icon}</span> {item.label}
               </Link>
