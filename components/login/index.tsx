@@ -3,6 +3,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { PrimaryButton } from "../global/buttons";
+import { Line } from "../global/line";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
 
@@ -75,9 +76,9 @@ export const Container: React.FC = () => {
         />
       )}
       <div className="flex items-center gap-4 mt-10">
-        <hr className="border-t border-sky-950 w-10 dark:border-rose-950" />
+        <Line />
         <p>lub</p>
-        <hr className="border-t border-sky-950 w-10 dark:border-rose-950" />
+        <Line />
       </div>
       <div className="mt-10">
         <PrimaryButton onClick={toggleForm}>

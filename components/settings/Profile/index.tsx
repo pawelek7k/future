@@ -1,4 +1,5 @@
 import { SecondHeading, ThirdHeading } from "@/components/global/heading";
+import { Line } from "@/components/global/line";
 import { FaRegCopy } from "react-icons/fa";
 import { ImagePicker } from "./ImagePicker";
 
@@ -13,7 +14,7 @@ export const ProfileContainer: React.FC = () => {
           <ImagePicker />
           <div className="flex flex-col gap-2 items-center ">
             <ThirdHeading>Nazwa użytkownika</ThirdHeading>
-            <hr className="border-t border-sky-950 w-20" />
+            <Line />
             <div className="flex items-center gap-2">
               <ThirdHeading>Id użytkownika: ID</ThirdHeading>
               <FaRegCopy className="cursor-pointer" />
