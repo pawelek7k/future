@@ -5,12 +5,11 @@
 @tailwind utilities;
 
 body {
-  background-color: #f5f5f5;
   font-family: "Montserrat", sans-serif;
 }
 
 @layer base {
   body {
-    @apply dark:bg-gray-950 bg-white;
+    @apply dark:bg-zinc-950 bg-neutral-50;
   }
 }
