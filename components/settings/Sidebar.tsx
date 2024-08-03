@@ -7,7 +7,7 @@ import { useState } from "react";
 import { SecondHeading } from "../global/heading";
 
 export const Sidebar = () => {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(true);
 
   return (
     <div>
