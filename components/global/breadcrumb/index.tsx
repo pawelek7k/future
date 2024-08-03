@@ -10,7 +10,11 @@ export const BreadcrumbContainer = () => {
     str.charAt(0).toUpperCase() + str.slice(1);
 
   return (
-    <Breadcrumbs>
+    <Breadcrumbs
+      itemClasses={{
+        item: "font-sans",
+      }}
+    >
       <BreadcrumbItem key="home">
         <Link href="/">Home</Link>
       </BreadcrumbItem>

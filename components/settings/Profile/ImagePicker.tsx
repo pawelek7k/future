@@ -26,7 +26,7 @@ export const ImagePicker: React.FC = () => {
 
   return (
     <div>
-      <div className="bg-neutral-100 p-2 rounded-full">
+      <div className="bg-white/30 p-2 rounded-full dark:bg-black/60 backdrop-blur-lg">
         <div
           className="w-28 h-28 rounded-full relative border border-myPrimary flex items-center justify-center font-sans cursor-pointer z-10"
           onClick={handleImageClick}

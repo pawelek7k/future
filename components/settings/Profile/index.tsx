@@ -5,11 +5,13 @@ import { ImagePicker } from "./ImagePicker";
 export const ProfileContainer: React.FC = () => {
   return (
     <div>
-      <SecondHeading>Profil użytkownika</SecondHeading>
-      <div className="flex items-center justify-center mt-10">
-        <div className="border border-gray-200 flex flex-col items-center justify-center rounded-lg w-1/3 ">
+      <div className="text-center">
+        <SecondHeading>Profil użytkownika</SecondHeading>
+      </div>
+      <div className="flex items-center justify-center mt-10 ">
+        <div className="shadow-lg flex flex-col items-center justify-center rounded-lg w-1/3 backdrop-blur-xl bg-white/10 p-6">
           <ImagePicker />
-          <div className="flex flex-col gap-2 items-center">
+          <div className="flex flex-col gap-2 items-center ">
             <ThirdHeading>Nazwa użytkownika</ThirdHeading>
             <hr className="border-t border-sky-950 w-20" />
             <div className="flex items-center gap-2">
