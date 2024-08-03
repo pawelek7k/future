@@ -16,7 +16,7 @@ export const Sidebar = () => {
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-full bg-neutral-100 text-sky-950 p-4 pt-20 z-40 transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full bg-neutral-100 text-sky-950 p-4 pt-24 z-40 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ width: "250px" }}
