@@ -75,9 +75,9 @@ export const Container = () => {
         />
       )}
       <div className="flex items-center gap-4 mt-10">
-        <hr className="border-t border-sky-950 w-10" />
+        <hr className="border-t border-sky-950 w-10 dark:border-rose-950" />
         <p>lub</p>
-        <hr className="border-t border-sky-950 w-10" />
+        <hr className="border-t border-sky-950 w-10 dark:border-rose-950" />
       </div>
       <div className="mt-10">
         <PrimaryButton onClick={toggleForm}>
