@@ -31,7 +31,12 @@ export const PrimaryButton = ({ children, onClick }: ButtonProps) => {
   return (
     <button
       type="submit"
-      className="w-full bg-sky-900 text-white py-2 px-4 rounded-lg hover:bg-sky-950 focus:outline-none focus:ring-2  focus:ring-opacity-50"
+      className="
+        w-full bg-sky-900 text-white py-2 px-4 rounded-lg
+        hover:bg-sky-950
+        dark:bg-rose-900 dark:hover:bg-rose-800
+        shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out
+      "
       onClick={onClick}
     >
       {children}
