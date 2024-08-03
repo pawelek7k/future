@@ -16,7 +16,7 @@ export const Sidebar = () => {
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-full bg-neutral-100 text-sky-950 p-4 pt-24 z-40 transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full bg-neutral-100 text-sky-950 dark:bg-zinc-950 p-4 pt-24 z-40 transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ width: "250px" }}
@@ -26,11 +26,11 @@ export const Sidebar = () => {
           {sidebarItems.map((item) => (
             <li
               key={item.id}
-              className="hover:bg-neutral-200 rounded transition-colors w-full"
+              className="hover:bg-neutral-200 rounded transition-colors w-full dark:hover:bg-zinc-800"
             >
               <Link
                 href={`/settings/${item.id}`}
-                className="gap-4 p-2 w-full h-full text-sky-950 flex items-center hover:text-neutral-400 transition-all"
+                className="gap-4 p-2 w-full h-full text-sky-950 flex items-center hover:text-neutral-400 transition-all dark:text-neutral-50"
               >
                 <span className="text-xl">{item.icon}</span> {item.label}
               </Link>
