@@ -61,7 +61,7 @@ export const Container: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-20 flex flex-col justify-center items-center">
+    <div className="container mx-auto flex flex-col justify-center items-center">
       {isLogin ? (
         <LoginForm
           formData={formData}

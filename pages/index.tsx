@@ -1,4 +1,3 @@
-import { BreadcrumbContainer } from "@/components/global/breadcrumb";
 import Head from "next/head";
 
 const HomePage = () => {
@@ -8,7 +7,7 @@ const HomePage = () => {
         <title>Future</title>
         <meta name="description" content="Posts about programming" />
       </Head>
-      <h1 className="mt-40">ok</h1>
+      <h1 className="">ok</h1>
     </>
   );
 };
