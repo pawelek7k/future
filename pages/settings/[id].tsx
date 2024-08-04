@@ -1,3 +1,4 @@
+import { AccountContainer } from "@/components/settings/Account";
 import { GeneralComponent } from "@/components/settings/General";
 import { NotificationContainer } from "@/components/settings/Notification";
 import { ProfileContainer } from "@/components/settings/Profile";
@@ -39,7 +40,7 @@ const SettingPage = ({ session }: SessionProps) => {
       case "profile":
         return <ProfileContainer />;
       case "account":
-        return <div>Account settings content...</div>;
+        return <AccountContainer />;
       case "notifications":
         return <NotificationContainer />;
       case "security":

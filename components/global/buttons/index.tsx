@@ -1,4 +1,5 @@
-import { signIn } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
+import { useTranslation } from "react-i18next";
 import { FcGoogle } from "react-icons/fc";
 
 interface ButtonProps {
@@ -42,4 +43,12 @@ export const PrimaryButton: React.FC<ButtonProps> = ({ children, onClick }) => {
       {children}
     </button>
   );
+};
+
+export const LogoutButton = () => {
+  const { t } = useTranslation("common");
+  const logoutHandler = () => {
+    signOut();
+  };
+  return <button onClick={logoutHandler}>{t("logoutButton")}</button>;
 };

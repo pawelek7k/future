@@ -27,9 +27,6 @@ export const MainNavigation: React.FC = () => {
               <li>
                 <Link href="/settings">{t("settings")}</Link>
               </li>
-              <li>
-                <button onClick={logoutHandler}>{t("logoutButton")}</button>
-              </li>
             </>
           )}
         </ul>
