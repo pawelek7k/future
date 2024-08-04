@@ -35,10 +35,10 @@ export const Tags: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col">
       <label
         htmlFor="tags"
-        className="block text-gray-700 dark:text-gray-300 text-sm font-medium"
+        className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
       >
         Tags
       </label>
@@ -50,7 +50,7 @@ export const Tags: React.FC = () => {
         value={inputValue}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30  text-gray-900  placeholder-gray-500  focus:outline-none focus:border focus:border-sky-950 dark:focus:border-rose-950 shadow-lg backdrop-blur-md"
+        className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30  text-gray-900  placeholder-gray-500  focus:outline-none  shadow-lg backdrop-blur-md"
       />
       <input type="hidden" value={JSON.stringify(words)} />
       <div className="flex gap-2 flex-wrap">
