@@ -38,7 +38,7 @@ export const CreateForm: React.FC = () => {
               name="title"
               id="title"
               placeholder="Title"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white  text-gray-900  placeholder-gray-500  focus:outline-none focus:border-sky-950 "
+              className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30  text-gray-900  placeholder-gray-500  focus:outline-none focus:border focus:border-sky-950 dark:focus:border-rose-950 shadow-lg backdrop-blur-md"
             />
           </div>
           title input title description
