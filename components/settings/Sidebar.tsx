@@ -12,7 +12,7 @@ export const Sidebar: React.FC = () => {
   return (
     <div>
       <div className={`fixed z-50 top-2 left-1/2 transform -translate-x-1/2`}>
-        <Hamburger toggled={isOpen} toggle={setOpen} size={24} />
+        <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
       </div>
 
       <div
