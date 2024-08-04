@@ -1,3 +1,4 @@
+import { FirstHeading } from "@/components/global/heading";
 import Head from "next/head";
 
 const CreatePage = () => {
@@ -7,7 +8,7 @@ const CreatePage = () => {
         <title>Future - Create your book</title>
         <meta name="description" content="Posts about programming" />
       </Head>
-      <h1 className="">ok</h1>
+      <FirstHeading>Pour your thoughts into the future</FirstHeading>
     </>
   );
 };
