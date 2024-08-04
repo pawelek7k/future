@@ -20,7 +20,7 @@ export const CreateForm: React.FC = () => {
     <div className="flex flex-col items-center justify-center">
       <form
         //  action={shareBook}
-        className=" flex gap-16 shadow-lg p-12"
+        className=" flex gap-16 shadow-lg p-12 rounded-tl-3xl rounded-br-3xl"
       >
         <div>
           <CoverPicker />
