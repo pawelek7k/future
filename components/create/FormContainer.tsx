@@ -1,5 +1,6 @@
 import { CoverPicker } from "./CoverPicker";
 import { Tags } from "./Tags";
+import { ToggleSwitch } from "./ToggleSwitch";
 
 export const CreateForm: React.FC = () => {
   //   const shareBook = async (formData) => {
@@ -52,7 +53,13 @@ export const CreateForm: React.FC = () => {
             className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30 text-gray-900 placeholder-gray-500 focus:outline-none shadow-lg backdrop-blur-md resize-none"
             placeholder="Describe your book"
           />
-          <div className="mt-6 flex gap-6 items-center">genre checkbox</div>
+          <div className="flex gap-6 items-center">
+            genre
+            <div className="flex gap-2">
+              For adult
+              <ToggleSwitch />
+            </div>
+          </div>
           <Tags />
         </div>
       </form>
