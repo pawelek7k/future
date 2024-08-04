@@ -25,13 +25,13 @@ export const ImagePicker: React.FC = () => {
   };
 
   return (
-    <div>
-      <div className="bg-white/30 p-2 rounded-full dark:bg-black/60 backdrop-blur-lg">
+    <div className="z-10">
+      <div className="bg-black/30 p-2 rounded-full dark:bg-black/60 backdrop-blur-lg">
         <div
-          className="w-28 h-28 rounded-full relative border border-myPrimary flex items-center justify-center font-sans cursor-pointer z-10"
+          className="w-24 h-24 rounded-full relative border border-sky-950 dark:border-rose-950 flex items-center justify-center font-sans cursor-pointer z-10"
           onClick={handleImageClick}
         >
-          {!pickedImage && <FaUserCircle className="w-28 h-28" />}
+          {!pickedImage && <FaUserCircle className="w-24 h-24" />}
           {pickedImage && (
             <Image
               src={pickedImage}
