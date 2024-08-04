@@ -53,7 +53,7 @@ export const CreateForm: React.FC = () => {
             className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30 text-gray-900 placeholder-gray-500 focus:outline-none shadow-lg backdrop-blur-md resize-none"
             placeholder="Describe your book"
           />
-          <div className="flex gap-6 items-center">
+          <div className="flex gap-6 items-center justify-between">
             genre
             <div className="flex gap-2">
               For adult
