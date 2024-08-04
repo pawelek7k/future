@@ -31,7 +31,7 @@ export const ImagePicker: React.FC = () => {
 
   return (
     <div className="z-10">
-      <div className="bg-white/20 p-2 rounded-full dark:bg-black/60 backdrop-blur-lg flex items-center gap-4 border border-sky-950">
+      <div className="bg-white/20 p-2 rounded-full dark:bg-black/60 backdrop-blur-lg flex items-center gap-4 border border-sky-950 dark:border-rose-950">
         <div
           className="w-24 h-24 rounded-full relative border border-sky-950 dark:border-rose-950 flex items-center justify-center font-sans cursor-pointer z-10"
           onClick={handleImageClick}
