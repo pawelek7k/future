@@ -1,7 +1,7 @@
 import { FirstHeading } from "@/components/global/heading";
 import Head from "next/head";
 
-const CreatePage = () => {
+const CreatePage: React.FC = () => {
   return (
     <>
       <Head>

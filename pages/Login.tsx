@@ -7,7 +7,7 @@ interface SessionProps {
   session: Session | null;
 }
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
   return <Container />;
 };
 
