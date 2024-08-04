@@ -1,4 +1,4 @@
-import { FirstHeading } from "@/components/global/heading";
+import { FirstHeading, SecondHeading } from "@/components/global/heading";
 import Head from "next/head";
 
 const CreatePage: React.FC = () => {
@@ -9,6 +9,7 @@ const CreatePage: React.FC = () => {
         <meta name="description" content="Posts about programming" />
       </Head>
       <FirstHeading>Pour your thoughts into the future</FirstHeading>
+      <SecondHeading>Or edit your existing books</SecondHeading>
     </>
   );
 };
