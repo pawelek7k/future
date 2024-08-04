@@ -1,7 +1,7 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { CiSettings } from "react-icons/ci";
+import { CiCirclePlus, CiSettings } from "react-icons/ci";
 import { Logo } from "../../components/global/Logo";
 
 export const MainNavigation: React.FC = () => {
@@ -25,6 +25,11 @@ export const MainNavigation: React.FC = () => {
           )}
           {session && (
             <>
+              <li>
+                <Link href="/create">
+                  <CiCirclePlus className="w-6 h-6" />
+                </Link>
+              </li>
               <li>
                 <Link href="/settings">
                   <CiSettings className="w-6 h-6" />
