@@ -14,7 +14,7 @@ export const MainNavigation: React.FC = () => {
   };
 
   return (
-    <header className="flex justify-evenly p-4 w-full fixed z-40 bg-secondaryBg backdrop-blur-md rounded-b-lg border-b top-0 items-center dark:border-b-zinc-800">
+    <header className="flex justify-evenly p-4 w-full fixed z-40 bg-secondaryBg backdrop-blur-md rounded-b-lg border-b top-0 items-center dark:border-b-zinc-800 shadow-lg">
       <Logo />
       <nav>
         <ul className="flex gap-8 tracking-widest">
