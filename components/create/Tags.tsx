@@ -2,11 +2,7 @@ import Notiflix from "notiflix";
 import { ChangeEvent, KeyboardEvent, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
-interface TagsProps {
-  name: string;
-}
-
-export const Tags = ({ name }: TagsProps) => {
+export const Tags: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
   const [words, setWords] = useState<string[]>([]);
 
@@ -40,14 +36,20 @@ export const Tags = ({ name }: TagsProps) => {
 
   return (
     <div className="flex flex-col gap-4">
+      <label
+        htmlFor="tags"
+        className="block text-gray-700 dark:text-gray-300 text-sm font-medium"
+      >
+        Tags
+      </label>
       <input
-        type={"text"}
-        name=""
-        value={inputValue}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
+        type="text"
+        name="tags"
+        id="tags"
+        placeholder="Tags"
+        className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white  text-gray-900  placeholder-gray-500  focus:outline-none focus:border-sky-950 "
       />
-      <input type="hidden" name={name} value={JSON.stringify(words)} />
+      <input type="hidden" value={JSON.stringify(words)} />
       <div className="flex gap-2 flex-wrap">
         {words.map((word, index) => (
           <div
