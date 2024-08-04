@@ -26,7 +26,10 @@ export const CoverPicker: React.FC = () => {
   return (
     <div className="z-10">
       <div className="bg-white/20 dark:bg-black/60 border border-sky-950 dark:border-rose-950">
-        <div className="w-[12rem] h-[18rem] cursor-pointer z-10">
+        <div
+          className="w-[12rem] h-[18rem] relative cursor-pointer z-10"
+          onClick={handleImageClick}
+        >
           {!pickedImage && ""}
           {pickedImage && (
             <Image
