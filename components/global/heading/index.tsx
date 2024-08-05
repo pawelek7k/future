@@ -6,7 +6,7 @@ interface Props {
 
 export const FirstHeading: React.FC<Props> = ({ children }) => {
   return (
-    <h1 className="text-3xl font-semibold text-gray-800 font-sans dark:text-neutral-50">
+    <h1 className="sm:text-3xl font-semibold text-gray-800 font-sans dark:text-neutral-50 text-2xl">
       {children}
     </h1>
   );
@@ -14,7 +14,7 @@ export const FirstHeading: React.FC<Props> = ({ children }) => {
 
 export const SecondHeading: React.FC<Props> = ({ children }) => {
   return (
-    <h2 className="text-2xl font-semibold text-gray-800 font-sans dark:text-neutral-50">
+    <h2 className="sm:text-2xl font-semibold text-gray-800 font-sans dark:text-neutral-50 text-xl">
       {children}
     </h2>
   );
@@ -22,7 +22,7 @@ export const SecondHeading: React.FC<Props> = ({ children }) => {
 
 export const ThirdHeading: React.FC<Props> = ({ children }) => {
   return (
-    <h3 className="text-l font-semibold text-gray-800 dark:text-neutral-50">
+    <h3 className="sm:text-xl font-semibold text-gray-800 dark:text-neutral-50 text-l">
       {children}
     </h3>
   );
