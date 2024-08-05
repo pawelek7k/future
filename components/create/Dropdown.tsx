@@ -4,6 +4,12 @@ import { HiChevronDown } from "react-icons/hi";
 
 export const DropdownMenu = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedGenre, setSelectedGenre] = useState("Genre");
+
+  const handleSelectGenre = (genreName: string) => {
+    setSelectedGenre(genreName);
+    setIsDropdownOpen(false);
+  };
 
   return (
     <div className="relative z-20">
@@ -11,7 +17,7 @@ export const DropdownMenu = () => {
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         className="flex items-center text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
       >
-        Genre
+        {selectedGenre}
         <HiChevronDown
           className={`ml-2 transition-transform ${
             isDropdownOpen ? "rotate-180" : "rotate-0"
@@ -19,9 +25,13 @@ export const DropdownMenu = () => {
         />
       </button>
       {isDropdownOpen && (
-        <ul className="absolute left-0 mt-2 w-64 shadow-lg rounded-lg transition-opacity duration-300 ease-in-out">
+        <ul className="absolute left-0 mt-2 w-64 shadow-lg backdrop-blur-lg p-1 rounded-lg transition-opacity duration-300 ease-in-out">
           {bookGenres.map(({ id, name }) => (
-            <li key={id} className="hover:bg-blue-100">
+            <li
+              key={id}
+              className="hover:bg-sky-950/10 rounded-md cursor-pointer dark:hover:bg-rose-950/10"
+              onClick={() => handleSelectGenre(name)}
+            >
               {name}
             </li>
           ))}
