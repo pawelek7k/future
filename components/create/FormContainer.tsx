@@ -18,7 +18,7 @@ export const CreateForm: React.FC = () => {
   //     console.log(book);
   //   };
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mt-10 sm:mt-0">
       <form
         //  action={shareBook}
         className=" flex flex-col sm:flex-row sm:gap-2 md:gap-16 shadow-lg md:p-12 rounded-tl-3xl sm:p-4 rounded-br-3xl items-center justify-center"
