@@ -9,9 +9,16 @@ const CreatePage: React.FC = () => {
         <title>Future - Create your book</title>
         <meta name="description" content="Posts about programming" />
       </Head>
-      <FirstHeading>Pour your thoughts into the future</FirstHeading>
-      <CreateForm />
-      <SecondHeading>Or edit your existing books</SecondHeading>
+      <section className="flex flex-col gap-16 mt-8">
+        <div>
+          <FirstHeading>Pour your thoughts into the future</FirstHeading>
+
+          <CreateForm />
+        </div>
+        <div>
+          <SecondHeading>Or edit your existing books</SecondHeading>
+        </div>
+      </section>
     </>
   );
 };
