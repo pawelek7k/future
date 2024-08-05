@@ -26,7 +26,7 @@ export const Sidebar: React.FC = () => {
           {sidebarItems.map((item) => (
             <li
               key={item.id}
-              className="hover:bg-neutral-200 rounded transition-colors w-full dark:hover:bg-zinc-800/10"
+              className="hover:bg-neutral-100/10 rounded transition-colors w-full dark:hover:bg-zinc-800/10"
             >
               <Link
                 href={`/settings/${item.id}`}
