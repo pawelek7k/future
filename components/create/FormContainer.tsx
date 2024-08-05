@@ -1,4 +1,5 @@
 import { CoverPicker } from "./CoverPicker";
+import { DropdownMenu } from "./Dropdown";
 import { Tags } from "./Tags";
 import { ToggleSwitch } from "./ToggleSwitch";
 
@@ -54,9 +55,12 @@ export const CreateForm: React.FC = () => {
             placeholder="Describe your book"
           />
           <div className="flex gap-6 items-center justify-between">
-            genre
-            <div className="flex gap-2">
-              For adult
+            <DropdownMenu />
+            <div className="flex gap-2 items-center justify-center">
+              <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
+                For adult
+              </span>
+
               <ToggleSwitch />
             </div>
           </div>
