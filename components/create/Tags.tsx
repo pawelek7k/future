@@ -50,13 +50,13 @@ export const Tags: React.FC = () => {
         value={inputValue}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30  text-gray-900  placeholder-gray-500  focus:outline-none  shadow-lg backdrop-blur-md"
+        className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30  text-gray-900  placeholder-gray-500  focus:outline-none  shadow-lg backdrop-blur-md mb-4"
       />
       <input type="hidden" value={JSON.stringify(words)} />
       <div className="flex gap-2 flex-wrap">
         {words.map((word, index) => (
           <div
-            className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 min-w-12 text-center flex flex-nowrap items-center gap-1 px-2"
+            className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 min-w-12 text-center flex flex-nowrap items-center gap-1 px-2 "
             key={index}
           >
             <span className="text-nowrap">{word}</span>
