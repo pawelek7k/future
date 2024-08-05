@@ -12,7 +12,7 @@ export const Tags: React.FC = () => {
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === " ") {
+    if (e.key === " " || e.key === "Enter") {
       const trimmedValue = inputValue.trim();
       const wordExists = words.includes(trimmedValue);
       if (trimmedValue.length <= 2 || wordExists) {
