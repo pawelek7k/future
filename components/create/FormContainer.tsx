@@ -21,9 +21,9 @@ export const CreateForm: React.FC = () => {
     <div className="flex flex-col items-center justify-center">
       <form
         //  action={shareBook}
-        className=" flex gap-16 shadow-lg p-12 rounded-tl-3xl rounded-br-3xl"
+        className=" flex flex-col sm:flex-row gap-4 sm:gap-2 md:gap-16 shadow-lg p-6 md:p-12 rounded-tl-3xl rounded-br-3xl items-center justify-center"
       >
-        <div>
+        <div className="w-[9rem] h-[14rem] sm:w-[12rem] flex items-center">
           <CoverPicker />
         </div>
         <div className="w-[25rem]">
