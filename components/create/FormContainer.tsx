@@ -15,6 +15,7 @@ interface BookFormData {
 
 export const CreateForm: React.FC = () => {
   const shareBook = async (formData: FormData) => {
+    "use server";
     try {
       const title = formData.get("title") as string;
       const description = formData.get("description") as string;
