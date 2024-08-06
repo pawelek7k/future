@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-export const ToggleSwitch = () => {
+interface Props {
+  name: string;
+}
+
+export const ToggleSwitch: React.FC<Props> = ({ name }) => {
   const [checked, setChecked] = useState(false);
 
   const handleChange = () => {
@@ -10,6 +14,7 @@ export const ToggleSwitch = () => {
   return (
     <label className="relative inline-flex items-center cursor-pointer">
       <input
+        name={name}
         type="checkbox"
         value=""
         className="sr-only peer"

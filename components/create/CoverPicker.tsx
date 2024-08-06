@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { ChangeEvent, useRef, useState } from "react";
 
-export const CoverPicker: React.FC = () => {
+interface Props {
+  name: string;
+}
+
+export const CoverPicker: React.FC<Props> = ({ name }) => {
   const [pickedImage, setPickedImage] = useState<string | null>(null);
   const imageInput = useRef<HTMLInputElement>(null);
 
@@ -43,6 +47,7 @@ export const CoverPicker: React.FC = () => {
         <input
           type="file"
           accept="image/png, image/jpeg"
+          name={name}
           ref={imageInput}
           className="hidden"
           onChange={handleImageChange}

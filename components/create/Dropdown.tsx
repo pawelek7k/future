@@ -1,8 +1,12 @@
 import { bookGenres } from "@/lib/routes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
-export const DropdownMenu = () => {
+interface Props {
+  name: string;
+}
+
+export const DropdownMenu = ({ name }: Props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState("Genre");
 
@@ -11,13 +15,22 @@ export const DropdownMenu = () => {
     setIsDropdownOpen(false);
   };
 
+  useEffect(() => {
+    const hiddenInput = document.getElementById(
+      "hidden-input"
+    ) as HTMLInputElement;
+    if (hiddenInput) {
+      hiddenInput.value = selectedGenre;
+    }
+  }, [selectedGenre]);
+
   return (
     <div className="relative z-20">
       <button
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         className="flex items-center text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
       >
-        {selectedGenre}
+        {name} : {selectedGenre}
         <HiChevronDown
           className={`ml-2 transition-transform ${
             isDropdownOpen ? "rotate-180" : "rotate-0"
@@ -37,6 +50,12 @@ export const DropdownMenu = () => {
           ))}
         </ul>
       )}
+      <input
+        type="hidden"
+        id="hidden-input"
+        name={name}
+        value={selectedGenre}
+      />
     </div>
   );
 };
