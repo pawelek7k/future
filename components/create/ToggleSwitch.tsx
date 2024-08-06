@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface Props {
   name: string;
@@ -8,24 +8,45 @@ export const ToggleSwitch: React.FC<Props> = ({ name }) => {
   const [checked, setChecked] = useState(false);
 
   const handleChange = () => {
-    setChecked(!checked);
+    setChecked((prev) => !prev);
   };
 
+  useEffect(() => {
+    const hiddenInput = document.getElementById(name) as HTMLInputElement;
+    if (hiddenInput) {
+      hiddenInput.value = checked ? "on" : "off";
+    }
+  }, [checked, name]);
+
   return (
-    <label className="relative inline-flex items-center cursor-pointer">
+    <div className="relative inline-flex items-center cursor-pointer">
       <input
-        name={name}
         type="checkbox"
-        value=""
-        className="sr-only peer"
+        id={name}
+        className="sr-only"
         checked={checked}
         onChange={handleChange}
       />
       <div
-        className={`peer ring-0 rounded-full outline-none duration-300 after:duration-500 w-6 h-6 shadow-md ${
-          checked ? "bg-sky-950" : "bg-rose-950"
-        } peer-focus:outline-none after:content-['✖️'] after:rounded-full after:absolute after:outline-none after:h-5 after:w-5 after:bg-gray-50 after:top-0.5 after:left-0.5 after:flex after:justify-center after:items-center peer-hover:after:scale-75 peer-checked:after:content-['✔️'] after:-rotate-180 peer-checked:after:rotate-0`}
+        className={`w-10 h-6 flex items-center rounded-full p-1 transition-colors duration-300 ease-in-out ${
+          checked
+            ? "bg-sky-950 dark:bg-rose-950"
+            : "bg-sky-950/20 dark:bg-black/50"
+        }`}
+        onClick={handleChange}
+      >
+        <div
+          className={`w-4 h-4 bg-neutral-100 rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${
+            checked ? "translate-x-4" : "translate-x-0"
+          }`}
+        />
+      </div>
+      <input
+        type="hidden"
+        id={`hidden-${name}`}
+        name={name}
+        value={checked ? "on" : "off"}
       />
-    </label>
+    </div>
   );
 };
