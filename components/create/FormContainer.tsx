@@ -89,7 +89,7 @@ export const CreateForm: React.FC = () => {
             placeholder="Describe your book"
           />
           <div className="flex gap-6 items-center justify-between">
-            <DropdownMenu nameForm={"genre"} />
+            <DropdownMenu name={"genre"} />
             <div className="flex gap-2 items-center justify-center">
               <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                 For adult

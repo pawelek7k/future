@@ -16,13 +16,11 @@ export const DropdownMenu = ({ name }: Props) => {
   };
 
   useEffect(() => {
-    const hiddenInput = document.getElementById(
-      "hidden-input"
-    ) as HTMLInputElement;
+    const hiddenInput = document.getElementById(name) as HTMLInputElement;
     if (hiddenInput) {
       hiddenInput.value = selectedGenre;
     }
-  }, [selectedGenre]);
+  }, [name, selectedGenre]);
 
   return (
     <div className="relative z-20">
@@ -30,7 +28,7 @@ export const DropdownMenu = ({ name }: Props) => {
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         className="flex items-center text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
       >
-        {name} : {selectedGenre}
+        {selectedGenre}
         <HiChevronDown
           className={`ml-2 transition-transform ${
             isDropdownOpen ? "rotate-180" : "rotate-0"
@@ -50,12 +48,7 @@ export const DropdownMenu = ({ name }: Props) => {
           ))}
         </ul>
       )}
-      <input
-        type="hidden"
-        id="hidden-input"
-        name={name}
-        value={selectedGenre}
-      />
+      <input type="hidden" id={name} name={name} value={selectedGenre} />
     </div>
   );
 };
