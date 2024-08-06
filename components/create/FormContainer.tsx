@@ -1,5 +1,5 @@
 import React from "react";
-import { shareBook } from "../../lib/actions";
+import { shareBook } from "../../lib/book/actions";
 import { CoverPicker } from "./CoverPicker";
 import { DropdownMenu } from "./Dropdown";
 import { Tags } from "./Tags";
