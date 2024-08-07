@@ -2,28 +2,32 @@ import React, { useEffect, useState } from "react";
 
 interface Props {
   name: string;
+  onChange: (value: string) => void;
+  value?: string;
 }
 
-export const ToggleSwitch: React.FC<Props> = ({ name, ref }) => {
-  const [checked, setChecked] = useState(false);
+export const ToggleSwitch: React.FC<Props> = ({
+  name,
+  value = "off",
+  onChange,
+}) => {
+  const [checked, setChecked] = useState(value === "on");
 
   const handleChange = () => {
-    setChecked((prev) => !prev);
+    const newChecked = !checked;
+    setChecked(newChecked);
+    onChange(newChecked ? "on" : "off");
   };
 
   useEffect(() => {
-    const hiddenInput = document.getElementById(name) as HTMLInputElement;
-    if (hiddenInput) {
-      hiddenInput.value = checked ? "on" : "off";
-    }
-  }, [checked, name]);
+    setChecked(value === "on");
+  }, [value]);
 
   return (
     <div className="relative inline-flex items-center cursor-pointer">
       <input
         type="checkbox"
         id={name}
-        ref={ref}
         className="sr-only"
         checked={checked}
         onChange={handleChange}
@@ -42,12 +46,6 @@ export const ToggleSwitch: React.FC<Props> = ({ name, ref }) => {
           }`}
         />
       </div>
-      <input
-        type="hidden"
-        id={`hidden-${name}`}
-        name={name}
-        value={checked ? "on" : "off"}
-      />
     </div>
   );
 };
