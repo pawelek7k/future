@@ -1,3 +1,4 @@
+import Notiflix from "notiflix";
 import React, { useState } from "react";
 import { PrimaryButton } from "../global/buttons";
 import { CoverPicker } from "./CoverPicker";
@@ -52,6 +53,8 @@ export const CreateForm: React.FC = () => {
 
       if (!response.ok) {
         throw new Error("Something went wrong");
+      } else {
+        Notiflix.Notify.success("Book created!");
       }
 
       const result = await response.json();
@@ -125,7 +128,6 @@ export const CreateForm: React.FC = () => {
             </div>
           </div>
           <Tags name="tags" value={tags} onChange={handleTagChange} />
-
           <PrimaryButton>Next</PrimaryButton>
         </div>
       </form>

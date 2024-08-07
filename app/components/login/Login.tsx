@@ -18,7 +18,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   handleChange,
   submitHandler,
 }) => (
-  <div className="bg-neutral-50 dark:bg-zinc-900 text-gray-900 dark:text-neutral-50 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10">
+  <div className="bg-neutral-50/20 dark:bg-zinc-900/20 text-gray-900 dark:text-neutral-50 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10">
     <SecondHeading>Logowanie</SecondHeading>
     <form onSubmit={submitHandler}>
       <div className="mb-4">
