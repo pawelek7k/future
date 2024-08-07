@@ -3,22 +3,28 @@ import { ChangeEvent, useRef, useState } from "react";
 
 interface Props {
   name: string;
+  onChange: (value: string) => void;
+  value: string;
 }
 
-export const CoverPicker: React.FC<Props> = ({ name, ref }) => {
-  const [pickedImage, setPickedImage] = useState<string | null>(null);
+export const CoverPicker: React.FC<Props> = ({ name, onChange, value }) => {
+  const [pickedImage, setPickedImage] = useState<string | null>(value);
   const imageInput = useRef<HTMLInputElement>(null);
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
 
     if (!file) {
-      return setPickedImage(null);
+      setPickedImage(null);
+      onChange("");
+      return;
     }
 
     const fileReader = new FileReader();
     fileReader.onload = () => {
-      setPickedImage(fileReader.result as string);
+      const imageUrl = fileReader.result as string;
+      setPickedImage(imageUrl);
+      onChange(imageUrl);
     };
     fileReader.readAsDataURL(file);
   };
@@ -34,7 +40,7 @@ export const CoverPicker: React.FC<Props> = ({ name, ref }) => {
           className="w-[9rem] h-[14rem] md:w-[12rem] md:h-[18rem] relative cursor-pointer z-10"
           onClick={handleImageClick}
         >
-          {!pickedImage && ""}
+          {!pickedImage && "Select an image"}
           {pickedImage && (
             <Image
               src={pickedImage}
@@ -48,16 +54,9 @@ export const CoverPicker: React.FC<Props> = ({ name, ref }) => {
           type="file"
           accept="image/png, image/jpeg"
           name={name}
-          ref={(node) => {
-            imageInput.current = node;
-            if (ref) {
-              (ref as React.MutableRefObject<HTMLInputElement | null>).current =
-                node;
-            }
-          }}
           className="hidden"
           onChange={handleImageChange}
-          required
+          ref={imageInput}
         />
       </div>
     </div>

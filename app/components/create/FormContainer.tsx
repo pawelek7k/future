@@ -1,31 +1,29 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { CoverPicker } from "./CoverPicker";
 import { DropdownMenu } from "./Dropdown";
 import { Tags } from "./Tags";
 import { ToggleSwitch } from "./ToggleSwitch";
 
 export const CreateForm: React.FC = () => {
-  const titleInput = useRef<HTMLInputElement>(null);
-  const coverInput = useRef<HTMLInputElement>(null);
-  const descriptionInput = useRef<HTMLTextAreaElement>(null);
-  const forAdultInput = useRef<HTMLInputElement>(null);
-  const tagsInput = useRef<HTMLSelectElement>(null);
+  const [title, setTitle] = useState<string>("");
+  const [cover, setCover] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [forAdult, setForAdult] = useState<boolean>(false);
+  const [tags, setTags] = useState<string[]>([]);
+
+  const handleTagChange = (newTags: string[]) => {
+    setTags(newTags);
+  };
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const enteredTitle = titleInput.current?.value;
-    const enteredCover = coverInput.current?.value;
-    const enteredDescription = descriptionInput.current?.value;
-    const enteredForAdult = forAdultInput.current?.checked;
-    const enteredTags = tagsInput.current?.value;
-
     console.log({
-      title: enteredTitle,
-      cover: enteredCover,
-      description: enteredDescription,
-      forAdult: enteredForAdult,
-      tags: enteredTags,
+      title,
+      cover,
+      description,
+      forAdult,
+      tags,
     });
   };
 
@@ -37,7 +35,11 @@ export const CreateForm: React.FC = () => {
         onSubmit={submitHandler}
       >
         <div className="w-[9rem] h-[14rem] sm:w-[12rem] flex items-center justify-center">
-          <CoverPicker name="selectedCover" ref={coverInput} />
+          <CoverPicker
+            name="selectedCover"
+            value={cover}
+            onChange={(e) => setCover(e.target.value)}
+          />
         </div>
         <div className="sm:w-[25rem] w-screen p-10">
           <div className="mb-4">
@@ -53,7 +55,8 @@ export const CreateForm: React.FC = () => {
               id="title"
               placeholder="Title"
               className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30 text-gray-900 placeholder-gray-500 focus:outline-none shadow-lg backdrop-blur-md"
-              ref={titleInput}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <label
@@ -67,7 +70,8 @@ export const CreateForm: React.FC = () => {
             name="description"
             className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30 text-gray-900 placeholder-gray-500 focus:outline-none shadow-lg backdrop-blur-md resize-none"
             placeholder="Describe your book"
-            ref={descriptionInput}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
           <div className="flex gap-6 items-center justify-between">
             <DropdownMenu name="genre" />
@@ -75,10 +79,14 @@ export const CreateForm: React.FC = () => {
               <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                 For adult
               </span>
-              <ToggleSwitch name="forAdult" ref={forAdultInput} />
+              <ToggleSwitch
+                name="forAdult"
+                checked={forAdult}
+                onChange={(e) => setForAdult(e.target.checked)}
+              />
             </div>
           </div>
-          <Tags name="tags" ref={tagsInput} />
+          <Tags name="tags" tags={tags} onTagsChange={handleTagChange} />
         </div>
         <button
           type="submit"
