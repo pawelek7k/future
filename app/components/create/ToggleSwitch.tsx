@@ -4,7 +4,7 @@ interface Props {
   name: string;
 }
 
-export const ToggleSwitch: React.FC<Props> = ({ name }) => {
+export const ToggleSwitch: React.FC<Props> = ({ name, ref }) => {
   const [checked, setChecked] = useState(false);
 
   const handleChange = () => {
@@ -23,6 +23,7 @@ export const ToggleSwitch: React.FC<Props> = ({ name }) => {
       <input
         type="checkbox"
         id={name}
+        ref={ref}
         className="sr-only"
         checked={checked}
         onChange={handleChange}

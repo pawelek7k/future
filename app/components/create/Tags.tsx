@@ -6,7 +6,7 @@ interface Props {
   name: string;
 }
 
-export const Tags: React.FC<Props> = ({ name }) => {
+export const Tags: React.FC<Props> = ({ name, ref }) => {
   const [inputValue, setInputValue] = useState("");
   const [words, setWords] = useState<string[]>([]);
 
@@ -55,6 +55,7 @@ export const Tags: React.FC<Props> = ({ name }) => {
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30 text-gray-900 placeholder-gray-500 focus:outline-none shadow-lg backdrop-blur-md mb-4"
+        ref={ref}
       />
       <input type="hidden" name={name} value={JSON.stringify(words)} />
       <div className="flex gap-2 flex-wrap">

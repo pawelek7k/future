@@ -5,7 +5,7 @@ interface Props {
   name: string;
 }
 
-export const CoverPicker: React.FC<Props> = ({ name }) => {
+export const CoverPicker: React.FC<Props> = ({ name, ref }) => {
   const [pickedImage, setPickedImage] = useState<string | null>(null);
   const imageInput = useRef<HTMLInputElement>(null);
 
@@ -48,7 +48,13 @@ export const CoverPicker: React.FC<Props> = ({ name }) => {
           type="file"
           accept="image/png, image/jpeg"
           name={name}
-          ref={imageInput}
+          ref={(node) => {
+            imageInput.current = node;
+            if (ref) {
+              (ref as React.MutableRefObject<HTMLInputElement | null>).current =
+                node;
+            }
+          }}
           className="hidden"
           onChange={handleImageChange}
           required
