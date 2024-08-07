@@ -55,7 +55,7 @@ export const Tags: React.FC<Props> = ({ name, value = [], onChange }) => {
         type="text"
         name={name}
         id="tags"
-        placeholder="Tags"
+        placeholder="Split space"
         value={inputValue}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
@@ -65,7 +65,7 @@ export const Tags: React.FC<Props> = ({ name, value = [], onChange }) => {
       <div className="flex gap-2 flex-wrap">
         {words.map((word, index) => (
           <div
-            className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 min-w-12 text-center flex flex-nowrap items-center gap-1 px-2"
+            className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 min-w-12 text-center flex flex-nowrap items-center gap-1 px-2 mb-4"
             key={index}
           >
             <span className="text-nowrap">{word}</span>
