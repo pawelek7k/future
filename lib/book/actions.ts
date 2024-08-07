@@ -1,3 +1,4 @@
+import { saveBook } from './book'
 
 interface BookFormData {
   title: string;
@@ -35,7 +36,7 @@ export const shareBook = async (formData: FormData) => {
       tags,
     };
 
-    console.log(book);
+    await saveBook(book)
   } catch (error) {
     console.error("Error processing form data:", error);
   }
