@@ -1,9 +1,9 @@
+import Layout from "@/app/components/layout";
 import { SessionProvider } from "next-auth/react";
 import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import Layout from "../components/layout";
 import "../lib/i18n";
 import "../styles/globals.css";
 

@@ -1,5 +1,3 @@
-"use client";
-
 import { sidebarItems } from "@/lib/routes";
 import { Divide as Hamburger } from "hamburger-react";
 import Link from "next/link";

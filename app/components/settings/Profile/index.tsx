@@ -1,5 +1,5 @@
-import { SecondHeading, ThirdHeading } from "@/components/global/heading";
-import { Line } from "@/components/global/line";
+import { SecondHeading, ThirdHeading } from "@/app/components/global/heading";
+import { Line } from "@/app/components/global/line";
 import { FaRegCopy } from "react-icons/fa";
 import { BackgroundImagePicker, ImagePicker } from "./ImagePicker";
 

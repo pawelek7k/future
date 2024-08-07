@@ -1,4 +1,4 @@
-import { SecondHeading } from "@/components/global/heading";
+import { SecondHeading } from "@/app/components/global/heading";
 import Image from "next/image";
 import { ChangeEvent, ReactNode, useRef, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";

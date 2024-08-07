@@ -1,4 +1,4 @@
-import { LogoutButton } from "@/components/global/buttons";
+import { LogoutButton } from "@/app/components/global/buttons";
 
 export const AccountContainer = () => {
   return (

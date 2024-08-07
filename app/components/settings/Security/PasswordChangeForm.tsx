@@ -1,4 +1,4 @@
-import { SecondHeading } from "@/components/global/heading";
+import { SecondHeading } from "@/app/components/global/heading";
 import { useRef } from "react";
 import { PrimaryButton } from "../../global/buttons";
 

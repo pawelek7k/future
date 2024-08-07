@@ -1,5 +1,5 @@
 "use client";
-import { PrimaryButton } from "@/components/global/buttons";
+import { PrimaryButton } from "@/app/components/global/buttons";
 import { useTheme } from "next-themes";
 
 export const Button: React.FC = () => {

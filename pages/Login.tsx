@@ -1,4 +1,4 @@
-import { Container } from "@/components/login";
+import { Container } from "@/app/components/login";
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import { Session } from "next-auth";
 import { getSession } from "next-auth/react";

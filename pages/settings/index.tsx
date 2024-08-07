@@ -1,4 +1,4 @@
-import { Sidebar } from "@/components/settings/Sidebar";
+import { Sidebar } from "@/app/components/settings/Sidebar";
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import { Session } from "next-auth";
 import { getSession } from "next-auth/react";

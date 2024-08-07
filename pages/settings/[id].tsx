@@ -1,14 +1,14 @@
-import { AccountContainer } from "@/components/settings/Account";
-import { GeneralComponent } from "@/components/settings/General";
-import { NotificationContainer } from "@/components/settings/Notification";
-import { ProfileContainer } from "@/components/settings/Profile";
+import { AccountContainer } from "@/app/components/settings/Account";
+import { GeneralComponent } from "@/app/components/settings/General";
+import { NotificationContainer } from "@/app/components/settings/Notification";
+import { ProfileContainer } from "@/app/components/settings/Profile";
+import { PasswordChangeForm } from "@/app/components/settings/Security/PasswordChangeForm";
+import { Sidebar } from "@/app/components/settings/Sidebar";
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { PasswordChangeForm } from "../../components/settings/Security/PasswordChangeForm";
-import { Sidebar } from "../../components/settings/Sidebar";
 import { changePasswordHandler } from "../../lib/settings/userService";
 
 interface SessionProps {

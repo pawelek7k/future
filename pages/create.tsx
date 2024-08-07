@@ -1,5 +1,5 @@
-import { CreateForm } from "@/components/create/FormContainer";
-import { FirstHeading, SecondHeading } from "@/components/global/heading";
+import { CreateForm } from "@/app/components/create/FormContainer";
+import { FirstHeading, SecondHeading } from "@/app/components/global/heading";
 import Head from "next/head";
 
 const CreatePage: React.FC = () => {

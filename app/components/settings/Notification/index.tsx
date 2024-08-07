@@ -1,5 +1,5 @@
-import { ThirdHeading } from "@/components/global/heading";
-import { Paragraph } from "@/components/global/text";
+import { ThirdHeading } from "@/app/components/global/heading";
+import { Paragraph } from "@/app/components/global/text";
 import { IoTrashBinOutline } from "react-icons/io5";
 import { SearchInput } from "./SearchInput";
 
