@@ -124,13 +124,13 @@ export const CreateForm: React.FC = () => {
             </div>
           </div>
           <Tags name="tags" value={tags} onChange={handleTagChange} />
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+          >
+            Submit
+          </button>
         </div>
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg"
-        >
-          Submit
-        </button>
       </form>
     </div>
   );
