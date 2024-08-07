@@ -4,11 +4,11 @@ import { ChangeEvent, useRef, useState } from "react";
 interface Props {
   name: string;
   onChange: (value: string) => void;
-  value: string;
+  value?: string;
 }
 
 export const CoverPicker: React.FC<Props> = ({ name, onChange, value }) => {
-  const [pickedImage, setPickedImage] = useState<string | null>(value);
+  const [pickedImage, setPickedImage] = useState<string | null>(value || null);
   const imageInput = useRef<HTMLInputElement>(null);
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
