@@ -9,7 +9,7 @@ const CreatePage: React.FC = () => {
         <title>Future - Create your book</title>
         <meta name="description" content="Posts about programming" />
       </Head>
-      <section className="flex flex-col gap-16 mt-8">
+      <section className="flex flex-col gap-16 mt-8 min-h-screen">
         <div>
           <FirstHeading>Pour your thoughts into the future</FirstHeading>
 
