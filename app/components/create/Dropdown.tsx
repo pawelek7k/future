@@ -4,31 +4,32 @@ import { HiChevronDown } from "react-icons/hi";
 
 interface Props {
   name: string;
+  value: string;
+  onChange: (value: string) => void;
 }
 
-export const DropdownMenu = ({ name }: Props) => {
+export const DropdownMenu: React.FC<Props> = ({ name, value, onChange }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedGenre, setSelectedGenre] = useState("Genre");
+  const [selectedGenre, setSelectedGenre] = useState(value);
 
   const handleSelectGenre = (genreName: string) => {
     setSelectedGenre(genreName);
     setIsDropdownOpen(false);
+    onChange(genreName);
   };
 
   useEffect(() => {
-    const hiddenInput = document.getElementById(name) as HTMLInputElement;
-    if (hiddenInput) {
-      hiddenInput.value = selectedGenre;
-    }
-  }, [name, selectedGenre]);
+    setSelectedGenre(value);
+  }, [value]);
 
   return (
     <div className="relative z-20">
       <button
+        type="button"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         className="flex items-center text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
       >
-        {selectedGenre}
+        {selectedGenre || "Genre"}
         <HiChevronDown
           className={`ml-2 transition-transform ${
             isDropdownOpen ? "rotate-180" : "rotate-0"

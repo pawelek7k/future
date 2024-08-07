@@ -4,38 +4,43 @@ import { RxCross2 } from "react-icons/rx";
 
 interface Props {
   name: string;
+  onChange: (value: string[]) => void;
+  value?: string[];
 }
 
-export const Tags: React.FC<Props> = ({ name, ref }) => {
+export const Tags: React.FC<Props> = ({ name, value = [], onChange }) => {
   const [inputValue, setInputValue] = useState("");
-  const [words, setWords] = useState<string[]>([]);
+  const [words, setWords] = useState<string[]>(value);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setInputValue(value);
+    setInputValue(e.target.value);
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === " " || e.key === "Enter") {
+      e.preventDefault();
       const trimmedValue = inputValue.trim();
-      const wordExists = words.includes(trimmedValue);
-      if (trimmedValue.length <= 2 || wordExists) {
-        Notiflix.Notify.warning(
-          wordExists
-            ? "This word is already added."
-            : "Enter a minimum of three characters."
-        );
-        e.preventDefault();
+      if (trimmedValue.length <= 2) {
+        Notiflix.Notify.warning("Enter a minimum of three characters.");
         return;
       }
 
-      setWords((prevWords) => [...prevWords, trimmedValue]);
+      if (words.includes(trimmedValue)) {
+        Notiflix.Notify.warning("This word is already added.");
+        return;
+      }
+
+      const newWords = [...words, trimmedValue];
+      setWords(newWords);
       setInputValue("");
+      onChange(newWords);
     }
   };
 
   const handleDelete = (index: number) => {
-    setWords((prevWords) => prevWords.filter((_, i) => i !== index));
+    const newWords = words.filter((_, i) => i !== index);
+    setWords(newWords);
+    onChange(newWords);
   };
 
   return (
@@ -55,7 +60,6 @@ export const Tags: React.FC<Props> = ({ name, ref }) => {
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30 text-gray-900 placeholder-gray-500 focus:outline-none shadow-lg backdrop-blur-md mb-4"
-        ref={ref}
       />
       <input type="hidden" name={name} value={JSON.stringify(words)} />
       <div className="flex gap-2 flex-wrap">

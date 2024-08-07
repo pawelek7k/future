@@ -10,13 +10,22 @@ export const CreateForm: React.FC = () => {
   const [description, setDescription] = useState<string>("");
   const [forAdult, setForAdult] = useState<boolean>(false);
   const [tags, setTags] = useState<string[]>([]);
+  const [genre, setGenre] = useState<string>("");
 
   const handleCoverChange = (coverUrl: string) => {
     setCover(coverUrl);
   };
 
+  const handleGenreChange = (selectedGenre: string) => {
+    setGenre(selectedGenre);
+  };
+
   const handleTagChange = (newTags: string[]) => {
     setTags(newTags);
+  };
+
+  const handleToggleChange = (value: string) => {
+    setForAdult(value === "on");
   };
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
@@ -27,6 +36,7 @@ export const CreateForm: React.FC = () => {
       cover,
       description,
       forAdult,
+      genre,
       tags,
     });
   };
@@ -78,19 +88,23 @@ export const CreateForm: React.FC = () => {
             onChange={(e) => setDescription(e.target.value)}
           />
           <div className="flex gap-6 items-center justify-between">
-            <DropdownMenu name="genre" />
+            <DropdownMenu
+              name="genre"
+              value={genre}
+              onChange={handleGenreChange}
+            />
             <div className="flex gap-2 items-center justify-center">
               <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                 For adult
               </span>
               <ToggleSwitch
                 name="forAdult"
-                checked={forAdult}
-                onChange={(e) => setForAdult(e.target.checked)}
+                value={forAdult ? "on" : "off"}
+                onChange={handleToggleChange}
               />
             </div>
           </div>
-          <Tags name="tags" tags={tags} onTagsChange={handleTagChange} />
+          <Tags name="tags" value={tags} onChange={handleTagChange} />
         </div>
         <button
           type="submit"
