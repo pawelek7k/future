@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-const mongoUri = process.env.MONGODB_CONNECT as string;
+export const mongoUri = process.env.MONGODB_CONNECT as string;
 
 if (!mongoUri) {
     throw new Error('MONGODB_CONNECT environment variable is not defined');

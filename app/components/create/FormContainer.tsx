@@ -1,4 +1,3 @@
-import { shareBook } from "@/lib/actions";
 import React from "react";
 import { CoverPicker } from "./CoverPicker";
 import { DropdownMenu } from "./Dropdown";
@@ -6,25 +5,11 @@ import { Tags } from "./Tags";
 import { ToggleSwitch } from "./ToggleSwitch";
 
 export const CreateForm: React.FC = () => {
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-
-    try {
-      await shareBook(formData);
-      if (e.currentTarget) {
-        e.currentTarget.reset();
-      }
-    } catch (error) {
-      console.error("Error processing form data:", error);
-    }
-  };
   return (
     <div className="flex flex-col items-center justify-center mt-10 sm:mt-0">
       <form
-        onSubmit={onSubmit}
         className="flex flex-col sm:flex-row sm:gap-2 md:gap-16 shadow-lg md:p-12 rounded-tl-3xl sm:p-4 rounded-br-3xl items-center justify-center"
-        encType="multipart/form-data" // Dodane, aby obsłużyć przesyłanie plików
+        encType="multipart/form-data"
       >
         <div className="w-[9rem] h-[14rem] sm:w-[12rem] flex items-center justify-center">
           <CoverPicker name="selectedCover" />
