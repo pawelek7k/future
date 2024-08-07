@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { PrimaryButton } from "../global/buttons";
 import { CoverPicker } from "./CoverPicker";
 import { DropdownMenu } from "./Dropdown";
 import { Tags } from "./Tags";
@@ -124,12 +125,8 @@ export const CreateForm: React.FC = () => {
             </div>
           </div>
           <Tags name="tags" value={tags} onChange={handleTagChange} />
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg"
-          >
-            Submit
-          </button>
+
+          <PrimaryButton>Next</PrimaryButton>
         </div>
       </form>
     </div>

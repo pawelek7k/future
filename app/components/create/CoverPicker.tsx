@@ -40,7 +40,7 @@ export const CoverPicker: React.FC<Props> = ({ name, onChange, value }) => {
           className="w-[9rem] h-[14rem] md:w-[12rem] md:h-[18rem] relative cursor-pointer z-10"
           onClick={handleImageClick}
         >
-          {!pickedImage && "Select an image"}
+          {!pickedImage && ""}
           {pickedImage && (
             <Image
               src={pickedImage}
