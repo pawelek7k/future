@@ -11,6 +11,10 @@ export const CreateForm: React.FC = () => {
   const [forAdult, setForAdult] = useState<boolean>(false);
   const [tags, setTags] = useState<string[]>([]);
 
+  const handleCoverChange = (coverUrl: string) => {
+    setCover(coverUrl);
+  };
+
   const handleTagChange = (newTags: string[]) => {
     setTags(newTags);
   };
@@ -38,7 +42,7 @@ export const CreateForm: React.FC = () => {
           <CoverPicker
             name="selectedCover"
             value={cover}
-            onChange={(e) => setCover(e.target.value)}
+            onChange={handleCoverChange}
           />
         </div>
         <div className="sm:w-[25rem] w-screen p-10">
