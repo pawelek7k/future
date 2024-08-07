@@ -33,6 +33,11 @@ export const CreateForm: React.FC = () => {
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!title || !cover || !description || !genre || tags.length === 0) {
+      Notiflix.Notify.warning("Please fill in all fields before submitting.");
+      return;
+    }
+
     const formData = {
       title,
       cover,
