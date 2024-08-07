@@ -28,17 +28,36 @@ export const CreateForm: React.FC = () => {
     setForAdult(value === "on");
   };
 
-  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log({
+    const formData = {
       title,
       cover,
       description,
       forAdult,
       genre,
       tags,
-    });
+    };
+
+    try {
+      const response = await fetch("/api/new-book", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      const result = await response.json();
+      console.log(result.message);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
