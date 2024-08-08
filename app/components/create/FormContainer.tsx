@@ -13,7 +13,7 @@ export const CreateForm: React.FC = () => {
   const [forAdult, setForAdult] = useState<boolean>(false);
   const [tags, setTags] = useState<string[]>([]);
   const [genre, setGenre] = useState<string>("");
-
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const handleCoverChange = (coverUrl: string) => {
     setCover(coverUrl);
   };
@@ -33,10 +33,14 @@ export const CreateForm: React.FC = () => {
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (isSubmitting) return;
+
     if (!title || !cover || !description || !genre || tags.length === 0) {
       Notiflix.Notify.warning("Please fill in all fields before submitting.");
       return;
     }
+
+    setIsSubmitting(true);
 
     const formData = {
       title,
@@ -66,6 +70,8 @@ export const CreateForm: React.FC = () => {
       console.log(result.message);
     } catch (error) {
       console.error("Error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -133,7 +139,7 @@ export const CreateForm: React.FC = () => {
             </div>
           </div>
           <Tags name="tags" value={tags} onChange={handleTagChange} />
-          <CreateButton />
+          <CreateButton isSubmitting={isSubmitting} />
         </div>
       </form>
     </div>

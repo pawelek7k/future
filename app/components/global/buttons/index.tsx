@@ -8,6 +8,10 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
+interface CreateButtonProps {
+  isSubmitting: boolean;
+}
+
 export const GoogleButton: React.FC = () => {
   const handleGoogleSignIn = async () => {
     try {
@@ -54,7 +58,7 @@ export const LogoutButton: React.FC = () => {
   return <button onClick={logoutHandler}>{t("logoutButton")}</button>;
 };
 
-export const CreateButton: React.FC = () => {
+export const CreateButton: React.FC<CreateButtonProps> = ({ isSubmitting }) => {
   const randomId = nanoid();
   const router = useRouter();
 
@@ -70,9 +74,10 @@ export const CreateButton: React.FC = () => {
     dark:bg-rose-900 dark:hover:bg-rose-800
     shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out
   "
+      disabled={isSubmitting}
       onClick={handleNavigate}
     >
-      Next
+      {isSubmitting ? "Submitting..." : "Next"}
     </button>
   );
 };
