@@ -1,6 +1,8 @@
+import { PrimaryButton } from "@/app/components/global/buttons";
+import { nanoid } from "nanoid";
+import { useRouter } from "next/router";
 import Notiflix from "notiflix";
 import React, { useState } from "react";
-import { CreateButton } from "../global/buttons";
 import { CoverPicker } from "./CoverPicker";
 import { DropdownMenu } from "./Dropdown";
 import { Tags } from "./Tags";
@@ -14,6 +16,8 @@ export const CreateForm: React.FC = () => {
   const [tags, setTags] = useState<string[]>([]);
   const [genre, setGenre] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const router = useRouter();
+
   const handleCoverChange = (coverUrl: string) => {
     setCover(coverUrl);
   };
@@ -68,6 +72,9 @@ export const CreateForm: React.FC = () => {
 
       const result = await response.json();
       console.log(result.message);
+
+      const randomId = nanoid();
+      router.push(`/create/${randomId}`);
     } catch (error) {
       console.error("Error:", error);
     } finally {
@@ -139,7 +146,7 @@ export const CreateForm: React.FC = () => {
             </div>
           </div>
           <Tags name="tags" value={tags} onChange={handleTagChange} />
-          <CreateButton isSubmitting={isSubmitting} />
+          <PrimaryButton isSubmitting={isSubmitting}>Next</PrimaryButton>
         </div>
       </form>
     </div>
