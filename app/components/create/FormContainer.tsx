@@ -1,6 +1,6 @@
 import Notiflix from "notiflix";
 import React, { useState } from "react";
-import { PrimaryButton } from "../global/buttons";
+import { CreateButton } from "../global/buttons";
 import { CoverPicker } from "./CoverPicker";
 import { DropdownMenu } from "./Dropdown";
 import { Tags } from "./Tags";
@@ -133,7 +133,7 @@ export const CreateForm: React.FC = () => {
             </div>
           </div>
           <Tags name="tags" value={tags} onChange={handleTagChange} />
-          <PrimaryButton>Next</PrimaryButton>
+          <CreateButton />
         </div>
       </form>
     </div>

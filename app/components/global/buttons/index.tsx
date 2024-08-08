@@ -1,7 +1,8 @@
+import { nanoid } from "nanoid";
 import { signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { FcGoogle } from "react-icons/fc";
-
 interface ButtonProps {
   children: string;
   onClick?: () => void;
@@ -45,10 +46,33 @@ export const PrimaryButton: React.FC<ButtonProps> = ({ children, onClick }) => {
   );
 };
 
-export const LogoutButton = () => {
+export const LogoutButton: React.FC = () => {
   const { t } = useTranslation("common");
   const logoutHandler = () => {
     signOut();
   };
   return <button onClick={logoutHandler}>{t("logoutButton")}</button>;
+};
+
+export const CreateButton: React.FC = () => {
+  const randomId = nanoid();
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push(`/create/${randomId}`);
+  };
+  return (
+    <button
+      type="submit"
+      className="
+    w-full bg-sky-900 text-white py-2 px-4 rounded-lg
+    hover:bg-sky-950
+    dark:bg-rose-900 dark:hover:bg-rose-800
+    shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out
+  "
+      onClick={handleNavigate}
+    >
+      Next
+    </button>
+  );
 };
