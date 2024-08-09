@@ -9,11 +9,13 @@ const CreateChapters: React.FC = () => {
   const [id, setId] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log("Router query:", router.query);
-    if (typeof bookId === "string") {
-      setId(bookId);
+    if (router.isReady) {
+      console.log("Router query:", router.query);
+      if (typeof bookId === "string") {
+        setId(bookId);
+      }
     }
-  }, [bookId, router.query]);
+  }, [router.isReady, bookId, router.query]);
 
   if (!id) {
     return <p>Loading...</p>;
