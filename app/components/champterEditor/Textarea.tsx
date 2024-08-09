@@ -10,7 +10,7 @@ export const RichTextEditor = () => {
   };
 
   return (
-    <div className="w-full min-h-screen p-10">
+    <div className="w-full min-h-screen p-10 relative">
       <ReactQuill
         value={text}
         onChange={handleChange}
@@ -18,6 +18,14 @@ export const RichTextEditor = () => {
         formats={RichTextEditor.formats}
         placeholder="Once upon a time lived a king who had three daughters..."
       />
+      <button
+        className="mt-4 p-2 absolute -top-28 right-0  bg-sky-900 text-white py-2 px-4 rounded-lg
+        hover:bg-sky-950
+        dark:bg-rose-900 dark:hover:bg-rose-800
+        shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
+      >
+        Save
+      </button>
     </div>
   );
 };
