@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { AbsoluteButton } from "../global/buttons";
@@ -6,7 +6,7 @@ import { AbsoluteButton } from "../global/buttons";
 export const RichTextEditor = () => {
   const [text, setText] = useState("");
 
-  const handleChange = (value: string) => {
+  const handleChange = (value: SetStateAction<string>) => {
     setText(value);
   };
 
