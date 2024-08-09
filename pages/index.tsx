@@ -1,3 +1,4 @@
+import { FirstHeading } from "@/app/components/global/heading";
 import Head from "next/head";
 
 const HomePage: React.FC = () => {
@@ -7,7 +8,11 @@ const HomePage: React.FC = () => {
         <title>Future</title>
         <meta name="description" content="Future" />
       </Head>
-      <section className="h-screen bg-hero-marketing-bg">ok</section>
+      <section className="h-screen bg-hero-marketing-bg flex items-center justify-center">
+        <div className="bg-white/20 dark:bg-zinc-900/20 w-1/2 h-1/2 flex items-center justify-center backdrop-blur-md rounded-br-lg rounded-tl-lg">
+          <FirstHeading>Kreuj Przyszłość Książek z Future!</FirstHeading>
+        </div>
+      </section>
     </>
   );
 };
