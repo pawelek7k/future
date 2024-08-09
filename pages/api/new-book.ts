@@ -39,7 +39,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         client.close();
 
-        res.status(201).json({ message: 'Book created!' });
+        res.status(201).json({ message: 'Book created!', id: result.insertedId });
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Internal Server Error' });
