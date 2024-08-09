@@ -5,9 +5,9 @@ const HomePage: React.FC = () => {
     <>
       <Head>
         <title>Future</title>
-        <meta name="description" content="Posts about programming" />
+        <meta name="description" content="Future" />
       </Head>
-      <h1 className="">ok</h1>
+      <section className="h-screen bg-hero-marketing-bg">ok</section>
     </>
   );
 };

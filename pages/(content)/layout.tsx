@@ -1,5 +1,5 @@
-import { BreadcrumbContainer } from "../global/breadcrumb";
-import { MainNavigation } from "./MainNavigation";
+import { BreadcrumbContainer } from "../../app/components/global/breadcrumb";
+import { MainNavigation } from "../../app/components/layout/MainNavigation";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
