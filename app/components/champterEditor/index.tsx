@@ -1,27 +1,15 @@
-import { useEffect, useRef, useState } from "react";
-import { RichTextEditor } from "./Textarea";
+// import { useRouter } from "next/router";
+// import { useEffect, useState } from "react";
+// import { RichTextEditor } from "./Textarea";
 
-export const ChampterEditor = () => {
-  const [text, setText] = useState("");
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value);
-  };
-
-  useEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-    }
-  }, [text]);
-  return (
-    <section className="flex flex-col gap-16 mt-8 min-h-screen">
-      <div className="container mx-auto p-4">
-        <div className="rounded-lg p-4 flex flex-col items-center justify-center">
-          <RichTextEditor />
-        </div>
-      </div>
-    </section>
-  );
-};
+// export const ChampterEditor = () => {
+//   return (
+//     <section className="flex flex-col gap-16 mt-8 min-h-screen">
+//       <div className="container mx-auto p-4">
+//         <div className="rounded-lg p-4 flex flex-col items-center justify-center">
+//           <RichTextEditor bookId={id} />
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };

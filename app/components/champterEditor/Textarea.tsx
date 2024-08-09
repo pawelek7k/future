@@ -1,13 +1,48 @@
+import axios from "axios";
 import { SetStateAction, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { AbsoluteButton } from "../global/buttons";
 
-export const RichTextEditor = () => {
-  const [text, setText] = useState("");
+interface RichTextEditorProps {
+  bookId: string;
+}
+
+interface RichTextEditorStaticProps {
+  modules: any;
+  formats: any;
+}
+
+export const RichTextEditor: React.FC<RichTextEditorProps> &
+  RichTextEditorStaticProps = ({ bookId }) => {
+  const [text, setText] = useState<string>("");
 
   const handleChange = (value: SetStateAction<string>) => {
     setText(value);
+  };
+
+  const handleSave = async () => {
+    if (!bookId) {
+      console.error("No book ID provided");
+      alert("Failed to save content: Book ID is missing");
+      return;
+    }
+
+    try {
+      await axios.put(`/api/books/update/${bookId}`, { content: text });
+      alert("Content saved successfully!");
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        console.error(
+          "Error saving content:",
+          error.response?.data || error.message
+        );
+        alert("Failed to save content");
+      } else {
+        console.error("Unexpected error:", error);
+        alert("An unexpected error occurred");
+      }
+    }
   };
 
   return (
@@ -19,7 +54,7 @@ export const RichTextEditor = () => {
         formats={RichTextEditor.formats}
         placeholder="Once upon a time lived a king who had three daughters..."
       />
-      <AbsoluteButton>Save</AbsoluteButton>
+      <AbsoluteButton onClick={handleSave}>Save</AbsoluteButton>
     </div>
   );
 };

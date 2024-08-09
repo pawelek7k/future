@@ -34,11 +34,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         const result = await booksCollection.insertOne(data);
 
-        console.log(result);
-
         client.close();
 
-        res.status(201).json({ message: 'Book created!', id: result.insertedId });
+        res.status(201).json({ message: 'Book created!', id: result.insertedId.toString() });
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Internal Server Error' });

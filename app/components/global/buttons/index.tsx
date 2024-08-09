@@ -58,13 +58,17 @@ export const LogoutButton: React.FC = () => {
   return <button onClick={logoutHandler}>{t("logoutButton")}</button>;
 };
 
-export const AbsoluteButton: React.FC<ButtonProps> = ({ children }) => {
+export const AbsoluteButton: React.FC<ButtonProps> = ({
+  children,
+  onClick,
+}) => {
   return (
     <button
       className="mt-4 p-2 absolute -top-28 right-0  bg-sky-900 text-white py-2 px-4 rounded-lg
   hover:bg-sky-950
   dark:bg-rose-900 dark:hover:bg-rose-800
   shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
+      onClick={onClick}
     >
       {children}
     </button>

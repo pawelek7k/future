@@ -13,6 +13,7 @@
     "@nextui-org/system": "^2.2.5",
     "@nextui-org/theme": "^2.2.9",
     "@types/mongodb": "^4.0.7",
+    "axios": "^1.7.3",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "formidable": "^3.5.1",

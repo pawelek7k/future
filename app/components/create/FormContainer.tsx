@@ -1,5 +1,4 @@
 import { PrimaryButton } from "@/app/components/global/buttons";
-import { nanoid } from "nanoid";
 import { useRouter } from "next/router";
 import Notiflix from "notiflix";
 import React, { useState } from "react";
@@ -66,15 +65,12 @@ export const CreateForm: React.FC = () => {
 
       if (!response.ok) {
         throw new Error("Something went wrong");
-      } else {
-        Notiflix.Notify.success("Book created!");
       }
 
       const result = await response.json();
       console.log(result.message);
 
-      const randomId = nanoid();
-      router.push(`/create/${randomId}`);
+      router.push(`/create/${result.id}`);
     } catch (error) {
       console.error("Error:", error);
     } finally {
