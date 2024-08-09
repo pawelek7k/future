@@ -12,7 +12,6 @@ const bookSchema = Joi.object({
     forAdult: Joi.boolean().required(),
     genre: Joi.string().valid(...validGenres).required(),
     tags: Joi.array().items(Joi.string().min(1)).required(),
-    content: Joi.string().optional()
 });
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
