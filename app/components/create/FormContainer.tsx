@@ -56,7 +56,7 @@ export const CreateForm: React.FC = () => {
     };
 
     try {
-      const response = await fetch("/api/new-book", {
+      const response = await fetch("/api/books/new-book", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
