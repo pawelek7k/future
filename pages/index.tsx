@@ -14,13 +14,13 @@ const HomePage: React.FC = () => {
       <HeroNavigation />
       <section className="h-screen bg-hero-marketing-bg bg-center flex items-center justify-center flex-col md:justify-start md:flex-row gap-4">
         <SocialContainer />
-        <div className=" md:w-1/2 h-1/2 flex items-center justify-center md:justify-start p-8  md:backdrop-blur-md rounded-br-3xl rounded-tl-3xl sm:pl-20 lg:pl-40">
+        <div className=" md:w-1/2 h-1/2 flex items-center justify-center md:justify-start p-8  lg:backdrop-blur-md rounded-br-3xl rounded-tl-3xl sm:pl-20 lg:pl-40">
           <h1 className="sm:text-7xl font-semibold font-sans text-neutral-50 text-5xl text-center sm:text-start">
             Kreuj Przyszłość Książek z Future!
           </h1>
         </div>
         <div className=" flex w-1/2 items-center justify-center">
-          <ul className="flex items-center justify-center gap-4">
+          <ul className="flex items-center justify-center gap-4 flex-col sm:flex-row">
             <li>
               <HeroButton />
             </li>
