@@ -13,8 +13,10 @@ const HomePage: React.FC = () => {
       <HeroNavigation />
       <section className="h-screen bg-hero-marketing-bg flex items-center justify-center ">
         <SocialContainer />
-        <div className="bg-white/50 dark:bg-zinc-900/20 w-1/2 h-1/2 flex items-center justify-center backdrop-blur-md rounded-br-lg rounded-tl-lg">
-          <FirstHeading>Kreuj Przyszłość Książek z Future!</FirstHeading>
+        <div className="bg-hero-bg w-1/2 h-1/2 flex items-center justify-center backdrop-blur-md rounded-br-3xl rounded-tl-3xl">
+          <h1 className="sm:text-3xl font-semibold font-sans text-neutral-50 text-2xl">
+            Kreuj Przyszłość Książek z Future!
+          </h1>
         </div>
       </section>
     </>
