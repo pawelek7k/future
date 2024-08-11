@@ -14,8 +14,8 @@ const HomePage: React.FC = () => {
       <HeroNavigation />
       <section className="h-screen bg-hero-marketing-bg flex items-center justify-center flex-col md:justify-start md:flex-row gap-4">
         <SocialContainer />
-        <div className=" w-1/2 h-1/2 flex items-center justify-start  backdrop-blur-md rounded-br-3xl rounded-tl-3xl pl-20 lg:pl-40">
-          <h1 className="sm:text-7xl font-semibold font-sans text-neutral-50 text-xl text-start">
+        <div className=" md:w-1/2 h-1/2 flex items-center justify-center md:justify-start p-8  md:backdrop-blur-md rounded-br-3xl rounded-tl-3xl sm:pl-20 lg:pl-40">
+          <h1 className="sm:text-7xl font-semibold font-sans text-neutral-50 text-5xl text-center sm:text-start">
             Kreuj Przyszłość Książek z Future!
           </h1>
         </div>
