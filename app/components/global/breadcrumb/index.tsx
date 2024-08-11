@@ -16,7 +16,7 @@ export const BreadcrumbContainer = () => {
       }}
     >
       <BreadcrumbItem key="home">
-        <Link href="/">Home</Link>
+        <Link href="/home">Home</Link>
       </BreadcrumbItem>
       {segments.map((item, index) => (
         <BreadcrumbItem key={item}>

@@ -20,7 +20,7 @@ export const getServerSideProps = async (
     if (session) {
       return {
         redirect: {
-          destination: "/settings",
+          destination: "/home/settings",
           permanent: false,
         },
       };

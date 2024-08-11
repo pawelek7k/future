@@ -21,12 +21,12 @@ export const MainNavigation: React.FC = () => {
           {session && (
             <>
               <li>
-                <Link href="/auth/create">
+                <Link href="/home/create">
                   <CiCirclePlus className="w-6 h-6" />
                 </Link>
               </li>
               <li>
-                <Link href="/auth/settings">
+                <Link href="/home/settings">
                   <CiSettings className="w-6 h-6" />
                 </Link>
               </li>
