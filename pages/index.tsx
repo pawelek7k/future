@@ -10,13 +10,14 @@ const HomePage: React.FC = () => {
         <meta name="description" content="Future" />
       </Head>
       <HeroNavigation />
-      <section className="h-screen bg-hero-marketing-bg flex items-center justify-center ">
+      <section className="h-screen bg-hero-marketing-bg flex items-center justify-start ">
         <SocialContainer />
-        <div className=" w-1/2 h-1/2 flex items-center justify-center backdrop-blur-md rounded-br-3xl rounded-tl-3xl">
-          <h1 className="sm:text-6xl font-semibold font-sans text-neutral-50 text-xl text-center">
+        <div className=" w-1/2 h-1/2 flex items-center justify-start backdrop-blur-md rounded-br-3xl rounded-tl-3xl pl-40">
+          <h1 className="sm:text-6xl font-semibold font-sans text-neutral-50 text-xl text-start">
             Kreuj Przyszłość Książek z Future!
           </h1>
         </div>
+        <div></div>
       </section>
     </>
   );
