@@ -10,13 +10,13 @@ export const SocialContainer = () => {
           <HeroLine />
         </li>
         <li>
-          <FaInstagram className="w-8 h-8 text-neutral-100 transition easy-in-out hover:text-neutral-100/80 hover:cursor-pointer" />
+          <FaInstagram className="sm:w-8 sm:h-8 text-neutral-100 transition easy-in-out hover:text-neutral-100/80 hover:cursor-pointer" />
         </li>
         <li>
-          <FaFacebookSquare className="w-8 h-8 text-neutral-100  transition easy-in-out hover:text-neutral-100/80 hover:cursor-pointer" />
+          <FaFacebookSquare className="sm:w-8 sm:h-8 text-neutral-100  transition easy-in-out hover:text-neutral-100/80 hover:cursor-pointer" />
         </li>
         <li>
-          <FaXTwitter className="w-8 h-8 text-neutral-100  transition easy-in-out hover:text-neutral-100/80 hover:cursor-pointer" />
+          <FaXTwitter className="sm:w-8 sm:h-8 text-neutral-100  transition easy-in-out hover:text-neutral-100/80 hover:cursor-pointer" />
         </li>
       </ul>
     </div>
