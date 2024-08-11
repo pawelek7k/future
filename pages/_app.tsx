@@ -11,7 +11,7 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const Layout = router.pathname.startsWith("/content")
+  const Layout = router.pathname.startsWith("/auth")
     ? ContentLayout
     : DefaultLayout;
   return (

@@ -18,20 +18,15 @@ export const MainNavigation: React.FC = () => {
       <Logo />
       <nav>
         <ul className="flex gap-8 tracking-widest">
-          {!session && !loading && (
-            <li>
-              <Link href="/login">{t("loginButton")}</Link>
-            </li>
-          )}
           {session && (
             <>
               <li>
-                <Link href="/create">
+                <Link href="/auth/create">
                   <CiCirclePlus className="w-6 h-6" />
                 </Link>
               </li>
               <li>
-                <Link href="/settings">
+                <Link href="/auth/settings">
                   <CiSettings className="w-6 h-6" />
                 </Link>
               </li>
