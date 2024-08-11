@@ -1,7 +1,8 @@
+import { HeroButton } from "@/app/components/global/buttons";
 import { SocialContainer } from "@/app/components/hero/Socials";
 import { HeroNavigation } from "@/app/components/layout/HeroNavigation";
 import Head from "next/head";
-import Link from "next/link";
+import { FaArrowPointer } from "react-icons/fa6";
 
 const HomePage: React.FC = () => {
   return (
@@ -21,14 +22,13 @@ const HomePage: React.FC = () => {
         <div className=" flex w-1/2 items-center justify-center">
           <ul className="flex items-center justify-center gap-4">
             <li>
-              <Link href="/login" className="text-neutral-100">
-                Log in
-              </Link>
+              <HeroButton />
             </li>
-            <li>
-              <Link href="/#" className="text-neutral-100">
-                Read more
-              </Link>
+            <li className="relative">
+              <button className="text-neutral-100 font-sans tracking-wide transition easy-in-out hover:text-neutral-100/80">
+                Read More
+              </button>
+              <FaArrowPointer className="absolute text-neutral-100 -right-5 animate-scale" />
             </li>
           </ul>
         </div>

@@ -13,3 +13,19 @@ body {
     @apply dark:bg-dark-bg-settings bg-bg-settings;
   }
 }
+
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-scale {
+  animation: scaleUpDown 2s infinite;
+}

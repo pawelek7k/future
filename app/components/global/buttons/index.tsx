@@ -1,4 +1,5 @@
 import { signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { FcGoogle } from "react-icons/fc";
 interface ButtonProps {
@@ -71,6 +72,16 @@ export const AbsoluteButton: React.FC<ButtonProps> = ({
       onClick={onClick}
     >
       {children}
+    </button>
+  );
+};
+
+export const HeroButton = () => {
+  return (
+    <button className="border border-neutral-100 backdrop-blur-md py-2 px-6 transition easy-in-out font-sans tracking-wide rounded-full shadow-md text-neutral-100 shadow-neutral-100/30 hover:bg-neutral-100 hover:text-black text-large">
+      <Link href="/login" className="">
+        Log in
+      </Link>
     </button>
   );
 };
