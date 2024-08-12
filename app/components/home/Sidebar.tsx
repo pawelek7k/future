@@ -14,13 +14,13 @@ export const Sidebar: React.FC = () => {
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-full text-sky-950 bg-neutral-100/20 dark:bg-zinc-950/20 p-4 pt-24 z-40 transition-transform duration-300 ease-in-out backdrop-blur-lg ${
+        className={`fixed top-0 right-0 h-full text-sky-950 bg-neutral-100/20 dark:bg-zinc-950/20 p-4 pt-6 z-40 transition-transform duration-300 ease-in-out backdrop-blur-lg ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{ width: "250px" }}
+        style={{ width: "400px" }}
       >
         <SecondHeading>Genres</SecondHeading>
-        <ul className="space-y-2 overflow-y-auto max-h-[calc(100vh-6rem)]">
+        <ul className="space-y-2">
           {bookGenres.map(({ id, name }) => (
             <li
               key={id}
