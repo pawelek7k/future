@@ -15,9 +15,6 @@ export const BreadcrumbContainer = () => {
         item: "font-sans",
       }}
     >
-      <BreadcrumbItem key="home">
-        <Link href="/home">Home</Link>
-      </BreadcrumbItem>
       {segments.map((item, index) => (
         <BreadcrumbItem key={item}>
           {index === segments.length - 1 ? (
