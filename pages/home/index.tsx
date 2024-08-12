@@ -1,7 +1,9 @@
+import { FirstHeading } from "@/app/components/global/heading";
+
 export default function HomeAuthPage() {
   return (
     <div>
-      <h1>ok</h1>
+      <FirstHeading>The most popular books</FirstHeading>
     </div>
   );
 }
