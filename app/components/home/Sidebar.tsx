@@ -2,7 +2,7 @@ import { bookGenres } from "@/lib/routes";
 import { Divide as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { useState } from "react";
-import { SecondHeading } from "../global/heading";
+import { LogoHeading } from "../global/heading";
 
 export const Sidebar: React.FC = () => {
   const [isOpen, setOpen] = useState(true);
@@ -19,7 +19,7 @@ export const Sidebar: React.FC = () => {
         }`}
         style={{ width: "400px" }}
       >
-        <SecondHeading>Genres</SecondHeading>
+        <LogoHeading>Genres</LogoHeading>
         <ul className="space-y-2">
           {bookGenres.map(({ id, name }) => (
             <li

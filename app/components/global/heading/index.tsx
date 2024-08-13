@@ -27,3 +27,9 @@ export const ThirdHeading: React.FC<Props> = ({ children }) => {
     </h3>
   );
 };
+
+export const LogoHeading: React.FC<Props> = ({ children }) => {
+  return (
+    <h1 className="sm:text-l text-lg font-sans tracking-widest">{children}</h1>
+  );
+};

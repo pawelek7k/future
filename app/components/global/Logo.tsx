@@ -5,7 +5,7 @@ export const Logo: React.FC = () => (
   <Link href="/home">
     <div className="flex items-center gap-4 justify-center">
       <IoMdMoon className="w-8 h-8" />
-      <h1 className="text-lg font-sans tracking-widest hidden fancy lg:block">
+      <h1 className="text-lg font-sans tracking-widest hidden lg:block">
         Future
       </h1>
     </div>
