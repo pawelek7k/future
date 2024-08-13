@@ -46,17 +46,20 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
           <IoCloseOutline />
         </button>
         <div className="flex  items-center">
-          <div className="relative overflow-hidden rounded-md w-48 h-80 mb-4">
-            <Image
-              src={book.cover}
-              alt={book.title}
-              width={30}
-              height={30}
-              className="object-cover object-center w-full h-full"
-            />
+          <div className="flex flex-col gap-6">
+            {" "}
+            <SecondHeading>{book.title}</SecondHeading>
+            <div className="relative overflow-hidden rounded-md w-48 h-80 mb-4">
+              <Image
+                src={book.cover}
+                alt={book.title}
+                width={30}
+                height={30}
+                className="object-cover object-center w-full h-full"
+              />
+            </div>
           </div>
           <div>
-            <SecondHeading>{book.title}</SecondHeading>
             <p className="text-gray-700 mb-2">Genre: {book.genre}</p>
             <p className="text-gray-700 mb-2">
               For Adult: {book.forAdult ? "Yes" : "No"}
