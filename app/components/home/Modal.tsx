@@ -46,7 +46,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
         >
           <IoCloseOutline />
         </button>
-        <div className="flex  items-center">
+        <div className="flex  items-center gap-6">
           <div className="flex flex-col gap-6">
             {" "}
             <SecondHeading>{book.title}</SecondHeading>
@@ -60,13 +60,13 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
               />
             </div>
           </div>
-          <div>
+          <div className="w-full flex flex-col itms-center justify-center">
             <p className="text-gray-700">{book.description}</p>
             <p className="text-gray-700 mb-2">Genre: {book.genre}</p>
             <p className="text-gray-700 mb-2">
               For Adult: {book.forAdult ? "Yes" : "No"}
             </p>
-            <p className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 min-w-12 text-center">
+            <p className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 px-4 min-w-12">
               Tags: {book.tags.join(", ")}
             </p>
           </div>
