@@ -33,13 +33,15 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
           {books.map((book) => (
             <li key={book._id}>
               <h2>{book.title}</h2>
-              <Image
-                src={book.cover}
-                alt={book.title}
-                style={{ maxWidth: "150px", height: "230px" }}
-                width={150}
-                height={300}
-              />
+              <div className="relative overflow-hidden rounded-md w-36 h-56">
+                <Image
+                  src={book.cover}
+                  alt={book.title}
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                />
+              </div>
               <p>{book.description}</p>
               <p>Genre: {book.genre}</p>
               <p>For Adult: {book.forAdult ? "Yes" : "No"}</p>
