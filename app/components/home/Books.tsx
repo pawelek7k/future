@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import { Modal } from "./Modal";
 
 interface Book {
   _id: string;
@@ -15,26 +16,44 @@ interface BooksListProps {
   books: Book[];
 }
 
-const BooksList = ({ books }: BooksListProps) => {
-  const [modal, setModal] = useState<boolean>(false);
+export const BooksList = ({ books }: BooksListProps) => {
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const handleBookClick = (book: Book) => {
+    setSelectedBook(book);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedBook(null);
+  };
+
   return (
-    <ul className="flex gap-6 mt-10">
-      {books.map((book) => (
-        <li key={book._id} className="cursor-pointer">
-          <div className="relative overflow-hidden rounded-md w-36 h-56">
-            <Image
-              src={book.cover}
-              alt={book.title}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-            />
-          </div>
-          <h2>{book.title}</h2>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="flex gap-6 mt-10">
+        {books.map((book) => (
+          <li
+            key={book._id}
+            className="cursor-pointer"
+            onClick={() => handleBookClick(book)}
+          >
+            <div className="relative overflow-hidden rounded-md w-36 h-56">
+              <Image
+                src={book.cover}
+                alt={book.title}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
+            <h2>{book.title}</h2>
+          </li>
+        ))}
+      </ul>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal} book={selectedBook} />
+    </>
   );
 };
-
-export default BooksList;

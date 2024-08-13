@@ -1,5 +1,5 @@
 import { FirstHeading } from "@/app/components/global/heading";
-import BooksList from "@/app/components/home/Books";
+import { BooksList } from "@/app/components/home/Books";
 import { Sidebar } from "@/app/components/home/Sidebar";
 import { connectToDatabase } from "@/lib/db";
 import { GetServerSideProps } from "next";
