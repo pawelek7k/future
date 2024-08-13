@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { IoCloseOutline } from "react-icons/io5";
+import { PrimaryButton } from "../global/buttons";
 import { SecondHeading } from "../global/heading";
 
 interface ModalProps {
@@ -46,7 +47,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
         >
           <IoCloseOutline />
         </button>
-        <div className="flex  items-center gap-6">
+        <div className="flex gap-6">
           <div className="flex flex-col gap-6">
             {" "}
             <SecondHeading>{book.title}</SecondHeading>
@@ -60,7 +61,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
               />
             </div>
           </div>
-          <div className="w-full flex flex-col itms-center justify-center">
+          <div className="w-full flex flex-col justify-center">
             <p className="text-gray-700">{book.description}</p>
             <p className="text-gray-700 mb-2">Genre: {book.genre}</p>
             <p className="text-gray-700 mb-2">
@@ -69,6 +70,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
             <p className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 px-4 min-w-12">
               Tags: {book.tags.join(", ")}
             </p>
+            <PrimaryButton>Start reading</PrimaryButton>
           </div>
         </div>
       </div>
