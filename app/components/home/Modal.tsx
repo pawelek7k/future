@@ -38,7 +38,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl items-center justify-center">
+      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl items-center justify-center w-[45rem]">
         <button
           onClick={onClose}
           className="absolute top-2 right-2 text-lg font-bold"
