@@ -29,10 +29,9 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
       <div>
         <FirstHeading>The most popular books</FirstHeading>
         <Sidebar />
-        <ul>
+        <ul className="flex gap-6">
           {books.map((book) => (
             <li key={book._id}>
-              <h2>{book.title}</h2>
               <div className="relative overflow-hidden rounded-md w-36 h-56">
                 <Image
                   src={book.cover}
@@ -42,10 +41,9 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
                   objectPosition="center"
                 />
               </div>
-              <p>{book.description}</p>
+              <h2>{book.title}</h2>
               <p>Genre: {book.genre}</p>
               <p>For Adult: {book.forAdult ? "Yes" : "No"}</p>
-              <p>Tags: {book.tags.join(", ")}</p>
             </li>
           ))}
         </ul>
