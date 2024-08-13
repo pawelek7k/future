@@ -9,6 +9,7 @@ interface ModalProps {
   book: {
     title: string;
     cover: string;
+    tags: string[];
     description: string;
     genre: string;
     forAdult: boolean;
@@ -60,11 +61,14 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
             </div>
           </div>
           <div>
+            <p className="text-gray-700">{book.description}</p>
             <p className="text-gray-700 mb-2">Genre: {book.genre}</p>
             <p className="text-gray-700 mb-2">
               For Adult: {book.forAdult ? "Yes" : "No"}
             </p>
-            <p className="text-gray-700">{book.description}</p>
+            <p className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 min-w-12 text-center">
+              Tags: {book.tags.join(", ")}
+            </p>
           </div>
         </div>
       </div>
