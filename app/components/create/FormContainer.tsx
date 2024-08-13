@@ -70,7 +70,7 @@ export const CreateForm: React.FC = () => {
       const result = await response.json();
       console.log(result.message);
 
-      router.push(`/create/${result.id}`);
+      router.push(`/home/create/${result.id}`);
     } catch (error) {
       console.error("Error:", error);
     } finally {
