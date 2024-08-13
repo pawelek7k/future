@@ -38,7 +38,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white/70 backdrop-blur-md p-6 rounded-lg w-80">
+      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl">
         <button
           onClick={onClose}
           className="absolute top-2 right-2 text-lg font-bold"
@@ -46,7 +46,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
           <IoCloseOutline />
         </button>
         <div className="flex  items-center">
-          <div className="relative overflow-hidden rounded-md w-36 h-56 mb-4">
+          <div className="relative overflow-hidden rounded-md w-48 h-80 mb-4">
             <Image
               src={book.cover}
               alt={book.title}
