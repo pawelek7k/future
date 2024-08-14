@@ -82,7 +82,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
                 {book.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 px-4 min-w-12"
+                    className="dark:bg-rose-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 px-4 min-w-12"
                   >
                     {tag}
                   </span>

@@ -32,11 +32,11 @@ export const BooksList = ({ books }: BooksListProps) => {
 
   return (
     <>
-      <ul className="flex gap-6 mt-10">
+      <ul className="flex gap-6 mt-10 ">
         {books.map((book) => (
           <li
             key={book._id}
-            className="cursor-pointer"
+            className="cursor-pointer dark:shadow-sm"
             onClick={() => handleBookClick(book)}
           >
             <div className="relative overflow-hidden rounded-md w-36 h-56">
