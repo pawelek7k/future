@@ -40,7 +40,7 @@ export const Container: React.FC = () => {
         });
 
         if (result && !result.error) {
-          router.replace("/home/settings/profile");
+          router.replace("/home");
         }
         console.log(result);
       } catch (error) {

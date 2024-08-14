@@ -41,7 +41,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
     const db = client.db();
     const booksCollection = db.collection("books");
     const books = await booksCollection.find({}).toArray();
-    client.close();
 
     return {
       props: {
@@ -49,7 +48,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       },
     };
   } catch (err) {
-    console.error(err);
+    console.error("Error fetching books:", err);
     return {
       props: {
         books: [],
