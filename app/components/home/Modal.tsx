@@ -63,10 +63,12 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
           </div>
           <div className="w-full flex flex-col justify-center">
             <p className="text-gray-700">{book.description}</p>
-            <p className="text-gray-700 mb-2">Genre: {book.genre}</p>
-            <p className="text-gray-700 mb-2">
-              For Adult: {book.forAdult ? "Yes" : "No"}
-            </p>
+            <div className="flex justify-evenly">
+              <p className="text-gray-700 mb-2">Genre: {book.genre}</p>
+              <p className="text-gray-700 mb-2">
+                For Adult: {book.forAdult ? "Yes" : "No"}
+              </p>
+            </div>
             <p className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 px-4 min-w-12">
               Tags: {book.tags.join(", ")}
             </p>
