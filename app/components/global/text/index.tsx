@@ -10,6 +10,8 @@ export const Paragraph: React.FC<Props> = ({ children }) => {
 
 export const FirstWord: React.FC<Props> = ({ children }) => {
   return (
-    <span className="text-sky-950 tracking-wide font-semibold">{children}</span>
+    <span className="text-sky-950 tracking-wide font-semibold dark:text-neutral-100">
+      {children}
+    </span>
   );
 };

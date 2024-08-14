@@ -40,8 +40,8 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
   if (!isOpen || !book) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl justify-center w-[45rem]">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 dark:bg-zinc-900/50">
+      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl justify-center w-[45rem] dark:bg-black/70">
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-lg font-bold"
@@ -63,16 +63,16 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
             </div>
           </div>
           <div className="w-full flex flex-col justify-center p-6 gap-2">
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-neutral-100">
               <FirstWord>Description: </FirstWord>
               {book.description}
             </p>
             <div className="flex justify-between">
-              <p className="text-gray-700">
+              <p className="text-gray-700 dark:text-neutral-100">
                 <FirstWord>Genre: </FirstWord>
                 {book.genre}
               </p>
-              <p className="text-gray-700">
+              <p className="text-gray-700 dark:text-neutral-100">
                 <FirstWord>For Adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
               </p>
             </div>
