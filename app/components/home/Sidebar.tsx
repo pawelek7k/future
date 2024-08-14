@@ -19,7 +19,7 @@ export const Sidebar: React.FC = () => {
         }`}
         style={{ width: "400px" }}
       >
-        <LogoHeading>Genres</LogoHeading>
+        <LogoHeading>Filters</LogoHeading>
         <ul className="space-y-2">
           {bookGenres.map(({ id, name }) => (
             <li
