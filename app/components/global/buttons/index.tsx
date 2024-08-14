@@ -89,8 +89,8 @@ export const HeroButton: React.FC = () => {
 export const SecondaryButton: React.FC<ButtonProps> = ({ children }) => {
   return (
     <button
-      className="mt-4 p-2 absolute -top-10 right-0  bg-sky-900 text-white py-2 px-4 rounded-lg
-hover:bg-sky-950
+      className="mt-4 p-2 bg-sky-900 text-white py-2 px-4 rounded-lg
+hover:bg-sky-950 w-full
 dark:bg-rose-900 dark:hover:bg-rose-800
 shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
     >

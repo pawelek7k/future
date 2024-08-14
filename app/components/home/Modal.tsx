@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import { PrimaryButton } from "../global/buttons";
+import { PrimaryButton, SecondaryButton } from "../global/buttons";
 import { SecondHeading } from "../global/heading";
 
 interface ModalProps {
@@ -70,7 +70,14 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
             <p className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 px-4 min-w-12">
               Tags: {book.tags.join(", ")}
             </p>
-            <PrimaryButton>Start reading</PrimaryButton>
+            <ul>
+              <li>
+                <PrimaryButton>Start reading</PrimaryButton>
+              </li>
+              <li>
+                <SecondaryButton>Add to library</SecondaryButton>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
