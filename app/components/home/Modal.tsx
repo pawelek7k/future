@@ -49,7 +49,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
           <IoCloseOutline className="w-6 h-6" />
         </button>
         <div className="flex gap-6">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 px-6">
             {" "}
             <SecondHeading>{book.title}</SecondHeading>
             <div className="relative overflow-hidden rounded-md w-48 h-80 mb-4">
