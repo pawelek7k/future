@@ -41,7 +41,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
         w-full bg-sky-900 text-white py-2 px-4 rounded-lg
         hover:bg-sky-950
         dark:bg-rose-900 dark:hover:bg-rose-800
-        shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out
+        shadow-md hover:shadow-lg transition ease-in-out
       "
       onClick={onClick}
       disabled={isSubmitting}
@@ -88,12 +88,7 @@ export const HeroButton: React.FC = () => {
 
 export const SecondaryButton: React.FC<ButtonProps> = ({ children }) => {
   return (
-    <button
-      className="mt-4 p-2 bg-sky-900 text-white py-2 px-4 rounded-lg
-hover:bg-sky-950 w-full
-dark:bg-rose-900 dark:hover:bg-rose-800
-shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
-    >
+    <button className="p-2 dark:bg-zinc-950/30 bg-sky-950/70 text-white py-2 px-4 rounded-lg w-full shadow-md hover:shadow-lg transition ease-in-out hover:bg-sky-950/80">
       {children}
     </button>
   );
