@@ -28,6 +28,9 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
       </Head>
       <div>
         <FirstHeading>The most popular books</FirstHeading>
+        <div className="w-full flex items-center justify-center">
+          <input type="text" />
+        </div>
         <Sidebar />
         <BooksList books={books} />
       </div>

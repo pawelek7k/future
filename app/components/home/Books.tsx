@@ -32,7 +32,7 @@ export const BooksList = ({ books }: BooksListProps) => {
 
   return (
     <>
-      <ul className="flex gap-6 mt-10 ">
+      <ul className="flex flex-wrap gap-6 mt-10 items-center justify-center">
         {books.map((book) => (
           <li
             key={book._id}
