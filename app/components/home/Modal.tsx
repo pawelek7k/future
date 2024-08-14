@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { PrimaryButton, SecondaryButton } from "../global/buttons";
 import { SecondHeading } from "../global/heading";
+import { FirstWord } from "../global/text";
 
 interface ModalProps {
   isOpen: boolean;
@@ -40,12 +41,12 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl items-center justify-center w-[45rem]">
+      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl justify-center w-[45rem]">
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-lg font-bold"
+          className="absolute top-3 right-3 text-lg font-bold"
         >
-          <IoCloseOutline />
+          <IoCloseOutline className="w-6 h-6" />
         </button>
         <div className="flex gap-6">
           <div className="flex flex-col gap-6">
@@ -61,18 +62,34 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
               />
             </div>
           </div>
-          <div className="w-full flex flex-col justify-center">
-            <p className="text-gray-700">{book.description}</p>
-            <div className="flex justify-evenly">
-              <p className="text-gray-700 mb-2">Genre: {book.genre}</p>
-              <p className="text-gray-700 mb-2">
-                For Adult: {book.forAdult ? "Yes" : "No"}
+          <div className="w-full flex flex-col justify-center p-6 gap-2">
+            <p className="text-gray-700">
+              <FirstWord>Description: </FirstWord>
+              {book.description}
+            </p>
+            <div className="flex justify-between">
+              <p className="text-gray-700">
+                <FirstWord>Genre: </FirstWord>
+                {book.genre}
+              </p>
+              <p className="text-gray-700">
+                <FirstWord>For Adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
               </p>
             </div>
-            <p className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 px-4 min-w-12">
-              Tags: {book.tags.join(", ")}
+            <p>
+              <FirstWord>Tags:</FirstWord>
+              <span className="flex flex-wrap gap-2 mt-2">
+                {book.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 px-4 min-w-12"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </span>
             </p>
-            <ul className="flex justify-evenly mt-6">
+            <ul className="flex justify-between mt-2">
               <li>
                 <PrimaryButton>Start reading</PrimaryButton>
               </li>
