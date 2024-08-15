@@ -1,8 +1,9 @@
 import { Divide as Hamburger } from "hamburger-react";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { KeyboardEvent, useEffect, useState } from "react";
 import { DropdownMenu } from "../create/Dropdown";
-import { LogoHeading } from "../global/heading";
 import { PrimaryButton } from "../global/buttons";
+import { LogoHeading } from "../global/heading";
 
 interface FilterValues {
   search: string;
@@ -15,17 +16,44 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
+  const router = useRouter();
   const [isOpen, setOpen] = useState(true);
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("");
   const [forAdult, setForAdult] = useState(false);
 
+  useEffect(() => {
+    const {
+      search: querySearch,
+      genre: queryGenre,
+      forAdult: queryForAdult,
+    } = router.query;
+    setSearch((querySearch as string) || "");
+    setGenre((queryGenre as string) || "");
+    setForAdult(queryForAdult === "true");
+  }, [router.query]);
+
   const handleFilterChange = () => {
+    const query: any = {};
+    if (search) query.search = search;
+    if (genre) query.genre = genre;
+    if (forAdult) query.forAdult = forAdult;
+
+    router.push({
+      pathname: router.pathname,
+      query: query,
+    });
     onFilterChange({ search, genre, forAdult });
   };
 
   const handleGenreChange = (selectedGenre: string) => {
     setGenre(selectedGenre);
+  };
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleFilterChange();
+    }
   };
 
   return (
@@ -47,6 +75,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search..."
+          onKeyDown={handleKeyDown}
           className="w-full p-2 border border-gray-300 rounded mb-4"
         />
 
@@ -60,6 +89,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           />
           <label>For Adults</label>
         </div>
+
         <PrimaryButton onClick={handleFilterChange}>
           Apply Filters
         </PrimaryButton>

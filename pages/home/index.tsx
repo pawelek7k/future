@@ -4,8 +4,8 @@ import { Sidebar } from "@/app/components/home/Sidebar";
 import { connectToDatabase } from "@/lib/db";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
-import { useState } from "react";
-
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 interface Book {
   _id: string;
   title: string;
@@ -21,11 +21,21 @@ interface BooksPageProps {
 }
 
 const HomeAuthPage = ({ books }: BooksPageProps) => {
+  const router = useRouter();
   const [filters, setFilters] = useState({
     search: "",
     genre: "",
     forAdult: false,
   });
+
+  useEffect(() => {
+    const { search, genre, forAdult } = router.query;
+    setFilters({
+      search: (search as string) || "",
+      genre: (genre as string) || "",
+      forAdult: forAdult === "true",
+    });
+  }, [router.query]);
 
   const handleFilterChange = (filters: {
     search: string;
