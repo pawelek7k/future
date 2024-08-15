@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { PrimaryButton, SecondaryButton } from "../global/buttons";
 import { SecondHeading } from "../global/heading";
+import { Line } from "../global/line";
 import { FirstWord } from "../global/text";
 
 interface ModalProps {
@@ -50,9 +51,9 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
         </button>
         <div className="flex gap-6">
           <div className="flex flex-col gap-6 px-6">
-            {" "}
             <SecondHeading>{book.title}</SecondHeading>
-            <div className="relative overflow-hidden rounded-md w-48 h-80 mb-4">
+            <Line />
+            <div className="relative overflow-hidden rounded-md w-48 h-80 mb-4 mt-4">
               <Image
                 src={book.cover}
                 alt={book.title}
