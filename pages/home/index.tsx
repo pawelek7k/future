@@ -3,6 +3,7 @@ import { BooksList } from "@/app/components/home/Books";
 import { Sidebar } from "@/app/components/home/Sidebar";
 import { connectToDatabase } from "@/lib/db";
 import { GetServerSideProps } from "next";
+import { getSession, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -21,6 +22,7 @@ interface BooksPageProps {
 }
 
 const HomeAuthPage = ({ books }: BooksPageProps) => {
+  const { data: session, status } = useSession();
   const router = useRouter();
   const [filters, setFilters] = useState({
     search: "",
@@ -29,13 +31,20 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
   });
 
   useEffect(() => {
-    const { search, genre, forAdult } = router.query;
-    setFilters({
-      search: (search as string) || "",
-      genre: (genre as string) || "",
-      forAdult: forAdult === "true",
-    });
-  }, [router.query]);
+    if (status === "loading") return;
+
+    if (!session) {
+      signOut({ redirect: false });
+      router.push("/login");
+    } else {
+      const { search, genre, forAdult } = router.query;
+      setFilters({
+        search: (search as string) || "",
+        genre: (genre as string) || "",
+        forAdult: forAdult === "true",
+      });
+    }
+  }, [router, session, status]);
 
   const handleFilterChange = (filters: {
     search: string;
@@ -70,7 +79,17 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
   try {
     const client = await connectToDatabase();
     const db = client.db();
