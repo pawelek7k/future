@@ -1,9 +1,32 @@
 import { Divide as Hamburger } from "hamburger-react";
 import { useState } from "react";
+import { DropdownMenu } from "../create/Dropdown";
 import { LogoHeading } from "../global/heading";
+import { PrimaryButton } from "../global/buttons";
 
-export const Sidebar: React.FC = () => {
+interface FilterValues {
+  search: string;
+  genre: string;
+  forAdult: boolean;
+}
+
+interface SidebarProps {
+  onFilterChange: (filters: FilterValues) => void;
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
   const [isOpen, setOpen] = useState(true);
+  const [search, setSearch] = useState("");
+  const [genre, setGenre] = useState("");
+  const [forAdult, setForAdult] = useState(false);
+
+  const handleFilterChange = () => {
+    onFilterChange({ search, genre, forAdult });
+  };
+
+  const handleGenreChange = (selectedGenre: string) => {
+    setGenre(selectedGenre);
+  };
 
   return (
     <div>
@@ -18,21 +41,28 @@ export const Sidebar: React.FC = () => {
         style={{ width: "400px" }}
       >
         <LogoHeading>Filters</LogoHeading>
-        {/* <ul className="space-y-2">
-          {bookGenres.map(({ id, name }) => (
-            <li
-              key={id}
-              className="hover:bg-neutral-100/10 rounded transition-colors w-full dark:hover:bg-zinc-800/10"
-            >
-              <Link
-                href={`/home/${id}`}
-                className="gap-4 p-2 w-full h-full text-sky-950 flex items-center hover:text-neutral-400 transition-all dark:text-neutral-50"
-              >
-                <span className="text-sm">{name}</span>
-              </Link>
-            </li>
-          ))}
-        </ul> */}
+
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search..."
+          className="w-full p-2 border border-gray-300 rounded mb-4"
+        />
+
+        <DropdownMenu onChange={handleGenreChange} value={genre} />
+
+        <div className="mb-4">
+          <input
+            type="checkbox"
+            checked={forAdult}
+            onChange={() => setForAdult(!forAdult)}
+          />
+          <label>For Adults</label>
+        </div>
+        <PrimaryButton onClick={handleFilterChange}>
+          Apply Filters
+        </PrimaryButton>
       </div>
     </div>
   );

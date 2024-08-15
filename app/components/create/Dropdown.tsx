@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
 interface Props {
-  name: string;
-  value: string;
+  name?: string;
+  value?: string;
   onChange: (value: string) => void;
 }
 

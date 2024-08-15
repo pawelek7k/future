@@ -4,6 +4,7 @@ import { Sidebar } from "@/app/components/home/Sidebar";
 import { connectToDatabase } from "@/lib/db";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { useState } from "react";
 
 interface Book {
   _id: string;
@@ -20,6 +21,30 @@ interface BooksPageProps {
 }
 
 const HomeAuthPage = ({ books }: BooksPageProps) => {
+  const [filters, setFilters] = useState({
+    search: "",
+    genre: "",
+    forAdult: false,
+  });
+
+  const handleFilterChange = (filters: {
+    search: string;
+    genre: string;
+    forAdult: boolean;
+  }) => {
+    setFilters(filters);
+  };
+
+  const filteredBooks = books.filter((book) => {
+    const matchesSearch = book.title
+      .toLowerCase()
+      .includes(filters.search.toLowerCase());
+    const matchesGenre = !filters.genre || book.genre === filters.genre;
+    const matchesForAdult = !filters.forAdult || book.forAdult;
+
+    return matchesSearch && matchesGenre && matchesForAdult;
+  });
+
   return (
     <>
       <Head>
@@ -28,11 +53,8 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
       </Head>
       <div>
         <FirstHeading>The most popular books</FirstHeading>
-        <div className="w-full flex items-center justify-center">
-          <input type="text" />
-        </div>
-        <Sidebar />
-        <BooksList books={books} />
+        <Sidebar onFilterChange={handleFilterChange} />
+        <BooksList books={filteredBooks} />
       </div>
     </>
   );
