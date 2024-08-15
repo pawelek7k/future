@@ -1,7 +1,7 @@
 import { ThirdHeading } from "@/app/components/global/heading";
 import { Paragraph } from "@/app/components/global/text";
 import { IoTrashBinOutline } from "react-icons/io5";
-import { SearchInput } from "./SearchInput";
+import { SearchInput } from "../../global/SearchInput";
 
 export const NotificationContainer: React.FC = () => {
   return (
