@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import { IoCloseOutline } from "react-icons/io5";
+import { FaBookOpenReader } from "react-icons/fa6";
+import { IoCloseOutline, IoLibrary } from "react-icons/io5";
 import { PrimaryButton, SecondaryButton } from "../global/buttons";
 import { SecondHeading } from "../global/heading";
 import { Line } from "../global/line";
@@ -92,10 +93,14 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
             </p>
             <ul className="flex justify-between mt-2">
               <li>
-                <PrimaryButton>Start reading</PrimaryButton>
+                <PrimaryButton icon={<FaBookOpenReader />}>
+                  Start reading
+                </PrimaryButton>
               </li>
               <li>
-                <SecondaryButton>Add to library</SecondaryButton>
+                <SecondaryButton icon={<IoLibrary />}>
+                  Add to library
+                </SecondaryButton>
               </li>
             </ul>
           </div>

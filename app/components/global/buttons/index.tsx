@@ -6,6 +6,7 @@ interface ButtonProps {
   children: string;
   onClick?: () => void;
   isSubmitting?: boolean;
+  icon?: React.ReactNode;
 }
 
 export const GoogleButton: React.FC = () => {
@@ -33,6 +34,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
   children,
   onClick,
   isSubmitting,
+  icon,
 }) => {
   return (
     <button
@@ -42,11 +44,19 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
         hover:bg-sky-950
         dark:bg-rose-900 dark:hover:bg-rose-800
         shadow-md hover:shadow-lg transition ease-in-out
+        flex items-center justify-center gap-2
       "
       onClick={onClick}
       disabled={isSubmitting}
     >
-      {isSubmitting ? "Submitting..." : `${children}`}
+      {isSubmitting ? (
+        "Submitting..."
+      ) : (
+        <>
+          {icon && <span className="flex-shrink-0">{icon}</span>}
+          {children}
+        </>
+      )}
     </button>
   );
 };
@@ -86,9 +96,10 @@ export const HeroButton: React.FC = () => {
   );
 };
 
-export const SecondaryButton: React.FC<ButtonProps> = ({ children }) => {
+export const SecondaryButton: React.FC<ButtonProps> = ({ children, icon }) => {
   return (
-    <button className="p-2 dark:bg-rose-950/30 bg-sky-950/70 text-white py-2 px-4 rounded-lg w-full shadow-md hover:shadow-lg transition ease-in-out hover:bg-sky-950/80 dark:hover:bg-rose-950/80">
+    <button className="p-2 dark:bg-rose-950/30 bg-sky-950/70 text-white py-2 px-4 rounded-lg w-full shadow-md hover:shadow-lg transition ease-in-out hover:bg-sky-950/80 dark:hover:bg-rose-950/80 flex items-center gap-2">
+      {icon && <span className="flex-shrink-0">{icon}</span>}
       {children}
     </button>
   );
