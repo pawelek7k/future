@@ -1,5 +1,12 @@
 {
   "loginButton": "Join us!",
   "settings": "Settings",
-  "logoutButton": "Logout"
+  "logoutButton": "Logout",
+
+  "homeHeading": "The most popular books",
+  "searchPlaceholder": "Search...",
+  "genreLabel": "Genre",
+  "forAdultsLabel": "For Adults",
+  "applyFilters": "Apply Filters",
+  "clearFilters": "Clear Filters"
 }

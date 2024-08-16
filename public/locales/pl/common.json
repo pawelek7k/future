@@ -1,5 +1,12 @@
 {
   "loginButton": "Dołącz do nas!",
   "settings": "Ustawienia",
-  "logoutButton": "Wyloguj"
+  "logoutButton": "Wyloguj",
+
+  "homeHeading": "Najbardziej popularne książki",
+  "searchPlaceholder": "Szukaj...",
+  "genreLabel": "Gatunek",
+  "forAdultsLabel": "Dla dorosłych",
+  "applyFilters": "Zastosuj filtry",
+  "clearFilters": "Wyczyść filtry"
 }

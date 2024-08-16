@@ -8,6 +8,7 @@ import { signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 interface Book {
   _id: string;
   title: string;
@@ -23,6 +24,7 @@ interface BooksPageProps {
 }
 
 const HomeAuthPage = ({ books }: BooksPageProps) => {
+  const { t } = useTranslation("common");
   const { data: session, status } = useSession();
   const router = useRouter();
   const [filters, setFilters] = useState({
@@ -72,7 +74,7 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
         <meta name="description" content="Future" />
       </Head>
       <div>
-        <FirstHeading>The most popular books</FirstHeading>
+        <FirstHeading>{t("homeHeading")}</FirstHeading>
         <Sidebar onFilterChange={handleFilterChange} />
         <BooksList books={filteredBooks} />
       </div>
