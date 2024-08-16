@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { FaBookOpenReader } from "react-icons/fa6";
@@ -11,6 +12,7 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   book: {
+    _id: string;
     title: string;
     cover: string;
     tags: string[];
@@ -22,6 +24,7 @@ interface ModalProps {
 
 export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const { data: session } = useSession();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -40,6 +43,34 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
   }, [isOpen, onClose]);
 
   if (!isOpen || !book) return null;
+
+  const handleAddToLibrary = async () => {
+    if (!session) {
+      alert("You must be logged in to add a book to your library.");
+      return;
+    }
+
+    try {
+      console.log("Session in modal:", session);
+      const response = await fetch("/api/library/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ bookId: book._id }),
+        credentials: "include",
+      });
+
+      if (response.ok) {
+        alert("Book added to library!");
+      } else {
+        alert("Failed to add book to library.");
+      }
+    } catch (error) {
+      console.error("Error adding book to library:", error);
+      alert("Error adding book to library.");
+    }
+  };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 dark:bg-zinc-900/50">
@@ -98,7 +129,10 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
                 </PrimaryButton>
               </li>
               <li>
-                <SecondaryButton icon={<IoLibrary />}>
+                <SecondaryButton
+                  icon={<IoLibrary />}
+                  onClick={handleAddToLibrary}
+                >
                   Add to library
                 </SecondaryButton>
               </li>
