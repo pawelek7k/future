@@ -1,5 +1,7 @@
+import { FirstHeading } from "@/app/components/global/heading";
+
 const LibraryPage = () => {
-  return <h2>Your library!</h2>;
+  return <FirstHeading>Your library!</FirstHeading>;
 };
 
 export default LibraryPage;
