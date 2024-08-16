@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { KeyboardEvent, useEffect, useState } from "react";
 import { DropdownMenu } from "../create/Dropdown";
 import { ToggleSwitch } from "../create/ToggleSwitch";
-import { PrimaryButton } from "../global/buttons";
+import { PrimaryButton, SecondaryButton } from "../global/buttons";
 import { LogoHeading } from "../global/heading";
 import { SearchInput } from "../global/SearchInput";
 
@@ -96,6 +96,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         <PrimaryButton onClick={handleFilterChange}>
           Apply Filters
         </PrimaryButton>
+        <SecondaryButton>Clear Filters</SecondaryButton>
       </div>
     </div>
   );
