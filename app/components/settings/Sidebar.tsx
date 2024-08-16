@@ -1,4 +1,4 @@
-import { sidebarItems } from "@/lib/routes";
+import { SidebarItems } from "@/lib/routes";
 import { Divide as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -6,6 +6,7 @@ import { SecondHeading } from "../global/heading";
 
 export const Sidebar: React.FC = () => {
   const [isOpen, setOpen] = useState(true);
+  const sidebarItems = SidebarItems();
 
   return (
     <div>

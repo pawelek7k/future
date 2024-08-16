@@ -1,4 +1,4 @@
-import { bookGenres } from "@/lib/routes";
+import { BookGenres } from "@/lib/routes";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HiChevronDown } from "react-icons/hi";
@@ -13,6 +13,7 @@ export const DropdownMenu: React.FC<Props> = ({ name, value, onChange }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState(value);
   const { t } = useTranslation("common");
+  const bookGenres = BookGenres();
 
   const handleSelectGenre = (genreName: string) => {
     setSelectedGenre(genreName);
