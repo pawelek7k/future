@@ -2,8 +2,9 @@ import { FirstHeading } from "@/app/components/global/heading";
 import { BooksList } from "@/app/components/home/Books";
 import { Sidebar } from "@/app/components/home/Sidebar";
 import { connectToDatabase } from "@/lib/db";
+import { withAuth } from "@/lib/withAuth";
 import { GetServerSideProps } from "next";
-import { getSession, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -79,36 +80,33 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
+export const getServerSideProps: GetServerSideProps = withAuth(
+  async (context) => {
+    try {
+      const client = await connectToDatabase();
+      const db = client.db();
+      const booksCollection = db.collection("books");
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
-  try {
-    const client = await connectToDatabase();
-    const db = client.db();
-    const booksCollection = db.collection("books");
-    const books = await booksCollection.find({}).toArray();
+      const books = await booksCollection.find({}).toArray();
+      const booksWithId = books.map((book) => ({
+        ...book,
+        _id: book._id.toString(),
+      }));
 
-    return {
-      props: {
-        books: JSON.parse(JSON.stringify(books)),
-      },
-    };
-  } catch (err) {
-    console.error("Error fetching books:", err);
-    return {
-      props: {
-        books: [],
-      },
-    };
+      return {
+        props: {
+          books: booksWithId,
+        },
+      };
+    } catch (err) {
+      console.error("Error fetching books:", err);
+      return {
+        props: {
+          books: [],
+        },
+      };
+    }
   }
-};
+);
 
 export default HomeAuthPage;
