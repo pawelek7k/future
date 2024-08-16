@@ -1,7 +1,9 @@
 import { connectToDatabase } from "@/lib/db";
-import { bookGenres } from "@/lib/routes";
+import { BookGenres } from "@/lib/routes";
 import Joi from "joi";
 import { NextApiRequest, NextApiResponse } from "next";
+
+const bookGenres = BookGenres()
 
 const validGenres = bookGenres.map(genre => genre.name);
 
