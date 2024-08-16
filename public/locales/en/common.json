@@ -1,10 +1,10 @@
 {
-  "profile": "Profil",
-  "account": "Konto",
-  "notifications": "Powiadomienia",
-  "security": "Bezpieczeństwo",
-  "privacy": "Prywatność",
-  "general": "Ogólne",
+  "profile": "Profile",
+  "account": "Account",
+  "notifications": "notifications",
+  "security": "Security",
+  "privacy": "Privacy",
+  "general": "General",
 
   "scienceFiction": "Science Fiction",
   "fantasy": "Fantasy",
