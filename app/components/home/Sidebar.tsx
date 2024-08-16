@@ -1,6 +1,7 @@
 import { Divide as Hamburger } from "hamburger-react";
 import { useRouter } from "next/router";
 import { KeyboardEvent, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { DropdownMenu } from "../create/Dropdown";
 import { ToggleSwitch } from "../create/ToggleSwitch";
 import { PrimaryButton, SecondaryButton } from "../global/buttons";
@@ -18,6 +19,7 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
+  const { t } = useTranslation("common");
   const router = useRouter();
   const [isOpen, setOpen] = useState(true);
   const [search, setSearch] = useState("");
@@ -104,13 +106,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
             value={forAdult ? "on" : "off"}
             onChange={handleToggleChange}
           />
-          <label>For Adults</label>
+          <label>{t("forAdultsLabel")}</label>
         </div>
         <PrimaryButton onClick={handleFilterChange}>
-          Apply Filters
+          {t("applyFilters")}
         </PrimaryButton>
         <SecondaryButton onClick={handleClearFilters}>
-          Clear Filters
+          {t("clearFilters")}
         </SecondaryButton>
       </div>
     </div>

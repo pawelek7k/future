@@ -1,5 +1,6 @@
 import { bookGenres } from "@/lib/routes";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { HiChevronDown } from "react-icons/hi";
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
 export const DropdownMenu: React.FC<Props> = ({ name, value, onChange }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState(value);
+  const { t } = useTranslation("common");
 
   const handleSelectGenre = (genreName: string) => {
     setSelectedGenre(genreName);
@@ -29,7 +31,7 @@ export const DropdownMenu: React.FC<Props> = ({ name, value, onChange }) => {
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         className="flex items-center text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
       >
-        {selectedGenre || "Genre"}
+        {selectedGenre || t("genreLabel")}
         <HiChevronDown
           className={`ml-2 transition-transform ${
             isDropdownOpen ? "rotate-180" : "rotate-0"
