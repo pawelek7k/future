@@ -48,6 +48,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     onFilterChange({ search, genre, forAdult });
   };
 
+  const handleClearFilters = () => {
+    setSearch("");
+    setGenre("");
+    setForAdult(false);
+
+    router.push({
+      pathname: router.pathname,
+      query: {},
+    });
+
+    onFilterChange({ search: "", genre: "", forAdult: false });
+  };
+
   const handleGenreChange = (selectedGenre: string) => {
     setGenre(selectedGenre);
   };
@@ -96,7 +109,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         <PrimaryButton onClick={handleFilterChange}>
           Apply Filters
         </PrimaryButton>
-        <SecondaryButton>Clear Filters</SecondaryButton>
+        <SecondaryButton onClick={handleClearFilters}>
+          Clear Filters
+        </SecondaryButton>
       </div>
     </div>
   );
