@@ -85,7 +85,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
       </div>
       <div
-        className={`fixed top-0 right-0 h-full text-sky-950 bg-neutral-100/20 dark:bg-zinc-950/20 p-4 pt-5 z-40 transition-transform duration-300 ease-in-out backdrop-blur-lg flex flex-col gap-4 ${
+        className={`fixed top-0 right-0 h-full text-sky-950 bg-neutral-100/40 dark:bg-zinc-950/20 p-4 pt-5 z-40 transition-transform duration-300 ease-in-out backdrop-blur-lg flex flex-col gap-4 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ width: "400px" }}
