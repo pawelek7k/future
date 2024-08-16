@@ -1,11 +1,9 @@
 import { connectToDatabase } from "@/lib/db";
-import { BookGenres } from "@/lib/routes";
+import { ArrayGenres } from "@/lib/routes";
 import Joi from "joi";
 import { NextApiRequest, NextApiResponse } from "next";
 
-const bookGenres = BookGenres()
-
-const validGenres = bookGenres.map(genre => genre.name);
+const validGenres = ArrayGenres.map(genre => genre.name);
 
 const bookSchema = Joi.object({
     title: Joi.string().min(3).max(100).required(),
@@ -14,7 +12,6 @@ const bookSchema = Joi.object({
     forAdult: Joi.boolean().required(),
     genre: Joi.string().valid(...validGenres).required(),
     tags: Joi.array().items(Joi.string().min(1)).required(),
-    // createdBy: Joi.string().required(),
 });
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
