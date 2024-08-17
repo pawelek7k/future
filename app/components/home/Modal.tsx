@@ -45,10 +45,10 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
   if (!isOpen || !book) return null;
 
   const handleAddToLibrary = async () => {
-    if (!session) {
-      alert("You must be logged in to add a book to your library.");
-      return;
-    }
+    // if (!session) {
+    //   alert("You must be logged in to add a book to your library.");
+    //   return;
+    // }
 
     try {
       console.log("Session in modal:", session);

@@ -1,19 +1,19 @@
 import { connectToDatabase } from '@/lib/db';
+import { user } from '@nextui-org/theme';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getSession } from 'next-auth/react';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method Not Allowed' });
     }
 
-    const session = await getSession({ req });
+    // const session = await getSession({ req });
 
 
-    if (!session) {
-        console.error("No session found");
-        return res.status(401).json({ message: "Not authenticated" });
-    }
+    // if (!session) {
+    //     console.error("No session found");
+    //     return res.status(401).json({ message: "Not authenticated" });
+    // }
 
     const { bookId } = req.body;
 
@@ -27,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const usersCollection = db.collection('users');
 
         await usersCollection.updateOne(
-            { email: session.user?.email },
+            { email: user?.email },
             { $addToSet: { library: bookId } }
         );
 
