@@ -45,13 +45,13 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
   if (!isOpen || !book) return null;
 
   const handleAddToLibrary = async () => {
-    // if (!session) {
-    //   alert("You must be logged in to add a book to your library.");
-    //   return;
-    // }
+    console.log(session);
+    if (!session?.user?.id) {
+      alert("You need to be logged in to add a book to your library.");
+      return;
+    }
 
     try {
-      console.log("Session in modal:", session);
       const response = await fetch("/api/library/add", {
         method: "POST",
         headers: {

@@ -23,6 +23,8 @@ export default NextAuth({
                 password: { label: 'Password', type: 'password' }
             },
             async authorize(credentials) {
+                console.log('Credentials:', credentials);
+
                 if (!credentials || !credentials.email || !credentials.password) {
                     console.error('Credentials are missing.');
                     return null;
