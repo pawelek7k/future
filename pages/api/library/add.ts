@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getSession } from 'next-auth/react';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method !== 'POST') {
+    if (req.method !== 'PATCH') {
         return res.status(405).json({ error: 'Method Not Allowed' });
     }
 

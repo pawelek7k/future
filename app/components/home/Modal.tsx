@@ -53,7 +53,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
 
     try {
       const response = await fetch("/api/library/add", {
-        method: "POST",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
