@@ -1,9 +1,14 @@
 import { connectToDatabase } from '@/lib/db';
 import { verifyPassword } from '@/lib/signup/hashPasswd';
-import NextAuth, { User } from 'next-auth';
+import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-interface CustomUser extends User {
+interface RedirectCallbackParams {
+    url: string;
+    baseUrl: string;
+}
+
+interface CustomUser {
     id: string;
     email: string;
     username?: string;
@@ -11,7 +16,8 @@ interface CustomUser extends User {
     accessToken?: string;
 }
 
-const handler = NextAuth({
+export const authOptions: NextAuthOptions = {
+    secret: process.env.AUTH_SECRET,
     providers: [
         CredentialsProvider({
             credentials: {
@@ -60,12 +66,12 @@ const handler = NextAuth({
         signIn: '/login',
     },
     callbacks: {
-        async redirect({ url, baseUrl }) {
+        async redirect(params: RedirectCallbackParams) {
+            const { url, baseUrl } = params;
             return baseUrl + '/dashboard';
         }
     }
+};
 
-})
-
+const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
-1
