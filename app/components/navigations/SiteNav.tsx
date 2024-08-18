@@ -23,13 +23,13 @@ export const SiteNavigation: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link href="/home/library" className="flex items-center gap-2">
+            <Link href="/library" className="flex items-center gap-2">
               <IoLibrary className="w-6 h-6" />
               <span>Library</span>
             </Link>
           </li>
           <li>
-            <Link href="/home/settings" className="flex items-center gap-2">
+            <Link href="/settings" className="flex items-center gap-2">
               <CiSettings className="w-6 h-6" />
               <span>Settings</span>
             </Link>
