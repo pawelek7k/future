@@ -56,8 +56,16 @@ const handler = NextAuth({
             }
         }),
     ],
+    pages: {
+        signIn: '/login',
+    },
+    callbacks: {
+        async redirect({ url, baseUrl }) {
+            return baseUrl + '/dashboard';
+        }
+    }
 
 })
 
 export { handler as GET, handler as POST };
-
+1

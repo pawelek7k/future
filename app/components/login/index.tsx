@@ -2,7 +2,6 @@
 
 import { createUser } from "@/lib/signup/userApi";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/router";
 import { useState } from "react";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
@@ -33,9 +32,10 @@ export const Container: React.FC = () => {
     if (isLogin) {
       try {
         const result = await signIn("credentials", {
-          redirect: false,
+          redirect: true,
           email: formData.email,
           password: formData.password,
+          callbackUrl: "/dashboard",
         });
 
         console.log("Sign In Result:", result);
