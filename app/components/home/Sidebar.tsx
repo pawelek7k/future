@@ -1,10 +1,9 @@
 "use client";
 
+import { DropdownMenu } from "@/app/components/global/Dropdown";
+import { SearchInput } from "@/app/components/global/SearchInput";
 import { Divide as Hamburger } from "hamburger-react";
-import { useRouter } from "next/router";
-import { KeyboardEvent, useEffect, useState } from "react";
-import { DropdownMenu } from "../../global/Dropdown";
-import { SearchInput } from "../../global/SearchInput";
+import { KeyboardEvent, useState } from "react";
 
 interface FilterValues {
   search: string;

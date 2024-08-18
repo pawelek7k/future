@@ -35,7 +35,7 @@ export const Container: React.FC = () => {
           redirect: true,
           email: formData.email,
           password: formData.password,
-          callbackUrl: "/dashboard",
+          callbackUrl: "/home",
         });
 
         console.log("Sign In Result:", result);

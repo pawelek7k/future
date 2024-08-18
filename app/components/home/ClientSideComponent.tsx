@@ -1,8 +1,8 @@
 "use client";
 
+import { BooksList } from "@/app/components/home/Books";
+import { Sidebar } from "@/app/components/home/Sidebar";
 import { useState } from "react";
-import { BooksList } from "@/app/components/login/home/Books";
-import { Sidebar } from "@/app/components/login/home/Sidebar";
 
 interface Book {
   _id: string;
