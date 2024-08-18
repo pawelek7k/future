@@ -1,4 +1,4 @@
-import { Container } from "../components/login";
+import { Container } from "@/app/components/login/";
 
 export default function Login() {
   return (
