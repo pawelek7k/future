@@ -13,9 +13,9 @@ export const SiteNavigation: React.FC = () => {
 
   return (
     <header className="flex justify-evenly p-4 w-full fixed z-40 bg-secondaryBg backdrop-blur-md rounded-b-lg border-b top-0 items-center dark:border-b-zinc-800 shadow-lg">
-      <nav>
+      <nav className="flex items-center">
         <Logo />
-        <ul className="flex gap-8 tracking-widest">
+        <ul className="flex gap-8 tracking-widest justify-evenly">
           <li>
             <Link href="/home/create" className="flex items-center">
               <CiCirclePlus className="w-6 h-6" />
