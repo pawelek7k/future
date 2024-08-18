@@ -4,6 +4,7 @@ import { DropdownMenu } from "@/app/components/global/Dropdown";
 import { SearchInput } from "@/app/components/global/SearchInput";
 import { Divide as Hamburger } from "hamburger-react";
 import { KeyboardEvent, useState } from "react";
+import { ToggleSwitch } from "../global/ToggleSwitch";
 
 interface FilterValues {
   search: string;
@@ -30,7 +31,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     onFilterChange({ search, genre, forAdult });
   };
 
-  // Clear filters and reset state
   const handleClearFilters = () => {
     setSearch("");
     setGenre("");
@@ -39,22 +39,18 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     onFilterChange({ search: "", genre: "", forAdult: false });
   };
 
-  // Update genre filter
   const handleGenreChange = (selectedGenre: string) => {
     setGenre(selectedGenre);
   };
 
-  // Toggle adult filter
-  const handleToggleChange = () => {
-    setForAdult((prev) => !prev);
+  const handleToggleChange = (value: string) => {
+    setForAdult(value === "on");
   };
 
-  // Update search filter
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
 
-  // Apply filters on Enter key press
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleFilterChange();
@@ -86,9 +82,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         <DropdownMenu onChange={handleGenreChange} value={genre} />
         <div className="flex items-center gap-2">
           <label>For adult</label>
-          <input
-            type="checkbox"
-            checked={forAdult}
+          <ToggleSwitch
+            name="forAdult"
+            value={forAdult ? "on" : "off"}
             onChange={handleToggleChange}
           />
         </div>
