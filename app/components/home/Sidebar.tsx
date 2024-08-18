@@ -63,7 +63,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
 
   return (
     <div>
-      <div className="fixed z-50 top-2 left-1/2 transform -translate-x-1/2">
+      <div className="fixed z-50 top-2 right-10 transform -translate-x-1/2">
         <Hamburger
           toggled={isOpen}
           toggle={setOpen}
