@@ -1,14 +1,14 @@
 import { connectToDatabase } from '@/lib/db';
 import { verifyPassword } from '@/lib/signup/auth';
-import NextAuth, { NextAuthOptions } from 'next-auth';
+import { ObjectId } from 'mongodb';
+import NextAuth, { NextAuthOptions, User } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import GoogleProvider from 'next-auth/providers/google';
-
-interface CustomUser {
-    id: string;
+interface CustomUser extends User {
+    _id: ObjectId;
     email: string;
     username?: string;
     password?: string;
+    accessToken?: string;
 }
 
 export default NextAuth({
@@ -23,9 +23,7 @@ export default NextAuth({
                 password: { label: 'Password', type: 'password' }
             },
             async authorize(credentials) {
-                console.log('Credentials:', credentials);
-
-                if (!credentials || !credentials.email || !credentials.password) {
+                if (!credentials?.email || !credentials?.password) {
                     console.error('Credentials are missing.');
                     return null;
                 }
@@ -43,8 +41,6 @@ export default NextAuth({
                         return null;
                     }
 
-                    console.log('User found:', user);
-
                     const isValid = await verifyPassword(credentials.password, user.password || '');
 
                     if (!isValid) {
@@ -52,18 +48,20 @@ export default NextAuth({
                         return null;
                     }
 
-                    console.log('User authorized:', user.email);
-
-                    return { id: user.id, email: user.email, username: user.username };
+                    return {
+                        id: user._id.toString(),
+                        email: user.email,
+                        username: user.username,
+                    };
                 } finally {
                     await client.close();
                 }
             }
         }),
-        GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID as string,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-        }),
+        // GoogleProvider({
+        //     clientId: process.env.GOOGLE_CLIENT_ID as string,
+        //     clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+        // }),
     ],
     pages: {
         signIn: '/login',
@@ -71,9 +69,9 @@ export default NextAuth({
     callbacks: {
         async jwt({ token, user }) {
             if (user) {
-                token.id = (user as CustomUser).id;
-                token.email = (user as CustomUser).email;
-                token.username = (user as CustomUser).username;
+                token.id = user.id as string;
+                token.email = user.email as string;
+                token.accessToken = user.accessToken as string;
             }
             return token;
         },
@@ -83,9 +81,15 @@ export default NextAuth({
                     id: token.id as string,
                     email: token.email as string,
                     username: token.username as string,
+                    accessToken: token.accessToken as string,
                 };
+                session.accessToken = token.accessToken as string;
             }
             return session;
         },
-    },
+    }
 } as NextAuthOptions);
+function GoogleProvider(arg0: { clientId: string; clientSecret: string; }): import("next-auth/providers/index").Provider {
+    throw new Error('Function not implemented.');
+}
+

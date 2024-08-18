@@ -26,6 +26,7 @@ interface BooksPageProps {
 const HomeAuthPage = ({ books }: BooksPageProps) => {
   const { t } = useTranslation("common");
   const { data: session, status } = useSession();
+
   const router = useRouter();
   const [filters, setFilters] = useState({
     search: "",
@@ -66,6 +67,9 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
 
     return matchesSearch && matchesGenre && matchesForAdult;
   });
+  if (!session) {
+    return <div>You are not logged in. Please log in to see this content.</div>;
+  }
 
   return (
     <>
@@ -77,6 +81,7 @@ const HomeAuthPage = ({ books }: BooksPageProps) => {
         <FirstHeading>{t("homeHeading")}</FirstHeading>
         <Sidebar onFilterChange={handleFilterChange} />
         <BooksList books={filteredBooks} />
+        <div>Welcome, {session.user?.email}</div>
       </div>
     </>
   );
