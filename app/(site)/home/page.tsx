@@ -24,16 +24,17 @@ export default async function HomeAuthPage() {
 
   if (!session) {
     redirect("/login");
-    return;
   }
 
   let client;
+  let books: Book[] = [];
+
   try {
     client = await connectToDatabase();
     const db = client.db();
     const booksCollection = db.collection("books");
 
-    const books = await booksCollection
+    const booksData = await booksCollection
       .find(
         {},
         {
@@ -50,7 +51,7 @@ export default async function HomeAuthPage() {
       )
       .toArray();
 
-    const booksWithId: Book[] = books.map((book) => ({
+    books = booksData.map((book) => ({
       _id: book._id.toString(),
       title: book.title,
       cover: book.cover,
@@ -59,8 +60,6 @@ export default async function HomeAuthPage() {
       genre: book.genre,
       tags: book.tags,
     }));
-
-    return <ClientSideComponent books={booksWithId} session={session} />;
   } catch (error) {
     console.error("Error connecting to the database or fetching books:", error);
   } finally {
@@ -68,4 +67,6 @@ export default async function HomeAuthPage() {
       await client.close();
     }
   }
+
+  return <ClientSideComponent books={books} session={session} />;
 }
