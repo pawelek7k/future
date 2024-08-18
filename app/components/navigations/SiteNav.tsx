@@ -15,18 +15,21 @@ export const SiteNavigation: React.FC = () => {
       <nav>
         <ul className="flex gap-8 tracking-widest">
           <li>
-            <Link href="/home/create">
+            <Link href="/home/create" className="flex items-center">
               <CiCirclePlus className="w-6 h-6" />
+              <span>Create</span>
             </Link>
           </li>
           <li>
-            <Link href="/home/library">
+            <Link href="/home/library" className="flex items-center">
               <IoLibrary className="w-6 h-6" />
+              <span>Library</span>
             </Link>
           </li>
           <li>
-            <Link href="/home/settings">
+            <Link href="/home/settings" className="flex items-center">
               <CiSettings className="w-6 h-6" />
+              <span>Settings</span>
             </Link>
           </li>
         </ul>
