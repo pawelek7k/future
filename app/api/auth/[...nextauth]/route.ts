@@ -1,26 +1,18 @@
 import { connectToDatabase } from '@/lib/db';
 import { verifyPassword } from '@/lib/signup/hashPasswd';
-import NextAuth, { NextAuthOptions } from 'next-auth';
+import NextAuth, { DefaultSession, NextAuthOptions, Session } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-interface RedirectCallbackParams {
-    url: string;
-    baseUrl: string;
-}
 
-interface CustomUser {
-    id: string;
-    email: string;
-    username?: string;
-    password?: string;
-    accessToken?: string;
+interface CustomSession extends Session {
+    user: {
+        id: string;
+        email: string;
+        username?: string;
+    } & DefaultSession['user'];
 }
 
 export const authOptions: NextAuthOptions = {
-    secret: process.env.AUTH_SECRET,
-    session: {
-        strategy: 'jwt'
-    },
     providers: [
         CredentialsProvider({
             credentials: {
@@ -39,7 +31,7 @@ export const authOptions: NextAuthOptions = {
                 try {
                     console.log("Attempting to authorize with email:", credentials.email);
 
-                    const usersCollection = client.db().collection<CustomUser>('users');
+                    const usersCollection = client.db().collection('users');
                     const user = await usersCollection.findOne({ email: credentials.email });
 
                     if (!user) {
@@ -69,11 +61,34 @@ export const authOptions: NextAuthOptions = {
         signIn: '/login',
     },
     callbacks: {
-        async redirect(params: RedirectCallbackParams) {
-            const { url, baseUrl } = params;
+        async redirect({ url, baseUrl }) {
             return baseUrl + '/dashboard';
-        }
-    }
+        },
+        async jwt({ token, user }) {
+            console.log('jwt callback', { token, user });
+            if (user) {
+                token.id = user.id;
+                token.email = user.email;
+                token.username = user.username;
+            }
+            return token;
+        },
+        async session({ session, token }) {
+            console.log('session callback', { session, token });
+            if (token) {
+                session.user = {
+                    ...session.user,
+                    id: token.id as string,
+                    username: token.username as string,
+                };
+            }
+            return session;
+        },
+    },
+    secret: process.env.AUTH_SECRET,
+    session: {
+        strategy: 'jwt'
+    },
 };
 
 const handler = NextAuth(authOptions);
