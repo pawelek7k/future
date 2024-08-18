@@ -18,6 +18,9 @@ interface CustomUser {
 
 export const authOptions: NextAuthOptions = {
     secret: process.env.AUTH_SECRET,
+    session: {
+        strategy: 'jwt'
+    },
     providers: [
         CredentialsProvider({
             credentials: {
@@ -75,3 +78,4 @@ export const authOptions: NextAuthOptions = {
 
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
+
