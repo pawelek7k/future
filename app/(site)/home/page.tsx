@@ -24,38 +24,49 @@ export default async function HomeAuthPage() {
 
   if (!session) {
     redirect("/login");
+    return;
   }
 
-  const client = await connectToDatabase();
-  const db = client.db();
-  const booksCollection = db.collection("books");
+  let client;
+  try {
+    client = await connectToDatabase();
+    const db = client.db();
+    const booksCollection = db.collection("books");
 
-  const books = await booksCollection
-    .find(
-      {},
-      {
-        projection: {
-          _id: 1,
-          title: 1,
-          cover: 1,
-          description: 1,
-          forAdult: 1,
-          genre: 1,
-          tags: 1,
-        },
-      }
-    )
-    .toArray();
+    const books = await booksCollection
+      .find(
+        {},
+        {
+          projection: {
+            _id: 1,
+            title: 1,
+            cover: 1,
+            description: 1,
+            forAdult: 1,
+            genre: 1,
+            tags: 1,
+          },
+        }
+      )
+      .toArray();
 
-  const booksWithId: Book[] = books.map((book) => ({
-    _id: book._id.toString(),
-    title: book.title,
-    cover: book.cover,
-    description: book.description,
-    forAdult: book.forAdult,
-    genre: book.genre,
-    tags: book.tags,
-  }));
+    const booksWithId: Book[] = books.map((book) => ({
+      _id: book._id.toString(),
+      title: book.title,
+      cover: book.cover,
+      description: book.description,
+      forAdult: book.forAdult,
+      genre: book.genre,
+      tags: book.tags,
+    }));
 
-  return <ClientSideComponent books={booksWithId} session={session} />;
+    return <ClientSideComponent books={booksWithId} session={session} />;
+  } catch (error) {
+    console.error("Error connecting to the database or fetching books:", error);
+    redirect("/error");
+  } finally {
+    if (client) {
+      await client.close();
+    }
+  }
 }
