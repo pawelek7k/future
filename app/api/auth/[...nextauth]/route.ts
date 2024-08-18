@@ -1,7 +1,7 @@
-import { connectToDatabase } from "@/lib/db";
-import { verifyPassword } from "@/lib/signup/hashPasswd";
-import NextAuth, { NextAuthOptions, User } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
+import { connectToDatabase } from '@/lib/db';
+import { verifyPassword } from '@/lib/signup/hashPasswd';
+import NextAuth, { User } from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
 
 interface CustomUser extends User {
     id: string;
@@ -11,11 +11,7 @@ interface CustomUser extends User {
     accessToken?: string;
 }
 
-export default NextAuth({
-    secret: process.env.AUTH_SECRET,
-    session: {
-        strategy: 'jwt',
-    },
+const handler = NextAuth({
     providers: [
         CredentialsProvider({
             credentials: {
@@ -60,8 +56,8 @@ export default NextAuth({
             }
         }),
     ],
-    pages: {
-        signIn: '/login',
-    },
 
-} as NextAuthOptions);
+})
+
+export { handler as GET, handler as POST };
+
