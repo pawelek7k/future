@@ -43,9 +43,10 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
 
   return (
     <div>
+      <h1>Discover the books!</h1>
+      <div>Welcome, {session.user?.username}</div>
       <Sidebar onFilterChange={handleFilterChange} />
       <BooksList books={filteredBooks} />
-      <div>Welcome, {session.user?.email}</div>
     </div>
   );
 };
