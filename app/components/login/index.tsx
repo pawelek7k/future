@@ -42,7 +42,7 @@ export const Container: React.FC = () => {
         if (result && !result.error) {
           router.replace("/home");
         }
-        console.log(result);
+        console.log("Sign In Result:", result);
       } catch (error) {
         console.error("Login error:", error);
       }

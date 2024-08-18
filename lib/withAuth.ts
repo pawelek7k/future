@@ -4,7 +4,6 @@ import { getSession } from 'next-auth/react';
 export function withAuth<P extends { [key: string]: any; }>(gssp: GetServerSideProps<P>) {
     return async (context: GetServerSidePropsContext) => {
         const session = await getSession(context);
-        console.log("Session:", session);
 
         if (!session) {
             return {
