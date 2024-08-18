@@ -1,21 +1,40 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "../../api/auth/[...nextauth]/route";
+import { connectToDatabase } from "@/lib/db";
+import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import ClientSideComponent from "@/app/components/login/home/ClientSideComponent";
 
-export default async function Dashboard() {
+interface Book {
+  _id: string;
+  title: string;
+  cover: string;
+  description: string;
+  forAdult: boolean;
+  genre: string;
+  tags: string[];
+}
+
+export const metadata = {
+  title: "Future - Home",
+  description: "Future",
+};
+
+export default async function HomeAuthPage() {
   const session = await getServerSession(authOptions);
-  console.log("session:", session);
+
   if (!session) {
-    return (
-      <p>
-        Access Denied. Please <a href="/login">sign in</a>
-      </p>
-    );
+    redirect("/login");
   }
 
-  return (
-    <main className="flex h-screen flex-col items-center justify-between p-24">
-      <h1>Auth Home</h1>
-      <p>Welcome, {session.user.username}</p>
-    </main>
-  );
+  const client = await connectToDatabase();
+  const db = client.db();
+  const booksCollection = db.collection("books");
+
+  const books = await booksCollection.find({}).toArray();
+  const booksWithId = books.map((book) => ({
+    ...book,
+    _id: book._id.toString(),
+  }));
+
+  return <ClientSideComponent books={booksWithId} session={session} />;
 }
