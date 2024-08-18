@@ -1,4 +1,4 @@
-import NextAuthProvider from "@/app/NextAuthProvider";
+import NextAuthProvider from "@/app/(site)/NextAuthProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SiteNavigation } from "../components/navigations/SiteNav";
