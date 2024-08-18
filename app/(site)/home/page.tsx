@@ -63,7 +63,6 @@ export default async function HomeAuthPage() {
     return <ClientSideComponent books={booksWithId} session={session} />;
   } catch (error) {
     console.error("Error connecting to the database or fetching books:", error);
-    redirect("/error");
   } finally {
     if (client) {
       await client.close();
