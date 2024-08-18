@@ -40,23 +40,24 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
   if (!isOpen || !book) return null;
 
   const handleAddToLibrary = async () => {
-    if (!session?.user.accessToken) {
+    if (!session?.user) {
       alert("You need to be logged in to add a book to your library.");
       return;
     }
 
     try {
-      const response = await fetch("/api/user/library/add-to-library", {
+      const response = await fetch("/api/user/library/add", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${session.user.accessToken}`,
         },
         body: JSON.stringify({ bookId: book._id }),
       });
 
       if (response.ok) {
         alert("Book added to library!");
+      } else if (response.status === 409) {
+        alert("This book is already in your library.");
       } else {
         alert("Failed to add book to library.");
       }
