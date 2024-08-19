@@ -17,7 +17,7 @@ export const SiteNavigation: React.FC = () => {
         <Logo />
         <ul className="flex gap-8 tracking-widest justify-evenly">
           <li>
-            <Link href="/create" className="flex items-center gap-2">
+            <Link href="myworks/create" className="flex items-center gap-2">
               <CiCirclePlus className="w-6 h-6" />
               <span>Create</span>
             </Link>
