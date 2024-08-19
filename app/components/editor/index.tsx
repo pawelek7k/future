@@ -1,5 +1,6 @@
 "use client";
 import axios from "axios";
+import Notiflix from "notiflix";
 import { SetStateAction, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -23,8 +24,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> &
 
   const handleSave = async () => {
     if (!bookId) {
-      console.error("No book ID provided");
-      alert("Failed to save content: Book ID is missing");
+      Notiflix.Notify.failure("Failed to save content: Book ID is missing");
       return;
     }
 
@@ -37,10 +37,10 @@ export const RichTextEditor: React.FC<RichTextEditorProps> &
           "Error saving content:",
           error.response?.data || error.message
         );
-        alert("Failed to save content");
+        Notiflix.Notify.failure("Failed to save content");
       } else {
         console.error("Unexpected error:", error);
-        alert("An unexpected error occurred");
+        Notiflix.Notify.warning("An unexpected error occurred");
       }
     }
   };
