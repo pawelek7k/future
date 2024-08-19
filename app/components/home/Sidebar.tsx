@@ -4,6 +4,7 @@ import { DropdownMenu } from "@/app/components/global/Dropdown";
 import { SearchInput } from "@/app/components/global/SearchInput";
 import { Divide as Hamburger } from "hamburger-react";
 import { KeyboardEvent, useState } from "react";
+import { PrimaryButton, SecondaryButton } from "../global/Buttons";
 import { FirstHeading } from "../global/Heading";
 import { ToggleSwitch } from "../global/ToggleSwitch";
 
@@ -69,7 +70,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         />
       </div>
       <div
-        className={`fixed top-0 right-0 h-full text-sky-950 bg-neutral-100/40 dark:bg-zinc-950/20 p-4 pt-5 z-40 transition-transform duration-300 ease-in-out backdrop-blur-lg flex flex-col gap-4 ${
+        className={`fixed top-0 right-0 h-full text-sky-950 bg-neutral-100/40 dark:bg-zinc-950/20 p-6 pt-20 z-40 transition-transform duration-300 ease-in-out backdrop-blur-lg flex flex-col gap-4 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ width: "400px" }}
@@ -82,15 +83,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         />
         <DropdownMenu onChange={handleGenreChange} value={genre} />
         <div className="flex items-center gap-2">
-          <label>For adult</label>
+          <label className="dark:text-neutral-100 text-sm">For adult</label>
           <ToggleSwitch
             name="forAdult"
             value={forAdult ? "on" : "off"}
             onChange={handleToggleChange}
           />
         </div>
-        <button onClick={handleFilterChange}>Apply Filters</button>
-        <button onClick={handleClearFilters}>Clear filters</button>
+        <PrimaryButton onClick={handleFilterChange}>
+          Apply Filters
+        </PrimaryButton>
+        <SecondaryButton onClick={handleClearFilters}>
+          Clear filters
+        </SecondaryButton>
       </div>
     </div>
   );
