@@ -4,6 +4,7 @@ import { DropdownMenu } from "@/app/components/global/Dropdown";
 import { SearchInput } from "@/app/components/global/SearchInput";
 import { Divide as Hamburger } from "hamburger-react";
 import { KeyboardEvent, useState } from "react";
+import { FirstHeading } from "../global/Heading";
 import { ToggleSwitch } from "../global/ToggleSwitch";
 
 interface FilterValues {
@@ -59,7 +60,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
 
   return (
     <div>
-      <div className="fixed z-50 top-2 right-10 transform -translate-x-1/2">
+      <div className="fixed z-50 top-2 right-5 transform -translate-x-1/2">
         <Hamburger
           toggled={isOpen}
           toggle={setOpen}
@@ -73,7 +74,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         }`}
         style={{ width: "400px" }}
       >
-        <h1>Filters</h1>
+        <FirstHeading>Filters</FirstHeading>
         <SearchInput
           onChange={handleSearch}
           onKeyDown={handleKeyDown}
