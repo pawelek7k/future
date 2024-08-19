@@ -1,4 +1,5 @@
 import { FirstHeading } from "@/app/components/global/Heading";
+import { Sidebar } from "@/app/components/settings/Sidebar";
 import Head from "next/head";
 
 const SettingsPage: React.FC = () => {
@@ -9,6 +10,7 @@ const SettingsPage: React.FC = () => {
       </Head>
       <section className="h-screen">
         <FirstHeading>Your global settings</FirstHeading>
+        <Sidebar />
       </section>
     </>
   );
