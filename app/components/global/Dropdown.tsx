@@ -30,7 +30,7 @@ export const DropdownMenu: React.FC<Props> = ({ name, value, onChange }) => {
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         className="flex items-center text-gray-700 dark:text-neutral-100 text-sm font-medium mb-2"
       >
-        {selectedGenre || "genre"}
+        {selectedGenre || "Genre"}
         <HiChevronDown
           className={`ml-2 transition-transform ${
             isDropdownOpen ? "rotate-180" : "rotate-0"
