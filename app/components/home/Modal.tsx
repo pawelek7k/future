@@ -3,6 +3,7 @@ import Image from "next/image";
 import Notiflix from "notiflix";
 import React, { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
+import { PrimaryButton, SecondaryButton } from "../global/Buttons";
 
 interface ModalProps {
   isOpen: boolean;
@@ -120,10 +121,12 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
             </p>
             <ul className="flex justify-between mt-2">
               <li>
-                <button>Start reading</button>
+                <PrimaryButton>Start reading</PrimaryButton>
               </li>
               <li>
-                <button onClick={handleAddToLibrary}>Add to library</button>
+                <SecondaryButton onClick={handleAddToLibrary}>
+                  Add to library
+                </SecondaryButton>
               </li>
             </ul>
           </div>
