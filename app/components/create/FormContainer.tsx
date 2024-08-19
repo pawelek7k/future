@@ -1,5 +1,6 @@
 "use client";
 import { PrimaryButton } from "@/app/components/global/Buttons";
+import { useRouter } from "next/navigation";
 import Notiflix from "notiflix";
 import React, { useState } from "react";
 import { DropdownMenu } from "../global/Dropdown";
@@ -15,6 +16,8 @@ export const CreateForm: React.FC = () => {
   const [tags, setTags] = useState<string[]>([]);
   const [genre, setGenre] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const router = useRouter();
 
   const handleCoverChange = (coverUrl: string) => {
     setCover(coverUrl);
@@ -67,7 +70,8 @@ export const CreateForm: React.FC = () => {
       }
 
       const result = await response.json();
-      console.log(result.message);
+
+      router.push(`/myworks/${result.id}`);
     } catch (error) {
       console.error("Error:", error);
     } finally {
