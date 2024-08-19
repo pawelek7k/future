@@ -20,7 +20,7 @@ interface Book {
   tags: string[];
 }
 
-export default async function LibraryAuthPage() {
+const LibraryAuthPage: React.FC = async () => {
   const session = await getServerSession(authOptions);
 
   if (!session) {
@@ -70,4 +70,6 @@ export default async function LibraryAuthPage() {
       <BooksList books={books} />
     </div>
   );
-}
+};
+
+export default LibraryAuthPage;

@@ -19,7 +19,7 @@ export const metadata = {
   description: "Future",
 };
 
-export default async function HomeAuthPage() {
+const HomeAuthPage: React.FC = async () => {
   const session = await getServerSession(authOptions);
 
   if (!session) {
@@ -69,4 +69,6 @@ export default async function HomeAuthPage() {
   }
 
   return <ClientSideComponent books={books} session={session} />;
-}
+};
+
+export default HomeAuthPage;
