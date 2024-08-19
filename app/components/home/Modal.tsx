@@ -1,6 +1,7 @@
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import Notiflix from "notiflix";
+import React, { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
 interface ModalProps {
@@ -18,7 +19,6 @@ interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
-  const modalRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -41,7 +41,9 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
 
   const handleAddToLibrary = async () => {
     if (!session?.user) {
-      alert("You need to be logged in to add a book to your library.");
+      Notiflix.Notify.warning(
+        "You need to be logged in to add a book to your library."
+      );
       return;
     }
 
@@ -55,15 +57,14 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
       });
 
       if (response.ok) {
-        alert("Book added to library!");
+        Notiflix.Notify.success("Book added to library!");
       } else if (response.status === 409) {
-        alert("This book is already in your library.");
+        Notiflix.Notify.warning("This book is already in your library.");
       } else {
-        alert("Failed to add book to library.");
+        Notiflix.Notify.failure("Failed to add book to library.");
       }
     } catch (error) {
-      console.error("Error adding book to library:", error);
-      alert("Error adding book to library.");
+      Notiflix.Notify.failure("Error adding book to library.");
     }
   };
 
