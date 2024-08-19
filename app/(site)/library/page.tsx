@@ -1,4 +1,5 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { FirstHeading } from "@/app/components/global/Heading";
 import { BooksList } from "@/app/components/home/Books";
 import { connectToDatabase } from "@/lib/db";
 import { ObjectId } from "mongodb";
@@ -66,7 +67,7 @@ const LibraryAuthPage: React.FC = async () => {
 
   return (
     <div>
-      <h1>Your Library!</h1>
+      <FirstHeading>Your Library!</FirstHeading>
       <BooksList books={books} />
     </div>
   );
