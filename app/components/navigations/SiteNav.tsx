@@ -19,19 +19,19 @@ export const SiteNavigation: React.FC = () => {
           <li>
             <Link href="myworks/create" className="flex items-center gap-2">
               <CiCirclePlus className="w-6 h-6" />
-              <span>Create</span>
+              <span className="text-sm">Create</span>
             </Link>
           </li>
           <li>
             <Link href="/library" className="flex items-center gap-2">
               <IoLibrary className="w-6 h-6" />
-              <span>Library</span>
+              <span className="text-sm">Library</span>
             </Link>
           </li>
           <li>
             <Link href="/settings" className="flex items-center gap-2">
               <CiSettings className="w-6 h-6" />
-              <span>Settings</span>
+              <span className="text-sm">Settings</span>
             </Link>
           </li>
         </ul>
