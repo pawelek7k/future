@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <NextAuthProvider>
         <ThemeProvider attribute="class" defaultTheme="system">
-          <body className={inter.className}>
+          <body className="bg-primary-bg dark:bg-dark-primary-bg min-h-screen">
             <SiteNavigation />
             <main className="p-20">{children}</main>
           </body>
