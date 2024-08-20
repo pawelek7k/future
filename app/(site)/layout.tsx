@@ -1,5 +1,6 @@
 import NextAuthProvider from "@/app/(site)/NextAuthProvider";
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import { SiteNavigation } from "../components/navigations/SiteNav";
 import "../globals.css";
@@ -19,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <NextAuthProvider>
-        <body className={inter.className}>
-          <SiteNavigation />
-          <main className="p-20">{children}</main>
-        </body>
+        <ThemeProvider attribute="class">
+          <body className={inter.className}>
+            <SiteNavigation />
+            <main className="p-20">{children}</main>
+          </body>
+        </ThemeProvider>
       </NextAuthProvider>
     </html>
   );
