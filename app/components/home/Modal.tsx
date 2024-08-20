@@ -4,6 +4,7 @@ import Notiflix from "notiflix";
 import React, { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { PrimaryButton, SecondaryButton } from "../global/Buttons";
+import { FirstHeading } from "../global/Heading";
 
 interface ModalProps {
   isOpen: boolean;
@@ -79,16 +80,15 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
           <IoCloseOutline className="w-6 h-6" />
         </button>
         <div className="flex gap-6">
-          <div className="flex flex-col gap-6 px-6">
-            <h1>{book.title}</h1>
-
-            <div className="relative overflow-hidden rounded-md w-48 h-80 mb-4 mt-4">
+          <div className="flex flex-col gap-6 px-6 text-nowrap">
+            <FirstHeading>{book.title}</FirstHeading>
+            <div className="relative overflow-hidden rounded-md w-48 h-80 mt-4">
               <Image
                 src={book.cover}
                 alt={book.title}
-                width={30}
-                height={30}
-                className="object-cover object-center w-full h-full"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
               />
             </div>
           </div>
