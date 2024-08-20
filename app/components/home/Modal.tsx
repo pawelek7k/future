@@ -4,6 +4,7 @@ import Notiflix from "notiflix";
 import React, { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { PrimaryButton, SecondaryButton } from "../global/Buttons";
+import { FirstWord } from "../global/FirstWord";
 import { FirstHeading } from "../global/Heading";
 
 interface ModalProps {
@@ -72,7 +73,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 dark:bg-zinc-900/50">
-      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl justify-center w-[45rem] dark:bg-black/70">
+      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl justify-center w-[50rem] dark:bg-black/70">
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-lg font-bold"
@@ -94,20 +95,20 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
           </div>
           <div className="w-full flex flex-col justify-center p-6 gap-2">
             <p className="text-gray-700 dark:text-neutral-100">
-              <span>Description: </span>
+              <FirstWord>Description: </FirstWord>
               {book.description}
             </p>
             <div className="flex justify-between">
               <p className="text-gray-700 dark:text-neutral-100">
-                <span>Genre: </span>
+                <FirstWord>Genre: </FirstWord>
                 {book.genre}
               </p>
               <p className="text-gray-700 dark:text-neutral-100">
-                <span>For Adult:</span> {book.forAdult ? "Yes" : "No"}
+                <FirstWord>For Adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
               </p>
             </div>
             <p>
-              <span>Tags:</span>
+              <FirstWord>Tags:</FirstWord>
               <span className="flex flex-wrap gap-2 mt-2">
                 {book.tags.map((tag, index) => (
                   <span
