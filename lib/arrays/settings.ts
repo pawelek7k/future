@@ -1,5 +1,4 @@
 export const sidebarItems = [
-    { id: "profile", label: "profile" },
     { id: "account", label: "account" },
     {
         id: "notifications",
