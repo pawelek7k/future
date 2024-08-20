@@ -20,6 +20,7 @@ export const GlobalSettings: React.FC = async () => {
         <SecondHeading>{session.user?.username}</SecondHeading>
         <p>Followers:</p>
         <p>Following:</p>
+        <p>books:</p>
         <p>User Description:</p>
       </div>
     </>
