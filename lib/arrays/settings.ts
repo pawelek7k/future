@@ -10,5 +10,4 @@ export const sidebarItems = [
         id: "privacy",
         label: "privacy",
     },
-    { id: "general", label: "general" },
 ];
