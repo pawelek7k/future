@@ -41,7 +41,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
       className="
         w-full bg-sky-900 text-white py-2 px-4 rounded-lg
         hover:bg-sky-950
-        light:bg-rose-900 light:hover:bg-rose-800
+        dark:bg-rose-900 dark:hover:bg-rose-800
         shadow-md hover:shadow-lg transition ease-in-out
         flex items-center justify-center gap-2
       "
@@ -101,7 +101,7 @@ export const SecondaryButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className="p-2 light:bg-rose-950/30 bg-sky-950/70 text-white py-2 px-4 rounded-lg w-full shadow-md hover:shadow-lg transition ease-in-out hover:bg-sky-950/80 light:hover:bg-rose-950/80 flex items-center gap-2 justify-center"
+      className="p-2 dark:bg-rose-950/30 bg-sky-950/70 text-white py-2 px-4 rounded-lg w-full shadow-md hover:shadow-lg transition ease-in-out hover:bg-sky-950/80 dark:hover:bg-rose-950/80 flex items-center gap-2 justify-center"
       onClick={onClick}
     >
       {icon && <span className="flex-shrink-0">{icon}</span>}
