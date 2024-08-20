@@ -1,5 +1,11 @@
 "use client";
 
+import { DarkModeSwitch } from "./Darkmode";
+
 export const GlobalSettings: React.FC = () => {
-  return <h1>ok</h1>;
+  return (
+    <>
+      <DarkModeSwitch />
+    </>
+  );
 };
