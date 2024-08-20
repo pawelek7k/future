@@ -1,5 +1,5 @@
 import { useSession } from "next-auth/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Notiflix from "notiflix";
 import React, { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
