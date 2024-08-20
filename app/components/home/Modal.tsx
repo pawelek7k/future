@@ -73,15 +73,15 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 dark:bg-zinc-900/50">
-      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl justify-center w-[50rem] dark:bg-black/70">
+      <div className="bg-white/70 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl justify-center w-full md:w-[50rem] dark:bg-black/70">
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-lg font-bold"
         >
           <IoCloseOutline className="w-6 h-6" />
         </button>
-        <div className="flex gap-6">
-          <div className="flex flex-col gap-6 px-6 text-nowrap">
+        <div className="flex gap-4 md:gap-6 flex-col sm:flex-row">
+          <div className="flex flex-col gap-4 md:gap-6 px-6 text-nowrap items-center">
             <FirstHeading>{book.title}</FirstHeading>
             <div className="relative overflow-hidden rounded-md w-48 h-80 mt-4">
               <Image
@@ -93,8 +93,8 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
               />
             </div>
           </div>
-          <div className="w-full flex flex-col justify-center p-6 gap-2">
-            <p className="text-gray-700 dark:text-neutral-100">
+          <div className="w-full flex flex-col p-0 justify-center md:p-6 gap-2">
+            <p className="text-gray-700 dark:text-neutral-100 hidden md:block">
               <FirstWord>Description: </FirstWord>
               {book.description}
             </p>
@@ -120,7 +120,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
                 ))}
               </span>
             </p>
-            <ul className="flex justify-between mt-2">
+            <ul className="flex justify-between mt-2 flex-col gap-4 sm:flex-row">
               <li>
                 <PrimaryButton>Start reading</PrimaryButton>
               </li>
