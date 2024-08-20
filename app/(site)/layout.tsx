@@ -1,8 +1,7 @@
 import NextAuthProvider from "@/app/(site)/NextAuthProvider";
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
-import { Inter } from "next/font/google";
 import { SiteNavigation } from "../components/navigations/SiteNav";
+import { ThemeProvider } from "../components/theme-provider";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -18,12 +17,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <NextAuthProvider>
-        <ThemeProvider attribute="class" defaultTheme="system">
-          <body className="bg-primary-bg dark:bg-dark-primary-bg min-h-screen">
+        <body className="bg-primary-bg dark:bg-dark-primary-bg min-h-screen">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
             <SiteNavigation />
             <main className="p-20">{children}</main>
-          </body>
-        </ThemeProvider>
+          </ThemeProvider>
+        </body>
       </NextAuthProvider>
     </html>
   );
