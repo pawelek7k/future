@@ -18,6 +18,9 @@ export const GlobalSettings: React.FC = async () => {
         <div className="w-32 h-32 border border-sky-950 rounded-full"></div>
         <ThirdHeading>display name</ThirdHeading>
         <SecondHeading>{session.user?.username}</SecondHeading>
+        <p>Followers:</p>
+        <p>Following:</p>
+        <p>User Description:</p>
       </div>
     </>
   );
