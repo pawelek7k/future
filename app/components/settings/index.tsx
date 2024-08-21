@@ -19,7 +19,7 @@ export const GlobalSettings: React.FC = async () => {
           <div className="flex flex-col items-center">
             <ImagePicker />
             <div className="text-center flex flex-col gap-2">
-              <SecondHeading>display name</SecondHeading>
+              <ThirdHeading>display name</ThirdHeading>
               <p>{session.user?.username}</p>
             </div>
           </div>

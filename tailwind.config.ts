@@ -15,7 +15,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      'sans': ["Paytone One", 'sans-serif']
+      'sans': ["Spicy Rice", 'serif']
     }
   },
   plugins: [],
