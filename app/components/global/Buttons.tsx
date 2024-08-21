@@ -2,7 +2,7 @@ import { signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 interface ButtonProps {
-  children: string;
+  children: string | React.ReactNode;
   onClick?: () => void;
   isSubmitting?: boolean;
   icon?: React.ReactNode;

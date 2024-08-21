@@ -29,7 +29,7 @@ export const Sidebar: React.FC = () => {
               className="hover:bg-neutral-100/10 rounded transition-colors w-full dark:hover:bg-zinc-800/10"
             >
               <Link
-                href={`/home/settings/${item.id}`}
+                href={`/settings/${item.id}`}
                 className="gap-4 p-2 w-full h-full text-sky-950 flex items-center hover:text-neutral-400 transition-all dark:text-neutral-50"
               >
                 <span className="text-xl"></span> {item.label}
