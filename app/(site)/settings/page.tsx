@@ -11,7 +11,7 @@ const SettingsPage: React.FC = () => {
   return (
     <>
       <section className="h-screen">
-        <FirstHeading>Your global settings</FirstHeading>
+        <FirstHeading>Your profile</FirstHeading>
         <GlobalSettings />
         <Sidebar />
       </section>
