@@ -1,12 +1,6 @@
 export const sidebarItems = [
-    { id: "account", label: "account" },
-    {
-        id: "notifications",
-        label: "notifications",
-    },
-    { id: "security", label: "security" },
-    {
-        id: "privacy",
-        label: "privacy",
-    },
+    { id: "account", label: "Account" },
+    { id: "notifications", label: "Notifications" },
+    { id: "security", label: "Security" },
+    { id: "privacy", label: "Privacy" },
 ];
