@@ -98,7 +98,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
             <IoCloseOutline className="w-6 h-6" />
           </button>
           <div className="flex gap-4 md:gap-6 flex-col sm:flex-row">
-            <div className="flex flex-col gap-4 md:gap-6 px-6 text-nowrap items-center">
+            <div className="flex flex-col gap-4 md:gap-6 px-6 text-nowrap ">
               <FirstHeading>{book.title}</FirstHeading>
               <div className="relative overflow-hidden rounded-md w-48 h-80 mt-4">
                 <Image
