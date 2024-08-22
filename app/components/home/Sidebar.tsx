@@ -89,6 +89,20 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
             value={forAdult ? "on" : "off"}
             onChange={handleToggleChange}
           />
+          <div className="flex gap-2 items-center mb-4">
+            <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
+              Language of the book:
+            </span>
+            <div className="flex items-center gap-2 ">
+              <span className="text-sm">PL</span>
+              <ToggleSwitch
+                name="Lang"
+                value={forAdult ? "on" : "off"}
+                onChange={handleToggleChange}
+              />
+              <span className="text-sm">ENG</span>
+            </div>
+          </div>
         </div>
         <PrimaryButton onClick={handleFilterChange}>
           Apply Filters
