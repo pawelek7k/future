@@ -2,11 +2,10 @@
 
 import { AccountContainer } from "@/app/components/settings/Account";
 import { Sidebar } from "@/app/components/settings/Sidebar";
-import { useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation";
 
 const SettingPage = () => {
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+  const { id } = useParams();
 
   const renderContent = () => {
     switch (id) {
