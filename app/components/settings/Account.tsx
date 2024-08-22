@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { PrimaryButton } from "../global/Buttons";
 import { FirstHeading, SecondHeading } from "../global/Heading";
 
 export const AccountContainer = () => {
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   return (
     <section className="max-w-2xl mx-auto p-6 shadow-lg rounded-lg">
       <FirstHeading>Edit your profile</FirstHeading>
