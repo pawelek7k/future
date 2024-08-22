@@ -96,11 +96,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           </span>
           <div className="flex items-center gap-2 ">
             <span className="text-sm">PL</span>
-            <ToggleSwitch
-              name="Lang"
-              value={forAdult ? "on" : "off"}
-              onChange={handleToggleChange}
-            />
+            <ToggleSwitch name="Lang" />
             <span className="text-sm">ENG</span>
           </div>
         </div>
