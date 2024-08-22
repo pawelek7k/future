@@ -12,6 +12,12 @@ const SettingPage = () => {
     switch (id) {
       case "account":
         return <AccountContainer />;
+      case "notifications":
+        return <div>Notifications Settings</div>;
+      case "security":
+        return <div>Security Settings</div>;
+      case "privacy":
+        return <div>Privacy Settings</div>;
       default:
         return <div>Unknown settings section</div>;
     }
