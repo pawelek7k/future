@@ -59,6 +59,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     }
   };
 
+  const handleSwitchLang = () => {
+    return console.log("hejka");
+  };
+
   return (
     <div>
       <div className="fixed z-50 top-2 right-5 transform -translate-x-1/2">
@@ -95,9 +99,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
             Language of the book:
           </span>
           <div className="flex items-center gap-2 ">
-            <span className="text-sm">PL</span>
-            <ToggleSwitch name="Lang" />
-            <span className="text-sm">ENG</span>
+            <span className="text-sm dark:text-neutral-100">PL</span>
+            <ToggleSwitch name="Lang" onChange={handleSwitchLang} />
+            <span className="text-sm dark:text-neutral-100">ENG</span>
           </div>
         </div>
         <PrimaryButton onClick={handleFilterChange}>
