@@ -1,3 +1,5 @@
+import { FirstHeading } from "../global/Heading";
+
 export const AccountContainer = () => {
-  return <h1>Account</h1>;
+  return <FirstHeading>Edit your profile</FirstHeading>;
 };
