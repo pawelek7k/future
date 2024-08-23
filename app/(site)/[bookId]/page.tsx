@@ -5,6 +5,7 @@ import { getBookDetails } from "@/lib/getDetails";
 import { getServerSession } from "next-auth/next";
 import Image from "next/legacy/image";
 import { redirect } from "next/navigation";
+import styles from "./styles.module.css";
 
 export const metadata = {
   title: "Future - Read the book",
@@ -32,7 +33,7 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
   }
 
   return (
-    <section className="">
+    <section className="flex flex-col gap-12">
       <div className="flex flex-col items-center shadow-lg rounded-lg">
         <div className="flex p-10 gap-12">
           <div className="relative overflow-hidden rounded-md w-48 h-80">
@@ -54,7 +55,10 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
         </div>
       </div>
       <div>
-        <div dangerouslySetInnerHTML={{ __html: book.content }} />
+        <div
+          className={styles.contentContainer}
+          dangerouslySetInnerHTML={{ __html: book.content }}
+        />
       </div>
     </section>
   );
