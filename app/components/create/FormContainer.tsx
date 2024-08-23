@@ -16,9 +16,14 @@ export const CreateForm: React.FC = () => {
   const [forAdult, setForAdult] = useState<boolean>(false);
   const [tags, setTags] = useState<string[]>([]);
   const [genre, setGenre] = useState<string>("");
+  const [lang, setLang] = useState<"pl" | "eng">("pl");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const router = useRouter();
+
+  const handleLangChange = (selectedLang: string) => {
+    setLang(selectedLang);
+  };
 
   const handleCoverChange = (coverUrl: string) => {
     setCover(coverUrl);
@@ -55,6 +60,7 @@ export const CreateForm: React.FC = () => {
       forAdult,
       genre,
       tags,
+      lang,
     };
 
     try {
@@ -84,7 +90,6 @@ export const CreateForm: React.FC = () => {
 
   return (
     <>
-      {" "}
       {isSubmitting && <Loader />}
       <div className="flex flex-col items-center justify-center mt-10 sm:mt-0">
         <form
@@ -149,7 +154,7 @@ export const CreateForm: React.FC = () => {
               </div>
             </div>
             <Tags name="tags" value={tags} onChange={handleTagChange} />
-            {/* <div className="flex gap-2 items-center mb-4">
+            <div className="flex gap-2 items-center mb-4">
               <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                 Language of the book:
               </span>
@@ -157,12 +162,12 @@ export const CreateForm: React.FC = () => {
                 <span className="text-sm">PL</span>
                 <ToggleSwitch
                   name="Lang"
-                  value={forAdult ? "on" : "off"}
-                  onChange={handleToggleChange}
+                  onChange={(value) => handleLangChange(value as "pl" | "eng")}
+                  value={lang}
                 />
                 <span className="text-sm">ENG</span>
               </div>
-            </div> */}
+            </div>
             <PrimaryButton isSubmitting={isSubmitting}>Next</PrimaryButton>
           </div>
         </form>

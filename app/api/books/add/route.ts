@@ -5,6 +5,7 @@ import Joi from 'joi';
 import { NextRequest, NextResponse } from 'next/server';
 
 const validGenres = ArrayGenres.map(genre => genre.name);
+const validLanguages = ['pl', 'eng'];
 
 const bookSchema = Joi.object({
     title: Joi.string().min(3).max(100).required(),
@@ -13,6 +14,7 @@ const bookSchema = Joi.object({
     forAdult: Joi.boolean().required(),
     genre: Joi.string().valid(...validGenres).required(),
     tags: Joi.array().items(Joi.string().min(1)).required(),
+    lang: Joi.string().valid(...validLanguages).required(),
 });
 
 export async function POST(req: NextRequest) {
