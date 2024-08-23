@@ -8,6 +8,7 @@ import { Loader } from "../global/Loader";
 import { Tags } from "../global/Tags";
 import { ToggleSwitch } from "../global/ToggleSwitch";
 import { CoverPicker } from "./CoverPicker";
+import { LangSwitch } from "../global/LangSwitch";
 
 export const CreateForm: React.FC = () => {
   const [title, setTitle] = useState<string>("");
@@ -21,7 +22,7 @@ export const CreateForm: React.FC = () => {
 
   const router = useRouter();
 
-  const handleLangChange = (selectedLang: string) => {
+  const handleLangChange = (selectedLang: "pl" | "eng") => {
     setLang(selectedLang);
   };
 
@@ -160,9 +161,9 @@ export const CreateForm: React.FC = () => {
               </span>
               <div className="flex items-center gap-2 ">
                 <span className="text-sm">PL</span>
-                <ToggleSwitch
+                <LangSwitch
                   name="Lang"
-                  onChange={(value) => handleLangChange(value as "pl" | "eng")}
+                  onChange={handleLangChange}
                   value={lang}
                 />
                 <span className="text-sm">ENG</span>
