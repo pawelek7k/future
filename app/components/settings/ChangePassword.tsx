@@ -3,7 +3,7 @@ import { PrimaryButton } from "../global/Buttons";
 import { SecondHeading } from "../global/Heading";
 import { Loader } from "../global/Loader";
 
-export const ChangePassword = () => {
+export const ChangePassword: React.FC = () => {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
