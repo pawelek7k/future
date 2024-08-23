@@ -1,7 +1,7 @@
 import { FirstHeading, SecondHeading } from "../global/Heading";
 import { ChangePassword } from "./ChangePassword";
 
-export const AccountContainer = () => {
+export const AccountContainer: React.FC = () => {
   return (
     <section className="max-w-2xl mx-auto p-6 shadow-lg rounded-lg">
       <FirstHeading>Edit your profile</FirstHeading>
