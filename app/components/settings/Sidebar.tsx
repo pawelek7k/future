@@ -21,7 +21,9 @@ export const Sidebar: React.FC = () => {
         }`}
         style={{ width: "250px" }}
       >
-        <FirstHeading>Settings</FirstHeading>
+        <FirstHeading>
+          <Link href="/settings">Settings</Link>
+        </FirstHeading>
         <ul className="space-y-2 mt-6">
           {sidebarItems.map((item) => (
             <li
