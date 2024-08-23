@@ -62,7 +62,7 @@ export const ChangePassword: React.FC = () => {
     <>
       {isSubmitting && <Loader />}
       <form
-        className="mt-6 p-6 border border-gray-300 rounded-lg shadow-md bg-neutral-50 dark:bg-transparent dark:border-neutral-600"
+        className="mt-6 p-6 border border-gray-300 rounded-lg shadow-md bg-neutral-50 dark:bg-transparent dark:border-neutral-600 bg-transparent"
         onSubmit={handleSubmit}
       >
         <SecondHeading>Change Password</SecondHeading>
