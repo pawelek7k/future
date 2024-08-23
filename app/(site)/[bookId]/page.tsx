@@ -34,7 +34,6 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
   return (
     <section className="">
       <div className="flex flex-col items-center shadow-lg rounded-lg">
-        <FirstHeading>{book.title}</FirstHeading>
         <div className="flex p-10 gap-12">
           <div className="relative overflow-hidden rounded-md w-48 h-80">
             <Image
@@ -45,7 +44,8 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
               objectPosition="center"
             />
           </div>
-          <div>
+          <div className="flex flex-col gap-4">
+            <FirstHeading>{book.title}</FirstHeading>
             <p>{book.description}</p>
             <p className="text-gray-700 dark:text-neutral-100">
               <FirstWord>For Adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
