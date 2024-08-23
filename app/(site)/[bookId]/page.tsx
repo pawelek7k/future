@@ -1,6 +1,9 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { FirstWord } from "@/app/components/global/FirstWord";
+import { FirstHeading } from "@/app/components/global/Heading";
 import { getBookDetails } from "@/lib/getDetails";
 import { getServerSession } from "next-auth/next";
+import Image from "next/legacy/image";
 import { redirect } from "next/navigation";
 
 export const metadata = {
@@ -29,9 +32,27 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
   }
 
   return (
-    <section>
-      <h1>{book.title}</h1>
-      <p>{book.description}</p>
+    <section className="">
+      <div className="flex flex-col items-center shadow-lg rounded-lg">
+        <FirstHeading>{book.title}</FirstHeading>
+        <div className="flex p-10 gap-12">
+          <div className="relative overflow-hidden rounded-md w-48 h-80">
+            <Image
+              src={book.cover}
+              alt={book.title}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </div>
+          <div>
+            <p>{book.description}</p>
+            <p className="text-gray-700 dark:text-neutral-100">
+              <FirstWord>For Adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
