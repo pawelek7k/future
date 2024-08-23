@@ -25,8 +25,8 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
   }
 
   const { bookId } = params;
-
   const book = await getBookDetails(bookId);
+
   if (!book) {
     return <section>Book not found</section>;
   }
@@ -52,6 +52,9 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
             </p>
           </div>
         </div>
+      </div>
+      <div>
+        <div dangerouslySetInnerHTML={{ __html: book.content }} />
       </div>
     </section>
   );

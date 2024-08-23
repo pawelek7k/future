@@ -9,6 +9,7 @@ interface Book {
     forAdult: boolean;
     genre: string;
     tags: string[];
+    content: string;
 }
 
 export async function getBookDetails(bookId: string): Promise<Book | null> {
@@ -28,5 +29,6 @@ export async function getBookDetails(bookId: string): Promise<Book | null> {
         forAdult: book.forAdult,
         genre: book.genre,
         tags: book.tags,
+        content: book.content
     };
 }
