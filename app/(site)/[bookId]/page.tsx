@@ -69,10 +69,10 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
           </div>
         </div>
       </div>
-      <div className="flex gap-20">
+      <div className="flex md:gap-20 flex-col md:flex-row">
         <div>
           <ThirdHeading>Share:</ThirdHeading>
-          <ul className="flex flex-col gap-10 items-center mt-10">
+          <ul className="flex md:flex-col gap-10 md:items-center md:mt-10 mb-10 md:mb-0 justify-center">
             <li>
               <a href="">
                 <FaFacebookSquare className="w-8 h-8" />
