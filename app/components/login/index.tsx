@@ -74,10 +74,10 @@ export const Container: React.FC = () => {
         />
       )}
       <div className="flex items-center gap-4 mt-10">
-        <p>lub</p>
+        <p className="text-neutral-100">lub</p>
       </div>
       <div className="mt-10">
-        <button onClick={toggleForm}>
+        <button onClick={toggleForm} className="text-neutral-100">
           {isLogin ? "Przełącz na Rejestrację" : "Przełącz na Logowanie"}
         </button>
       </div>
