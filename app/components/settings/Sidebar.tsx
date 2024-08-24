@@ -16,7 +16,7 @@ export const Sidebar: React.FC = () => {
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-full text-sky-950  bg-neutral-100/50 dark:bg-zinc-950/20 p-4 pt-24 z-40 transition-transform duration-300 ease-in-out backdrop-blur-lg ${
+        className={`fixed top-20 right-10  text-sky-950  bg-neutral-100/50 dark:bg-zinc-950/20 p-4 z-40 rounded-xl transition-transform duration-300 ease-in-out backdrop-blur-lg shadow-md dark:shadow-zinc-950 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ width: "250px" }}
