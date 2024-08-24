@@ -5,6 +5,9 @@ import { getBookDetails } from "@/lib/getDetails";
 import { getServerSession } from "next-auth/next";
 import Image from "next/legacy/image";
 import { redirect } from "next/navigation";
+import { FaFacebookSquare, FaPinterest } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { HiShare } from "react-icons/hi";
 import styles from "./styles.module.css";
 
 export const metadata = {
@@ -69,10 +72,27 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
       <div className="flex gap-20">
         <div>
           <ThirdHeading>Share:</ThirdHeading>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+          <ul className="flex flex-col gap-10 items-center mt-10">
+            <li>
+              <a href="">
+                <FaFacebookSquare className="w-8 h-8" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FaXTwitter className="w-8 h-8" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <FaPinterest className="w-8 h-8" />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <HiShare className="w-8 h-8" />
+              </a>
+            </li>
           </ul>
         </div>
         {book.content && (
