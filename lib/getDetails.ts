@@ -2,6 +2,7 @@ import { ObjectId } from "mongodb";
 import { connectToDatabase } from "./db";
 
 interface Book {
+    lang: string;
     _id: string;
     title: string;
     cover: string;
@@ -29,6 +30,7 @@ export async function getBookDetails(bookId: string): Promise<Book | null> {
         forAdult: book.forAdult,
         genre: book.genre,
         tags: book.tags,
+        lang: book.lang,
         content: book.content
     };
 }

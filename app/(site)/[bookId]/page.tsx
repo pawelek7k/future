@@ -36,21 +36,29 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
     <section className="flex flex-col gap-12">
       <div className="flex flex-col items-center shadow-lg rounded-lg">
         <div className="flex p-10 gap-12">
-          <div className="relative overflow-hidden rounded-md w-48 h-80">
-            <Image
-              src={book.cover}
-              alt={book.title}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-            />
+          <div>
+            <div className="relative overflow-hidden rounded-md w-48 h-80">
+              <Image
+                src={book.cover}
+                alt={book.title}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 ">
             <FirstHeading>{book.title}</FirstHeading>
             <p>{book.description}</p>
-            <p className="text-gray-700 dark:text-neutral-100">
-              <FirstWord>For Adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
-            </p>
+            <div className="flex gap-10">
+              <p className="text-gray-700 dark:text-neutral-100">
+                <FirstWord>For Adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
+              </p>
+              <p className="text-gray-700 dark:text-neutral-100">
+                <FirstWord>Language of the book:</FirstWord>{" "}
+                {book.lang ? "PL" : "EN"}
+              </p>
+            </div>
             <p className="text-gray-700 dark:text-neutral-100">
               <FirstWord>Genre: </FirstWord>
               {book.genre}
