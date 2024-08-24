@@ -1,6 +1,14 @@
+import { FirstHeading } from "../components/global/Heading";
+import { MarketingNavigation } from "../components/navigations/MarketingNav";
+
 const Home: React.FC = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-hero-bg bg-center bg-no-repeat bg-cover"></main>
+    <main className="">
+      <section className="h-screen bg-hero-bg bg-center bg-no-repeat bg-cover m-1 rounded-lg">
+        <MarketingNavigation />
+        <FirstHeading>Your way</FirstHeading>
+      </section>
+    </main>
   );
 };
 export default Home;
