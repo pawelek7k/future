@@ -3,7 +3,7 @@
 import { BooksList } from "@/app/components/home/Books";
 import { Sidebar } from "@/app/components/home/Sidebar";
 import { useState } from "react";
-import { FirstHeading, SecondHeading } from "../global/Heading";
+import { FirstHeading, ThirdHeading } from "../global/Heading";
 
 interface Book {
   _id: string;
@@ -44,7 +44,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
 
   return (
     <div>
-      <SecondHeading>Welcome, {session.user?.username}!</SecondHeading>
+      <ThirdHeading>Welcome, {session.user?.username}!</ThirdHeading>
       <FirstHeading>Discover the books!</FirstHeading>
 
       <Sidebar onFilterChange={handleFilterChange} />
