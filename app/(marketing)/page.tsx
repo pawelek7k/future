@@ -3,9 +3,9 @@ import { MarketingNavigation } from "../components/navigations/MarketingNav";
 const Home: React.FC = () => {
   return (
     <main className="">
-      <section className="h-screen bg-hero-bg bg-center bg-no-repeat bg-cover m-1 rounded-lg flex gap-10 backdrop-blur-lg">
+      <section className="p-28 bg-hero-bg bg-center bg-no-repeat bg-cover m-2 rounded-lg flex gap-20 backdrop-blur-lg">
         <MarketingNavigation />
-        <div className="flex flex-col justify-center gap-3 ">
+        <div className="flex flex-col justify-center gap-3">
           <p className="text-neutral-300">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Reprehenderit, sint.
@@ -30,8 +30,8 @@ const Home: React.FC = () => {
             Reprehenderit, sint.
           </p>
         </div>
-        <div className="flex items-center justify-center p-40">
-          <div className="rounded-lg border border-neutral-300 p-10 shadow-lg shadow-white backdrop-blur-lg h-full">
+        <div className="flex items-center justify-center w-1/2">
+          <div className="rounded-lg border border-neutral-300 p-10 shadow-lg shadow-white backdrop-blur-lg">
             <p className="text-neutral-300">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.{" "}
             </p>
