@@ -38,11 +38,11 @@ export const DropdownMenu: React.FC<Props> = ({ name, value, onChange }) => {
         />
       </button>
       {isDropdownOpen && (
-        <ul className="absolute left-0 mt-2 w-64 shadow-lg backdrop-blur-lg bg-neutral-100/40 p-1 rounded-lg transition-opacity duration-300 ease-in-out">
+        <ul className="absolute left-0 mt-2 w-64 shadow-lg backdrop-blur-lg bg-neutral-100/40 p-1 rounded-lg transition-opacity duration-300 ease-in-out dark:bg-zinc-950/90">
           {bookGenres.map(({ id, name }) => (
             <li
               key={id}
-              className="hover:bg-sky-950/10 rounded-md cursor-pointer dark:hover:bg-rose-950/10"
+              className="hover:bg-sky-950/10 rounded-md cursor-pointer dark:text-neutral-300 dark:hover:bg-rose-950/10"
               onClick={() => handleSelectGenre(name)}
             >
               {name}
