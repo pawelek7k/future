@@ -6,6 +6,7 @@ import { Divide as Hamburger } from "hamburger-react";
 import { KeyboardEvent, useState } from "react";
 import { PrimaryButton, SecondaryButton } from "../global/Buttons";
 import { FirstHeading } from "../global/Heading";
+import { LangSwitch } from "../global/LangSwitch";
 import { ToggleSwitch } from "../global/ToggleSwitch";
 
 interface FilterValues {
@@ -23,6 +24,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("");
   const [forAdult, setForAdult] = useState(false);
+  const [lang, setLang] = useState<"pl" | "eng">("pl");
 
   const handleFilterChange = () => {
     const query: any = {};
@@ -59,8 +61,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     }
   };
 
-  const handleSwitchLang = () => {
-    return console.log("hejka");
+  const handleLangChange = (selectedLang: "pl" | "eng") => {
+    setLang(selectedLang);
   };
 
   return (
@@ -100,7 +102,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           </span>
           <div className="flex items-center gap-2 ">
             <span className="text-sm dark:text-neutral-100">PL</span>
-            <ToggleSwitch name="Lang" onChange={handleSwitchLang} />
+            <LangSwitch name="Lang" onChange={handleLangChange} value={lang} />
             <span className="text-sm dark:text-neutral-100">ENG</span>
           </div>
         </div>
