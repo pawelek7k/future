@@ -20,8 +20,9 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   submitHandler,
 }) => (
   <div className="bg-neutral-50/20 dark:bg-zinc-900/20 text-gray-900 dark:text-neutral-50 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10">
-    <h1 className="text-2xl font-semibold mb-6">Logowanie</h1>
-    <form onSubmit={submitHandler}>
+    <h1 className="text-2xl font-semibold">Welcome back!</h1>
+    <p>Please enter your account details</p>
+    <form onSubmit={submitHandler} className="mt-8">
       <div className="mb-4">
         <label
           htmlFor="email"

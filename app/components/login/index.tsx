@@ -3,6 +3,7 @@
 import { createUser } from "@/lib/signup/userApi";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { MarketingNavigation } from "../navigations/MarketingNav";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
 
@@ -58,6 +59,7 @@ export const Container: React.FC = () => {
 
   return (
     <div className="h-screen container mx-auto flex flex-col justify-center items-center">
+      <MarketingNavigation />
       {isLogin ? (
         <LoginForm
           formData={formData}
