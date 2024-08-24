@@ -1,6 +1,6 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { FirstWord } from "@/app/components/global/FirstWord";
-import { FirstHeading } from "@/app/components/global/Heading";
+import { FirstHeading, ThirdHeading } from "@/app/components/global/Heading";
 import { getBookDetails } from "@/lib/getDetails";
 import { getServerSession } from "next-auth/next";
 import Image from "next/legacy/image";
@@ -66,11 +66,23 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
           </div>
         </div>
       </div>
-      <div>
-        <div
-          className={styles.contentContainer}
-          dangerouslySetInnerHTML={{ __html: book.content }}
-        />
+      <div className="flex gap-20">
+        <div>
+          <ThirdHeading>Share:</ThirdHeading>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        {book.content && (
+          <div>
+            <div
+              className={styles.contentContainer}
+              dangerouslySetInnerHTML={{ __html: book.content }}
+            />
+          </div>
+        )}
       </div>
     </section>
   );
