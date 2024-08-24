@@ -38,7 +38,7 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
   return (
     <section className="flex flex-col gap-12">
       <div className="flex flex-col items-center  shadow-lg rounded-lg">
-        <div className="flex p-10 gap-12 flex-col md:flex-row items-center md:items-start">
+        <div className="flex md:p-10 p-4 gap-12 flex-col md:flex-row items-center md:items-start">
           <div>
             <div className="relative overflow-hidden rounded-md md:w-48 md:h-80 w-40 h-60">
               <Image

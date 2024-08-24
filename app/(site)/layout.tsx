@@ -25,7 +25,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <SiteNavigation />
-            <main className="p-20">{children}</main>
+            <main className="p-10 pt-20 md:p-20">{children}</main>
           </ThemeProvider>
         </body>
       </NextAuthProvider>
