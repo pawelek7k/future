@@ -61,62 +61,61 @@ export const ChangePassword: React.FC = () => {
   return (
     <>
       {isSubmitting && <Loader />}
-      <form
-        className="mt-6 p-6 border border-gray-300 rounded-lg shadow-md bg-neutral-50 dark:bg-transparent dark:border-neutral-600 bg-transparent"
-        onSubmit={handleSubmit}
-      >
-        <SecondHeading>Change Password</SecondHeading>
+      <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10 shadow-rose-950">
+        <form onSubmit={handleSubmit}>
+          <SecondHeading>Change Password</SecondHeading>
 
-        <div className="mb-6">
-          <label
-            htmlFor="current-password"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-          >
-            Current Password
-          </label>
-          <input
-            id="current-password"
-            type="password"
-            value={currentPassword}
-            onChange={handleCurrentPassword}
-            className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-transparent dark:bg-neutral-800 dark:border-neutral-600 dark:text-gray-200"
-            required
-          />
-        </div>
+          <div className="mb-6">
+            <label
+              htmlFor="current-password"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
+              Current Password
+            </label>
+            <input
+              id="current-password"
+              type="password"
+              value={currentPassword}
+              onChange={handleCurrentPassword}
+              className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-transparent dark:bg-neutral-800 dark:border-neutral-600 dark:text-gray-200"
+              required
+            />
+          </div>
 
-        <div className="mb-6">
-          <label
-            htmlFor="new-password"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-          >
-            New Password
-          </label>
-          <input
-            id="new-password"
-            type="password"
-            value={newPassword}
-            onChange={handleNewPassword}
-            className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-transparent dark:bg-neutral-800 dark:border-neutral-600 dark:text-gray-200"
-            required
-          />
-        </div>
+          <div className="mb-6">
+            <label
+              htmlFor="new-password"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
+              New Password
+            </label>
+            <input
+              id="new-password"
+              type="password"
+              value={newPassword}
+              onChange={handleNewPassword}
+              className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-transparent dark:bg-neutral-800 dark:border-neutral-600 dark:text-gray-200"
+              required
+            />
+          </div>
 
-        {message && (
-          <p
-            className={`mt-4 text-sm ${
-              isSuccess ? "text-green-600" : "text-red-600"
-            }`}
-          >
-            {message}
-          </p>
-        )}
+          {message && (
+            <p
+              className={`mt-4 text-sm ${
+                isSuccess ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              {message}
+            </p>
+          )}
 
-        <div className="flex justify-end">
-          <PrimaryButton isSubmitting={isSubmitting}>
-            {isSubmitting ? "Changing..." : "Change Password"}
-          </PrimaryButton>
-        </div>
-      </form>
+          <div className="flex justify-end">
+            <PrimaryButton isSubmitting={isSubmitting}>
+              {isSubmitting ? "Changing..." : "Change Password"}
+            </PrimaryButton>
+          </div>
+        </form>
+      </div>
     </>
   );
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import { AccountContainer } from "@/app/components/settings/Account";
+import { ChangePassword } from "@/app/components/settings/ChangePassword";
 import { Sidebar } from "@/app/components/settings/Sidebar";
 import { useParams } from "next/navigation";
 
@@ -14,7 +15,7 @@ const SettingPage = () => {
       case "notifications":
         return <div>Notifications Settings</div>;
       case "security":
-        return <div>Security Settings</div>;
+        return <ChangePassword />;
       case "privacy":
         return <div>Privacy Settings</div>;
       default:
