@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { FaFacebookSquare, FaPinterest } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
