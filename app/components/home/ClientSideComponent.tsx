@@ -44,9 +44,10 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
 
   return (
     <div>
-      <ThirdHeading>Welcome, {session.user?.username}!</ThirdHeading>
-      <FirstHeading>Discover the books!</FirstHeading>
-
+      <div className="bg-black rounded-xl p-10 bg-home-img bg-center bg-no-repeat bg-cover">
+        <ThirdHeading>Welcome, {session.user?.username}!</ThirdHeading>
+        <FirstHeading>Discover the books!</FirstHeading>
+      </div>
       <Sidebar onFilterChange={handleFilterChange} />
       <BooksList books={filteredBooks} />
     </div>
