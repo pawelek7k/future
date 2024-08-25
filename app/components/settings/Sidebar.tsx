@@ -34,7 +34,7 @@ export const Sidebar: React.FC = () => {
                 href={`/settings/${item.id}`}
                 className="gap-4 p-2 w-full h-full text-sky-950 flex items-center hover:text-neutral-400 transition-all dark:text-neutral-50"
               >
-                <span className="text-xl"></span> {item.label}
+                <span className="text-xl">{item.icon}</span> {item.label}
               </Link>
             </li>
           ))}
