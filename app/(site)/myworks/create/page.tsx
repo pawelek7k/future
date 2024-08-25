@@ -1,4 +1,5 @@
 import { CreateForm } from "@/app/components/create/FormContainer";
+import { FirstHeading } from "@/app/components/global/Heading";
 
 export const metadata = {
   title: "Future - Create your book",
@@ -7,8 +8,9 @@ export const metadata = {
 
 export default async function CreateAuthPage() {
   return (
-    <>
+    <section>
+      <FirstHeading>Create your book!</FirstHeading>
       <CreateForm />
-    </>
+    </section>
   );
 }
