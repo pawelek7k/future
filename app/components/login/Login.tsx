@@ -3,11 +3,7 @@
 import React from "react";
 import { FaFacebookSquare, FaPinterest } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import {
-  GoogleButton,
-  PrimaryButton,
-  SecondaryButton,
-} from "../global/Buttons";
+import { GoogleButton, PrimaryButton } from "../global/Buttons";
 
 interface FormData {
   email: string;
@@ -79,17 +75,17 @@ export const LoginForm: React.FC<LoginFormProps> = ({
       <ul className="flex gap-10 md:items-center md:mt-10 mb-10 md:mb-0 justify-center">
         <li>
           <a href="">
-            <FaFacebookSquare className="w-6 h-6 text-neutral-100" />
+            <FaFacebookSquare className="w-6 h-6 text-neutral-100 hover:text-neutral-300 transition ease-in-out" />
           </a>
         </li>
         <li>
           <a href="">
-            <FaXTwitter className="w-6 h-6 text-neutral-100" />
+            <FaXTwitter className="w-6 h-6 text-neutral-100 hover:text-neutral-300 transition ease-in-out" />
           </a>
         </li>
         <li>
           <a href="">
-            <FaPinterest className="w-6 h-6 text-neutral-100" />
+            <FaPinterest className="w-6 h-6 text-neutral-100 hover:text-neutral-300 transition ease-in-out" />
           </a>
         </li>
       </ul>
