@@ -2,6 +2,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { FirstWord } from "@/app/components/global/FirstWord";
 import { FirstHeading, ThirdHeading } from "@/app/components/global/Heading";
 import { getBookDetails } from "@/lib/getDetails";
+import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth/next";
 import Image from "next/legacy/image";
 import { redirect } from "next/navigation";
@@ -29,6 +30,11 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
   }
 
   const { bookId } = params;
+
+  if (!ObjectId.isValid(bookId)) {
+    return <section>Invalid book ID</section>;
+  }
+
   const book = await getBookDetails(bookId);
 
   if (!book) {
