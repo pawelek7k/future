@@ -4,7 +4,7 @@ export const AccountContainer: React.FC = () => {
   return (
     <section className="max-w-2xl mx-auto p-6  rounded-lg shadow-lg w-full  mt-10 dark:shadow-rose-950 shadow-sky-950">
       <FirstHeading>Edit your profile</FirstHeading>
-      <div className=" backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10 ">
+      <div className=" backdrop-blur-md rounded-lg w-full max-w-md mx-auto mt-10 ">
         <form className="">
           <label
             htmlFor="description"
