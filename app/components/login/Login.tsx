@@ -22,7 +22,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   handleChange,
   submitHandler,
 }) => (
-  <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10">
+  <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10 shadow-rose-950">
     <h1 className="text-2xl font-semibold text-neutral-100 text-center">
       Welcome back!
     </h1>
@@ -73,17 +73,17 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         </li>
       </ul>
       <ul className="flex gap-10 md:items-center md:mt-10 mb-10 md:mb-0 justify-center">
-        <li>
+        <li className="rounded-full p-3 border border-rose-950">
           <a href="">
             <FaFacebookSquare className="w-6 h-6 text-neutral-100 hover:text-neutral-300 transition ease-in-out" />
           </a>
         </li>
-        <li>
+        <li className="rounded-full p-3 border border-rose-950">
           <a href="">
             <FaXTwitter className="w-6 h-6 text-neutral-100 hover:text-neutral-300 transition ease-in-out" />
           </a>
         </li>
-        <li>
+        <li className="rounded-full p-3 border border-rose-950">
           <a href="">
             <FaPinterest className="w-6 h-6 text-neutral-100 hover:text-neutral-300 transition ease-in-out" />
           </a>

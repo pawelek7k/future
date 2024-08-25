@@ -6,6 +6,7 @@ import { useState } from "react";
 import { MarketingNavigation } from "../navigations/MarketingNav";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
+import { PrimaryButton, SecondaryButton } from "../global/Buttons";
 
 export const Container: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -77,9 +78,9 @@ export const Container: React.FC = () => {
         <p className="text-neutral-100">lub</p>
       </div>
       <div className="mt-10">
-        <button onClick={toggleForm} className="text-neutral-100">
+        <SecondaryButton onClick={toggleForm}>
           {isLogin ? "Przełącz na Rejestrację" : "Przełącz na Logowanie"}
-        </button>
+        </SecondaryButton>
       </div>
     </div>
   );
