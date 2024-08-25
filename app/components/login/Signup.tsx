@@ -26,24 +26,24 @@ export const SignupForm: React.FC<SignupFormProps> = ({
         name="email"
         value={formData.email}
         onChange={handleChange}
-        placeholder="Email"
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white  text-gray-900  placeholder-gray-500  focus:outline-none focus:border-sky-950 "
+        placeholder="Enter your e-mail"
+        className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
       />
       <input
         type="text"
         name="username"
         value={formData.username}
         onChange={handleChange}
-        placeholder="Username"
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white  text-gray-900  placeholder-gray-500  focus:outline-none focus:border-sky-950 "
+        placeholder="Enter your username"
+        className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
       />
       <input
         type="password"
         name="password"
         value={formData.password}
         onChange={handleChange}
-        placeholder="Password"
-        className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white  text-gray-900  placeholder-gray-500  focus:outline-none focus:border-sky-950 "
+        placeholder="Enter your password"
+        className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
       />
       <PrimaryButton>Sign Up</PrimaryButton>
     </form>
