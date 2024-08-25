@@ -61,11 +61,11 @@ export const ChangePassword: React.FC = () => {
   return (
     <>
       {isSubmitting && <Loader />}
-      <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10 shadow-rose-950">
+      <div className="dark:bg-zinc-950/90 bg-neutral-100/20 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10 dark:shadow-rose-950 shadow-sky-950">
         <form onSubmit={handleSubmit}>
           <SecondHeading>Change Password</SecondHeading>
 
-          <div className="mb-6">
+          <div className="mb-6 mt-6">
             <label
               htmlFor="current-password"
               className="block text-sm font-medium text-gray-700 dark:text-gray-300"
@@ -77,7 +77,7 @@ export const ChangePassword: React.FC = () => {
               type="password"
               value={currentPassword}
               onChange={handleCurrentPassword}
-              className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-transparent dark:bg-neutral-800 dark:border-neutral-600 dark:text-gray-200"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
               required
             />
           </div>
@@ -94,7 +94,7 @@ export const ChangePassword: React.FC = () => {
               type="password"
               value={newPassword}
               onChange={handleNewPassword}
-              className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-transparent dark:bg-neutral-800 dark:border-neutral-600 dark:text-gray-200"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
               required
             />
           </div>
