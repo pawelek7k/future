@@ -43,7 +43,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           name="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="Wpisz swój e-mail"
+          placeholder="Enter your e-mail"
           className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-sky-500"
         />
       </div>
@@ -60,7 +60,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           name="password"
           value={formData.password}
           onChange={handleChange}
-          placeholder="Wpisz swoje hasło"
+          placeholder="Enter your password"
           className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-sky-500"
         />
       </div>
