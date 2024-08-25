@@ -1,4 +1,5 @@
 import React from "react";
+import { PrimaryButton } from "../global/Buttons";
 
 interface SignupFormProps {
   formData: {
@@ -44,7 +45,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
         placeholder="Password"
         className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white  text-gray-900  placeholder-gray-500  focus:outline-none focus:border-sky-950 "
       />
-      <button type="submit">Sign Up</button>
+      <PrimaryButton>Sign Up</PrimaryButton>
     </form>
   );
 };

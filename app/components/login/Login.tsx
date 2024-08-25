@@ -44,7 +44,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           value={formData.email}
           onChange={handleChange}
           placeholder="Enter your e-mail"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-sky-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
         />
       </div>
       <div className="mb-4">
@@ -61,7 +61,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           value={formData.password}
           onChange={handleChange}
           placeholder="Enter your password"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-sky-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
         />
       </div>
       <ul className="flex flex-col gap-4">
