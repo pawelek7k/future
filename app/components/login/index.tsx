@@ -3,10 +3,10 @@
 import { createUser } from "@/lib/signup/userApi";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { SecondaryButton } from "../global/Buttons";
 import { MarketingNavigation } from "../navigations/MarketingNav";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
-import { PrimaryButton, SecondaryButton } from "../global/Buttons";
 
 export const Container: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -52,6 +52,12 @@ export const Container: React.FC = () => {
           formData.password
         );
         console.log("User created:", result);
+        await signIn("credentials", {
+          redirect: true,
+          email: formData.email,
+          password: formData.password,
+          callbackUrl: "/home",
+        });
       } catch (error) {
         console.error("Error creating user:", error);
       }
