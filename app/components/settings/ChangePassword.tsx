@@ -42,6 +42,8 @@ export const ChangePassword: React.FC = () => {
       }
 
       Notiflix.Notify.success("Password updated successfully!");
+      setCurrentPassword("");
+      setNewPassword("");
       return;
     } catch {
       Notiflix.Notify.failure("Something went wrong!");
