@@ -68,7 +68,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
             <button
               onClick={() => handleViewChange("grid")}
               className={`flex items-center justify-center gap-2 p-2 ${
-                viewMode === "grid" ? "text-sky-950 dark:text-neutral-100" : ""
+                viewMode === "grid" ? "text-sky-950 dark:text-rose-800" : ""
               }`}
             >
               <CiGrid41 />
@@ -79,7 +79,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
             <button
               onClick={() => handleViewChange("list")}
               className={`flex items-center justify-center gap-2 p-2 ${
-                viewMode === "list" ? "text-sky-950 dark:text-neutral-100" : ""
+                viewMode === "list" ? "text-sky-950 dark:text-rose-800" : ""
               }`}
             >
               <CiBoxList />
