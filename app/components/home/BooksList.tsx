@@ -39,7 +39,7 @@ export const BooksList: React.FC<BooksListProps> = ({ books }) => {
         {books.map((book) => (
           <li
             key={book._id}
-            className="cursor-pointer dark:shadow-sm flex gap-2 hover:bg-neutral-100/20 p-2 transition ease-in-out rounded-lg"
+            className="cursor-pointer dark:shadow-sm flex gap-2 hover:bg-neutral-100/20 p-2 transition ease-in-out rounded-lg dark:hover:bg-zinc-950/30"
             onClick={() => handleBookClick(book)}
           >
             <div>
