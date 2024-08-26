@@ -1,3 +1,4 @@
+import Notiflix from "notiflix";
 import { useState } from "react";
 import { PrimaryButton } from "../global/Buttons";
 import { SecondHeading } from "../global/Heading";
@@ -7,8 +8,6 @@ export const ChangePassword: React.FC = () => {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [message, setMessage] = useState("");
-  const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 
   const handleCurrentPassword = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -23,10 +22,6 @@ export const ChangePassword: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (isSubmitting) return;
-
-    setIsSubmitting(true);
-    setMessage("");
-    setIsSuccess(null);
 
     try {
       const response = await fetch("/api/auth/change-password", {
@@ -46,15 +41,12 @@ export const ChangePassword: React.FC = () => {
         throw new Error(data.message || "Failed to update password.");
       }
 
-      setMessage("Password updated successfully!");
-      setIsSuccess(true);
-    } catch (error) {
-      setMessage(error.message || "Something went wrong!");
-      setIsSuccess(false);
+      Notiflix.Notify.success("Password updated successfully!");
+      return;
+    } catch {
+      Notiflix.Notify.failure("Something went wrong!");
     } finally {
       setIsSubmitting(false);
-      setCurrentPassword("");
-      setNewPassword("");
     }
   };
 
@@ -98,16 +90,6 @@ export const ChangePassword: React.FC = () => {
               required
             />
           </div>
-
-          {message && (
-            <p
-              className={`mt-4 text-sm ${
-                isSuccess ? "text-green-600" : "text-red-600"
-              }`}
-            >
-              {message}
-            </p>
-          )}
 
           <div className="flex justify-end">
             <PrimaryButton isSubmitting={isSubmitting}>
