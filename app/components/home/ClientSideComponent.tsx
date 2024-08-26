@@ -3,7 +3,6 @@
 import { BooksList } from "@/app/components/home/Books";
 import { Sidebar } from "@/app/components/home/Sidebar";
 import { useState } from "react";
-import { FirstHeading, ThirdHeading } from "../global/Heading";
 
 interface Book {
   _id: string;
@@ -45,8 +44,12 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
   return (
     <div>
       <div className="bg-black rounded-xl p-10 bg-home-img bg-center bg-no-repeat bg-cover">
-        <ThirdHeading>Welcome, {session.user?.username}!</ThirdHeading>
-        <FirstHeading>Discover the books!</FirstHeading>
+        <h2 className="text-xl text-neutral-100">
+          Welcome, {session.user?.username}!
+        </h2>
+        <h1 className="text-3xl text-neutral-100 font-semibold">
+          Discover the books!
+        </h1>
       </div>
       <Sidebar onFilterChange={handleFilterChange} />
       <BooksList books={filteredBooks} />
