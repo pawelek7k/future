@@ -51,14 +51,6 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
 
   return (
     <div>
-      <div className="bg-black rounded-xl p-10 bg-home-img bg-top dark:bg-center dark:bg-dark-home-img bg-no-repeat bg-cover ">
-        <h2 className="text-xl text-neutral-100">
-          Welcome, {session.user?.username}!
-        </h2>
-        <h1 className="text-3xl text-neutral-100 font-semibold">
-          Discover the books!
-        </h1>
-      </div>
       <div>
         <ul className="flex gap-16 mt-4">
           <li>

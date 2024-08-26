@@ -1,10 +1,10 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { FirstHeading } from "@/app/components/global/Heading";
-import { BooksList } from "@/app/components/home/BooksGrid";
 import { connectToDatabase } from "@/lib/db";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
+import ClientSideComponent from "@/app/components/home/ClientSideComponent";
 
 export const metadata = {
   title: "Future - Your Library",
@@ -28,11 +28,10 @@ const LibraryAuthPage: React.FC = async () => {
     redirect("/login");
   }
 
-  let db;
   let books: Book[] = [];
 
   try {
-    db = await connectToDatabase();
+    const db = await connectToDatabase();
     const usersCollection = db.collection("users");
     const booksCollection = db.collection("books");
 
@@ -63,7 +62,7 @@ const LibraryAuthPage: React.FC = async () => {
   return (
     <div>
       <FirstHeading>Your Library!</FirstHeading>
-      <BooksList books={books} />
+      <ClientSideComponent books={books} session={session} />
     </div>
   );
 };

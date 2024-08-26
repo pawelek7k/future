@@ -63,7 +63,19 @@ const HomeAuthPage: React.FC = async () => {
     console.error("Error connecting to the database or fetching books:", error);
   }
 
-  return <ClientSideComponent books={books} session={session} />;
+  return (
+    <>
+      <div className="bg-black rounded-xl p-10 bg-home-img bg-top dark:bg-center dark:bg-dark-home-img bg-no-repeat bg-cover ">
+        <h2 className="text-xl text-neutral-100">
+          Welcome, {session.user?.username}!
+        </h2>
+        <h1 className="text-3xl text-neutral-100 font-semibold">
+          Discover the books!
+        </h1>
+      </div>
+      <ClientSideComponent books={books} session={session} />
+    </>
+  );
 };
 
 export default HomeAuthPage;
