@@ -39,7 +39,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
           value={formData.email}
           onChange={handleChange}
           placeholder="Enter your e-mail"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-neutral-100 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
         />
       </div>
       <div className="mb-4">
@@ -56,7 +56,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
           value={formData.username}
           onChange={handleChange}
           placeholder="Enter your username"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-neutral-100 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
         />
       </div>
       <div className="mb-4">
@@ -73,7 +73,7 @@ export const SignupForm: React.FC<SignupFormProps> = ({
           value={formData.password}
           onChange={handleChange}
           placeholder="Enter your password"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-neutral-100 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
         />
       </div>
       <PrimaryButton>Sign Up</PrimaryButton>
