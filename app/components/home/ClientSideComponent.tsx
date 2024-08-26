@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { CiBoxList, CiGrid41 } from "react-icons/ci";
 import { BooksGrid } from "@/app/components/home/BooksGrid";
 import { BooksList } from "@/app/components/home/BooksList";
 import { Sidebar } from "@/app/components/home/Sidebar";
+import { useEffect, useState } from "react";
+import { CiBoxList, CiGrid41 } from "react-icons/ci";
 
 interface Book {
   _id: string;
@@ -32,23 +32,15 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
 
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
-  const loadViewMode = () => {
+  useEffect(() => {
     const savedViewMode = localStorage.getItem("viewMode");
     if (savedViewMode === "grid" || savedViewMode === "list") {
       setViewMode(savedViewMode);
     }
-  };
-
-  const saveViewMode = (mode: "grid" | "list") => {
-    localStorage.setItem("viewMode", mode);
-  };
-
-  useEffect(() => {
-    loadViewMode();
   }, []);
 
   useEffect(() => {
-    saveViewMode(viewMode);
+    localStorage.setItem("viewMode", viewMode);
   }, [viewMode]);
 
   const handleFilterChange = (filters: { search: string; genre: string }) => {
