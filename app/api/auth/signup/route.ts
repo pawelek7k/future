@@ -13,13 +13,11 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: error.message }, { status: 400 });
         }
 
-        const client = await connectToDatabase();
-        const db = client.db();
+        const db = await connectToDatabase();
 
         const existingUser = await db.collection('users').findOne({ email });
 
         if (existingUser) {
-            client.close();
             return NextResponse.json({ message: 'User already exists.' }, { status: 422 });
         }
 
@@ -30,7 +28,6 @@ export async function POST(req: NextRequest) {
             password: hashedPassword
         });
 
-        client.close();
 
         return NextResponse.json({ message: 'User created successfully', userId: result.insertedId.toString() }, { status: 201 });
 

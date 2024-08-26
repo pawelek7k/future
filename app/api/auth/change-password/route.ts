@@ -16,13 +16,12 @@ export async function PATCH(req: NextRequest) {
         const userEmail = session.user?.email;
         const { oldPassword, newPassword } = await req.json();
 
-        const client = await connectToDatabase();
-        const usersCollection = client.db().collection('users');
+        const db = await connectToDatabase();
+        const usersCollection = db.collection('users');
 
         const user = await usersCollection.findOne({ email: userEmail });
 
         if (!user) {
-            client.close();
             return NextResponse.json({ message: 'User not found' }, { status: 404 });
         }
 
@@ -30,7 +29,6 @@ export async function PATCH(req: NextRequest) {
         const passwordsAreEqual = await verifyPassword(oldPassword, currentPassword);
 
         if (!passwordsAreEqual) {
-            client.close();
             return NextResponse.json({ message: 'Invalid password.' }, { status: 422 });
         }
 
@@ -40,7 +38,6 @@ export async function PATCH(req: NextRequest) {
             { $set: { password: hashedPassword } }
         );
 
-        client.close();
         return NextResponse.json({ message: 'Password updated!' }, { status: 200 });
 
     } catch (error) {

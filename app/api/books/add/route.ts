@@ -30,13 +30,10 @@ export async function POST(req: NextRequest) {
     const data = value;
 
     try {
-        const client = await connectToDatabase();
-        const db = client.db();
+        const db = await connectToDatabase();
         const booksCollection = db.collection('books');
 
         const result = await booksCollection.insertOne(data);
-
-        client.close();
 
         return NextResponse.json({ message: 'Book created!', id: result.insertedId.toString() }, { status: 201 });
     } catch (err) {

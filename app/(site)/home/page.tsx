@@ -23,15 +23,14 @@ const HomeAuthPage: React.FC = async () => {
   const session = await getServerSession(authOptions);
 
   if (!session) {
+    // W Next.js 13+ w `/app` możesz użyć `redirect` bezpośrednio
     redirect("/login");
   }
 
-  let client;
   let books: Book[] = [];
 
   try {
-    client = await connectToDatabase();
-    const db = client.db();
+    const db = await connectToDatabase();
     const booksCollection = db.collection("books");
 
     const booksData = await booksCollection
@@ -62,10 +61,6 @@ const HomeAuthPage: React.FC = async () => {
     }));
   } catch (error) {
     console.error("Error connecting to the database or fetching books:", error);
-  } finally {
-    if (client) {
-      await client.close();
-    }
   }
 
   return <ClientSideComponent books={books} session={session} />;

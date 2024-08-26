@@ -28,12 +28,11 @@ const LibraryAuthPage: React.FC = async () => {
     redirect("/login");
   }
 
-  let client;
+  let db;
   let books: Book[] = [];
 
   try {
-    client = await connectToDatabase();
-    const db = client.db();
+    db = await connectToDatabase();
     const usersCollection = db.collection("users");
     const booksCollection = db.collection("books");
 
@@ -59,10 +58,6 @@ const LibraryAuthPage: React.FC = async () => {
     }));
   } catch (error) {
     console.error("Error connecting to the database or fetching books:", error);
-  } finally {
-    if (client) {
-      await client.close();
-    }
   }
 
   return (

@@ -3,7 +3,6 @@ import { verifyPassword } from '@/lib/signup/hashPasswd';
 import NextAuth, { DefaultSession, NextAuthOptions, Session } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-
 interface CustomSession extends Session {
     user: {
         id: string;
@@ -26,12 +25,12 @@ export const authOptions: NextAuthOptions = {
                     return null;
                 }
 
-                const client = await connectToDatabase();
+                const db = await connectToDatabase();
 
                 try {
                     console.log("Attempting to authorize with email:", credentials.email);
 
-                    const usersCollection = client.db().collection('users');
+                    const usersCollection = db.collection('users');
                     const user = await usersCollection.findOne({ email: credentials.email });
 
                     if (!user) {
@@ -51,8 +50,9 @@ export const authOptions: NextAuthOptions = {
                         email: user.email,
                         username: user.username,
                     };
-                } finally {
-                    await client.close();
+                } catch (e) {
+                    console.error(e);
+                    return null;
                 }
             }
         }),
@@ -65,7 +65,6 @@ export const authOptions: NextAuthOptions = {
             return baseUrl + '/home';
         },
         async jwt({ token, user }) {
-            console.log('jwt callback', { token, user });
             if (user) {
                 token.id = user.id;
                 token.email = user.email;
@@ -74,7 +73,6 @@ export const authOptions: NextAuthOptions = {
             return token;
         },
         async session({ session, token }) {
-            console.log('session callback', { session, token });
             if (token) {
                 session.user = {
                     ...session.user,

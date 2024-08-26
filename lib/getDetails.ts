@@ -1,6 +1,5 @@
-import { ObjectId } from "mongodb";
-import { connectToDatabase } from "./db";
-
+import { ObjectId } from 'mongodb';
+import { connectToDatabase } from './db';
 interface Book {
     lang: string;
     _id: string;
@@ -14,23 +13,28 @@ interface Book {
 }
 
 export async function getBookDetails(bookId: string): Promise<Book | null> {
-    const client = await connectToDatabase();
-    const db = client.db();
-    const booksCollection = db.collection("books");
+    try {
+        const db = await connectToDatabase();
 
-    const book = await booksCollection.findOne({ _id: new ObjectId(bookId) });
+        const booksCollection = db.collection('books');
 
-    if (!book) return null;
+        const book = await booksCollection.findOne({ _id: new ObjectId(bookId) });
 
-    return {
-        _id: book._id.toString(),
-        title: book.title,
-        cover: book.cover,
-        description: book.description,
-        forAdult: book.forAdult,
-        genre: book.genre,
-        tags: book.tags,
-        lang: book.lang,
-        content: book.content
-    };
+        if (!book) return null;
+
+        return {
+            _id: book._id.toString(),
+            title: book.title,
+            cover: book.cover,
+            description: book.description,
+            forAdult: book.forAdult,
+            genre: book.genre,
+            tags: book.tags,
+            lang: book.lang,
+            content: book.content,
+        };
+    } catch (error) {
+        console.error('Error fetching book details:', error);
+        throw new Error('Failed to fetch book details');
+    }
 }
