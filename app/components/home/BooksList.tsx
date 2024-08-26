@@ -2,6 +2,8 @@
 
 import Image from "next/legacy/image";
 import React, { useState } from "react";
+import { FirstWord } from "../global/FirstWord";
+import { ThirdHeading } from "../global/Heading";
 import { Modal } from "./Modal";
 
 interface Book {
@@ -33,23 +35,31 @@ export const BooksList: React.FC<BooksListProps> = ({ books }) => {
   };
   return (
     <>
-      <ul className="flex flex-wrap gap-6 mt-10 items-center justify-center">
+      <ul className="flex flex-col gap-6 mt-10">
         {books.map((book) => (
           <li
             key={book._id}
-            className="cursor-pointer dark:shadow-sm"
+            className="cursor-pointer dark:shadow-sm flex gap-2"
             onClick={() => handleBookClick(book)}
           >
-            <div className="relative overflow-hidden rounded-md w-36 h-56">
-              <Image
-                src={book.cover}
-                alt={book.title}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-              />
+            <div>
+              <div className="relative overflow-hidden rounded-md w-36 h-56">
+                <Image
+                  src={book.cover}
+                  alt={book.title}
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                />
+              </div>
             </div>
-            <h2>{book.title}</h2>
+            <div className="p-2 flex flex-col gap-2">
+              <ThirdHeading>{book.title}</ThirdHeading>
+              <p>
+                <FirstWord>For adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
+              </p>
+              <p>{book.description}</p>
+            </div>
           </li>
         ))}
       </ul>

@@ -6,7 +6,7 @@ interface Props {
 
 export const FirstWord: React.FC<Props> = ({ children }) => {
   return (
-    <span className="text-sky-950 tracking-wide font-semibold dark:text-neutral-100 font-sans">
+    <span className="text-sky-950 tracking-wide font-semibold dark:text-neutral-100 ">
       {children}
     </span>
   );

@@ -1,8 +1,10 @@
 "use client";
 
-import { BooksList } from "@/app/components/home/Books";
+import { BooksGrid } from "@/app/components/home/BooksGrid";
+import { BooksList } from "@/app/components/home/BooksList";
 import { Sidebar } from "@/app/components/home/Sidebar";
 import { useState } from "react";
+import { CiBoxList, CiGrid41 } from "react-icons/ci";
 
 interface Book {
   _id: string;
@@ -28,8 +30,14 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
     genre: "",
   });
 
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+
   const handleFilterChange = (filters: { search: string; genre: string }) => {
     setFilters(filters);
+  };
+
+  const handleViewChange = (mode: "grid" | "list") => {
+    setViewMode(mode);
   };
 
   const filteredBooks = books.filter((book) => {
@@ -51,8 +59,38 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
           Discover the books!
         </h1>
       </div>
+      <div>
+        <ul className="flex gap-16 mt-4">
+          <li>
+            <button
+              onClick={() => handleViewChange("grid")}
+              className={`flex items-center justify-center gap-2 p-2 ${
+                viewMode === "grid" ? "text-sky-950 dark:text-neutral-100" : ""
+              }`}
+            >
+              <CiGrid41 />
+              Grid
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => handleViewChange("list")}
+              className={`flex items-center justify-center gap-2 p-2 ${
+                viewMode === "list" ? "text-sky-950 dark:text-neutral-100" : ""
+              }`}
+            >
+              <CiBoxList />
+              List
+            </button>
+          </li>
+        </ul>
+      </div>
       <Sidebar onFilterChange={handleFilterChange} />
-      <BooksList books={filteredBooks} />
+      {viewMode === "grid" ? (
+        <BooksGrid books={filteredBooks} />
+      ) : (
+        <BooksList books={filteredBooks} />
+      )}
     </div>
   );
 };

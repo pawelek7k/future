@@ -1,6 +1,6 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { FirstHeading } from "@/app/components/global/Heading";
-import { BooksList } from "@/app/components/home/Books";
+import { BooksList } from "@/app/components/home/BooksGrid";
 import { connectToDatabase } from "@/lib/db";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth/next";
