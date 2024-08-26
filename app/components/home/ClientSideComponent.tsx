@@ -43,7 +43,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
 
   return (
     <div>
-      <div className="bg-black rounded-xl p-10 bg-home-img bg-center bg-no-repeat bg-cover">
+      <div className="bg-black rounded-xl p-10 bg-home-img bg-top dark:bg-center dark:bg-dark-home-img bg-no-repeat bg-cover ">
         <h2 className="text-xl text-neutral-100">
           Welcome, {session.user?.username}!
         </h2>
