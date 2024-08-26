@@ -81,22 +81,22 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
           <ul className="flex md:flex-col gap-10 md:items-center md:mt-10 mb-10 md:mb-0 justify-center">
             <li>
               <a href="">
-                <FaFacebookSquare className="w-8 h-8" />
+                <FaFacebookSquare className="w-8 h-8 hover:text-sky-950 hover:dark:text-rose-800 transition ease-in-out" />
               </a>
             </li>
             <li>
               <a href="">
-                <FaXTwitter className="w-8 h-8" />
+                <FaXTwitter className="w-8 h-8 hover:text-sky-950 hover:dark:text-rose-800 transition ease-in-out" />
               </a>
             </li>
             <li>
               <a href="">
-                <FaPinterest className="w-8 h-8" />
+                <FaPinterest className="w-8 h-8 hover:text-sky-950 hover:dark:text-rose-800 transition ease-in-out" />
               </a>
             </li>
             <li>
               <a href="">
-                <HiShare className="w-8 h-8" />
+                <HiShare className="w-8 h-8 hover:text-sky-950 hover:dark:text-rose-800 transition ease-in-out" />
               </a>
             </li>
           </ul>
