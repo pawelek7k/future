@@ -76,10 +76,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         />
       </div>
       <div
-        className={`fixed top-20  right-10 text-sky-950 bg-neutral-100/40 dark:bg-zinc-950/20 p-6  z-40 rounded-xl transition-transform duration-300 ease-in-out backdrop-blur-lg flex flex-col gap-4 shadow-md dark:shadow-zinc-950 ${
+        className={`fixed top-20 right-0 md:right-10 text-sky-950 bg-neutral-100/40 dark:bg-zinc-950/20 p-6 z-40 rounded-xl transition-transform duration-300 ease-in-out backdrop-blur-lg flex flex-col gap-4 shadow-md dark:shadow-zinc-950 ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        style={{ width: "400px" }}
+        } w-full md:w-[400px]`}
       >
         <FirstHeading>Filters</FirstHeading>
         <SearchInput
