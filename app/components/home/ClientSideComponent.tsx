@@ -5,6 +5,7 @@ import { BooksList } from "@/app/components/home/BooksList";
 import { Sidebar } from "@/app/components/home/Sidebar";
 import { useEffect, useState } from "react";
 import { CiBoxList, CiGrid41 } from "react-icons/ci";
+import { Loader } from "../global/Loader";
 
 interface Book {
   _id: string;
@@ -26,17 +27,21 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({ books }) => {
     genre: "",
   });
 
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [viewMode, setViewMode] = useState<"grid" | "list" | null>(null);
 
   useEffect(() => {
     const savedViewMode = localStorage.getItem("viewMode");
     if (savedViewMode === "grid" || savedViewMode === "list") {
       setViewMode(savedViewMode);
+    } else {
+      setViewMode("grid");
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("viewMode", viewMode);
+    if (viewMode !== null) {
+      localStorage.setItem("viewMode", viewMode);
+    }
   }, [viewMode]);
 
   const handleFilterChange = (filters: { search: string; genre: string }) => {
@@ -55,6 +60,10 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({ books }) => {
 
     return matchesSearch && matchesGenre;
   });
+
+  if (viewMode === null) {
+    return <Loader />;
+  }
 
   return (
     <div>
