@@ -25,8 +25,7 @@ export async function PUT(request: NextRequest) {
     }
 
     try {
-        const client = await connectToDatabase();
-        const db = client.db();
+        const db = await connectToDatabase();
         const booksCollection = db.collection('books');
 
         console.log(`Updating book with ID: ${id}`);
@@ -39,7 +38,6 @@ export async function PUT(request: NextRequest) {
 
         console.log('Update result:', result);
 
-        client.close();
 
         if (result.modifiedCount === 0) {
             return NextResponse.json({ message: 'Book not found or no changes made' }, { status: 404 });
