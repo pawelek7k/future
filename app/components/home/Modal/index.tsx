@@ -4,10 +4,10 @@ import { useRouter } from "next/navigation";
 import Notiflix from "notiflix";
 import React, { useEffect, useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import { PrimaryButton, SecondaryButton } from "../global/Buttons";
-import { FirstWord } from "../global/FirstWord";
-import { FirstHeading } from "../global/Heading";
-import { Loader } from "../global/Loader";
+import { PrimaryButton, SecondaryButton } from "../../global/Buttons";
+import { FirstWord } from "../../global/FirstWord";
+import { FirstHeading } from "../../global/Heading";
+import { Loader } from "../../global/Loader";
 
 interface ModalProps {
   isOpen: boolean;

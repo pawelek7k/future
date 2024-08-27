@@ -2,8 +2,8 @@
 
 import Image from "next/legacy/image";
 import React, { useState } from "react";
-import { Modal } from "./Modal";
 import { ThirdHeading } from "../global/Heading";
+import { Modal } from "./Modal";
 
 interface Book {
   _id: string;
