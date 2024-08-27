@@ -4,10 +4,10 @@ import { useRouter } from "next/navigation";
 import Notiflix from "notiflix";
 import React, { useEffect, useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import { PrimaryButton, SecondaryButton } from "../global/Buttons";
 import { FirstWord } from "../global/FirstWord";
 import { FirstHeading } from "../global/Heading";
 import { Loader } from "../global/Loader";
+import { Buttons } from "./Buttons";
 
 interface ModalProps {
   isOpen: boolean;
@@ -138,21 +138,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
                   ))}
                 </span>
               </p>
-              <ul className="flex justify-between mt-2 flex-col gap-4 sm:flex-row">
-                <li>
-                  <PrimaryButton
-                    onClick={handleStartReading}
-                    isSubmitting={isSubmitting}
-                  >
-                    Start reading
-                  </PrimaryButton>
-                </li>
-                <li>
-                  <SecondaryButton onClick={handleAddToLibrary}>
-                    Add to library
-                  </SecondaryButton>
-                </li>
-              </ul>
+              <Buttons book={book} />
             </div>
           </div>
         </div>
