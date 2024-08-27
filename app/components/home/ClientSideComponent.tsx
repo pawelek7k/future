@@ -34,7 +34,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({ books }) => {
     if (savedViewMode === "grid" || savedViewMode === "list") {
       setViewMode(savedViewMode);
     } else {
-      setViewMode("grid");
+      setViewMode("list");
     }
   }, []);
 
