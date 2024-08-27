@@ -73,7 +73,7 @@ const HomeAuthPage: React.FC = async () => {
           Discover the books!
         </h1>
       </div>
-      <ClientSideComponent books={books} session={session} />
+      <ClientSideComponent books={books} />
     </>
   );
 };

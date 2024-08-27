@@ -62,7 +62,7 @@ const LibraryAuthPage: React.FC = async () => {
   return (
     <div>
       <FirstHeading>Your Library!</FirstHeading>
-      <ClientSideComponent books={books} session={session} />
+      <ClientSideComponent books={books} />
     </div>
   );
 };

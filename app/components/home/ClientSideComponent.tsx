@@ -18,13 +18,9 @@ interface Book {
 
 interface ClientSideComponentProps {
   books: Book[];
-  session: any;
 }
 
-const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
-  books,
-  session,
-}) => {
+const ClientSideComponent: React.FC<ClientSideComponentProps> = ({ books }) => {
   const [filters, setFilters] = useState({
     search: "",
     genre: "",
