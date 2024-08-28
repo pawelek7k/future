@@ -1,10 +1,12 @@
-import { SecondHeading, ThirdHeading } from "../global/Heading";
+import { ThirdHeading } from "../global/Heading";
 
 export const Features = () => {
   return (
     <section className="py-20 px-12">
-      <div className="text-center">
-        <SecondHeading>How Future Works?</SecondHeading>
+      <div className="text-center p-8">
+        <h2 className="text-neutral-100 font-semibold text-4xl">
+          How Future Works?
+        </h2>
       </div>
       <ul className="flex">
         <li>
