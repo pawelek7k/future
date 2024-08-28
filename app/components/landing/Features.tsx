@@ -1,3 +1,7 @@
+import { CiCirclePlus } from "react-icons/ci";
+import { IoMdLogIn } from "react-icons/io";
+import { IoLibrary } from "react-icons/io5";
+
 export const Features = () => {
   return (
     <section className="py-20 px-12">
@@ -7,9 +11,12 @@ export const Features = () => {
         </h2>
       </div>
       <ul className="flex gap-12">
-        <li className="border border-neutral-400 p-12 rounded-lg">
+        <li className="border border-neutral-400 p-12 rounded-lg bg-hero-bg shadow-lg">
           <div>
             <h3 className="text-neutral-200 font-semibold text-2xl">Sing up</h3>
+            <div className="flex items-center justify-center p-4">
+              <IoMdLogIn className="w-14 h-14 text-neutral-300" />
+            </div>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
               non, quod minus accusantium impedit ea hic! Atque, distinctio nam
@@ -18,10 +25,13 @@ export const Features = () => {
             </p>
           </div>
         </li>
-        <li className="border border-neutral-400 p-12 rounded-lg">
+        <li className="border border-neutral-400 p-12 rounded-lg bg-hero-bg shadow-lg">
           <div>
             {" "}
             <h3 className="text-neutral-200 font-semibold text-2xl">Create</h3>
+            <div className="flex items-center justify-center p-4">
+              <CiCirclePlus className="w-14 h-14 text-neutral-300" />
+            </div>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
               non, quod minus accusantium impedit ea hic! Atque, distinctio nam
@@ -30,11 +40,14 @@ export const Features = () => {
             </p>
           </div>
         </li>
-        <li className="border border-neutral-400 p-12 rounded-lg">
+        <li className="border border-neutral-400 p-12 rounded-lg bg-hero-bg shadow-lg">
           <div>
             <h3 className="text-neutral-200 font-semibold text-2xl">
               And read!
             </h3>
+            <div className="flex items-center justify-center p-4">
+              <IoLibrary className="w-14 h-14 text-neutral-300" />
+            </div>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
               non, quod minus accusantium impedit ea hic! Atque, distinctio nam
