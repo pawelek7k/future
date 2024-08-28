@@ -1,5 +1,3 @@
-import { ThirdHeading } from "../global/Heading";
-
 export const Features = () => {
   return (
     <section className="py-20 px-12">
@@ -9,9 +7,9 @@ export const Features = () => {
         </h2>
       </div>
       <ul className="flex gap-12">
-        <li className="border border-neutral-400">
+        <li className="border border-neutral-400 p-12 rounded-lg">
           <div>
-            <ThirdHeading>Sing up</ThirdHeading>
+            <h3 className="text-neutral-200 font-semibold text-2xl">Sing up</h3>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
               non, quod minus accusantium impedit ea hic! Atque, distinctio nam
@@ -20,10 +18,10 @@ export const Features = () => {
             </p>
           </div>
         </li>
-        <li className="border border-neutral-400">
+        <li className="border border-neutral-400 p-12 rounded-lg">
           <div>
             {" "}
-            <ThirdHeading>Create</ThirdHeading>
+            <h3 className="text-neutral-200 font-semibold text-2xl">Create</h3>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
               non, quod minus accusantium impedit ea hic! Atque, distinctio nam
@@ -32,9 +30,11 @@ export const Features = () => {
             </p>
           </div>
         </li>
-        <li className="border border-neutral-400">
+        <li className="border border-neutral-400 p-12 rounded-lg">
           <div>
-            <ThirdHeading>Read!</ThirdHeading>
+            <h3 className="text-neutral-200 font-semibold text-2xl">
+              And read!
+            </h3>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
               non, quod minus accusantium impedit ea hic! Atque, distinctio nam
