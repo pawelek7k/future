@@ -8,8 +8,8 @@ export const Features = () => {
           How Future Works?
         </h2>
       </div>
-      <ul className="flex">
-        <li>
+      <ul className="flex gap-12">
+        <li className="border border-neutral-400">
           <div>
             <ThirdHeading>Sing up</ThirdHeading>
             <p className="text-neutral-300">
@@ -20,7 +20,7 @@ export const Features = () => {
             </p>
           </div>
         </li>
-        <li>
+        <li className="border border-neutral-400">
           <div>
             {" "}
             <ThirdHeading>Create</ThirdHeading>
@@ -32,7 +32,7 @@ export const Features = () => {
             </p>
           </div>
         </li>
-        <li>
+        <li className="border border-neutral-400">
           <div>
             <ThirdHeading>Read!</ThirdHeading>
             <p className="text-neutral-300">
