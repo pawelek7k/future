@@ -11,7 +11,7 @@ export const Features = () => {
         </h2>
       </div>
       <ul className="flex gap-12">
-        <li className="border border-neutral-400 p-12 rounded-lg bg-hero-bg shadow-lg">
+        <li className=" p-12 rounded-lg bg-hero-bg shadow-lg">
           <div>
             <h3 className="text-neutral-200 font-semibold text-2xl">Sing up</h3>
             <div className="flex items-center justify-center p-4">
@@ -25,7 +25,7 @@ export const Features = () => {
             </p>
           </div>
         </li>
-        <li className="border border-neutral-400 p-12 rounded-lg bg-hero-bg shadow-lg">
+        <li className=" p-12 rounded-lg bg-hero-bg shadow-lg">
           <div>
             {" "}
             <h3 className="text-neutral-200 font-semibold text-2xl">Create</h3>
@@ -40,7 +40,7 @@ export const Features = () => {
             </p>
           </div>
         </li>
-        <li className="border border-neutral-400 p-12 rounded-lg bg-hero-bg shadow-lg">
+        <li className=" p-12 rounded-lg bg-hero-bg shadow-lg">
           <div>
             <h3 className="text-neutral-200 font-semibold text-2xl">
               And read!
