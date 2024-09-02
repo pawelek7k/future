@@ -19,9 +19,7 @@ export const Features = () => {
             </div>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
-              non, quod minus accusantium impedit ea hic! Atque, distinctio nam
-              modi et minima, vero corrupti non enim libero voluptatibus magni.
-              Voluptatibus.
+              non, quod minus accusantium impedit ea hic!
             </p>
           </div>
         </li>
@@ -34,9 +32,7 @@ export const Features = () => {
             </div>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
-              non, quod minus accusantium impedit ea hic! Atque, distinctio nam
-              modi et minima, vero corrupti non enim libero voluptatibus magni.
-              Voluptatibus.
+              non, quod minus accusantium impedit ea hic!
             </p>
           </div>
         </li>
@@ -50,9 +46,7 @@ export const Features = () => {
             </div>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
-              non, quod minus accusantium impedit ea hic! Atque, distinctio nam
-              modi et minima, vero corrupti non enim libero voluptatibus magni.
-              Voluptatibus.
+              non, quod minus accusantium impedit ea hic!
             </p>
           </div>
         </li>
