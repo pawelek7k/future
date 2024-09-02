@@ -10,7 +10,7 @@ export const Features = () => {
           How Future Works?
         </h2>
       </div>
-      <ul className="flex gap-12">
+      <ul className="flex gap-12 flex-wrap">
         <li className=" p-12 rounded-lg bg-hero-bg shadow-lg">
           <div>
             <h3 className="text-neutral-200 font-semibold text-2xl">Sing up</h3>
