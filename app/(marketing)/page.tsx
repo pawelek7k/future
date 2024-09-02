@@ -1,4 +1,5 @@
 import { Features } from "../components/landing/Features";
+import { Footer } from "../components/landing/Footer";
 import { MarketingNavigation } from "../components/navigations/MarketingNav";
 
 const Home: React.FC = () => {
@@ -8,6 +9,7 @@ const Home: React.FC = () => {
         <MarketingNavigation />
       </section>
       <Features />
+      <Footer />
     </main>
   );
 };
