@@ -10,8 +10,8 @@ export const Features = () => {
           How Future Works?
         </h2>
       </div>
-      <ul className="flex gap-12 flex-wrap">
-        <li className=" p-12 rounded-lg bg-hero-bg shadow-lg">
+      <ul className="flex gap-12 flex-wrap items-center justify-center">
+        <li className=" p-12 rounded-lg bg-hero-bg shadow-l w-96">
           <div>
             <h3 className="text-neutral-200 font-semibold text-2xl">Sing up</h3>
             <div className="flex items-center justify-center p-4">
@@ -25,7 +25,7 @@ export const Features = () => {
             </p>
           </div>
         </li>
-        <li className=" p-12 rounded-lg bg-hero-bg shadow-lg">
+        <li className=" p-12 rounded-lg bg-hero-bg shadow-lg w-96">
           <div>
             {" "}
             <h3 className="text-neutral-200 font-semibold text-2xl">Create</h3>
@@ -40,7 +40,7 @@ export const Features = () => {
             </p>
           </div>
         </li>
-        <li className=" p-12 rounded-lg bg-hero-bg shadow-lg">
+        <li className=" p-12 rounded-lg bg-hero-bg shadow-lg w-96">
           <div>
             <h3 className="text-neutral-200 font-semibold text-2xl">
               And read!
