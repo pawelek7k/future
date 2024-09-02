@@ -33,17 +33,17 @@ export const Footer = () => {
         <LightLogo />
         <ul className="flex flex-col gap-6 mt-6">
           <li>
-            <a href="">
+            <a href="https://www.facebook.com/" target="_blank">
               <FaFacebookSquare className="w-6 h-6 text-neutral-300 hover:text-sky-950  transition ease-in-out" />
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="https://x.com/" target="_blank">
               <FaXTwitter className="w-6 h-6 text-neutral-300 hover:text-sky-950 transition ease-in-out" />
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="https://pl.pinterest.com/" target="_blank">
               <FaPinterest className="w-6 h-6 text-neutral-300 hover:text-sky-950  transition ease-in-out" />
             </a>
           </li>
