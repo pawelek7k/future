@@ -1,6 +1,10 @@
 import { CiCirclePlus } from "react-icons/ci";
+import { FaFacebookSquare, FaPinterest } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { HiShare } from "react-icons/hi";
 import { IoMdLogIn, IoMdMoon } from "react-icons/io";
 import { IoLibrary } from "react-icons/io5";
+import { LightLogo } from "../global/Logo";
 
 export const Footer = () => {
   return (
@@ -22,6 +26,31 @@ export const Footer = () => {
           </li>
           <li>
             <IoLibrary className="w-6 h-6 text-neutral-300" />
+          </li>
+        </ul>
+      </div>
+      <div className="flex items-end justify-end p-10 border-t border-sky-950 mt-20 flex-col">
+        <LightLogo />
+        <ul className="flex flex-col gap-6 mt-6">
+          <li>
+            <a href="">
+              <FaFacebookSquare className="w-6 h-6 text-neutral-300 hover:text-sky-950  transition ease-in-out" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <FaXTwitter className="w-6 h-6 text-neutral-300 hover:text-sky-950 transition ease-in-out" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <FaPinterest className="w-6 h-6 text-neutral-300 hover:text-sky-950  transition ease-in-out" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <HiShare className="w-6 h-6 text-neutral-300 hover:text-sky-950  transition ease-in-out" />
+            </a>
           </li>
         </ul>
       </div>
