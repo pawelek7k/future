@@ -29,9 +29,10 @@ export const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="flex items-end justify-end p-10 border-t border-sky-950 mt-20 flex-col">
+      <div className="flex items-end justify-end p-10 border-t border-sky-950 mt-20 flex-col gap-6">
         <LightLogo />
-        <ul className="flex flex-col gap-6 mt-6">
+        <p className="text-neutral-300">Contact with us!</p>
+        <ul className="flex flex-col gap-6">
           <li>
             <a href="https://www.facebook.com/" target="_blank">
               <FaFacebookSquare className="w-6 h-6 text-neutral-300 hover:text-sky-950  transition ease-in-out" />
