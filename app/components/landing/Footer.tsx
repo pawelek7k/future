@@ -8,7 +8,7 @@ import { LightLogo } from "../global/Logo";
 
 export const Footer = () => {
   return (
-    <footer className="h-screen p-20 border-t border-sky-950">
+    <footer className="h-screen p-10 sm:p-20 border-t border-sky-950">
       <div className="flex justify-start items-center gap-2">
         <ul className="flex flex-col gap-6">
           <li className="flex gap-2">
@@ -29,8 +29,8 @@ export const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="flex justify-between border-t border-sky-950 mt-20 p-10">
-        <div className="text-neutral-300 ">
+      <div className="flex justify-normal flex-col sm:justify-between border-t border-sky-950 mt-10 sm:mt-20 sm:p-10 gap-10 sm:flex-row p-4">
+        <div className="text-neutral-300">
           <h3 className="text-neutral-100 font-semibold text-xl mb-6">
             Company
           </h3>
