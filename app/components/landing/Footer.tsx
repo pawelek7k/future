@@ -35,10 +35,18 @@ export const Footer = () => {
             Company
           </h3>
           <ul className="flex flex-col gap-6">
-            <li>About us</li>
-            <li>News</li>
-            <li>Contact</li>
-            <li>Support</li>
+            <li className="hover:text-sky-950 cursor-pointer transition ease-in-out">
+              About us
+            </li>
+            <li className="hover:text-sky-950 cursor-pointer transition ease-in-out">
+              News
+            </li>
+            <li className="hover:text-sky-950 cursor-pointer transition ease-in-out">
+              Contact
+            </li>
+            <li className="hover:text-sky-950 cursor-pointer transition ease-in-out">
+              Support
+            </li>
           </ul>
         </div>
         <div className="text-neutral-300 ">
@@ -46,10 +54,18 @@ export const Footer = () => {
             Company
           </h3>
           <ul className="flex flex-col gap-6">
-            <li>About us</li>
-            <li>News</li>
-            <li>Contact</li>
-            <li>Support</li>
+            <li className="hover:text-sky-950 cursor-pointer transition ease-in-out">
+              About us
+            </li>
+            <li className="hover:text-sky-950 cursor-pointer transition ease-in-out">
+              News
+            </li>
+            <li className="hover:text-sky-950 cursor-pointer transition ease-in-out">
+              Contact
+            </li>
+            <li className="hover:text-sky-950 cursor-pointer transition ease-in-out">
+              Support
+            </li>
           </ul>
         </div>
         <div className="flex items-end justify-end   flex-col gap-6">
