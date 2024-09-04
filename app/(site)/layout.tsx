@@ -2,7 +2,7 @@ import NextAuthProvider from "@/app/(site)/NextAuthProvider";
 import type { Metadata } from "next";
 import { SiteNavigation } from "../components/navigations/SiteNav";
 import { ThemeProvider } from "../components/theme-provider";
-import "../globals.css";
+import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Future",
