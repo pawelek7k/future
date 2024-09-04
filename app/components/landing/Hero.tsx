@@ -1,5 +1,5 @@
-import { MarketingNavigation } from "../../components/navigations/MarketingNav";
 import "../../styles/card.css";
+import { MarketingNavigation } from "../navigations/MarketingNav";
 import { Cards } from "./Cards";
 
 export const Hero: React.FC = () => {
