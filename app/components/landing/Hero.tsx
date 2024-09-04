@@ -7,7 +7,7 @@ export const Hero: React.FC = () => {
     <section className="p-28 h-screen bg-black bg-hero-bg">
       <MarketingNavigation />
       <div className="flex justify-between">
-        <h1 className="text-neutral-100 text-6xl w-1/2">
+        <h1 className="text-neutral-100 text-3xl sm:text-4xl lg:text-6xl w-1/2">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
           nesciunt atque sint et! Aspernatur est, id, quos atque, molestiae
         </h1>
