@@ -38,7 +38,7 @@ export const DropdownMenu: React.FC<Props> = ({ name, value, onChange }) => {
         />
       </button>
       {isDropdownOpen && (
-        <ul className="absolute left-0 mt-2 w-64 shadow-lg backdrop-blur-lg bg-neutral-100/40 p-1 rounded-lg transition-opacity duration-300 ease-in-out dark:bg-zinc-950/90">
+        <ul className="absolute left-0 mt-2 w-64 shadow-lg backdrop-blur-lg bg-neutral-100/60 p-1 rounded-lg transition-opacity duration-300 ease-in-out dark:bg-zinc-950/90">
           {bookGenres.map(({ id, name }) => (
             <li
               key={id}
