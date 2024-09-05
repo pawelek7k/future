@@ -15,7 +15,7 @@ export const Features = () => {
           <div>
             <h3 className="text-neutral-200 font-semibold text-2xl">Sing up</h3>
             <div className="flex items-center justify-center p-4">
-              <IoMdLogIn className="w-14 h-14 text-neutral-300" />
+              <IoMdLogIn className="w-14 h-14 text-neutral-300 hover:text-neutral-100 transition ease-in-out cursor-pointer" />
             </div>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
@@ -28,7 +28,7 @@ export const Features = () => {
             {" "}
             <h3 className="text-neutral-200 font-semibold text-2xl">Create</h3>
             <div className="flex items-center justify-center p-4">
-              <CiCirclePlus className="w-14 h-14 text-neutral-300" />
+              <CiCirclePlus className="w-14 h-14 text-neutral-300 hover:text-neutral-100 transition ease-in-out cursor-pointer" />
             </div>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
@@ -42,7 +42,7 @@ export const Features = () => {
               And read!
             </h3>
             <div className="flex items-center justify-center p-4">
-              <IoLibrary className="w-14 h-14 text-neutral-300" />
+              <IoLibrary className="w-14 h-14 text-neutral-300 hover:text-neutral-100 transition ease-in-out cursor-pointer" />
             </div>
             <p className="text-neutral-300">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
