@@ -1,10 +1,12 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { FirstHeading } from "@/app/components/global/Heading";
+import { Loader } from "@/app/components/global/Loader";
+import ClientSideComponent from "@/app/components/home/ClientSideComponent";
 import { connectToDatabase } from "@/lib/db";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
-import ClientSideComponent from "@/app/components/home/ClientSideComponent";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Future - Your Library",
@@ -62,7 +64,9 @@ const LibraryAuthPage: React.FC = async () => {
   return (
     <div>
       <FirstHeading>Your Library!</FirstHeading>
-      <ClientSideComponent books={books} />
+      <Suspense fallback={<Loader />}>
+        <ClientSideComponent books={books} />
+      </Suspense>
     </div>
   );
 };

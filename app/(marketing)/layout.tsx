@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import { Loader } from "../components/global/Loader";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-zinc-950">{children}</body>
+      <body className="bg-zinc-950">
+        <Suspense fallback={<Loader />}>{children}</Suspense>
+      </body>
     </html>
   );
 }

@@ -1,8 +1,10 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { Loader } from "@/app/components/global/Loader";
 import ClientSideComponent from "@/app/components/home/ClientSideComponent";
 import { connectToDatabase } from "@/lib/db";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
+import { Suspense } from "react";
 
 interface Book {
   _id: string;
@@ -73,7 +75,9 @@ const HomeAuthPage: React.FC = async () => {
           Discover the books!
         </h1>
       </div>
-      <ClientSideComponent books={books} />
+      <Suspense fallback={<Loader />}>
+        <ClientSideComponent books={books} />
+      </Suspense>
     </>
   );
 };
