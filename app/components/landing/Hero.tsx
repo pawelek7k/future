@@ -15,9 +15,9 @@ export const Hero: React.FC = () => {
           </h1>
           <ul className="text-neutral-100 gap-4 flex">
             <li>
-              <PrimaryButton>
-                <Link href="/login">Join us!</Link>
-              </PrimaryButton>
+              <Link href="/login">
+                <PrimaryButton>Join us!</PrimaryButton>
+              </Link>
             </li>
             <li>
               <SecondaryButton>Read more</SecondaryButton>
