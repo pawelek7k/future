@@ -19,9 +19,13 @@ interface Book {
 
 interface ClientSideComponentProps {
   books: Book[];
+  userLibrary: string[];
 }
 
-const ClientSideComponent: React.FC<ClientSideComponentProps> = ({ books }) => {
+const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
+  books,
+  userLibrary,
+}) => {
   const [filters, setFilters] = useState({
     search: "",
     genre: "",
@@ -97,7 +101,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({ books }) => {
       {viewMode === "grid" ? (
         <BooksGrid books={filteredBooks} />
       ) : (
-        <BooksList books={filteredBooks} />
+        <BooksList books={filteredBooks} userLibrary={userLibrary} />
       )}
     </div>
   );

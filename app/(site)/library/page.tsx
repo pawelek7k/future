@@ -31,6 +31,7 @@ const LibraryAuthPage: React.FC = async () => {
   }
 
   let books: Book[] = [];
+  let userLibrary: string[] = [];
 
   try {
     const db = await connectToDatabase();
@@ -43,6 +44,7 @@ const LibraryAuthPage: React.FC = async () => {
     }
 
     const bookIds = user.library || [];
+    userLibrary = bookIds;
 
     const booksData = await booksCollection
       .find({ _id: { $in: bookIds.map((id: string) => new ObjectId(id)) } })
@@ -65,7 +67,7 @@ const LibraryAuthPage: React.FC = async () => {
     <div>
       <FirstHeading>Your Library!</FirstHeading>
       <Suspense fallback={<Loader />}>
-        <ClientSideComponent books={books} />
+        <ClientSideComponent books={books} userLibrary={userLibrary} />
       </Suspense>
     </div>
   );

@@ -1,6 +1,5 @@
-"use client";
-
 import Image from "next/legacy/image";
+import Notiflix from "notiflix";
 import React, { useState } from "react";
 import { FirstWord } from "../global/FirstWord";
 import { ThirdHeading } from "../global/Heading";
@@ -18,9 +17,13 @@ interface Book {
 
 interface BooksListProps {
   books: Book[];
+  userLibrary?: string[];
 }
 
-export const BooksList: React.FC<BooksListProps> = ({ books }) => {
+export const BooksList: React.FC<BooksListProps> = ({
+  books,
+  userLibrary = [],
+}) => {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
@@ -33,6 +36,27 @@ export const BooksList: React.FC<BooksListProps> = ({ books }) => {
     setIsModalOpen(false);
     setSelectedBook(null);
   };
+
+  const removeBookFromLibrary = async (bookId: string) => {
+    try {
+      const response = await fetch("/api/user/library/delete", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ bookId }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to remove book");
+      }
+
+      Notiflix.Notify.success("Book removed from library");
+    } catch (error) {
+      Notiflix.Notify.failure("Error removing book");
+    }
+  };
+
   return (
     <>
       <ul className="flex flex-col gap-6 mt-10">
@@ -59,6 +83,14 @@ export const BooksList: React.FC<BooksListProps> = ({ books }) => {
                 <FirstWord>For adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
               </p>
               <p>{book.description}</p>
+              {userLibrary.includes(book._id) && (
+                <button
+                  onClick={() => removeBookFromLibrary(book._id)}
+                  className="mt-2 p-2 bg-red-500 text-white rounded"
+                >
+                  Remove from Library
+                </button>
+              )}
             </div>
           </li>
         ))}

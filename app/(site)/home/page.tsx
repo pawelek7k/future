@@ -16,6 +16,11 @@ interface Book {
   tags: string[];
 }
 
+interface User {
+  email: string;
+  library: string[];
+}
+
 export const metadata = {
   title: "Future - Home",
   description: "Future",
@@ -30,10 +35,17 @@ const HomeAuthPage: React.FC = async () => {
   }
 
   let books: Book[] = [];
+  let userLibrary: string[] = [];
 
   try {
     const db = await connectToDatabase();
     const booksCollection = db.collection("books");
+    const usersCollection = db.collection("users");
+
+    const user = await usersCollection.findOne({ email: session.user?.email });
+    if (user) {
+      userLibrary = user.library || [];
+    }
 
     const booksData = await booksCollection
       .find(
@@ -76,7 +88,7 @@ const HomeAuthPage: React.FC = async () => {
         </h1>
       </div>
       <Suspense fallback={<Loader />}>
-        <ClientSideComponent books={books} />
+        <ClientSideComponent books={books} userLibrary={userLibrary} />
       </Suspense>
     </>
   );
