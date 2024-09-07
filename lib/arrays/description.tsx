@@ -8,7 +8,22 @@ interface descriptionItem {
 }
 
 export const descriptions: descriptionItem[] = [
-  { label: "sing up", icon: <IoMdLogIn />, img: "", description: "" },
-  { label: "create", icon: <IoMdLogIn />, img: "", description: "" },
-  { label: "read", icon: <IoMdLogIn />, img: "", description: "" },
+  {
+    label: "sing up",
+    icon: <IoMdLogIn className="text-neutral-100" />,
+    img: "",
+    description: "",
+  },
+  {
+    label: "create",
+    icon: <IoMdLogIn className="text-neutral-100" />,
+    img: "",
+    description: "",
+  },
+  {
+    label: "read",
+    icon: <IoMdLogIn className="text-neutral-100" />,
+    img: "",
+    description: "",
+  },
 ];
