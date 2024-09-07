@@ -1,6 +1,4 @@
-import { CiCirclePlus } from "react-icons/ci";
-import { IoMdLogIn } from "react-icons/io";
-import { IoLibrary } from "react-icons/io5";
+import { features } from "@/lib/arrays/features";
 
 export const Features = () => {
   return (
@@ -11,45 +9,22 @@ export const Features = () => {
         </h2>
       </div>
       <ul className="flex gap-12 flex-wrap items-center justify-center">
-        <li className=" p-12 rounded-lg bg-hero-bg shadow-l w-96">
-          <div>
-            <h3 className="text-neutral-200 font-semibold text-2xl">Sing up</h3>
-            <div className="flex items-center justify-center p-4">
-              <IoMdLogIn className="w-14 h-14 text-neutral-300 hover:text-neutral-100 transition ease-in-out cursor-pointer" />
+        {features.map((feature) => (
+          <li
+            className=" p-12 rounded-lg bg-hero-bg shadow-l w-96"
+            key={feature.id}
+          >
+            <div>
+              <h3 className="text-neutral-200 font-semibold text-2xl">
+                {feature.heading}
+              </h3>
+              <div className="flex items-center justify-center p-4">
+                {feature.icon}
+              </div>
+              <p className="text-neutral-300">{feature.p}</p>
             </div>
-            <p className="text-neutral-300">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
-              non, quod minus accusantium impedit ea hic!
-            </p>
-          </div>
-        </li>
-        <li className=" p-12 rounded-lg bg-hero-bg shadow-lg w-96">
-          <div>
-            {" "}
-            <h3 className="text-neutral-200 font-semibold text-2xl">Create</h3>
-            <div className="flex items-center justify-center p-4">
-              <CiCirclePlus className="w-14 h-14 text-neutral-300 hover:text-neutral-100 transition ease-in-out cursor-pointer" />
-            </div>
-            <p className="text-neutral-300">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
-              non, quod minus accusantium impedit ea hic!
-            </p>
-          </div>
-        </li>
-        <li className=" p-12 rounded-lg bg-hero-bg shadow-lg w-96">
-          <div>
-            <h3 className="text-neutral-200 font-semibold text-2xl">
-              And read!
-            </h3>
-            <div className="flex items-center justify-center p-4">
-              <IoLibrary className="w-14 h-14 text-neutral-300 hover:text-neutral-100 transition ease-in-out cursor-pointer" />
-            </div>
-            <p className="text-neutral-300">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
-              non, quod minus accusantium impedit ea hic!
-            </p>
-          </div>
-        </li>
+          </li>
+        ))}
       </ul>
     </section>
   );
