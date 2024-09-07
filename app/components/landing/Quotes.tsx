@@ -44,7 +44,7 @@ export const Quotes = () => {
   return (
     <div
       id="typewriter"
-      className="text-neutral-100 absolute transition ease-in-out"
+      className="text-neutral-500 absolute transition ease-in-out italic"
       style={{
         left: position.x,
         top: position.y,
