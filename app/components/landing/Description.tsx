@@ -9,7 +9,7 @@ export const Description = () => {
   return (
     <div>
       <nav>
-        <ul>
+        <ul className="text-neutral-100">
           {descriptions.map((description) => (
             <li
               key={description.label}
