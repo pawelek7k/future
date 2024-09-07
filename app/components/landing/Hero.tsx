@@ -3,10 +3,12 @@ import "../../styles/card.css";
 import { PrimaryButton, SecondaryButton } from "../global/Buttons";
 import { MarketingNavigation } from "../navigations/MarketingNav";
 import { Cards } from "./Cards";
+import { Quotes } from "./Quotes";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="p-28 h-screen bg-black bg-hero-bg">
+    <section className="p-28 h-screen bg-black bg-hero-bg relative">
+      <Quotes />
       <MarketingNavigation />
       <div className="flex md:justify-between justify-center">
         <div className="flex flex-col gap-8 justify-center">
