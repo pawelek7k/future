@@ -18,7 +18,7 @@ export const Features = () => {
               <h3 className="text-neutral-200 font-semibold text-2xl">
                 {feature.heading}
               </h3>
-              <div className="flex items-center justify-center p-4">
+              <div className="flex items-center justify-center p-4 w-18 h-18">
                 {feature.icon}
               </div>
               <p className="text-neutral-300">{feature.p}</p>
