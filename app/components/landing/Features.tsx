@@ -1,9 +1,11 @@
+import "@/app/styles/animations.css";
 import { features } from "@/lib/arrays/features";
+import { FaArrowDown } from "react-icons/fa";
 
 export const Features = () => {
   return (
-    <section className="py-20 px-12">
-      <div className="text-center p-8">
+    <section className="py-20 px-12 flex flex-col items-center gap-16">
+      <div className="text-center">
         <h2 className="text-neutral-100 font-semibold text-4xl">
           How Future Works?
         </h2>
@@ -26,6 +28,7 @@ export const Features = () => {
           </li>
         ))}
       </ul>
+      <FaArrowDown className="text-neutral-100 w-8 h-8 arrow-animation" />
     </section>
   );
 };
