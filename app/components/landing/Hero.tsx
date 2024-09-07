@@ -7,7 +7,7 @@ import { Quotes } from "./Quotes";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="p-28 h-screen bg-black bg-hero-bg relative">
+    <section className="p-28 h-screen bg-black  relative bg-hero-img bg-center bg-cover bg-fixed">
       <Quotes />
       <MarketingNavigation />
       <div className="flex md:justify-between justify-center">
