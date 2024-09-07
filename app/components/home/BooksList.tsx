@@ -1,6 +1,7 @@
 import Image from "next/legacy/image";
 import Notiflix from "notiflix";
 import React, { useState } from "react";
+import { IoTrashBin } from "react-icons/io5";
 import { FirstWord } from "../global/FirstWord";
 import { ThirdHeading } from "../global/Heading";
 import { Modal } from "../Modal";
@@ -26,6 +27,7 @@ export const BooksList: React.FC<BooksListProps> = ({
 }) => {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [hoveredBookId, setHoveredBookId] = useState<string | null>(null);
 
   const handleBookClick = (book: Book) => {
     setSelectedBook(book);
@@ -64,32 +66,47 @@ export const BooksList: React.FC<BooksListProps> = ({
           <li
             key={book._id}
             className="cursor-pointer dark:shadow-sm flex gap-2 hover:bg-neutral-100/20 p-2 transition ease-in-out rounded-lg dark:hover:bg-zinc-950/30 hover:shadow-sm"
-            onClick={() => handleBookClick(book)}
           >
-            <div>
-              <div className="relative overflow-hidden rounded-md w-36 h-56">
-                <Image
-                  src={book.cover}
-                  alt={book.title}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                />
+            <div onClick={() => handleBookClick(book)} className="flex gap-2">
+              <div>
+                <div className="relative overflow-hidden rounded-md w-36 h-56">
+                  <Image
+                    src={book.cover}
+                    alt={book.title}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </div>
+              </div>
+              <div className="p-2 flex flex-col gap-2">
+                <ThirdHeading>{book.title}</ThirdHeading>
+                <p>
+                  <FirstWord>For adult:</FirstWord>{" "}
+                  {book.forAdult ? "Yes" : "No"}
+                </p>
+                <p>{book.description}</p>
               </div>
             </div>
-            <div className="p-2 flex flex-col gap-2">
-              <ThirdHeading>{book.title}</ThirdHeading>
-              <p>
-                <FirstWord>For adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
-              </p>
-              <p>{book.description}</p>
+            <div className="flex items-center justify-center p-12">
               {userLibrary.includes(book._id) && (
-                <button
-                  onClick={() => removeBookFromLibrary(book._id)}
-                  className="mt-2 p-2 bg-red-500 text-white rounded"
+                <div
+                  className="relative flex items-center justify-center"
+                  onMouseEnter={() => setHoveredBookId(book._id)}
+                  onMouseLeave={() => setHoveredBookId(null)}
                 >
-                  Remove from Library
-                </button>
+                  <button
+                    onClick={() => removeBookFromLibrary(book._id)}
+                    className="flex items-center justify-center"
+                  >
+                    <IoTrashBin className="text-red-500 transition ease-in-out hover:text-rose-950 w-6 h-6" />
+                  </button>
+                  {hoveredBookId === book._id && (
+                    <div className="absolute bottom-full mb-2 px-2 py-1 text-sm bg-neutral-300 text-sky-950 dark:bg-zinc-950 rounded-md dark:text-neutral-100">
+                      Remove from library
+                    </div>
+                  )}
+                </div>
               )}
             </div>
           </li>
