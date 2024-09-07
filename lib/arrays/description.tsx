@@ -1,13 +1,14 @@
 import { IoMdLogIn } from "react-icons/io";
 
 interface descriptionItem {
+  label: string;
   icon: JSX.Element;
   img: string;
   description: string;
 }
 
-export const description: descriptionItem[] = [
-  { icon: <IoMdLogIn />, img: "", description: "" },
-  { icon: <IoMdLogIn />, img: "", description: "" },
-  { icon: <IoMdLogIn />, img: "", description: "" },
+export const descriptions: descriptionItem[] = [
+  { label: "sing up", icon: <IoMdLogIn />, img: "", description: "" },
+  { label: "create", icon: <IoMdLogIn />, img: "", description: "" },
+  { label: "read", icon: <IoMdLogIn />, img: "", description: "" },
 ];
