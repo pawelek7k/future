@@ -7,7 +7,7 @@ import { useState } from "react";
 export const Description = () => {
   const [selectedTab, setSelectedTab] = useState(descriptions[0]);
   return (
-    <div>
+    <div className="border border-rose-950 h-[20rem] w-[40rem] rounded-lg">
       <nav>
         <ul className="text-neutral-100">
           {descriptions.map((description) => (
@@ -23,7 +23,7 @@ export const Description = () => {
           ))}
         </ul>
       </nav>
-      <div>
+      <div className="flex justify-center items-center flex-1">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedTab ? selectedTab.label : "empty"}
