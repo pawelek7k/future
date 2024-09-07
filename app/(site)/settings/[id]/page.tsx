@@ -1,6 +1,5 @@
 "use client";
 
-import { AccountContainer } from "@/app/components/settings/Account";
 import { ChangePassword } from "@/app/components/settings/ChangePassword";
 import { Sidebar } from "@/app/components/settings/Sidebar";
 import { useParams } from "next/navigation";
@@ -10,8 +9,6 @@ const SettingPage = () => {
 
   const renderContent = () => {
     switch (id) {
-      case "account":
-        return <AccountContainer />;
       case "notifications":
         return <div>Notifications Settings</div>;
       case "security":

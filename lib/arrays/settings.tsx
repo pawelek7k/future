@@ -1,9 +1,5 @@
 import { IoIosNotifications } from "react-icons/io";
-import {
-  MdManageAccounts,
-  MdOutlineSecurity,
-  MdPrivacyTip,
-} from "react-icons/md";
+import { MdOutlineSecurity, MdPrivacyTip } from "react-icons/md";
 
 interface SidebarItem {
   id: string;
@@ -12,7 +8,6 @@ interface SidebarItem {
 }
 
 export const sidebarItems: SidebarItem[] = [
-  { id: "account", label: "Account", icon: <MdManageAccounts /> },
   { id: "notifications", label: "Notifications", icon: <IoIosNotifications /> },
   { id: "security", label: "Security", icon: <MdOutlineSecurity /> },
   { id: "privacy", label: "Privacy", icon: <MdPrivacyTip /> },
