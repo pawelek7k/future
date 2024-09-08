@@ -85,7 +85,7 @@ export const Container: React.FC = () => {
       </div>
       <div className="mt-10">
         <SecondaryButton onClick={toggleForm}>
-          {isLogin ? "Przełącz na Rejestrację" : "Przełącz na Logowanie"}
+          {isLogin ? "Switch to registrations" : "Switch to login"}
         </SecondaryButton>
       </div>
     </div>
