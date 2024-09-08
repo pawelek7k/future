@@ -11,19 +11,19 @@ interface descriptionItem {
 
 export const descriptions: descriptionItem[] = [
   {
-    label: "sing up",
+    label: "Sing up",
     icon: <IoMdLogIn className="text-neutral-100" />,
     img: "",
     description: "",
   },
   {
-    label: "create",
+    label: "Create",
     icon: <CiCirclePlus className="text-neutral-100" />,
     img: "",
     description: "",
   },
   {
-    label: "read",
+    label: "Read",
     icon: <IoLibrary className="text-neutral-100" />,
     img: "",
     description: "",
