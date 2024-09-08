@@ -16,7 +16,10 @@ export const Description = () => {
                 key={description.label}
                 onClick={() => setSelectedTab(description)}
               >
-                {`${description.icon} ${description.label}`}
+                <div className="flex items-center">
+                  <span className="mr-2">{description.icon}</span>
+                  {description.label}
+                </div>
                 {description === selectedTab ? (
                   <motion.div className="underline" layoutId="underline" />
                 ) : null}
