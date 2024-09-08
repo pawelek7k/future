@@ -11,12 +11,12 @@ export const statistics: statisticsItem[] = [
         description: 'writers & readers'
     },
     {
-        id: 1,
+        id: 2,
         numbers: '100',
         description: 'books'
     },
     {
-        id: 1,
+        id: 3,
         numbers: '100k',
         description: 'views'
     }
