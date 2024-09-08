@@ -7,7 +7,7 @@ import { useState } from "react";
 export const Description = () => {
   const [selectedTab, setSelectedTab] = useState(descriptions[0]);
   return (
-    <section className="flex items-center justify-center p-12">
+    <section className="flex items-center justify-center pb-20">
       <div className="border border-rose-950 h-[20rem] w-[40rem] rounded-lg overflow-hidden">
         <nav className="border border-rose-950">
           <ul className="text-neutral-100 flex justify-between py-2 px-6 ">
@@ -15,6 +15,7 @@ export const Description = () => {
               <li
                 key={description.label}
                 onClick={() => setSelectedTab(description)}
+                className="cursor-pointer"
               >
                 <div className="flex items-center">
                   <span className="mr-2">{description.icon}</span>
