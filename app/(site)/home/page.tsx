@@ -16,11 +16,6 @@ interface Book {
   tags: string[];
 }
 
-interface User {
-  email: string;
-  library: string[];
-}
-
 export const metadata = {
   title: "Future - Home",
   description: "Future",
@@ -30,7 +25,6 @@ const HomeAuthPage: React.FC = async () => {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    // W Next.js 13+ w `/app` możesz użyć `redirect` bezpośrednio
     redirect("/login");
   }
 
