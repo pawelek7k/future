@@ -28,7 +28,7 @@ export const Features = () => {
           </li>
         ))}
       </ul>
-      <FaArrowDown className="text-neutral-100 w-8 h-8 arrow-animation mt-10" />
+      <FaArrowDown className="text-neutral-100 w-8 h-8 arrow-animation mt-10 hidden md:block" />
     </section>
   );
 };

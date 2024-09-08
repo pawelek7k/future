@@ -8,7 +8,7 @@ import { useState } from "react";
 export const Description = () => {
   const [selectedTab, setSelectedTab] = useState(descriptions[0]);
   return (
-    <section className="flex items-center justify-center pb-20 relative">
+    <section className="items-center justify-center pb-20 relative hidden md:flex">
       <div className="border border-rose-950 h-[20rem] w-[40rem] rounded-lg shadow-lg shadow-rose-950 overflow-hidden">
         <nav className="border border-rose-950">
           <ul className="text-neutral-100 flex justify-between py-2 px-6 ">
