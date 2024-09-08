@@ -1,4 +1,6 @@
+import { CiCirclePlus } from "react-icons/ci";
 import { IoMdLogIn } from "react-icons/io";
+import { IoLibrary } from "react-icons/io5";
 
 interface descriptionItem {
   label: string;
@@ -16,13 +18,13 @@ export const descriptions: descriptionItem[] = [
   },
   {
     label: "create",
-    icon: <IoMdLogIn className="text-neutral-100" />,
+    icon: <CiCirclePlus className="text-neutral-100" />,
     img: "",
     description: "",
   },
   {
     label: "read",
-    icon: <IoMdLogIn className="text-neutral-100" />,
+    icon: <IoLibrary className="text-neutral-100" />,
     img: "",
     description: "",
   },
