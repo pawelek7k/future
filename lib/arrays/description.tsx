@@ -13,19 +13,19 @@ export const descriptions: descriptionItem[] = [
   {
     label: "Sing up",
     icon: <IoMdLogIn className="text-neutral-100" />,
-    img: "",
-    description: "",
+    img: "/images/login-img.png",
+    description: "Log in with your email and password!",
   },
   {
     label: "Create",
     icon: <CiCirclePlus className="text-neutral-100" />,
-    img: "",
+    img: "/public/images/login-img.png",
     description: "",
   },
   {
     label: "Read",
     icon: <IoLibrary className="text-neutral-100" />,
-    img: "",
+    img: "/public/images/login-img.png",
     description: "",
   },
 ];

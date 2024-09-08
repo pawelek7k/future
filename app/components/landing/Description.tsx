@@ -2,13 +2,14 @@
 
 import { descriptions } from "@/lib/arrays/description";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/legacy/image";
 import { useState } from "react";
 
 export const Description = () => {
   const [selectedTab, setSelectedTab] = useState(descriptions[0]);
   return (
-    <section className="flex items-center justify-center pb-20">
-      <div className="border border-rose-950 h-[20rem] w-[40rem] rounded-lg overflow-hidden">
+    <section className="flex items-center justify-center pb-20 relative">
+      <div className="border border-rose-950 h-[20rem] w-[40rem] rounded-lg shadow-lg shadow-rose-950 overflow-hidden">
         <nav className="border border-rose-950">
           <ul className="text-neutral-100 flex justify-between py-2 px-6 ">
             {descriptions.map((description) => (
@@ -28,7 +29,7 @@ export const Description = () => {
             ))}
           </ul>
         </nav>
-        <div className="flex justify-center items-center flex-1">
+        <div className="flex justify-center items-center flex-1 bg-hero-bg">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedTab ? selectedTab.label : "empty"}
@@ -37,7 +38,23 @@ export const Description = () => {
               exit={{ y: -10, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              {selectedTab ? selectedTab.icon : "😋"}
+              {selectedTab ? (
+                <>
+                  <div className="w-[20rem] h-[20rem] relative overflow-hidden flex items-start justify-start">
+                    <Image
+                      src={selectedTab.img}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                    />
+                  </div>
+                  <div className="bg-neutral-100 absolute  z-20 top-20 left-96 shadow-lg rounded-xl shadow-sky-950 text-zinc-950 p-2">
+                    <p>{selectedTab.description}</p>
+                  </div>
+                </>
+              ) : (
+                "😋"
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
