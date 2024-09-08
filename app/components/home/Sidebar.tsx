@@ -5,7 +5,7 @@ import { SearchInput } from "@/app/components/global/SearchInput";
 import { Divide as Hamburger } from "hamburger-react";
 import { KeyboardEvent, useState } from "react";
 import { PrimaryButton, SecondaryButton } from "../global/Buttons";
-import { FirstHeading } from "../global/Heading";
+import { SecondHeading } from "../global/Heading";
 import { LangSwitch } from "../global/LangSwitch";
 import { ToggleSwitch } from "../global/ToggleSwitch";
 
@@ -80,7 +80,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           isOpen ? "translate-x-0" : "translate-x-full"
         } w-full md:w-[400px]`}
       >
-        <FirstHeading>Filters</FirstHeading>
+        <SecondHeading>Filters</SecondHeading>
         <SearchInput
           onChange={handleSearch}
           onKeyDown={handleKeyDown}

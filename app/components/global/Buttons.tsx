@@ -20,6 +20,7 @@ export const GoogleButton: React.FC = () => {
     <button
       onClick={handleGoogleSignIn}
       className="flex items-center justify-center w-full bg-white border border-gray-300 rounded-lg shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition duration-150 ease-in-out p-2 gap-2"
+      aria-label="Sign in with Google"
     >
       <FcGoogle />
       <span className="text-gray-800 text-sm font-medium">
@@ -35,6 +36,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
   isSubmitting,
   icon,
 }) => {
+  const ariaLabel = typeof children === "string" ? children : "button";
   return (
     <button
       type="submit"
@@ -47,6 +49,7 @@ export const PrimaryButton: React.FC<ButtonProps> = ({
       "
       onClick={onClick}
       disabled={isSubmitting}
+      aria-label={ariaLabel}
     >
       {isSubmitting ? (
         "Submitting..."
@@ -64,13 +67,18 @@ export const LogoutButton: React.FC = () => {
   const logoutHandler = () => {
     signOut();
   };
-  return <button onClick={logoutHandler}>{"logoutButton"}</button>;
+  return (
+    <button onClick={logoutHandler} aria-label="logout">
+      {"logoutButton"}
+    </button>
+  );
 };
 
 export const AbsoluteButton: React.FC<ButtonProps> = ({
   children,
   onClick,
 }) => {
+  const ariaLabel = typeof children === "string" ? children : "button";
   return (
     <button
       className="mt-4 p-2 absolute -top-10 right-0  bg-sky-900 text-white py-2 px-4 rounded-lg
@@ -78,6 +86,7 @@ export const AbsoluteButton: React.FC<ButtonProps> = ({
   dark:bg-rose-900 dark:hover:bg-rose-800
   shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
       onClick={onClick}
+      aria-label={ariaLabel}
     >
       {children}
     </button>
@@ -86,7 +95,10 @@ export const AbsoluteButton: React.FC<ButtonProps> = ({
 
 export const HeroButton: React.FC = () => {
   return (
-    <button className="border border-neutral-100 backdrop-blur-md py-2 px-6 transition easy-in-out font-sans tracking-wide rounded-full shadow-md text-neutral-100 shadow-neutral-100/30 hover:bg-neutral-100 hover:text-black text-large">
+    <button
+      className="border border-neutral-100 backdrop-blur-md py-2 px-6 transition easy-in-out font-sans tracking-wide rounded-full shadow-md text-neutral-100 shadow-neutral-100/30 hover:bg-neutral-100 hover:text-black text-large"
+      aria-label="log in"
+    >
       <Link href="/login" className="">
         Log in
       </Link>
@@ -99,10 +111,12 @@ export const SecondaryButton: React.FC<ButtonProps> = ({
   icon,
   onClick,
 }) => {
+  const ariaLabel = typeof children === "string" ? children : "button";
   return (
     <button
       className="p-2 dark:bg-rose-950/30 bg-sky-950/70 text-white py-2 px-4 rounded-lg w-full shadow-md hover:shadow-lg transition ease-in-out hover:bg-sky-950/80 dark:hover:bg-rose-950/80 flex items-center gap-2 justify-center"
       onClick={onClick}
+      aria-label={ariaLabel}
     >
       {icon && <span className="flex-shrink-0">{icon}</span>}
       {children}

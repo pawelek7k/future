@@ -48,6 +48,7 @@ export const BooksGrid: React.FC<BooksListProps> = ({ books }) => {
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center"
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
               />
             </div>
             <ThirdHeading>{book.title}</ThirdHeading>

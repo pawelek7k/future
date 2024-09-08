@@ -4,7 +4,7 @@ import { sidebarItems } from "@/lib/arrays/settings";
 import { Divide as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { useState } from "react";
-import { FirstHeading } from "../global/Heading";
+import { SecondHeading } from "../global/Heading";
 
 export const Sidebar: React.FC = () => {
   const [isOpen, setOpen] = useState(true);
@@ -21,9 +21,9 @@ export const Sidebar: React.FC = () => {
         }`}
         style={{ width: "250px" }}
       >
-        <FirstHeading>
+        <SecondHeading>
           <Link href="/settings">Settings</Link>
-        </FirstHeading>
+        </SecondHeading>
         <ul className="space-y-2 mt-6">
           {sidebarItems.map((item) => (
             <li

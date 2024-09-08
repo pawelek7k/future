@@ -76,6 +76,7 @@ export const BooksList: React.FC<BooksListProps> = ({
                     layout="fill"
                     objectFit="cover"
                     objectPosition="center"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   />
                 </div>
               </div>
@@ -98,6 +99,7 @@ export const BooksList: React.FC<BooksListProps> = ({
                   <button
                     onClick={() => removeBookFromLibrary(book._id)}
                     className="flex items-center justify-center"
+                    aria-label="remove from library"
                   >
                     <IoTrashBin className="text-red-500 transition ease-in-out hover:text-rose-950 w-6 h-6" />
                   </button>
