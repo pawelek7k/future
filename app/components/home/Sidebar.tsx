@@ -1,9 +1,7 @@
-"use client";
-
 import { DropdownMenu } from "@/app/components/global/Dropdown";
 import { SearchInput } from "@/app/components/global/SearchInput";
 import { Divide as Hamburger } from "hamburger-react";
-import { KeyboardEvent, useState } from "react";
+import React, { KeyboardEvent, useState } from "react";
 import { PrimaryButton, SecondaryButton } from "../global/Buttons";
 import { SecondHeading } from "../global/Heading";
 import { LangSwitch } from "../global/LangSwitch";
@@ -73,9 +71,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           toggle={setOpen}
           size={20}
           aria-expanded={isOpen}
+          aria-label="Toggle menu"
+          aria-controls="sidebar"
         />
       </div>
       <div
+        id="sidebar"
         className={`fixed top-20 right-0 md:right-10 text-sky-950 bg-neutral-100/40 dark:bg-zinc-950/20 p-6 z-40 rounded-xl transition-transform duration-300 ease-in-out backdrop-blur-lg flex flex-col gap-4 shadow-md dark:shadow-zinc-950 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } w-full md:w-[400px]`}
@@ -85,10 +86,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
           onChange={handleSearch}
           onKeyDown={handleKeyDown}
           value={search}
+          aria-label="Search"
         />
         <DropdownMenu onChange={handleGenreChange} value={genre} />
         <div className="flex items-center gap-2">
-          <label className="dark:text-neutral-100 text-sm">For adult</label>
+          <span className="dark:text-neutral-100 text-sm font-medium text-gray-700">
+            For adult
+          </span>
           <ToggleSwitch
             name="forAdult"
             value={forAdult ? "on" : "off"}

@@ -1,6 +1,7 @@
 import { signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
+import { IoLogOutOutline } from "react-icons/io5";
 interface ButtonProps {
   children: string | React.ReactNode;
   onClick?: () => void;
@@ -68,8 +69,13 @@ export const LogoutButton: React.FC = () => {
     signOut();
   };
   return (
-    <button onClick={logoutHandler} aria-label="logout">
-      {"logoutButton"}
+    <button
+      onClick={logoutHandler}
+      aria-label="logout"
+      className="text-sm flex items-center gap-2"
+    >
+      <IoLogOutOutline className="w-6 h-6" />
+      <span className="text-sm hidden md:block">Log out</span>
     </button>
   );
 };

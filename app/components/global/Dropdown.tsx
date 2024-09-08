@@ -28,6 +28,7 @@ export const DropdownMenu: React.FC<Props> = ({ name, value, onChange }) => {
       <button
         type="button"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        aria-label="Select genre"
         className="flex items-center text-gray-700 dark:text-neutral-100 text-sm font-medium mb-2"
       >
         {selectedGenre || "Genre"}
