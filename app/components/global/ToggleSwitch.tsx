@@ -31,21 +31,25 @@ export const ToggleSwitch: React.FC<Props> = ({
         className="sr-only"
         checked={checked}
         onChange={handleChange}
+        aria-checked={checked}
+        role="switch"
       />
-      <div
-        className={`w-10 h-6 flex items-center rounded-full p-1 transition-colors duration-300 ease-in-out ${
+      <label
+        htmlFor={name}
+        className={`w-10 h-6 flex items-center rounded-full p-1 transition-colors duration-300 ease-in-out cursor-pointer ${
           checked
             ? "bg-sky-950 dark:bg-rose-950"
             : "bg-sky-950/20 dark:bg-black/50"
         }`}
-        onClick={handleChange}
+        aria-label="Toggle switch"
       >
         <div
           className={`w-4 h-4 bg-neutral-100 rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${
             checked ? "translate-x-4" : "translate-x-0"
           }`}
+          onClick={handleChange}
         />
-      </div>
+      </label>
     </div>
   );
 };
