@@ -19,7 +19,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   handleChange,
   submitHandler,
 }) => (
-  <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10 shadow-rose-950">
+  <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-20 shadow-rose-950">
     <h1 className="text-2xl font-semibold text-neutral-100 text-center">
       Welcome back!
     </h1>
