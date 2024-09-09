@@ -46,6 +46,7 @@ export const Description = () => {
                       layout="fill"
                       objectFit="cover"
                       objectPosition="center"
+                      alt={selectedTab.label}
                     />
                   </div>
                   <div className="bg-neutral-100 absolute  z-20 top-20 left-96 shadow-lg rounded-xl shadow-sky-950 text-zinc-950 p-2">
