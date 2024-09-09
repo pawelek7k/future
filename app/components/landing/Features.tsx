@@ -1,7 +1,7 @@
 import "@/app/styles/animations.css";
 import { features } from "@/lib/arrays/features";
 
-export const Features = () => {
+export const Features: React.FC = () => {
   return (
     <section className="py-20 px-12 flex flex-col items-center gap-16">
       <div className="text-center">
