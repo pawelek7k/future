@@ -1,6 +1,5 @@
 import "@/app/styles/animations.css";
 import { features } from "@/lib/arrays/features";
-import { FaArrowDown } from "react-icons/fa";
 
 export const Features = () => {
   return (
@@ -28,7 +27,6 @@ export const Features = () => {
           </li>
         ))}
       </ul>
-      <FaArrowDown className="text-neutral-100 w-8 h-8 arrow-animation mt-10 hidden md:block" />
     </section>
   );
 };
