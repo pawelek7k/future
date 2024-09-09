@@ -1,3 +1,4 @@
+import { Accordion } from "../components/landing/Faq";
 import { Features } from "../components/landing/Features";
 import { Footer } from "../components/landing/Footer";
 import { Hero } from "../components/landing/Hero";
@@ -7,6 +8,7 @@ const Home: React.FC = () => {
     <main className="">
       <Hero />
       <Features />
+      <Accordion />
       <Footer />
     </main>
   );
