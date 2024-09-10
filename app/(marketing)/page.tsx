@@ -9,8 +9,8 @@ const Home: React.FC = () => {
     <main className="">
       <Hero />
       <Features />
-      <Accordion />
       <Reviews />
+      <Accordion />
       <Footer />
     </main>
   );
