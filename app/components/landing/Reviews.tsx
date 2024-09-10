@@ -30,9 +30,15 @@ export const Reviews: React.FC = () => {
         >
           {reviewsData.reviews.map((review: ReviewsProps, index: number) => (
             <SwiperSlide key={index}>
-              <div className="bg-neutral-100 w-52 h-32">
-                <div>
-                  <Image src={review.img} alt={review.name} layout="fill" />
+              <div className="bg-neutral-100">
+                <div className="relative overflow-hidden rounded-full w-24 h-24">
+                  <Image
+                    src={review.img}
+                    alt={review.name}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
                 </div>
                 <div>
                   <h3>{review.name}</h3>
