@@ -3,27 +3,27 @@
     {
       "img": "/images/user-img1",
       "name": "Alina Bree",
-      "reviews": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
+      "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
     },
     {
       "img": "/images/user-img2",
       "name": "Alice Green",
-      "reviews": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
+      "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
     },
     {
       "img": "/images/user-img3",
       "name": "Kordian Lee",
-      "reviews": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
+      "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
     },
     {
       "img": "/images/user-img4",
       "name": "Carolina Jones",
-      "reviews": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
+      "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
     },
     {
       "img": "/images/user-img5",
       "name": "Oliver Smith",
-      "reviews": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
+      "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
     }
   ]
 }

@@ -1,11 +1,15 @@
 "use client";
 
+import reviewsData from "@/lib/arrays/json/reviews.json";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+interface ReviewsProps {
+  img: string;
+  name: string;
+  review: string;
+}
 
 export const Reviews: React.FC = () => {
   return (
@@ -23,18 +27,14 @@ export const Reviews: React.FC = () => {
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
         >
-          <SwiperSlide>
-            <div className="bg-neutral-100 w-52 h-32"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-neutral-100 w-52 h-32"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-neutral-100 w-52 h-32"></div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-neutral-100 w-52 h-32"></div>
-          </SwiperSlide>
+          {reviewsData.reviews.map((review: ReviewsProps, index: number) => (
+            <SwiperSlide key={index}>
+              <div className="bg-neutral-100 w-52 h-32">
+                <h3>{review.name}</h3>
+                <p>{review.review}</p>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>
