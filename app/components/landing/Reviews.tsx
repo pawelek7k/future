@@ -1,3 +1,39 @@
+"use client";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 export const Reviews: React.FC = () => {
-  return <section></section>;
+  return (
+    <section>
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={3}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
+      >
+        <SwiperSlide>
+          <div className="bg-neutral-100 w-52 h-32"></div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="bg-neutral-100 w-52 h-32"></div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="bg-neutral-100 w-52 h-32"></div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="bg-neutral-100 w-52 h-32"></div>
+        </SwiperSlide>
+      </Swiper>
+    </section>
+  );
 };
