@@ -3,7 +3,7 @@ import { features } from "@/lib/arrays/features";
 
 export const Features: React.FC = () => {
   return (
-    <section className="py-20 px-12 flex flex-col items-center gap-16">
+    <section className="py-20 px-20 flex flex-col items-center gap-16">
       <div className="text-center">
         <h2 className="text-neutral-100 font-semibold text-4xl">
           How Future Works?

@@ -15,7 +15,7 @@ interface ReviewsProps {
 
 export const Reviews: React.FC = () => {
   return (
-    <section className="py-20 px-12 flex flex-col items-center gap-16 justify-center">
+    <section className="py-20 px-20 flex flex-col items-center gap-16 justify-center">
       <h2 className="text-neutral-100 font-semibold text-4xl">Reviews</h2>
       <div className="max-w-[1000px] flex justify-center items-center">
         <Swiper

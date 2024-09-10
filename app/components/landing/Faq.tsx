@@ -37,7 +37,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
 
 export const Accordion: React.FC = () => {
   return (
-    <section className="max-w-2xl mx-auto pb-20 pt-0 px-12 flex flex-col items-center gap-16">
+    <section className="max-w-2xl mx-auto py-20 px-20 flex flex-col items-center gap-16">
       <h2 className="text-neutral-100 font-semibold text-4xl text-center">
         FAQ
       </h2>
