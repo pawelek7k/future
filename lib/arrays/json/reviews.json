@@ -1,27 +1,27 @@
 {
   "reviews": [
     {
-      "img": "/images/user-img1",
+      "img": "/images/user-img1.jpg",
       "name": "Alina Bree",
       "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
     },
     {
-      "img": "/images/user-img2",
+      "img": "/images/user-img2.jpg",
       "name": "Alice Green",
       "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
     },
     {
-      "img": "/images/user-img3",
+      "img": "/images/user-img3.jpg",
       "name": "Kordian Lee",
       "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
     },
     {
-      "img": "/images/user-img4",
+      "img": "/images/user-img4.jpg",
       "name": "Carolina Jones",
       "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
     },
     {
-      "img": "/images/user-img5",
+      "img": "/images/user-img5.jpg",
       "name": "Oliver Smith",
       "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus, tempore facere non in sed error, assumenda magnam ducimus, sint dignissimos quia."
     }
