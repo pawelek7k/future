@@ -1,6 +1,7 @@
 "use client";
 
 import reviewsData from "@/lib/arrays/json/reviews.json";
+import Image from "next/legacy/image";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -30,8 +31,13 @@ export const Reviews: React.FC = () => {
           {reviewsData.reviews.map((review: ReviewsProps, index: number) => (
             <SwiperSlide key={index}>
               <div className="bg-neutral-100 w-52 h-32">
-                <h3>{review.name}</h3>
-                <p>{review.review}</p>
+                <div>
+                  <Image src={review.img} alt={review.name} layout="fill" />
+                </div>
+                <div>
+                  <h3>{review.name}</h3>
+                  <p>{review.review}</p>
+                </div>
               </div>
             </SwiperSlide>
           ))}
