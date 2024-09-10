@@ -19,13 +19,23 @@ export const Reviews: React.FC = () => {
       <h2 className="text-neutral-100 font-semibold text-4xl">Reviews</h2>
       <div className="max-w-[1000px] flex justify-center items-center">
         <Swiper
-          spaceBetween={50}
-          slidesPerView={3}
+          spaceBetween={10}
+          slidesPerView={1}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
           modules={[Autoplay]}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+          }}
         >
           {reviewsData.reviews.map((review: ReviewsProps, index: number) => (
             <SwiperSlide key={index}>
