@@ -1,0 +1,16 @@
+{
+  "accordionData": [
+    {
+      "title": "Is the writing app free?",
+      "content": "Yes, the app offers a free plan that allows you to write and manage a few books. There are also paid plans that provide additional features such as advanced editing, collaboration, and more storage space."
+    },
+    {
+      "title": "How does the writing app work?",
+      "content": "The writing app allows users to create books, chapters, and notes in an organized manner. You can write your content, format text, add notes, and collaborate with other writers in real time."
+    },
+    {
+      "title": "Can I export my books?",
+      "content": "Yes, the app allows you to export your books in various formats such as PDF or Word. This makes it easy to publish your content on different platforms or print your books."
+    }
+  ]
+}
