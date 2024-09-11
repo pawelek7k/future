@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
       <MarketingNavigation />
       <div className="flex md:justify-between justify-center">
         <div className="flex flex-col gap-8 justify-center items-center md:items-start">
-          <h1 className="text-neutral-100 text-3xl sm:text-6xl lg:text-8xl w-1/2 text-center md:text-start leading-loose">
+          <h1 className="text-neutral-100 text-3xl sm:text-6xl lg:text-8xl w-1/2 text-center md:text-start leading-loose font-sans">
             Create your way with Future!
           </h1>
           <div className="text-neutral-100 rounded-full w-96 shadow-lg backdrop-blur-lg shadow-sky-950">
