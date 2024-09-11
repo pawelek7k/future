@@ -2,7 +2,7 @@ import { statistics } from "@/lib/arrays/statistics";
 
 export const Cards: React.FC = () => {
   return (
-    <div className=" justify-end border-l border-sky-950 hidden md:flex">
+    <div className=" justify-end border-l border-sky-950 hidden md:flex backdrop-blur-lg">
       <ul className="flex flex-col gap-10 pl-10">
         {statistics.map((statistic) => (
           <li key={statistic.id}>
