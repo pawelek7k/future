@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
             Create your way with Future!
           </motion.h1>
           <motion.div
-            className="text-neutral-100 rounded-full w-96 shadow-lg backdrop-blur-lg shadow-sky-950"
+            className="text-neutral-100 rounded-full w-96 shadow-lg backdrop-blur-lg shadow-sky-950 mt-20"
             initial={{ opacity: 0, y: 30 }}
             whileHover={{ scale: 1.05 }}
             animate={{ opacity: 1, y: 0 }}
