@@ -19,7 +19,7 @@ const config: Config = {
       },
     },
     fontFamily: {
-      'sans': ["Spicy Rice", 'serif']
+      'sans': ["SUSE", 'sans-serif']
     }
   },
   plugins: [],
