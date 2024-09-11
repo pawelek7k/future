@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
             <ul className="flex justify-between px-8 py-4">
               <li>
                 <button className="flex items-center gap-4">
-                  Read More <FaArrowDown />
+                  Read More <FaArrowDown className="arrow-animation" />
                 </button>
               </li>
               <li>
