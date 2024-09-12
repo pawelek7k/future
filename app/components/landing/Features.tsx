@@ -1,5 +1,8 @@
+"use client";
+
 import "@/app/styles/animations.css";
 import { features } from "@/lib/arrays/features";
+import { motion } from "framer-motion";
 
 export const Features: React.FC = () => {
   return (
@@ -11,9 +14,13 @@ export const Features: React.FC = () => {
       </div>
       <ul className="flex gap-12 flex-wrap items-center justify-center">
         {features.map((feature) => (
-          <li
+          <motion.li
             className=" p-12 rounded-lg bg-hero-bg shadow-l w-96"
             key={feature.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileHover={{ scale: 1.05 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
           >
             <div>
               <h3 className="text-neutral-200 font-semibold text-2xl">
@@ -24,7 +31,7 @@ export const Features: React.FC = () => {
               </div>
               <p className="text-neutral-300">{feature.p}</p>
             </div>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </section>
