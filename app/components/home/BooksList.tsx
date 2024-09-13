@@ -61,59 +61,65 @@ export const BooksList: React.FC<BooksListProps> = ({
 
   return (
     <>
-      <ul className="flex flex-col gap-6 mt-10">
-        {books.map((book) => (
-          <li
-            key={book._id}
-            className="cursor-pointer dark:shadow-sm flex gap-2 hover:bg-neutral-100/20 p-2 transition ease-in-out rounded-lg dark:hover:bg-zinc-950/30 hover:shadow-sm"
-          >
-            <div onClick={() => handleBookClick(book)} className="flex gap-2">
-              <div>
-                <div className="relative overflow-hidden rounded-md w-36 h-56">
-                  <Image
-                    src={book.cover}
-                    alt={book.title}
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                  />
+      {books.length === 0 ? (
+        <div className="text-center mt-10">
+          <FirstWord>Ooops... Empty here.</FirstWord>
+        </div>
+      ) : (
+        <ul className="flex flex-col gap-6 mt-10">
+          {books.map((book) => (
+            <li
+              key={book._id}
+              className="cursor-pointer dark:shadow-sm flex gap-2 hover:bg-neutral-100/20 p-2 transition ease-in-out rounded-lg dark:hover:bg-zinc-950/30 hover:shadow-sm"
+            >
+              <div onClick={() => handleBookClick(book)} className="flex gap-2">
+                <div>
+                  <div className="relative overflow-hidden rounded-md w-36 h-56">
+                    <Image
+                      src={book.cover}
+                      alt={book.title}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                    />
+                  </div>
+                </div>
+                <div className="p-2 flex flex-col gap-2">
+                  <ThirdHeading>{book.title}</ThirdHeading>
+                  <p>
+                    <FirstWord>For adult:</FirstWord>{" "}
+                    {book.forAdult ? "Yes" : "No"}
+                  </p>
+                  <p>{book.description}</p>
                 </div>
               </div>
-              <div className="p-2 flex flex-col gap-2">
-                <ThirdHeading>{book.title}</ThirdHeading>
-                <p>
-                  <FirstWord>For adult:</FirstWord>{" "}
-                  {book.forAdult ? "Yes" : "No"}
-                </p>
-                <p>{book.description}</p>
-              </div>
-            </div>
-            <div className="flex items-center justify-center p-12">
-              {userLibrary.includes(book._id) && (
-                <div
-                  className="relative flex items-center justify-center"
-                  onMouseEnter={() => setHoveredBookId(book._id)}
-                  onMouseLeave={() => setHoveredBookId(null)}
-                >
-                  <button
-                    onClick={() => removeBookFromLibrary(book._id)}
-                    className="flex items-center justify-center"
-                    aria-label="remove from library"
+              <div className="flex items-center justify-center p-12">
+                {userLibrary.includes(book._id) && (
+                  <div
+                    className="relative flex items-center justify-center"
+                    onMouseEnter={() => setHoveredBookId(book._id)}
+                    onMouseLeave={() => setHoveredBookId(null)}
                   >
-                    <IoTrashBin className="text-red-500 transition ease-in-out hover:text-rose-950 w-6 h-6" />
-                  </button>
-                  {hoveredBookId === book._id && (
-                    <div className="absolute bottom-full mb-2 px-2 py-1 text-sm bg-neutral-300 text-sky-950 dark:bg-zinc-950 rounded-md dark:text-neutral-100">
-                      Remove from library
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
+                    <button
+                      onClick={() => removeBookFromLibrary(book._id)}
+                      className="flex items-center justify-center"
+                      aria-label="Remove book from library"
+                    >
+                      <IoTrashBin className="text-red-500 transition ease-in-out hover:text-rose-950 w-6 h-6" />
+                    </button>
+                    {hoveredBookId === book._id && (
+                      <div className="absolute bottom-full mb-2 px-2 py-1 text-sm bg-neutral-300 text-sky-950 dark:bg-zinc-950 rounded-md dark:text-neutral-100">
+                        Remove from library
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
 
       <Modal isOpen={isModalOpen} onClose={closeModal} book={selectedBook} />
     </>
