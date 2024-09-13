@@ -6,7 +6,7 @@ import { Reviews } from "../components/landing/Reviews";
 
 const Home: React.FC = () => {
   return (
-    <main className="">
+    <main className="bg-hero-bg">
       <Hero />
       <Features />
       <Reviews />
