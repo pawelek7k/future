@@ -6,6 +6,7 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ThirdHeading } from "../global/Heading";
+import { Heading } from "./Heading";
 
 interface ReviewsProps {
   img: string;
@@ -16,9 +17,7 @@ interface ReviewsProps {
 export const Reviews: React.FC = () => {
   return (
     <section className="py-10 px-6 sm:px-10 md:px-20 flex flex-col items-center gap-10 md:gap-16 justify-center">
-      <h2 className="text-neutral-100 font-semibold text-2xl sm:text-3xl md:text-4xl">
-        Reviews
-      </h2>
+      <Heading>Reviews</Heading>
       <div className="max-w-[90%] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1000px] flex justify-center items-center">
         <Swiper
           spaceBetween={10}

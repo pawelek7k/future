@@ -2,6 +2,7 @@
 import accordionData from "@/lib/arrays/json/faq.json";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import { Heading } from "./Heading";
 
 interface AccordionItemProps {
   title: string;
@@ -38,9 +39,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content }) => {
 export const Accordion: React.FC = () => {
   return (
     <section className="max-w-2xl mx-auto py-20 px-20 flex flex-col items-center gap-16">
-      <h2 className="text-neutral-100 font-semibold text-4xl text-center">
-        FAQ
-      </h2>
+      <Heading>FAQ</Heading>
       <div>
         {accordionData.accordionData.map((item, index) => (
           <AccordionItem
