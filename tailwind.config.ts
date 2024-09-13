@@ -15,7 +15,7 @@ const config: Config = {
         "hero-bg": "radial-gradient(18% 28% at 24% 50%, #09090b 7%, #073AFF00 100%),radial-gradient(18% 28% at 18% 71%, #09090b 6%, #073AFF00 100%),radial-gradient(70% 53% at 36% 76%, #09090b 0%, #073AFF00 100%),radial-gradient(42% 53% at 15% 94%, #09090b 7%, #073AFF00 100%),radial-gradient(42% 53% at 34% 72%, #09090b 7%, #073AFF00 100%),radial-gradient(18% 28% at 35% 87%, #09090b 7%, #073AFF00 100%),radial-gradient(31% 43% at -17% 107%, #4c0519 1%, #073AFF00 100%),radial-gradient(21% 37% at 72% 23%, #09090b 1%, #073AFF00 100%),radial-gradient(35% 56% at 91% 74%, #082f49 1%, #073AFF00 100%),radial-gradient(74% 86% at 67% 38%, #09090b 18%, #073AFF00 100%),linear-gradient(326deg, #4C0519FF 90%, #09090b 100%);')",
         "home-img": "linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('/images/light-fantasy.jpg')",
         "dark-home-img": "url('/images/fantasy.jpg')",
-        'hero-img': "linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, .9)), url('/images/hero-bg.jpg')"
+        'hero-img': "linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, .8)), url('/images/hero-bg.jpg')"
       },
     },
     fontFamily: {
