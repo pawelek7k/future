@@ -1,7 +1,3 @@
-"use client";
-
-import "@/app/styles/animations.css";
-
 export const Features: React.FC = () => {
   return (
     <section>
@@ -11,8 +7,7 @@ export const Features: React.FC = () => {
         <li>
           <div>
             <div>{/* img */}</div>
-
-            <div>
+            <div className="p-4 bg-sky-950 w-14 flex items-center justify-center">
               <span>1</span>
             </div>
             <div>
