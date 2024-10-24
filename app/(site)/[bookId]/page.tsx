@@ -58,7 +58,7 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
           </div>
           <div className="flex flex-col gap-4 ">
             <FirstHeading>{book.title}</FirstHeading>
-            <p>{book.description}</p>
+            <p className="text-sm sm:text-base">{book.description}</p>
             <div className="flex gap-10">
               <p className="text-gray-700 dark:text-neutral-100">
                 <FirstWord>For Adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
