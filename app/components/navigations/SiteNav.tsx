@@ -3,9 +3,9 @@
 import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { CiCirclePlus, CiSettings } from "react-icons/ci";
-import { IoLibrary, IoLogOutOutline } from "react-icons/io5";
-import { Logo } from "../global/Logo";
+import { IoLibrary } from "react-icons/io5";
 import { LogoutButton } from "../global/Buttons";
+import { Logo } from "../global/Logo";
 
 export const SiteNavigation: React.FC = () => {
   const logoutHandler = () => {
@@ -23,7 +23,7 @@ export const SiteNavigation: React.FC = () => {
               className="flex items-center gap-2"
               aria-label="create"
             >
-              <CiCirclePlus className="w-6 h-6" />
+              <CiCirclePlus className="sm:w-6 sm:h-6 h-5 w-5" />
               <span className="text-sm  hidden md:block">Create</span>
             </Link>
           </li>
@@ -33,7 +33,7 @@ export const SiteNavigation: React.FC = () => {
               className="flex items-center gap-2"
               aria-label="library"
             >
-              <IoLibrary className="w-6 h-6 block" />
+              <IoLibrary className="sm:w-6 sm:h-6 h-5 w-5" />
               <span className="text-sm  hidden md:block">Library</span>
             </Link>
           </li>
@@ -43,7 +43,7 @@ export const SiteNavigation: React.FC = () => {
               className="flex items-center gap-2"
               aria-label="settings"
             >
-              <CiSettings className="w-6 h-6" />
+              <CiSettings className="sm:w-6 sm:h-6 h-5 w-5" />
               <span className="text-sm hidden md:block">Settings</span>
             </Link>
           </li>

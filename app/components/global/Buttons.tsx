@@ -74,7 +74,7 @@ export const LogoutButton: React.FC = () => {
       aria-label="logout"
       className="text-sm flex items-center gap-2"
     >
-      <IoLogOutOutline className="w-6 h-6" />
+      <IoLogOutOutline className="sm:w-6 sm:h-6 h-5 w-5" />
       <span className="text-sm hidden md:block">Log out</span>
     </button>
   );
