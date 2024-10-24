@@ -15,6 +15,12 @@
   margin-bottom: 1.25rem;
 }
 
+@media (max-width: 625px) {
+  .contentContainer p {
+    font-size: 0.9rem;
+  }
+}
+
 .contentContainer a {
   color: #082f49;
   text-decoration: underline;
