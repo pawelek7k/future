@@ -70,14 +70,14 @@ export const BooksList: React.FC<BooksListProps> = ({
           {books.map((book) => (
             <li
               key={book._id}
-              className="cursor-pointer dark:shadow-sm flex gap-2 hover:bg-neutral-100/20 p-2 transition ease-in-out rounded-lg dark:hover:bg-zinc-950/30 hover:shadow-sm flex-col md:flex-row"
+              className="cursor-pointer dark:shadow-sm flex gap-2 hover:bg-neutral-100/20 p-2 transition ease-in-out rounded-lg dark:hover:bg-zinc-950/30 hover:shadow-sm flex-col sm:flex-row"
             >
               <div
                 onClick={() => handleBookClick(book)}
-                className="flex flex-col md:flex-row gap-2"
+                className="flex flex-col sm:flex-row gap-2"
               >
                 <div>
-                  <div className="relative overflow-hidden rounded-md md:w-36 md:h-56 w-full h-40">
+                  <div className="relative overflow-hidden rounded-md sm:w-36 sm:h-56 w-full h-40">
                     <Image
                       src={book.cover}
                       alt={book.title}
