@@ -65,7 +65,7 @@ const DetailsDynamicPage: React.FC<DetailsDynamicPageProps> = async ({
               </p>
               <p className="text-gray-700 dark:text-neutral-100">
                 <FirstWord>Language of the book:</FirstWord>{" "}
-                {book.lang ? "PL" : "EN"}
+                {book.lang ? "PL" : "ENG"}
               </p>
             </div>
             <p className="text-gray-700 dark:text-neutral-100">
