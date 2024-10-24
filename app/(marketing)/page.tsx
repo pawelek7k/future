@@ -1,18 +1,10 @@
-import { Accordion } from "../components/landing/Faq";
-import { Features } from "../components/landing/Features";
-import { Footer } from "../components/landing/Footer";
-import { Hero } from "../components/landing/Hero";
-import { Reviews } from "../components/landing/Reviews";
+import { Container } from "@/app/components/login/";
 
-const Home: React.FC = () => {
+const Login: React.FC = () => {
   return (
-    <main className="bg-hero-bg">
-      <Hero />
-      <Features />
-      <Reviews />
-      <Accordion />
-      <Footer />
+    <main className="flex min-h-screen flex-col items-center justify-between bg-hero-bg">
+      <Container />
     </main>
   );
 };
-export default Home;
+export default Login;
