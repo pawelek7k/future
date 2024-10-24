@@ -70,11 +70,14 @@ export const BooksList: React.FC<BooksListProps> = ({
           {books.map((book) => (
             <li
               key={book._id}
-              className="cursor-pointer dark:shadow-sm flex gap-2 hover:bg-neutral-100/20 p-2 transition ease-in-out rounded-lg dark:hover:bg-zinc-950/30 hover:shadow-sm"
+              className="cursor-pointer dark:shadow-sm flex gap-2 hover:bg-neutral-100/20 p-2 transition ease-in-out rounded-lg dark:hover:bg-zinc-950/30 hover:shadow-sm flex-col md:flex-row"
             >
-              <div onClick={() => handleBookClick(book)} className="flex gap-2">
+              <div
+                onClick={() => handleBookClick(book)}
+                className="flex flex-col md:flex-row gap-2"
+              >
                 <div>
-                  <div className="relative overflow-hidden rounded-md w-36 h-56">
+                  <div className="relative overflow-hidden rounded-md md:w-36 md:h-56 w-full h-40">
                     <Image
                       src={book.cover}
                       alt={book.title}
@@ -87,11 +90,11 @@ export const BooksList: React.FC<BooksListProps> = ({
                 </div>
                 <div className="p-2 flex flex-col gap-2">
                   <ThirdHeading>{book.title}</ThirdHeading>
-                  <p>
+                  <p className="text-sm md:text-base">
                     <FirstWord>For adult:</FirstWord>{" "}
                     {book.forAdult ? "Yes" : "No"}
                   </p>
-                  <p>{book.description}</p>
+                  <p className="text-sm md:text-base">{book.description}</p>
                 </div>
               </div>
               <div className="flex items-center justify-center p-4 md:p-12">
