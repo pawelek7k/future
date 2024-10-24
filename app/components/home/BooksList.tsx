@@ -94,7 +94,7 @@ export const BooksList: React.FC<BooksListProps> = ({
                   <p>{book.description}</p>
                 </div>
               </div>
-              <div className="flex items-center justify-center p-12">
+              <div className="flex items-center justify-center p-4 md:p-12">
                 {userLibrary.includes(book._id) && (
                   <div
                     className="relative flex items-center justify-center"
