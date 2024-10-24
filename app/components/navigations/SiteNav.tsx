@@ -1,6 +1,5 @@
 "use client";
 
-import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { CiCirclePlus, CiSettings } from "react-icons/ci";
 import { IoLibrary } from "react-icons/io5";
@@ -8,10 +7,6 @@ import { LogoutButton } from "../global/Buttons";
 import { Logo } from "../global/Logo";
 
 export const SiteNavigation: React.FC = () => {
-  const logoutHandler = () => {
-    signOut();
-  };
-
   return (
     <header className="flex justify-between p-4 w-full fixed z-40  backdrop-blur-md rounded-b-lg border-b top-0 items-center dark:border-b-zinc-800 shadow-lg">
       <Logo />
