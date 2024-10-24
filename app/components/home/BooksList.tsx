@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { IoTrashBin } from "react-icons/io5";
 import { FirstWord } from "../global/FirstWord";
 import { ThirdHeading } from "../global/Heading";
-import { Modal } from "../Modal";
+import { Modal } from "../modal";
 
 interface Book {
   _id: string;
