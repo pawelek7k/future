@@ -1,15 +1,9 @@
 import NextAuthProvider from "@/app/(site)/NextAuthProvider";
-import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Loader } from "../components/global/Loader";
 import { SiteNavigation } from "../components/navigations/SiteNav";
 import { ThemeProvider } from "../components/theme-provider";
 import "../styles/globals.css";
-
-export const metadata: Metadata = {
-  title: "Future",
-  description: "Your favorite writting app!",
-};
 
 export default function RootLayout({
   children,
