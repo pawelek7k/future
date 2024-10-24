@@ -21,7 +21,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <SiteNavigation />
-            <main className="p-10 pt-20 md:p-20">
+            <main className="p-4 pt-20 sm:p-10 sm:pt-20 md:p-20">
               <Suspense fallback={<Loader />}>{children}</Suspense>
             </main>
           </ThemeProvider>
