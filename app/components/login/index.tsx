@@ -2,14 +2,13 @@
 
 import { createUser } from "@/lib/signup/userApi";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import Notiflix from "notiflix";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { SecondaryButton } from "../global/buttons/SecondaryBtn";
 import { Loader } from "../global/Loader";
-import { MarketingNavigation } from "../navigations/MarketingNav";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
-import { SecondaryButton } from "../global/buttons/SecondaryBtn";
 
 export const Container: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -88,7 +87,6 @@ export const Container: React.FC = () => {
 
   return (
     <div className="h-screen container mx-auto flex flex-col justify-center items-center">
-      <MarketingNavigation />
       {isLogin ? (
         <LoginForm
           formData={formData}
