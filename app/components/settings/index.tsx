@@ -24,6 +24,7 @@ export const GlobalSettings: React.FC = async () => {
     <div>
       <ImagePicker />
       <h2>{user?.username || user?.email.split("@")[0]}</h2>
+      <h3>{user?.email}</h3>
     </div>
   );
 };
