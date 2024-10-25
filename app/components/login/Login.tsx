@@ -1,6 +1,7 @@
 import React from "react";
-import { GoogleButton, PrimaryButton } from "../global/Buttons";
 import { Socials } from "./Socials";
+import { PrimaryButton } from "../global/buttons/PrimaryBtn";
+import { GoogleButton } from "../global/buttons/GoogleBtn";
 
 interface FormData {
   email: string;

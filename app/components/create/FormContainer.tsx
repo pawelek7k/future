@@ -1,5 +1,4 @@
 "use client";
-import { PrimaryButton } from "@/app/components/global/Buttons";
 import { useRouter } from "next/navigation";
 import Notiflix from "notiflix";
 import React, { useState } from "react";
@@ -9,6 +8,7 @@ import { Tags } from "../global/Tags";
 import { ToggleSwitch } from "../global/ToggleSwitch";
 import { CoverPicker } from "./CoverPicker";
 import { LangSwitch } from "../global/LangSwitch";
+import { PrimaryButton } from "../global/buttons/PrimaryBtn";
 
 export const CreateForm: React.FC = () => {
   const [title, setTitle] = useState<string>("");

@@ -1,6 +1,6 @@
 import React from "react";
-import { PrimaryButton } from "../global/Buttons";
 import { Socials } from "./Socials";
+import { PrimaryButton } from "../global/buttons/PrimaryBtn";
 
 interface SignupFormProps {
   formData: {

@@ -5,11 +5,11 @@ import { signIn } from "next-auth/react";
 import Notiflix from "notiflix";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { SecondaryButton } from "../global/Buttons";
 import { Loader } from "../global/Loader";
 import { MarketingNavigation } from "../navigations/MarketingNav";
 import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
+import { SecondaryButton } from "../global/buttons/SecondaryBtn";
 
 export const Container: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);

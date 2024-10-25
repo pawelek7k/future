@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { CiCirclePlus, CiSettings } from "react-icons/ci";
 import { IoLibrary } from "react-icons/io5";
-import { LogoutButton } from "../global/Buttons";
 import { Logo } from "../global/Logo";
+import { LogoutButton } from "../global/buttons/LogoutBtnn";
 
 export const SiteNavigation: React.FC = () => {
   return (

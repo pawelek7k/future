@@ -1,19 +1,13 @@
-import { useState, useEffect } from "react";
-import { PrimaryButton, SecondaryButton } from "../global/Buttons";
+import { Book } from "@/types/book";
 import { useSession } from "next-auth/react";
-import Notiflix from "notiflix";
 import { useRouter } from "next/navigation";
+import Notiflix from "notiflix";
+import { useState } from "react";
+import { PrimaryButton } from "../global/buttons/PrimaryBtn";
+import { SecondaryButton } from "../global/buttons/SecondaryBtn";
 
 interface ButtonsProps {
-  book: {
-    _id: string;
-    title: string;
-    cover: string;
-    tags: string[];
-    description: string;
-    genre: string;
-    forAdult: boolean;
-  };
+  book: Book;
 }
 
 export const Buttons: React.FC<ButtonsProps> = ({ book }) => {

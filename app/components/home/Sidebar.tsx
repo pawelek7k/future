@@ -2,10 +2,11 @@ import { DropdownMenu } from "@/app/components/global/Dropdown";
 import { SearchInput } from "@/app/components/global/SearchInput";
 import { Divide as Hamburger } from "hamburger-react";
 import React, { KeyboardEvent, useState } from "react";
-import { PrimaryButton, SecondaryButton } from "../global/Buttons";
 import { SecondHeading } from "../global/Heading";
 import { LangSwitch } from "../global/LangSwitch";
 import { ToggleSwitch } from "../global/ToggleSwitch";
+import { PrimaryButton } from "../global/buttons/PrimaryBtn";
+import { SecondaryButton } from "../global/buttons/SecondaryBtn";
 
 interface FilterValues {
   search: string;

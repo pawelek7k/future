@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { PrimaryButton } from "../global/Buttons";
 import { LightLogo } from "../global/Logo";
 import { motion } from "framer-motion";
+import { PrimaryButton } from "../global/buttons/PrimaryBtn";
 
 export const MarketingNavigation: React.FC = () => {
   return (
