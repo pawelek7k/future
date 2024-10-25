@@ -1,6 +1,5 @@
 import { useSession } from "next-auth/react";
 import Image from "next/legacy/image";
-import { useRouter } from "next/navigation";
 import Notiflix from "notiflix";
 import React, { useEffect, useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
@@ -26,7 +25,6 @@ interface ModalProps {
 export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const { data: session } = useSession();
-  const router = useRouter();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -72,17 +70,6 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
       }
     } catch (error) {
       Notiflix.Notify.failure("Error adding book to library.");
-    }
-  };
-
-  const handleStartReading = () => {
-    try {
-      setIsSubmitting(true);
-      router.push(`/${book._id}`);
-    } catch (e) {
-      console.log(e);
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
