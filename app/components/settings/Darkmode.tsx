@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { PrimaryButton } from "../global/Buttons";
+import { PrimaryButton } from "../global/buttons/PrimaryBtn";
 
 export const DarkModeSwitch: React.FC = () => {
   const { systemTheme, theme, setTheme } = useTheme();
