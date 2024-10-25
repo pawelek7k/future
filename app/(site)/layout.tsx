@@ -1,9 +1,9 @@
 import NextAuthProvider from "@/app/(site)/NextAuthProvider";
+import "@/styles/globals.css";
 import { Suspense } from "react";
 import { Loader } from "../components/global/Loader";
 import { SiteNavigation } from "../components/navigations/SiteNav";
 import { ThemeProvider } from "../components/theme-provider";
-import "../styles/globals.css";
 
 export default function RootLayout({
   children,

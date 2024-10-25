@@ -1,7 +1,7 @@
+import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Loader } from "../components/global/Loader";
-import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Future",
