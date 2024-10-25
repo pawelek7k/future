@@ -30,13 +30,13 @@ const HomeAuthPage: React.FC = async () => {
 
   let books: Book[] = [];
   let userLibrary: string[] = [];
-
+  let user;
   try {
     const db = await connectToDatabase();
     const booksCollection = db.collection("books");
     const usersCollection = db.collection("users");
 
-    const user = await usersCollection.findOne({ email: session.user?.email });
+    user = await usersCollection.findOne({ email: session.user?.email });
     if (user) {
       userLibrary = user.library || [];
     }
@@ -75,7 +75,7 @@ const HomeAuthPage: React.FC = async () => {
     <>
       <div className="bg-black rounded-xl p-10 bg-home-img bg-top dark:bg-center dark:bg-dark-home-img bg-no-repeat bg-cover ">
         <h2 className="text-xl text-neutral-100">
-          Welcome, {session.user?.username}!
+          Welcome, {user?.username || user?.email.split("@")[0]}!
         </h2>
         <h1 className="text-3xl text-neutral-100 font-semibold">
           Discover the books!
