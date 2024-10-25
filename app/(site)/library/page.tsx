@@ -3,6 +3,7 @@ import { FirstHeading } from "@/app/components/global/Heading";
 import { Loader } from "@/app/components/global/Loader";
 import ClientSideComponent from "@/app/components/home/ClientSideComponent";
 import { connectToDatabase } from "@/lib/db";
+import { Book } from "@/types/book";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
@@ -12,16 +13,6 @@ export const metadata = {
   title: "Future - Your Library",
   description: "Future",
 };
-
-interface Book {
-  _id: string;
-  title: string;
-  cover: string;
-  description: string;
-  forAdult: boolean;
-  genre: string;
-  tags: string[];
-}
 
 const LibraryAuthPage: React.FC = async () => {
   const session = await getServerSession(authOptions);
