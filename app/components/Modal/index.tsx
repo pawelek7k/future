@@ -87,13 +87,14 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
           <div className="flex gap-4 md:gap-6 flex-col sm:flex-row">
             <div className="flex flex-col gap-4 md:gap-6 px-6 text-nowrap ">
               <FirstHeading>{book.title}</FirstHeading>
-              <div className="relative overflow-hidden rounded-md w-48 h-80 mt-4">
+              <div className="relative overflow-hidden rounded-md sm:w-48 sm:h-80 mt-4 w-full h-64">
                 <Image
                   src={book.cover}
                   alt={book.title}
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                 />
               </div>
             </div>
