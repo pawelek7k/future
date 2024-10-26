@@ -5,6 +5,7 @@ import Notiflix from "notiflix";
 import { useState } from "react";
 import { PrimaryButton } from "../global/buttons/PrimaryBtn";
 import { SecondaryButton } from "../global/buttons/SecondaryBtn";
+import { Loader } from "../global/Loader";
 
 interface ButtonsProps {
   book: Book;
@@ -56,17 +57,23 @@ export const Buttons: React.FC<ButtonsProps> = ({ book }) => {
   };
 
   return (
-    <ul className="flex justify-between mt-2 flex-col gap-4 sm:flex-row">
-      <li>
-        <PrimaryButton onClick={handleStartReading} isSubmitting={isSubmitting}>
-          Start reading
-        </PrimaryButton>
-      </li>
-      <li>
-        <SecondaryButton onClick={handleAddToLibrary}>
-          Add to library
-        </SecondaryButton>
-      </li>
-    </ul>
+    <>
+      {isSubmitting && <Loader />}
+      <ul className="flex justify-between mt-2 flex-col gap-4 sm:flex-row">
+        <li>
+          <PrimaryButton
+            onClick={handleStartReading}
+            isSubmitting={isSubmitting}
+          >
+            Start reading
+          </PrimaryButton>
+        </li>
+        <li>
+          <SecondaryButton onClick={handleAddToLibrary}>
+            Add to library
+          </SecondaryButton>
+        </li>
+      </ul>
+    </>
   );
 };

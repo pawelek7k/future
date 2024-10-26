@@ -17,7 +17,7 @@ export async function PUT(request: NextRequest) {
     }
 
     const { content } = await request.json();
-    const { error, value } = contentSchema.validate({ content });
+    const { error } = contentSchema.validate({ content });
 
     if (error) {
         console.log("Validation error:", error.details);
