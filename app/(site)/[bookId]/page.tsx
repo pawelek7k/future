@@ -1,13 +1,13 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { Socials } from "@/app/components/details/Socials";
 import { FirstWord } from "@/app/components/global/FirstWord";
-import { FirstHeading } from "@/app/components/global/Heading";
 import { getBookDetails } from "@/lib/getDetails";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth/next";
 import Image from "next/legacy/image";
 import { redirect } from "next/navigation";
 import styles from "./styles.module.css";
+import { FirstHeading } from "@/app/components/global/headings/FirstHeading";
 
 export const metadata = {
   title: "Future - Read the book",

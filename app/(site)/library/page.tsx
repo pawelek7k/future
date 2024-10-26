@@ -1,5 +1,5 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { FirstHeading } from "@/app/components/global/Heading";
+import { FirstHeading } from "@/app/components/global/headings/FirstHeading";
 import { Loader } from "@/app/components/global/Loader";
 import ClientSideComponent from "@/app/components/home/ClientSideComponent";
 import { connectToDatabase } from "@/lib/db";

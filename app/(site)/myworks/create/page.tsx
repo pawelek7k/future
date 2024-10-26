@@ -1,5 +1,5 @@
 import { CreateForm } from "@/app/components/create/FormContainer";
-import { FirstHeading } from "@/app/components/global/Heading";
+import { FirstHeading } from "@/app/components/global/headings/FirstHeading";
 
 export const metadata = {
   title: "Future - Create your book",

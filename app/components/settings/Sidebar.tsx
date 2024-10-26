@@ -4,7 +4,7 @@ import { sidebarItems } from "@/lib/arrays/settings";
 import { Divide as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { useState } from "react";
-import { SecondHeading } from "../global/Heading";
+import { SecondHeading } from "../global/headings/SecondHeading";
 
 export const Sidebar: React.FC = () => {
   const [isOpen, setOpen] = useState(true);

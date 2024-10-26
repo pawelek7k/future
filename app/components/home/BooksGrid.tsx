@@ -3,8 +3,8 @@
 import Image from "next/legacy/image";
 import React, { useState } from "react";
 import { FirstWord } from "../global/FirstWord";
-import { ThirdHeading } from "../global/Heading";
 import { Modal } from "../modal";
+import { ThirdHeading } from "../global/headings/ThirdHeading";
 
 interface Book {
   _id: string;

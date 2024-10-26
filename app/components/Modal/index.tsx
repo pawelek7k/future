@@ -2,8 +2,8 @@ import Image from "next/legacy/image";
 import React, { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { FirstWord } from "../global/FirstWord";
-import { FirstHeading } from "../global/Heading";
 import { Buttons } from "./Buttons";
+import { FirstHeading } from "../global/headings/FirstHeading";
 
 interface ModalProps {
   isOpen: boolean;

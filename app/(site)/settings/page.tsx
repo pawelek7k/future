@@ -1,4 +1,4 @@
-import { FirstHeading } from "@/app/components/global/Heading";
+import { FirstHeading } from "@/app/components/global/headings/FirstHeading";
 import { GlobalSettings } from "@/app/components/settings";
 import { Sidebar } from "@/app/components/settings/Sidebar";
 

@@ -1,7 +1,7 @@
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaPinterest, FaXTwitter } from "react-icons/fa6";
 import { HiShare } from "react-icons/hi";
-import { ThirdHeading } from "../global/Heading";
+import { ThirdHeading } from "../global/headings/ThirdHeading";
 
 interface SocialLink {
   Icon: React.ElementType;
