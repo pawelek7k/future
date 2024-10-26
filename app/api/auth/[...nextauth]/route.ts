@@ -1,15 +1,7 @@
 import { connectToDatabase } from '@/lib/db';
 import { verifyPassword } from '@/lib/signup/hashPasswd';
-import NextAuth, { DefaultSession, NextAuthOptions, Session } from 'next-auth';
+import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-
-interface CustomSession extends Session {
-    user: {
-        id: string;
-        email: string;
-        username?: string;
-    } & DefaultSession['user'];
-}
 
 export const authOptions: NextAuthOptions = {
     providers: [
