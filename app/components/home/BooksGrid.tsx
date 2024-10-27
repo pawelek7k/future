@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/legacy/image";
 import React, { useState } from "react";
+import { Cover } from "../global/Cover";
 import { FirstWord } from "../global/FirstWord";
-import { Modal } from "../modal";
 import { ThirdHeading } from "../global/headings/ThirdHeading";
+import { Modal } from "../modal";
 
 interface Book {
   _id: string;
@@ -47,16 +47,7 @@ export const BooksGrid: React.FC<BooksListProps> = ({ books }) => {
               className="cursor-pointer dark:shadow-sm"
               onClick={() => handleBookClick(book)}
             >
-              <div className="relative overflow-hidden rounded-md w-36 h-56">
-                <Image
-                  src={book.cover}
-                  alt={book.title}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                />
-              </div>
+              <Cover title={book.title} cover={book.cover} />
               <ThirdHeading>{book.title}</ThirdHeading>
             </li>
           ))}

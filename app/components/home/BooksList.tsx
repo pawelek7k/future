@@ -1,10 +1,10 @@
-import Image from "next/legacy/image";
 import Notiflix from "notiflix";
 import React, { useState } from "react";
 import { IoTrashBin } from "react-icons/io5";
+import { Cover } from "../global/Cover";
 import { FirstWord } from "../global/FirstWord";
-import { Modal } from "../modal";
 import { ThirdHeading } from "../global/headings/ThirdHeading";
+import { Modal } from "../modal";
 
 interface Book {
   _id: string;
@@ -76,18 +76,7 @@ export const BooksList: React.FC<BooksListProps> = ({
                 onClick={() => handleBookClick(book)}
                 className="flex flex-col sm:flex-row gap-2"
               >
-                <div>
-                  <div className="relative overflow-hidden rounded-md sm:w-36 sm:h-56 w-full h-40">
-                    <Image
-                      src={book.cover}
-                      alt={book.title}
-                      layout="fill"
-                      objectFit="cover"
-                      objectPosition="center"
-                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                    />
-                  </div>
-                </div>
+                <Cover title={book.title} cover={book.cover} />
                 <div className="p-2 flex flex-col gap-2">
                   <ThirdHeading>{book.title}</ThirdHeading>
                   <p className="text-sm md:text-base">
