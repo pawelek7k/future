@@ -1,9 +1,11 @@
 "use client";
 import axios from "axios";
+import dynamic from "next/dynamic";
 import Notiflix from "notiflix";
 import { SetStateAction, useState } from "react";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 interface RichTextEditorProps {
   bookId: string;
@@ -30,7 +32,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> &
 
     try {
       await axios.put(`/api/books/update/${bookId}`, { content: text });
-      alert("Content saved successfully!");
+      Notiflix.Notify.success("Content saved successfully!");
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         console.error(
