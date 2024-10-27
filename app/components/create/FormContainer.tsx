@@ -3,66 +3,42 @@ import { useRouter } from "next/navigation";
 import Notiflix from "notiflix";
 import React, { useState } from "react";
 import { DropdownMenu } from "../global/Dropdown";
+import { LangSwitch } from "../global/LangSwitch";
 import { Loader } from "../global/Loader";
 import { Tags } from "../global/Tags";
 import { ToggleSwitch } from "../global/ToggleSwitch";
-import { CoverPicker } from "./CoverPicker";
-import { LangSwitch } from "../global/LangSwitch";
 import { PrimaryButton } from "../global/buttons/PrimaryBtn";
+import { CoverPicker } from "./CoverPicker";
 
 export const CreateForm: React.FC = () => {
-  const [title, setTitle] = useState<string>("");
-  const [cover, setCover] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
-  const [forAdult, setForAdult] = useState<boolean>(false);
-  const [tags, setTags] = useState<string[]>([]);
-  const [genre, setGenre] = useState<string>("");
-  const [lang, setLang] = useState<"pl" | "eng">("pl");
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-
+  const [formData, setFormData] = useState({
+    title: "",
+    cover: "",
+    description: "",
+    forAdult: false,
+    tags: [] as string[],
+    genre: "",
+    lang: "pl" as "pl" | "eng",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
-  const handleLangChange = (selectedLang: "pl" | "eng") => {
-    setLang(selectedLang);
-  };
-
-  const handleCoverChange = (coverUrl: string) => {
-    setCover(coverUrl);
-  };
-
-  const handleGenreChange = (selectedGenre: string) => {
-    setGenre(selectedGenre);
-  };
-
-  const handleTagChange = (newTags: string[]) => {
-    setTags(newTags);
-  };
-
-  const handleToggleChange = (value: string) => {
-    setForAdult(value === "on");
-  };
+  const handleChange =
+    (key: keyof typeof formData) => (value: string | boolean | string[]) => {
+      setFormData((prev) => ({ ...prev, [key]: value }));
+    };
 
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (isSubmitting) return;
 
+    const { title, cover, description, genre, tags } = formData;
     if (!title || !cover || !description || !genre || tags.length === 0) {
       Notiflix.Notify.warning("Please fill in all fields before submitting.");
       return;
     }
 
     setIsSubmitting(true);
-
-    const formData = {
-      title,
-      cover,
-      description,
-      forAdult,
-      genre,
-      tags,
-      lang,
-    };
 
     try {
       const response = await fetch("/api/books/add", {
@@ -73,14 +49,9 @@ export const CreateForm: React.FC = () => {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        throw new Error("Something went wrong");
-      }
-
+      if (!response.ok) throw new Error("Something went wrong");
       const result = await response.json();
-
       Notiflix.Notify.success("Book successfully created!");
-
       router.push(`/myworks/${result.id}`);
     } catch (error) {
       console.error("Error:", error);
@@ -101,8 +72,8 @@ export const CreateForm: React.FC = () => {
           <div className="w-[9rem] h-[14rem] sm:w-[12rem] flex items-center justify-center">
             <CoverPicker
               name="selectedCover"
-              value={cover}
-              onChange={handleCoverChange}
+              value={formData.cover}
+              onChange={handleChange("cover")}
             />
           </div>
           <div className="sm:w-[25rem] w-screen p-10">
@@ -119,8 +90,8 @@ export const CreateForm: React.FC = () => {
                 id="title"
                 placeholder="Title"
                 className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30 text-gray-900 placeholder-gray-500 focus:outline-none shadow-lg backdrop-blur-md"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={formData.title}
+                onChange={(e) => handleChange("title")(e.target.value)}
               />
             </div>
             <label
@@ -134,14 +105,14 @@ export const CreateForm: React.FC = () => {
               name="description"
               className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30 text-gray-900 placeholder-gray-500 focus:outline-none shadow-lg backdrop-blur-md resize-none"
               placeholder="Describe your book"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              value={formData.description}
+              onChange={(e) => handleChange("description")(e.target.value)}
             />
             <div className="flex gap-6 items-center justify-between">
               <DropdownMenu
                 name="genre"
-                value={genre}
-                onChange={handleGenreChange}
+                value={formData.genre}
+                onChange={handleChange("genre")}
               />
               <div className="flex gap-2 items-center justify-center">
                 <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
@@ -149,22 +120,26 @@ export const CreateForm: React.FC = () => {
                 </span>
                 <ToggleSwitch
                   name="forAdult"
-                  value={forAdult ? "on" : "off"}
-                  onChange={handleToggleChange}
+                  value={formData.forAdult ? "on" : "off"}
+                  onChange={(value) => handleChange("forAdult")(value === "on")}
                 />
               </div>
             </div>
-            <Tags name="tags" value={tags} onChange={handleTagChange} />
+            <Tags
+              name="tags"
+              value={formData.tags}
+              onChange={handleChange("tags")}
+            />
             <div className="flex gap-2 items-center mb-4">
               <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                 Language of the book:
               </span>
-              <div className="flex items-center gap-2 ">
+              <div className="flex items-center gap-2">
                 <span className="text-sm">PL</span>
                 <LangSwitch
                   name="Lang"
-                  onChange={handleLangChange}
-                  value={lang}
+                  onChange={handleChange("lang")}
+                  value={formData.lang}
                 />
                 <span className="text-sm">ENG</span>
               </div>
