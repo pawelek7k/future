@@ -6,6 +6,11 @@ interface CreateChaptersProps {
   };
 }
 
+export const metadata = {
+  title: "Future - Book Content",
+  description: "Write Your Best Thoughts",
+};
+
 const CreateChapters: React.FC<CreateChaptersProps> = ({ params }) => {
   const { bookId } = params;
 
