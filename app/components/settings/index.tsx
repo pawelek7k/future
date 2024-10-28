@@ -2,7 +2,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { connectToDatabase } from "@/lib/db";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { ImagePicker } from "./UserImgPicker";
+import { UserProfile } from "./UserProfile";
 
 export const GlobalSettings: React.FC = async () => {
   const session = await getServerSession(authOptions);
@@ -21,10 +21,8 @@ export const GlobalSettings: React.FC = async () => {
   }
 
   return (
-    <div>
-      <ImagePicker />
-      <h2>{user?.username || user?.email.split("@")[0]}</h2>
-      <h3>{user?.email}</h3>
-    </div>
+    <>
+      <UserProfile username={user?.username} email={user?.email} />
+    </>
   );
 };
