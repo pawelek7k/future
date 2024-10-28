@@ -66,14 +66,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
 
   return (
     <div>
-      <div className="fixed z-50 top-2 right-5 transform -translate-x-1/2">
+      <div
+        className="fixed z-50 top-2 right-5 transform -translate-x-1/2"
+        role="button"
+      >
         <Hamburger
           toggled={isOpen}
           toggle={setOpen}
           size={20}
           aria-expanded={isOpen}
-          aria-label="Toggle menu"
-          aria-controls="sidebar"
+          aria-labelledby="labeldiv"
         />
       </div>
       <div
