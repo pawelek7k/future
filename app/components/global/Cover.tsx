@@ -12,10 +12,10 @@ export const Cover: React.FC<CoverProps> = ({ title, cover }) => {
         <Image
           src={cover}
           alt={title}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
           sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+          loading="lazy"
         />
       </div>
     </div>
