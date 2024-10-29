@@ -1,11 +1,11 @@
 "use client";
 
+import { Book } from "@/types/book";
 import React, { useState } from "react";
 import { Cover } from "../global/Cover";
 import { FirstWord } from "../global/FirstWord";
 import { ThirdHeading } from "../global/headings/ThirdHeading";
-import { Modal } from "../modal";
-import { Book } from "@/types/book";
+import { Modal } from "../Modal";
 
 interface BooksListProps {
   books: Book[];

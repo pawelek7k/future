@@ -3,7 +3,7 @@ import Notiflix from "notiflix";
 import { useCallback, useState } from "react";
 import { BookItem } from "../global/BookItem";
 import { FirstWord } from "../global/FirstWord";
-import { Modal } from "../modal";
+import { Modal } from "../Modal";
 
 interface BooksListProps {
   books: Book[];
