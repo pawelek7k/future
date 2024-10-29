@@ -16,7 +16,6 @@ export const BooksList: React.FC<BooksListProps> = ({
 }) => {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isRemoving, setIsRemoving] = useState(false);
 
   const handleBookClick = useCallback((book: Book) => {
     setSelectedBook(book);
@@ -29,7 +28,6 @@ export const BooksList: React.FC<BooksListProps> = ({
   }, []);
 
   const removeBookFromLibrary = useCallback(async (bookId: string) => {
-    setIsRemoving(true);
     try {
       const response = await fetch("/api/user/library/delete", {
         method: "DELETE",
@@ -44,8 +42,6 @@ export const BooksList: React.FC<BooksListProps> = ({
       Notiflix.Notify.success("Book removed from library");
     } catch (error) {
       Notiflix.Notify.failure("Error removing book");
-    } finally {
-      setIsRemoving(false);
     }
   }, []);
 

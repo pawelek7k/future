@@ -1,5 +1,6 @@
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+
 import { connectToDatabase } from '@/lib/db';
+import { authOptions } from '@/utils/authOptions';
 import { getServerSession } from 'next-auth/next';
 import { NextRequest, NextResponse } from 'next/server';
 

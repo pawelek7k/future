@@ -5,16 +5,7 @@ import { Cover } from "../global/Cover";
 import { FirstWord } from "../global/FirstWord";
 import { ThirdHeading } from "../global/headings/ThirdHeading";
 import { Modal } from "../modal";
-
-interface Book {
-  _id: string;
-  title: string;
-  cover: string;
-  description: string;
-  forAdult: boolean;
-  genre: string;
-  tags: string[];
-}
+import { Book } from "@/types/book";
 
 interface BooksListProps {
   books: Book[];

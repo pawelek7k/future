@@ -1,7 +1,7 @@
 import { connectToDatabase } from '@/lib/db';
 import { NextRequest, NextResponse } from 'next/server';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '@/utils/authOptions';
 
 export async function PUT(req: NextRequest) {
     try {

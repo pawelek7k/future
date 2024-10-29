@@ -1,4 +1,3 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { Socials } from "@/app/components/details/Socials";
 import { FirstWord } from "@/app/components/global/FirstWord";
 import { getBookDetails } from "@/lib/getDetails";
@@ -8,6 +7,7 @@ import Image from "next/legacy/image";
 import { redirect } from "next/navigation";
 import styles from "./styles.module.css";
 import { FirstHeading } from "@/app/components/global/headings/FirstHeading";
+import { authOptions } from "@/utils/authOptions";
 
 export const metadata = {
   title: "Future - Read the book",
