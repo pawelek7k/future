@@ -13,9 +13,9 @@ import { SignupForm } from "./Signup";
 export const Container: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
-    email: "",
-    username: "",
-    password: "",
+    email: "john.doe99@example.com",
+    username: "user123",
+    password: "Password1",
   });
   const [isLoading, setIsLoading] = useState(false);
 

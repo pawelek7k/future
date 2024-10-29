@@ -27,7 +27,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
     <p className="text-neutral-100 bg-sky-950 p-1 rounded-full shadow-lg text-center mb-6">
       Please enter your account details.
     </p>
-    <form onSubmit={submitHandler} className="">
+    <form onSubmit={submitHandler}>
       <div className="mb-4">
         <label
           htmlFor="email"
@@ -42,6 +42,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           value={formData.email}
           onChange={handleChange}
           placeholder="Enter your e-mail"
+          autoComplete="email"
           className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-neutral-100 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
         />
       </div>
@@ -59,6 +60,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           value={formData.password}
           onChange={handleChange}
           placeholder="Enter your password"
+          autoComplete="current-password"
           className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-neutral-100 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
         />
       </div>
