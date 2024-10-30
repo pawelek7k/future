@@ -1,6 +1,7 @@
 import React from "react";
-import { Socials } from "./Socials";
 import { PrimaryButton } from "../global/buttons/PrimaryBtn";
+import { InputField } from "../global/InputField";
+import { Socials } from "./Socials";
 
 interface SignupFormProps {
   formData: {
@@ -25,60 +26,36 @@ export const SignupForm: React.FC<SignupFormProps> = ({
       Create your account now.
     </p>
     <form onSubmit={submitHandler}>
-      <div className="mb-4">
-        <label
-          htmlFor="email"
-          className="block text-neutral-100 text-sm font-medium mb-2"
-        >
-          E-mail
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Enter your e-mail"
-          autoComplete="email"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-neutral-100 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
-        />
-      </div>
-      <div className="mb-4">
-        <label
-          htmlFor="username"
-          className="block text-neutral-100 text-sm font-medium mb-2"
-        >
-          Username
-        </label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          placeholder="Enter your username"
-          autoComplete="username"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-neutral-100 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
-        />
-      </div>
-      <div className="mb-4">
-        <label
-          htmlFor="password"
-          className="block text-neutral-100 text-sm font-medium mb-2"
-        >
-          Password
-        </label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Enter your password"
-          autoComplete="new-password"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-neutral-100 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-rose-950"
-        />
-      </div>
+      <InputField
+        id="email"
+        name="email"
+        type="email"
+        value={formData.email}
+        onChange={handleChange}
+        placeholder="Enter your e-mail"
+        autoComplete="email"
+        label="E-mail"
+      />
+      <InputField
+        id="username"
+        name="username"
+        type="text"
+        value={formData.username}
+        onChange={handleChange}
+        placeholder="Enter your username"
+        autoComplete="username"
+        label="Username"
+      />
+      <InputField
+        id="password"
+        name="password"
+        type="password"
+        value={formData.password}
+        onChange={handleChange}
+        placeholder="Enter your password"
+        autoComplete="new-password"
+        label="Password"
+      />
       <PrimaryButton>Sign Up</PrimaryButton>
       <Socials />
     </form>
