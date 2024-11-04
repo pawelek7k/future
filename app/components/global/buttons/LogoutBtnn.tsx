@@ -2,9 +2,11 @@ import { signOut } from "next-auth/react";
 import { IoLogOutOutline } from "react-icons/io5";
 
 export const LogoutButton: React.FC = () => {
-  const logoutHandler = () => {
-    signOut();
+  const logoutHandler = async () => {
+    await signOut({ redirect: false });
+    window.location.reload();
   };
+
   return (
     <button
       onClick={logoutHandler}

@@ -16,7 +16,7 @@ const HomeAuthPage: React.FC = async () => {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    redirect("/login");
+    redirect("/");
   }
 
   let books: Book[] = [];
@@ -68,7 +68,7 @@ const HomeAuthPage: React.FC = async () => {
         <h2 className="text-xl text-neutral-100">
           Welcome, {user?.username || user?.email.split("@")[0]}!
         </h2>
-        <h1 className="text-3xl text-neutral-100 font-semibold">
+        <h1 className="text-3xl text-neutral-100 uppercase font-semibold">
           Discover the books!
         </h1>
       </div>

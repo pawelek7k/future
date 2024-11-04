@@ -48,11 +48,11 @@ export const authOptions: NextAuthOptions = {
         }),
     ],
     pages: {
-        signIn: '/login',
+        signIn: '/',
     },
     callbacks: {
         async redirect({ baseUrl }) {
-            return baseUrl + '/home';
+            return `${baseUrl}/home`;
         },
         async jwt({ token, user }) {
             if (user) {

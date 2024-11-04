@@ -8,7 +8,7 @@ import { LogoutButton } from "../global/buttons/LogoutBtnn";
 
 export const SiteNavigation: React.FC = () => {
   return (
-    <header className="flex justify-between p-4 w-full fixed z-40  backdrop-blur-md rounded-b-lg border-b top-0 items-center dark:border-b-zinc-800 shadow-lg">
+    <header className="flex justify-between p-4 w-full fixed z-40  backdrop-blur-md rounded-b-lg border-b top-0 items-center dark:border-b-rose-950 shadow-lg">
       <Logo />
       <nav className="md:flex items-center justify-evenly w-full">
         <ul className="flex justify-center gap-8  tracking-widest md:justify-evenly">

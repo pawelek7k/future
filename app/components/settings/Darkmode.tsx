@@ -1,20 +1,25 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { PrimaryButton } from "../global/buttons/PrimaryBtn";
+import { useEffect, useState } from "react";
 
 export const DarkModeSwitch: React.FC = () => {
   const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
+  const [currentTheme, setCurrentTheme] = useState<string>("light");
 
-  console.log(currentTheme);
+  useEffect(() => {
+    const resolvedTheme = theme === "system" ? systemTheme : theme || "light";
+    setCurrentTheme(resolvedTheme);
+  }, [systemTheme, theme]);
+
   return (
-    <div className="w-40">
-      <PrimaryButton
-        onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
+    <div>
+      <button
+        className="uppercase text-xs font-semibold w-24 h-24"
+        onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
       >
-        Toggle Mode
-      </PrimaryButton>
+        {currentTheme}
+      </button>
     </div>
   );
 };
