@@ -2,6 +2,7 @@ import { connectToDatabase } from '@/lib/db';
 import { verifyPassword } from '@/lib/signup/hashPasswd';
 import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from 'next-auth/providers/google';
 
 export const authOptions: NextAuthOptions = {
     providers: [
@@ -45,6 +46,10 @@ export const authOptions: NextAuthOptions = {
                     return null;
                 }
             }
+        }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID!,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
         }),
     ],
     pages: {
