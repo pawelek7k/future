@@ -26,24 +26,19 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
   books,
   userLibrary,
 }) => {
-  const [filters, setFilters] = useState({
-    search: "",
-    genre: "",
-  });
-
+  const [filters, setFilters] = useState({ search: "", genre: "" });
   const [viewMode, setViewMode] = useState<"grid" | "list" | null>(null);
 
   useEffect(() => {
-    const savedViewMode = localStorage.getItem("viewMode");
-    if (savedViewMode === "grid" || savedViewMode === "list") {
-      setViewMode(savedViewMode);
-    } else {
-      setViewMode("list");
-    }
+    const savedViewMode = localStorage.getItem("viewMode") as
+      | "grid"
+      | "list"
+      | null;
+    setViewMode(savedViewMode || "list");
   }, []);
 
   useEffect(() => {
-    if (viewMode !== null) {
+    if (viewMode) {
       localStorage.setItem("viewMode", viewMode);
     }
   }, [viewMode]);
@@ -61,7 +56,6 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
       .toLowerCase()
       .includes(filters.search.toLowerCase());
     const matchesGenre = !filters.genre || book.genre === filters.genre;
-
     return matchesSearch && matchesGenre;
   });
 
@@ -73,28 +67,19 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
     <div>
       <div>
         <ul className="flex gap-16 mt-4">
-          <li>
-            <button
-              onClick={() => handleViewChange("list")}
-              className={`flex items-center justify-center gap-2 p-2 ${
-                viewMode === "list" ? "text-sky-950 dark:text-rose-800" : ""
-              }`}
-            >
-              <CiBoxList />
-              List
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => handleViewChange("grid")}
-              className={`flex items-center justify-center gap-2 p-2 ${
-                viewMode === "grid" ? "text-sky-950 dark:text-rose-800" : ""
-              }`}
-            >
-              <CiGrid41 />
-              Grid
-            </button>
-          </li>
+          {["list", "grid"].map((mode) => (
+            <li key={mode}>
+              <button
+                onClick={() => handleViewChange(mode as "grid" | "list")}
+                className={`flex items-center justify-center gap-2 p-2 ${
+                  viewMode === mode ? "text-sky-950 dark:text-rose-800" : ""
+                }`}
+              >
+                {mode === "list" ? <CiBoxList /> : <CiGrid41 />}
+                {mode.charAt(0).toUpperCase() + mode.slice(1)}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
       <Sidebar onFilterChange={handleFilterChange} />
