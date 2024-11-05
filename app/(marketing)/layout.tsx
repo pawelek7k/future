@@ -8,13 +8,19 @@ export const metadata: Metadata = {
   description: "Your favorite writting app!",
 };
 
+export async function generateStaticParams() {
+  return [{ lang: "en-US" }, { lang: "pl" }];
+}
+
 export default function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { lang: string };
 }>) {
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <body className="bg-zinc-950">
         <Suspense fallback={<Loader />}>{children}</Suspense>
       </body>

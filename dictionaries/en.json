@@ -1,0 +1,14 @@
+{
+  "login": {
+    "heading": "Welcome back!",
+    "paragraph": "Please enter your account details.",
+    "button": "Log in!",
+    "switch": "Switch to registration"
+  },
+  "createAccount": {
+    "heading": "Join us!!",
+    "paragraph": "Create your account now.",
+    "button": "Sign up!",
+    "switch": "Switch to login"
+  }
+}
