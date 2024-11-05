@@ -8,7 +8,8 @@ export const DarkModeSwitch: React.FC = () => {
   const [currentTheme, setCurrentTheme] = useState<string>("light");
 
   useEffect(() => {
-    const resolvedTheme = theme === "system" ? systemTheme : theme || "light";
+    const resolvedTheme =
+      theme === "system" ? systemTheme ?? "light" : theme ?? "light";
     setCurrentTheme(resolvedTheme);
   }, [systemTheme, theme]);
 
