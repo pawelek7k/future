@@ -2,11 +2,11 @@ import { FirstHeading } from "@/app/components/global/headings/FirstHeading";
 import { Loader } from "@/app/components/global/Loader";
 import ClientSideComponent from "@/app/components/home/ClientSideComponent";
 import { connectToDatabase } from "@/lib/db";
+import { redirect } from "@/navigation";
 import { Book } from "@/types/book";
 import { authOptions } from "@/utils/authOptions";
 import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth/next";
-import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
 export const metadata = {
@@ -19,6 +19,7 @@ const LibraryAuthPage: React.FC = async () => {
 
   if (!session) {
     redirect("/");
+    return null;
   }
 
   let books: Book[] = [];

@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/navigation";
 import Notiflix from "notiflix";
 import React, { useState } from "react";
 import { DropdownMenu } from "../global/Dropdown";
