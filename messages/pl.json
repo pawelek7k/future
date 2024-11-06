@@ -1,0 +1,19 @@
+{
+  "login": {
+    "heading": "Witaj ponownie!",
+    "paragraph": "Proszę wprowadź dane swojego konta.",
+    "button": "Zaloguj się!",
+    "switch": "Przełącz na rejestrację",
+    "emailPlaceholder": "Wprowadź swój e-mail",
+    "emailLabel": "E-mail",
+    "passwordPlaceholder": "Wprowadź swoje hasło",
+    "passwordLabel": "Hasło",
+    "googleButton": "Zaloguj się z użyciem Google"
+  },
+  "createAccount": {
+    "heading": "Dołącz do nas!",
+    "paragraph": "Załóż swoje konto już teraz.",
+    "button": "Zarejestruj się!",
+    "switch": "Przełącz na logowanie"
+  }
+}
