@@ -1,8 +1,8 @@
 "use client";
 
 import { createUser } from "@/lib/signup/userApi";
+import { useRouter } from "@/navigation";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import Notiflix from "notiflix";
 import { useState } from "react";
 import { SecondaryButton } from "../global/buttons/SecondaryBtn";
