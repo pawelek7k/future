@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/navigation";
 import { DarkModeSwitch } from "./Darkmode";
 import { Tile } from "./Tile";
 import { ImagePicker } from "./UserImgPicker";

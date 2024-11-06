@@ -1,9 +1,9 @@
 import { FirstHeading } from "@/app/components/global/headings/FirstHeading";
 import { UserProfile } from "@/app/components/settings/UserProfile";
 import { connectToDatabase } from "@/lib/db";
+import { redirect } from "@/navigation";
 import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
 import { ReactNode } from "react";
 
 export const metadata = {
@@ -20,6 +20,7 @@ const SettingsLayout: React.FC<SettingsLayoutProps> = async ({ children }) => {
 
   if (!session) {
     redirect("/");
+    return null;
   }
 
   let user;

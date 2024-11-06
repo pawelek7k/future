@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "sourceMap": true,
     "incremental": true,
     "plugins": [
       {

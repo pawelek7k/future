@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { CiCirclePlus, CiSettings } from "react-icons/ci";
 import { IoLibrary } from "react-icons/io5";
 import { Logo } from "../global/Logo";
