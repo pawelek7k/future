@@ -1,0 +1,18 @@
+{
+  "login": {
+    "heading": "Welcome back!",
+    "paragraph": "Please enter your account details.",
+    "button": "Log in!",
+    "switch": "Switch to registration",
+    "emailPlaceholder": "Enter your e-mail",
+    "emailLabel": "E-mail",
+    "passwordPlaceholder": "Enter your password",
+    "passwordLabel": "Password"
+  },
+  "createAccount": {
+    "heading": "Join us!",
+    "paragraph": "Create your account now.",
+    "button": "Sign up!",
+    "switch": "Switch to login"
+  }
+}
