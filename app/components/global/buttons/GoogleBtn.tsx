@@ -1,7 +1,9 @@
 import { signIn } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import { FcGoogle } from "react-icons/fc";
 
 export const GoogleButton: React.FC = () => {
+  const t = useTranslations("login");
   const handleGoogleSignIn = async () => {
     try {
       await signIn("google", { redirect: true });
@@ -17,7 +19,7 @@ export const GoogleButton: React.FC = () => {
     >
       <FcGoogle />
       <span className="text-gray-800 text-sm font-medium">
-        Sign in with Google
+        {t("googleButton")}
       </span>
     </button>
   );
