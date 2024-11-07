@@ -25,10 +25,10 @@ export const LoginForm: React.FC<LoginFormProps> = ({
   const t = useTranslations("login");
   return (
     <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-20 shadow-rose-950">
-      <h1 className="text-2xl font-semibold text-neutral-100 text-center">
+      <h1 className="text-2xl font-semibold text-neutral-100 text-center mb-4">
         {t("heading")}
       </h1>
-      <p className="text-neutral-100 bg-sky-950 p-1 rounded-full shadow-lg text-center mb-6">
+      <p className="text-neutral-100 bg-sky-950 shadow-sky-950 p-1 rounded-full shadow-lg text-center mb-4">
         Please enter your account details.
       </p>
       <form onSubmit={submitHandler}>

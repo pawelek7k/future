@@ -19,10 +19,10 @@ export const SignupForm: React.FC<SignupFormProps> = ({
   submitHandler,
 }) => (
   <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10 shadow-rose-950">
-    <h1 className="text-2xl font-semibold text-neutral-100 text-center">
+    <h1 className="text-2xl font-semibold text-neutral-100 text-center mb-4">
       Join us!
     </h1>
-    <p className="text-neutral-100 bg-sky-950 p-1 rounded-full shadow-lg text-center mb-6">
+    <p className="text-neutral-100 bg-sky-950 p-1 rounded-full shadow-lg shadow-sky-950 text-center mb-4">
       Create your account now.
     </p>
     <form onSubmit={submitHandler}>

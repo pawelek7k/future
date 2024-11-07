@@ -7,7 +7,8 @@
     "emailPlaceholder": "Enter your e-mail",
     "emailLabel": "E-mail",
     "passwordPlaceholder": "Enter your password",
-    "passwordLabel": "Password"
+    "passwordLabel": "Password",
+    "googleButton": "Sign in with Google"
   },
   "createAccount": {
     "heading": "Join us!",
