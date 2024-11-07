@@ -3,6 +3,7 @@
 import { createUser } from "@/lib/signup/userApi";
 import { useRouter } from "@/navigation";
 import { signIn } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import Notiflix from "notiflix";
 import { useState } from "react";
 import { SecondaryButton } from "../global/buttons/SecondaryBtn";
@@ -18,6 +19,8 @@ export const Container: React.FC = () => {
     password: "Password1",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const loginT = useTranslations("login");
+  const signupT = useTranslations("signup");
 
   const router = useRouter();
 
@@ -105,7 +108,7 @@ export const Container: React.FC = () => {
       </div>
       <div className="mt-10">
         <SecondaryButton onClick={toggleForm}>
-          {isLogin ? "Switch to registration" : "Switch to login"}
+          {isLogin ? loginT("switch") : signupT("switch")}
         </SecondaryButton>
       </div>
       {isLoading && <Loader />}

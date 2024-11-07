@@ -1,7 +1,7 @@
 {
   "login": {
     "heading": "Witaj ponownie!",
-    "paragraph": "Proszę wprowadź dane swojego konta.",
+    "paragraph": "Wprowadź dane swojego konta!",
     "button": "Zaloguj się!",
     "switch": "Przełącz na rejestrację",
     "emailPlaceholder": "Wprowadź swój e-mail",
@@ -10,10 +10,16 @@
     "passwordLabel": "Hasło",
     "googleButton": "Zaloguj się z użyciem Google"
   },
-  "createAccount": {
+  "signup": {
     "heading": "Dołącz do nas!",
     "paragraph": "Załóż swoje konto już teraz.",
     "button": "Zarejestruj się!",
-    "switch": "Przełącz na logowanie"
+    "switch": "Przełącz na logowanie",
+    "emailPlaceholder": "Wprowadź swój e-mail",
+    "emailLabel": "E-mail",
+    "passwordPlaceholder": "Wprowadź swoje hasło",
+    "passwordLabel": "Hasło",
+    "usernamePlaceholder": "Wprowadź nazwe użytkownika",
+    "usernameLabel": "Nazwa użytkownika"
   }
 }

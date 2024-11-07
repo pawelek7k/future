@@ -29,7 +29,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         {t("heading")}
       </h1>
       <p className="text-neutral-100 bg-sky-950 p-1 rounded-full shadow-lg text-center mb-6">
-        Please enter your account details.
+        {t("paragraph")}
       </p>
       <form onSubmit={submitHandler}>
         <InputField
@@ -38,9 +38,9 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           type="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="Enter your e-mail"
+          placeholder={t("emailPlaceholder")}
           autoComplete="email"
-          label="E-mail"
+          label={t("emailLabel")}
         />
         <InputField
           id="password"
@@ -48,13 +48,13 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           type="password"
           value={formData.password}
           onChange={handleChange}
-          placeholder="Enter your password"
+          placeholder={t("passwordPlaceholder")}
           autoComplete="current-password"
-          label="Password"
+          label={t("passwordLabel")}
         />
         <ul className="flex flex-col gap-4">
           <li>
-            <PrimaryButton>Log in!</PrimaryButton>
+            <PrimaryButton>{t("button")}</PrimaryButton>
           </li>
           <li>
             <GoogleButton />

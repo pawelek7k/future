@@ -1,7 +1,7 @@
 {
   "login": {
     "heading": "Welcome back!",
-    "paragraph": "Please enter your account details.",
+    "paragraph": "Please enter your account details!",
     "button": "Log in!",
     "switch": "Switch to registration",
     "emailPlaceholder": "Enter your e-mail",
@@ -9,10 +9,16 @@
     "passwordPlaceholder": "Enter your password",
     "passwordLabel": "Password"
   },
-  "createAccount": {
+  "signup": {
     "heading": "Join us!",
     "paragraph": "Create your account now.",
     "button": "Sign up!",
-    "switch": "Switch to login"
+    "switch": "Switch to login",
+    "emailPlaceholder": "Enter your e-mail",
+    "emailLabel": "E-mail",
+    "passwordPlaceholder": "Enter your password",
+    "passwordLabel": "Password",
+    "usernamePlaceholder": "Enter your username",
+    "usernameLabel": "Username"
   }
 }
