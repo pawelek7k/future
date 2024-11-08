@@ -25,6 +25,24 @@
   "global": {
     "empty": "Ooops... Pusto tu.",
     "langSwitch": "Język książki:",
-    "adultChecker": "Dla dorosłych"
+    "adultChecker": "Dla dorosłych",
+    "grid": "Siatka",
+    "list": "Lista",
+    "title": "Tytuł",
+    "description": "Opis",
+    "genre": "Gatunek",
+    "tags": "Tagi"
+  },
+  "navigation": {
+    "create": "Stwórz",
+    "library": "Biblioteka",
+    "settings": "Ustawienia",
+    "logout": "Wyloguj"
+  },
+  "filters": {
+    "heading": "Filtry",
+    "search": "Wyszukaj",
+    "applyFilters": "Zatwierdź filtry",
+    "clearFilters": "Wyczyść filtry"
   }
 }
