@@ -21,5 +21,10 @@
     "passwordLabel": "Password",
     "usernamePlaceholder": "Enter your username",
     "usernameLabel": "Username"
+  },
+  "global": {
+    "empty": "Ooops... Empty here.",
+    "langSwitch": "Language of the book:",
+    "adultChecker": "For adult"
   }
 }

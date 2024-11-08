@@ -21,5 +21,10 @@
     "passwordLabel": "Hasło",
     "usernamePlaceholder": "Wprowadź nazwe użytkownika",
     "usernameLabel": "Nazwa użytkownika"
+  },
+  "global": {
+    "empty": "Ooops... Pusto tu.",
+    "langSwitch": "Język książki:",
+    "adultChecker": "Dla dorosłych"
   }
 }
