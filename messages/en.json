@@ -25,6 +25,24 @@
   "global": {
     "empty": "Ooops... Empty here.",
     "langSwitch": "Language of the book:",
-    "adultChecker": "For adult"
+    "adultChecker": "For adult",
+    "grid": "Grid",
+    "list": "List",
+    "title": "Title",
+    "description": "Description",
+    "genre": "Genre",
+    "tags": "Tags"
+  },
+  "navigation": {
+    "create": "Create",
+    "library": "Library",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+  "filters": {
+    "heading": "Filters",
+    "search": "Search",
+    "applyFilters": "Apply Filters",
+    "clearFilters": "Clear Filters"
   }
 }
