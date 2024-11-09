@@ -31,7 +31,11 @@
     "title": "Tytuł",
     "description": "Opis",
     "genre": "Gatunek",
-    "tags": "Tagi"
+    "tags": "Tagi",
+    "yes": "Tak",
+    "no": "Nie",
+    "addToLibrary": "Dodaj do biblioteki",
+    "startReading": "Zacznij czytać"
   },
   "navigation": {
     "create": "Stwórz",

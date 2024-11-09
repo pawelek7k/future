@@ -31,7 +31,11 @@
     "title": "Title",
     "description": "Description",
     "genre": "Genre",
-    "tags": "Tags"
+    "tags": "Tags",
+    "yes": "Yes",
+    "no": "No",
+    "addToLibrary": "Add to library",
+    "startReading": "Start reading"
   },
   "navigation": {
     "create": "Create",

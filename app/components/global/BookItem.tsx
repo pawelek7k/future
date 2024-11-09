@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import React, { memo, useState } from "react";
 import { IoTrashBin } from "react-icons/io5";
 import { Cover } from "../global/Cover";
@@ -24,6 +25,7 @@ interface BookItemProps {
 export const BookItem: React.FC<BookItemProps> = memo(
   ({ book, isInLibrary, onBookClick, onRemove }) => {
     const [hovered, setHovered] = useState(false);
+    const t = useTranslations("global");
 
     return (
       <li
@@ -38,7 +40,8 @@ export const BookItem: React.FC<BookItemProps> = memo(
           <div className="p-2 flex flex-col gap-2">
             <ThirdHeading>{book.title}</ThirdHeading>
             <p className="text-sm md:text-base">
-              <FirstWord>For adult:</FirstWord> {book.forAdult ? "Yes" : "No"}
+              <FirstWord>{t("adultChecker")}:</FirstWord>{" "}
+              {book.forAdult ? t("yes") : t("no")}
             </p>
             <p className="text-sm md:text-base">{book.description}</p>
           </div>

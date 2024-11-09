@@ -1,6 +1,7 @@
 import { useRouter } from "@/navigation";
 import { Book } from "@/types/book";
 import { useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import Notiflix from "notiflix";
 import { useState } from "react";
 import { PrimaryButton } from "../global/buttons/PrimaryBtn";
@@ -15,6 +16,7 @@ export const Buttons: React.FC<ButtonsProps> = ({ book }) => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const { data: session } = useSession();
   const router = useRouter();
+  const t = useTranslations("global");
 
   const handleAddToLibrary = async () => {
     if (!session?.user) {
@@ -65,12 +67,12 @@ export const Buttons: React.FC<ButtonsProps> = ({ book }) => {
             onClick={handleStartReading}
             isSubmitting={isSubmitting}
           >
-            Start reading
+            {t("startReading")}
           </PrimaryButton>
         </li>
         <li>
           <SecondaryButton onClick={handleAddToLibrary}>
-            Add to library
+            {t("addToLibrary")}
           </SecondaryButton>
         </li>
       </ul>

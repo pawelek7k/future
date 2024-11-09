@@ -1,9 +1,10 @@
+import { useTranslations } from "next-intl";
 import Image from "next/legacy/image";
 import React, { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { FirstWord } from "../global/FirstWord";
-import { Buttons } from "./Buttons";
 import { FirstHeading } from "../global/headings/FirstHeading";
+import { Buttons } from "./Buttons";
 
 interface ModalProps {
   isOpen: boolean;
@@ -20,6 +21,7 @@ interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
+  const t = useTranslations("global");
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -64,21 +66,21 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
             </div>
             <div className="w-full flex flex-col p-0 justify-center md:p-6 gap-2">
               <p className="text-gray-700 dark:text-neutral-100 hidden md:block">
-                <FirstWord>Description: </FirstWord>
+                <FirstWord>{t("description")}: </FirstWord>
                 {book.description}
               </p>
               <div className="flex justify-between">
                 <p className="text-gray-700 dark:text-neutral-100">
-                  <FirstWord>Genre: </FirstWord>
+                  <FirstWord>{t("genre")}: </FirstWord>
                   {book.genre}
                 </p>
                 <p className="text-gray-700 dark:text-neutral-100">
-                  <FirstWord>For Adult:</FirstWord>{" "}
-                  {book.forAdult ? "Yes" : "No"}
+                  <FirstWord>{t("adultChecker")}:</FirstWord>{" "}
+                  {book.forAdult ? t("yes") : t("no")}
                 </p>
               </div>
               <p>
-                <FirstWord>Tags:</FirstWord>
+                <FirstWord>{t("tags")}:</FirstWord>
                 <span className="flex flex-wrap gap-2 mt-2">
                   {book.tags.map((tag, index) => (
                     <span
