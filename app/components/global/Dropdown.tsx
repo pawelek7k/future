@@ -1,4 +1,5 @@
 import { ArrayGenres } from "@/lib/arrays/bookGenre";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { HiChevronDown } from "react-icons/hi";
 
@@ -12,6 +13,7 @@ export const DropdownMenu: React.FC<Props> = ({ name, value, onChange }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState(value);
   const bookGenres = ArrayGenres;
+  const t = useTranslations("global");
 
   const handleSelectGenre = (genreName: string) => {
     setSelectedGenre(genreName);
@@ -31,7 +33,7 @@ export const DropdownMenu: React.FC<Props> = ({ name, value, onChange }) => {
         aria-label="Select genre"
         className="flex items-center text-gray-700 dark:text-neutral-100 text-sm font-medium mb-2"
       >
-        {selectedGenre || "Genre"}
+        {selectedGenre || t("genre")}
         <HiChevronDown
           className={`ml-2 transition-transform ${
             isDropdownOpen ? "rotate-180" : "rotate-0"

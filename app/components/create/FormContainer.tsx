@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "@/navigation";
+import { useTranslations } from "next-intl";
 import Notiflix from "notiflix";
 import React, { useState } from "react";
 import { DropdownMenu } from "../global/Dropdown";
@@ -22,6 +23,7 @@ export const CreateForm: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
+  const t = useTranslations("global");
 
   const handleChange =
     (key: keyof typeof formData) => (value: string | boolean | string[]) => {
@@ -82,7 +84,7 @@ export const CreateForm: React.FC = () => {
                 htmlFor="title"
                 className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
               >
-                Title
+                {t("title")}
               </label>
               <input
                 type="text"
@@ -98,7 +100,7 @@ export const CreateForm: React.FC = () => {
               htmlFor="description"
               className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
             >
-              Description
+              {t("description")}
             </label>
             <textarea
               id="description"
@@ -116,7 +118,7 @@ export const CreateForm: React.FC = () => {
               />
               <div className="flex gap-2 items-center justify-center">
                 <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
-                  For adult
+                  {t("adultChecker")}
                 </span>
                 <ToggleSwitch
                   name="forAdult"
@@ -132,7 +134,7 @@ export const CreateForm: React.FC = () => {
             />
             <div className="flex gap-2 items-center mb-4">
               <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
-                Language of the book:
+                {t("langSwitch")}
               </span>
               <div className="flex items-center gap-2">
                 <span className="text-sm">PL</span>
