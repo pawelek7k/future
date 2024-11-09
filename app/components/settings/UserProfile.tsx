@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "@/navigation";
 import { DarkModeSwitch } from "./Darkmode";
+import { LangSwitcher } from "./LangSwitcher";
 import { Tile } from "./Tile";
 import { ImagePicker } from "./UserImgPicker";
 
@@ -40,7 +41,9 @@ export const UserProfile: React.FC<Props> = ({ username, email }) => {
           <Tile rounded="left">
             <DarkModeSwitch />
           </Tile>
-          <Tile label="ENG" rounded="right" />
+          <Tile rounded="right">
+            <LangSwitcher />
+          </Tile>
         </ul>
       </div>
     </div>
