@@ -31,7 +31,11 @@
     "title": "Tytuł",
     "description": "Opis",
     "genre": "Gatunek",
-    "tags": "Tagi"
+    "tags": "Tagi",
+    "yes": "Tak",
+    "no": "Nie",
+    "addToLibrary": "Dodaj do biblioteki",
+    "startReading": "Zacznij czytać"
   },
   "navigation": {
     "create": "Stwórz",
@@ -44,5 +48,14 @@
     "search": "Wyszukaj",
     "applyFilters": "Zatwierdź filtry",
     "clearFilters": "Wyczyść filtry"
+  },
+  "headings": {
+    "home": {
+      "welcome": "Witaj",
+      "mainHeading": "Odkrywaj książki!"
+    },
+    "create": "Stwórz swoją książkę!",
+    "library": "Twoja biblioteka!",
+    "settings": "Twój profil!"
   }
 }

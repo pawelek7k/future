@@ -1,9 +1,6 @@
 import { FirstHeading } from "@/app/components/global/headings/FirstHeading";
 import { UserProfile } from "@/app/components/settings/UserProfile";
-import { connectToDatabase } from "@/lib/db";
-import { redirect } from "@/navigation";
-import { authOptions } from "@/utils/authOptions";
-import { getServerSession } from "next-auth";
+import { useTranslations } from "next-intl";
 import { ReactNode } from "react";
 
 export const metadata = {
@@ -15,26 +12,12 @@ interface SettingsLayoutProps {
   children: ReactNode;
 }
 
-const SettingsLayout: React.FC<SettingsLayoutProps> = async ({ children }) => {
-  const session = await getServerSession(authOptions);
-
-  if (!session) {
-    redirect("/");
-    return null;
-  }
-
-  let user;
-  try {
-    const db = await connectToDatabase();
-    const usersCollection = db.collection("users");
-    user = await usersCollection.findOne({ email: session.user?.email });
-  } catch (error) {
-    console.error("Error retrieving user data:", error);
-  }
+const SettingsLayout: React.FC<SettingsLayoutProps> = ({ children }) => {
+  const t = useTranslations("headings");
   return (
     <section className="h-screen">
-      <FirstHeading>Your profile</FirstHeading>
-      <UserProfile username={user?.username} email={user?.email} />
+      <FirstHeading>{t("settings")}</FirstHeading>
+      <UserProfile />
       {children}
     </section>
   );

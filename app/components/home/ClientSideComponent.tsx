@@ -3,6 +3,7 @@
 import { BooksGrid } from "@/app/components/home/BooksGrid";
 import { BooksList } from "@/app/components/home/BooksList";
 import { Sidebar } from "@/app/components/home/Sidebar";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { CiBoxList, CiGrid41 } from "react-icons/ci";
 import { Loader } from "../global/Loader";
@@ -28,7 +29,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
 }) => {
   const [filters, setFilters] = useState({ search: "", genre: "" });
   const [viewMode, setViewMode] = useState<"grid" | "list" | null>(null);
-
+  const t = useTranslations("global");
   useEffect(() => {
     const savedViewMode = localStorage.getItem("viewMode") as
       | "grid"
@@ -67,7 +68,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
     <div>
       <div>
         <ul className="flex gap-16 mt-4">
-          {["list", "grid"].map((mode) => (
+          {[t("list"), t("grid")].map((mode) => (
             <li key={mode}>
               <button
                 onClick={() => handleViewChange(mode as "grid" | "list")}
@@ -75,7 +76,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
                   viewMode === mode ? "text-sky-950 dark:text-rose-800" : ""
                 }`}
               >
-                {mode === "list" ? <CiBoxList /> : <CiGrid41 />}
+                {mode === t("list") ? <CiBoxList /> : <CiGrid41 />}
                 {mode.charAt(0).toUpperCase() + mode.slice(1)}
               </button>
             </li>
@@ -83,7 +84,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
         </ul>
       </div>
       <Sidebar onFilterChange={handleFilterChange} />
-      {viewMode === "grid" ? (
+      {viewMode === t("grid") ? (
         <BooksGrid books={filteredBooks} />
       ) : (
         <BooksList books={filteredBooks} userLibrary={userLibrary} />
