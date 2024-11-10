@@ -57,5 +57,14 @@
     "create": "Stwórz swoją książkę!",
     "library": "Twoja biblioteka!",
     "settings": "Twój profil!"
+  },
+  "changePassword": {
+    "heading": "Zmień hasło",
+    "currentPassword": "Obecne hasło",
+    "newPassword": "Nowe hasło",
+    "currentPlaceholder": "Wprowadź obecne hasło",
+    "newPlaceholder": "Wprowadź nowe hasło",
+    "button": "Zmień hasło",
+    "isSubmitting": "Changing..."
   }
 }
