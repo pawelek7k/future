@@ -86,7 +86,7 @@ export const ChangePassword: React.FC = () => {
             />
           </div>
 
-          <div className="flex justify-end">
+          <div>
             <PrimaryButton isSubmitting={isSubmitting}>
               {isSubmitting ? "Changing..." : "Change Password"}
             </PrimaryButton>

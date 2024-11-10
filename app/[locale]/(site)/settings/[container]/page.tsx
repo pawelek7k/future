@@ -1,4 +1,5 @@
 "use client";
+import { ChangePassword } from "@/app/components/settings/ChangePassword";
 import { useParams } from "next/navigation";
 
 export default function SettingsContainerPage() {
@@ -9,7 +10,7 @@ export default function SettingsContainerPage() {
   }
 
   if (container === "change-password") {
-    return <div>Change Password Content</div>;
+    return <ChangePassword />;
   }
 
   return <div>Section Not Found</div>;

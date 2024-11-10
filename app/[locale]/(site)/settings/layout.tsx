@@ -17,8 +17,10 @@ const SettingsLayout: React.FC<SettingsLayoutProps> = ({ children }) => {
   return (
     <section className="h-screen">
       <FirstHeading>{t("settings")}</FirstHeading>
-      <UserProfile />
-      {children}
+      <div className="flex flex-col md:flex-row justify-center items-center">
+        <UserProfile />
+        {children}
+      </div>
     </section>
   );
 };
