@@ -1,5 +1,6 @@
 import { Loader } from "@/app/components/global/Loader";
 import ClientSideComponent from "@/app/components/home/ClientSideComponent";
+import { Welcome } from "@/app/components/home/Welcome";
 import { connectToDatabase } from "@/lib/db";
 import { redirect } from "@/navigation";
 import { Book } from "@/types/book";
@@ -65,14 +66,7 @@ const HomeAuthPage: React.FC = async () => {
 
   return (
     <>
-      <div className="bg-black rounded-xl p-10 bg-home-img bg-top dark:bg-center dark:bg-dark-home-img bg-no-repeat bg-cover ">
-        <h2 className="text-xl text-neutral-100">
-          Welcome, {user?.username || user?.email.split("@")[0]}!
-        </h2>
-        <h1 className="text-3xl text-neutral-100 uppercase font-semibold">
-          Discover the books!
-        </h1>
-      </div>
+      <Welcome email={user?.email} username={user?.username} />
       <Suspense fallback={<Loader />}>
         <ClientSideComponent books={books} userLibrary={userLibrary} />
       </Suspense>

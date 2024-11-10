@@ -48,5 +48,14 @@
     "search": "Wyszukaj",
     "applyFilters": "Zatwierdź filtry",
     "clearFilters": "Wyczyść filtry"
+  },
+  "headings": {
+    "home": {
+      "welcome": "Witaj",
+      "mainHeading": "Odkrywaj książki!"
+    },
+    "create": "Stwórz swoją książkę!",
+    "library": "Twoja biblioteka!",
+    "settings": "Twój profil!"
   }
 }

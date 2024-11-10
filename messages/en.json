@@ -48,5 +48,14 @@
     "search": "Search",
     "applyFilters": "Apply Filters",
     "clearFilters": "Clear Filters"
+  },
+  "headings": {
+    "home": {
+      "welcome": "Welcome",
+      "mainHeading": "Discover the books!"
+    },
+    "create": "Create your book!",
+    "library": "Your library!",
+    "settings": "Your profile!"
   }
 }
