@@ -57,5 +57,14 @@
     "create": "Create your book!",
     "library": "Your library!",
     "settings": "Your profile!"
+  },
+  "changePassword": {
+    "heading": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "currentPlaceholder": "Enter your password",
+    "newPlaceholder": "Enter your new password",
+    "button": "Change password",
+    "isSubmitting": "Changing..."
   }
 }
