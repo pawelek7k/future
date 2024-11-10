@@ -1,5 +1,6 @@
 import { Loader } from "@/app/components/global/Loader";
 import ClientSideComponent from "@/app/components/home/ClientSideComponent";
+import { CookieModal } from "@/app/components/home/CookieModal";
 import { Welcome } from "@/app/components/home/Welcome";
 import { connectToDatabase } from "@/lib/db";
 import { redirect } from "@/navigation";
@@ -70,6 +71,7 @@ const HomeAuthPage: React.FC = async () => {
       <Suspense fallback={<Loader />}>
         <ClientSideComponent books={books} userLibrary={userLibrary} />
       </Suspense>
+      <CookieModal />
     </>
   );
 };
