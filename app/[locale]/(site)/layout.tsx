@@ -1,6 +1,6 @@
 import NextAuthProvider from "@/app//[locale]/(site)/NextAuthProvider";
 import { Loader } from "@/app/components/global/Loader";
-import { SiteNavigation } from "@/app/components/navigations/SiteNav";
+import { SiteNavigation } from "@/app/components/navigations";
 import { ThemeProvider } from "@/app/components/theme-provider";
 import "@/styles/globals.css";
 import { NextIntlClientProvider } from "next-intl";
