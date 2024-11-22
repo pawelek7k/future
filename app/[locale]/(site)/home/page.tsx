@@ -17,6 +17,7 @@ export const metadata = {
 const Welcome = dynamic(() => import("@/app/components/home/Welcome"), {
   ssr: false,
 });
+
 const HomeAuthPage: React.FC = async () => {
   const session = await getServerSession(authOptions);
 
