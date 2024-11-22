@@ -9,9 +9,7 @@ export const ImagePicker: React.FC = () => {
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
 
-    if (!file) {
-      return setPickedImage(null);
-    }
+    if (!file) return setPickedImage(null);
 
     const fileReader = new FileReader();
     fileReader.onload = () => {
@@ -20,9 +18,7 @@ export const ImagePicker: React.FC = () => {
     fileReader.readAsDataURL(file);
   };
 
-  const handleImageClick = () => {
-    imageInput.current?.click();
-  };
+  const handleImageClick = () => imageInput.current?.click();
 
   return (
     <div className="z-10">
