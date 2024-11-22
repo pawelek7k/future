@@ -2,9 +2,9 @@
 
 import { BooksGrid } from "@/app/components/home/BooksGrid";
 import { BooksList } from "@/app/components/home/BooksList";
-import { Sidebar } from "@/app/components/home/Sidebar";
 import { Book } from "@/types/book";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { CiBoxList, CiGrid41 } from "react-icons/ci";
 import { Loader } from "../global/Loader";
@@ -13,6 +13,11 @@ interface ClientSideComponentProps {
   books: Book[];
   userLibrary: string[];
 }
+
+const Sidebar = dynamic(() => import("@/app/components/home/Sidebar"), {
+  ssr: false,
+  loading: () => <Loader />,
+});
 
 const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
   books,

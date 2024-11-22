@@ -19,7 +19,7 @@ interface SidebarProps {
   onFilterChange: (filters: Filters) => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
+const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
   const [isOpen, setOpen] = useState(true);
   const [filters, setFilters] = useState<Filters>({
     search: "",
@@ -99,3 +99,5 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     </div>
   );
 };
+
+export default Sidebar;
