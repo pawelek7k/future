@@ -50,10 +50,10 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
           >
             <IoCloseOutline className="w-6 h-6" />
           </button>
-          <div className="flex gap-4 md:gap-6 flex-col sm:flex-row">
+          <div className="flex gap-4 flex-col sm:flex-row">
             <div className="flex flex-col gap-4 md:gap-6 px-6 text-nowrap ">
               <FirstHeading>{book.title}</FirstHeading>
-              <div className="relative overflow-hidden rounded-md sm:w-48 sm:h-80 mt-4 w-full h-64">
+              <div className="relative overflow-hidden rounded-md sm:w-48 sm:h-80 mt-4 w-full h-64 md:self-center">
                 <Image
                   src={book.cover}
                   alt={book.title}
@@ -64,7 +64,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, book }) => {
                 />
               </div>
             </div>
-            <div className="w-full flex flex-col p-0 justify-center md:p-6 gap-2">
+            <div className="w-full flex flex-col p-0 justify-center md:py-6 gap-2">
               <p className="text-gray-700 dark:text-neutral-100 hidden md:block">
                 <FirstWord>{t("description")}: </FirstWord>
                 {book.description}
