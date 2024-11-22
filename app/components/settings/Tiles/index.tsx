@@ -7,9 +7,8 @@ import { Tile } from "./Tile";
 export const Tiles = () => {
   const router = useRouter();
 
-  const handleNavigation = (path: string) => {
-    router.push(path);
-  };
+  const handleNavigation = (path: string) => router.push(path);
+
   return (
     <div className="mt-6">
       <ul className="flex items-center justify-center pb-6 border-b border-sky-950 dark:border-rose-950">
