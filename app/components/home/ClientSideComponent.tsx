@@ -7,16 +7,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { CiBoxList, CiGrid41 } from "react-icons/ci";
 import { Loader } from "../global/Loader";
-
-interface Book {
-  _id: string;
-  title: string;
-  cover: string;
-  description: string;
-  forAdult: boolean;
-  genre: string;
-  tags: string[];
-}
+import { Book } from "@/types/book";
 
 interface ClientSideComponentProps {
   books: Book[];
