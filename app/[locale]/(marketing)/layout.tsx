@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Suspense } from "react";
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Future",
