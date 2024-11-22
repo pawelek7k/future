@@ -3,11 +3,11 @@
 import { BooksGrid } from "@/app/components/home/BooksGrid";
 import { BooksList } from "@/app/components/home/BooksList";
 import { Sidebar } from "@/app/components/home/Sidebar";
+import { Book } from "@/types/book";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { CiBoxList, CiGrid41 } from "react-icons/ci";
 import { Loader } from "../global/Loader";
-import { Book } from "@/types/book";
 
 interface ClientSideComponentProps {
   books: Book[];
@@ -35,13 +35,10 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
     }
   }, [viewMode]);
 
-  const handleFilterChange = (filters: { search: string; genre: string }) => {
+  const handleFilterChange = (filters: { search: string; genre: string }) =>
     setFilters(filters);
-  };
 
-  const handleViewChange = (mode: "grid" | "list") => {
-    setViewMode(mode);
-  };
+  const handleViewChange = (mode: "grid" | "list") => setViewMode(mode);
 
   const filteredBooks = books.filter((book) => {
     const matchesSearch = book.title
