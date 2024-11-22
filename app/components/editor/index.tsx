@@ -20,9 +20,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> &
   RichTextEditorStaticProps = ({ bookId }) => {
   const [text, setText] = useState<string>("");
 
-  const handleChange = (value: SetStateAction<string>) => {
-    setText(value);
-  };
+  const handleChange = (value: SetStateAction<string>) => setText(value);
 
   const handleSave = async () => {
     if (!bookId) {
