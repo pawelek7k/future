@@ -29,9 +29,7 @@ export const CoverPicker: React.FC<Props> = ({ name, onChange, value }) => {
     fileReader.readAsDataURL(file);
   };
 
-  const handleImageClick = () => {
-    imageInput.current?.click();
-  };
+  const handleImageClick = () => imageInput.current?.click();
 
   return (
     <div className="z-10">
