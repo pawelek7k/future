@@ -6,7 +6,7 @@ interface UserProps {
   username: string;
 }
 
-export const Welcome: React.FC<UserProps> = ({ email, username }) => {
+const Welcome: React.FC<UserProps> = ({ email, username }) => {
   const t = useTranslations("headings");
   return (
     <div className="bg-black rounded-xl p-10 bg-home-img bg-top dark:bg-center dark:bg-dark-home-img bg-no-repeat bg-cover ">
@@ -19,3 +19,5 @@ export const Welcome: React.FC<UserProps> = ({ email, username }) => {
     </div>
   );
 };
+
+export default Welcome;
