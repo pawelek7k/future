@@ -24,9 +24,7 @@ export const Container: React.FC = () => {
 
   const router = useRouter();
 
-  const toggleForm = () => {
-    setIsLogin((prev) => !prev);
-  };
+  const toggleForm = () => setIsLogin((prev) => !prev);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
