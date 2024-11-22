@@ -13,6 +13,11 @@ interface FilterValues {
   genre: string;
   forAdult: boolean;
 }
+interface QueryParams {
+  search?: string;
+  genre?: string;
+  forAdult?: boolean;
+}
 
 interface SidebarProps {
   onFilterChange: (filters: FilterValues) => void;
@@ -26,7 +31,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
   const [lang, setLang] = useState<"pl" | "eng">("pl");
 
   const handleFilterChange = () => {
-    const query: any = {};
+    const query: QueryParams = {};
     if (search) query.search = search;
     if (genre) query.genre = genre;
     if (forAdult) query.forAdult = forAdult;
