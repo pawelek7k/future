@@ -48,9 +48,7 @@ const ClientSideComponent: React.FC<ClientSideComponentProps> = ({
     return matchesSearch && matchesGenre;
   });
 
-  if (viewMode === null) {
-    return <Loader />;
-  }
+  if (viewMode === null) return <Loader />;
 
   return (
     <div>
