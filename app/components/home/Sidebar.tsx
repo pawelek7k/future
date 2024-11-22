@@ -42,27 +42,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
     onFilterChange({ search: "", genre: "", forAdult: false });
   };
 
-  const handleGenreChange = (selectedGenre: string) => {
-    setGenre(selectedGenre);
-  };
+  const handleGenreChange = (selectedGenre: string) => setGenre(selectedGenre);
 
-  const handleToggleChange = (value: string) => {
-    setForAdult(value === "on");
-  };
+  const handleToggleChange = (value: string) => setForAdult(value === "on");
 
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) =>
     setSearch(event.target.value);
-  };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      handleFilterChange();
-    }
+    if (e.key === "Enter") handleFilterChange();
   };
 
-  const handleLangChange = (selectedLang: "pl" | "eng") => {
+  const handleLangChange = (selectedLang: "pl" | "eng") =>
     setLang(selectedLang);
-  };
 
   return (
     <div>
