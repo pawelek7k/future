@@ -1,19 +1,10 @@
+import { Book } from "@/types/book";
 import { useTranslations } from "next-intl";
 import React, { memo, useState } from "react";
 import { IoTrashBin } from "react-icons/io5";
 import { Cover } from "../global/Cover";
 import { FirstWord } from "../global/FirstWord";
 import { ThirdHeading } from "../global/headings/ThirdHeading";
-
-interface Book {
-  _id: string;
-  title: string;
-  cover: string;
-  description: string;
-  forAdult: boolean;
-  genre: string;
-  tags: string[];
-}
 
 interface BookItemProps {
   book: Book;
