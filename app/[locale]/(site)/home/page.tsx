@@ -1,8 +1,8 @@
 import { Loader } from "@/app/components/global/Loader";
 import ClientSideComponent from "@/app/components/home/ClientSideComponent";
 import { CookieModal } from "@/app/components/home/CookieModal";
-import { Welcome } from "@/app/components/home/Welcome";
 import { connectToDatabase } from "@/lib/db";
+import dynamic from "next/dynamic";
 import { redirect } from "@/navigation";
 import { Book } from "@/types/book";
 import { authOptions } from "@/utils/authOptions";
@@ -13,6 +13,10 @@ export const metadata = {
   title: "Future - Home",
   description: "Future",
 };
+
+const Welcome = dynamic(() => import("@/app/components/home/Welcome"), {
+  ssr: false,
+});
 
 const HomeAuthPage: React.FC = async () => {
   const session = await getServerSession(authOptions);

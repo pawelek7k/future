@@ -2,16 +2,11 @@ import NextAuthProvider from "@/app//[locale]/(site)/NextAuthProvider";
 import { Loader } from "@/app/components/global/Loader";
 import { SiteNavigation } from "@/app/components/navigations";
 import { ThemeProvider } from "@/app/components/theme-provider";
+import { inter } from "@/app/fonts/font";
 import "@/styles/globals.css";
-import { Inter } from "@next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Suspense } from "react";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 export default async function RootLayout({
   children,
