@@ -1,4 +1,4 @@
-import { ButtonProps } from "@/types/btns";
+import type { ButtonProps } from "@/types/btns";
 
 export const PrimaryButton: React.FC<ButtonProps> = ({
   children,

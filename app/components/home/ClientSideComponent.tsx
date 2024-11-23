@@ -2,7 +2,7 @@
 
 import { BooksGrid } from "@/app/components/home/BooksGrid";
 import { BooksList } from "@/app/components/home/BooksList";
-import { Book } from "@/types/book";
+import type { Book } from "@/types/book";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
