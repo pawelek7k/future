@@ -1,4 +1,4 @@
-import { ButtonProps } from "@/types/btns";
+import type { ButtonProps } from "@/types/btns";
 
 export const AbsoluteButton: React.FC<ButtonProps> = ({
   children,

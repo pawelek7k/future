@@ -2,11 +2,11 @@ import { Loader } from "@/app/components/global/Loader";
 import ClientSideComponent from "@/app/components/home/ClientSideComponent";
 import { CookieModal } from "@/app/components/home/CookieModal";
 import { connectToDatabase } from "@/lib/db";
-import dynamic from "next/dynamic";
 import { redirect } from "@/navigation";
-import { Book } from "@/types/book";
+import type { Book } from "@/types/book";
 import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth/next";
+import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
 export const metadata = {
@@ -16,6 +16,7 @@ export const metadata = {
 
 const Welcome = dynamic(() => import("@/app/components/home/Welcome"), {
   ssr: false,
+  loading: () => <Loader />,
 });
 
 const HomeAuthPage: React.FC = async () => {

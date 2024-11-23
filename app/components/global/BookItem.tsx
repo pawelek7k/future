@@ -1,4 +1,4 @@
-import { Book } from "@/types/book";
+import type { Book } from "@/types/book";
 import { useTranslations } from "next-intl";
 import React, { memo, useState } from "react";
 import { IoTrashBin } from "react-icons/io5";

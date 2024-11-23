@@ -1,4 +1,4 @@
-import { Book } from "@/types/book";
+import type { Book } from "@/types/book";
 import Notiflix from "notiflix";
 import { useCallback, useState } from "react";
 import { BookItem } from "../global/BookItem";

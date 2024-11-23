@@ -1,4 +1,4 @@
-import { Props } from "@/types/children";
+import type { Props } from "@/types/children";
 
 export const SecondHeading: React.FC<Props> = ({ children }) => {
   return (
